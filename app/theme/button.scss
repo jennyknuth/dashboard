@@ -1,0 +1,14 @@
+@import "node_modules/nio-css-theme/dist/modules/button";
+
+.button {
+  vertical-align: middle;
+}
+
+.garbage {
+  background-color: green;
+  &:hover {
+    background-color: rgba(green, 0.6);
+  }
+}
+
+.square { border-radius: 0; }
