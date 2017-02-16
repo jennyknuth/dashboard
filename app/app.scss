@@ -1,7 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import "theme/palette";
+@import "theme/typography";
+@import "theme/global";
+@import "theme/instructions";
 
 :global {
   :root {
     font-family: Lato;
+   }
+
+   html, body {
+     padding:0;
+     margin:0;
+     background-color:$palette-background;
+     box-shadow: 0 -80px 0 0 $palette-primary;
+
+     #app {
+      margin: 80px auto;
+      padding: 20px 40px;
+      min-width:1000px;
+      max-width:1280px;
+     }
+   }
+
+   .right-panel {
+     position: absolute;
+     right: 110px;
+     top: 200px;
+     width: 25%;
    }
 }
