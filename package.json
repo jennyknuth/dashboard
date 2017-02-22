@@ -52,7 +52,7 @@
     "nio-css-theme": "^2.0.0",
     "niojs": "^1.1.5",
     "react": "^15.4.2",
-    "react-css-themr": "^1.7.1",
+    "react-css-themr": "^2.0.0",
     "react-dom": "^15.4.2",
     "react-nuik": "^0.0.x",
     "socket.io-client": "^1.7.1"

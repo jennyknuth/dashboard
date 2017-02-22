@@ -2,7 +2,8 @@ import React from 'react';
 import Instructions from 'components/instructions.jsx';
 import Steps from 'components/steps.jsx';
 import Tweet from 'components/tweet.jsx';
-import Weather from 'components/weather.jsx';
+import Fan from 'components/fan.jsx';
+// import Weather from 'components/weather.jsx';
 
 import instructions from 'theme/instructions.scss';
 
@@ -11,7 +12,7 @@ const IntroLab = () => {
     <div>
       <h1>Page Title</h1>
       <div className="container">
-        <Weather />
+        <Fan />
         <Instructions />
         <div className="right-panel">
           <Steps />

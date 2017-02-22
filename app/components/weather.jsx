@@ -9,8 +9,9 @@ const Weather = () => {
     <div>
       <div>
         <WeatherTop />
+        <Button variant="affirmative" mod="floatRight">Next</Button>
       </div>
-      <Button variant="affirmative" mod="floatRight">Next</Button>
+      <div className="clear"></div>
     </div>
   );
 };

@@ -3,12 +3,12 @@
 @import "_global";
 
 .wrapper {
-    width: 60%;
+    width: 770px;
     margin: 15px 50px 50px 0;
 
   .container {
     border: 2px solid $palette-border;
-    width: calc(100%-50px);
+    width: calc(760px);
     display: inline-block;
     padding: 15px 25px;
     border-radius: $border-radius;

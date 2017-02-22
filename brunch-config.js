@@ -25,7 +25,8 @@ module.exports = {
   },
   plugins: {
     babel: {
-      pattern: /\.jsx?$/
+      pattern: /\.jsx?$/,
+      presets: ["es2015", "react", "stage-0"],
     },
     eslint: {
       pattern: /^app\/.*\.jsx?$/
