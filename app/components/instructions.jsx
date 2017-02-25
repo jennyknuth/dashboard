@@ -2,6 +2,7 @@ import React from 'react';
 import InstructionsIntro from './instructions-intro';
 import InstructionsList from './instructions-list';
 import Button from 'react-nuik/lib/components/button';
+var nio = require('niojs')
 
 import instructions from 'theme/instructions.scss';
 

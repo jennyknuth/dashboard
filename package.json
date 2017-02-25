@@ -55,6 +55,8 @@
     "react-css-themr": "^2.0.0",
     "react-dom": "^15.4.2",
     "react-nuik": "^0.0.x",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
     "socket.io-client": "^1.7.1"
   }
 }

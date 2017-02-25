@@ -8,11 +8,11 @@ import Fan from 'components/fan.jsx';
 import instructions from 'theme/instructions.scss';
 
 const IntroLab = () => {
+
   return (
     <div>
-      <h1>Page Title</h1>
+      <h1><Fan /></h1>
       <div className="container">
-        <Fan />
         <Instructions />
         <div className="right-panel">
           <Steps />

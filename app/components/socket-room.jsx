@@ -1,17 +1,23 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import socketRoom from 'theme/socket-room.scss';
 
 
-const SocketRoom = () => {
+const SocketRoom = ({ data }) => {
+
+  // console.log(data);
   return (
     <div>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
-        <textarea value="sample output here"></textarea>
+        <textarea value={JSON.stringify(data)}></textarea>
       </div>
     </div>
   );
 };
 
-export default SocketRoom;
+const mapStateToProps = (state) => ({
+  data: state.socket.lastVal,
+});
+
+export default connect(mapStateToProps)(SocketRoom);
