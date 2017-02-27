@@ -9,6 +9,7 @@ const fan = (state = {vals: []}, action) => {
         vals: [...state['vals'], {
           accel: action.accel,
           time: action.time,
+          array: action.array,
         }],
       };
     default:

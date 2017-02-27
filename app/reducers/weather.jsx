@@ -1,10 +1,10 @@
 const fan = (state = {vals: []}, action) => {
   switch (action.type) {
-    case 'HEX_COLOR':
+    case 'WEATHER':
       return {
         ...state,
         vals: [...state['vals'], {
-          hex: action.hex,
+          weather: action.weather,
         }],
       };
     default:
@@ -12,4 +12,4 @@ const fan = (state = {vals: []}, action) => {
   }
 }
 
-export default fan;
+export default weather;

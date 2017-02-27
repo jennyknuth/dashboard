@@ -10,6 +10,7 @@ import fanController from './controllers/fan';
 
 const store = createStore(mainApp);
 
+//todo: create rooms with kylie, and combo example
 nio.source.socketio('https://labtest.socket.nio.works', ['fan'])
   .pipe(nio.func((data) => {
     fanController(store.dispatch, data);

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import fan from 'theme/fan.scss';
 
-const FanGraph = ({data}) => {
-  console.log(data);
+const FanGraph = ({ time, accel }) => {
+
 //   // set up chart boundaries and margins
 //   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
 //   const width = 600;
@@ -41,7 +41,7 @@ const FanGraph = ({data}) => {
 
   return (
     <div className={fan.right}>
-      <span>{data}</span>
+      <span>time: hi {time}</span>
     </div>
   );
 };
@@ -55,8 +55,25 @@ const FanGraph = ({data}) => {
 //   </g>
 // </svg>
 
-const mapStateToProps = (state) => ({
-  data: state.fan.vals,
-});
+// => this === .bind(this)
+
+const mapStateToProps = (state) => {
+  if (state.fan && state.fan.vals && state.fan.vals.length > 0) {
+    console.log(state.fan.vals);
+
+    return ({
+      accel: state.fan.vals.accel,
+      time: state.fan.vals[0].time,
+      array: state.fan.vals,
+    });
+  }
+  else {
+    return {
+      accel: '',
+      time: '',
+      array: [],
+    };
+  }
+};
 
 export default connect(mapStateToProps)(FanGraph);

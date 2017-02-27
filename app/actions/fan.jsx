@@ -1,4 +1,4 @@
-export const fanRead = (data) => ({
-  type: 'FAN_READ',
-  data,
+export const fanRead = ({hex}) => ({
+  type: 'LED_COLOR',
+  hex,
 });

@@ -4,13 +4,11 @@ import socketRoom from 'theme/socket-room.scss';
 
 
 const SocketRoom = ({ data }) => {
-
-  // console.log(data);
   return (
     <div>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
-        <textarea value={JSON.stringify(data)}></textarea>
+        <textarea value={JSON.stringify(data, null, 4)}></textarea>
       </div>
     </div>
   );
