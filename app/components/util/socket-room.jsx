@@ -8,7 +8,7 @@ const SocketRoom = ({ data }) => {
     <div>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
-        <textarea value={JSON.stringify(data, null, 4)}></textarea>
+        <textarea readOnly value={JSON.stringify(data, null, 4)}></textarea>
       </div>
     </div>
   );

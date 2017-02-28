@@ -1,8 +1,10 @@
-import { fanRead } from '../actions/led';
-import { socketVal } from '../actions/socket';
+import { ledRead } from 'actions/led';
+import BaseController from 'controllers/base';
 
-const handleLedHex = (dispatch, data) => {
-  dispatch(ledRead(data));
+class LEDController extends BaseController {
+  start() {
+    this.bindSocketDataToAction('blink1', ledRead);
+  }
 }
 
-export default handleLedHex;
+export default LEDController;

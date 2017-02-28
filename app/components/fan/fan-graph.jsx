@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import fan from 'theme/fan.scss';
 
 const FanGraph = ({ vals }) => {
-
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
   const width = 600;

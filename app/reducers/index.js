@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import fan from './fan';
-import socket from './socket';
+import fan from 'reducers/fan';
+import led from 'reducers/led';
 
 
 const mainApp = combineReducers({
   fan,
-  socket,
+  led,
 });
 
 export default mainApp;

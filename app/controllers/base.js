@@ -1,3 +1,6 @@
+import config from 'config';
+import nio from 'niojs';
+
 class BaseController {
 
   /*
@@ -14,6 +17,17 @@ class BaseController {
    * outbound socket connections here.
    */
   start() {
+  }
+
+  /*
+   * Listen to a socket room and dispatch an action when
+   * data arrives
+   */
+  bindSocketDataToAction(room, action) {
+    nio.source.socketio(config.SOCKET_HOST, [room])
+      .pipe(nio.pass((data) => {
+        this.dispatcher(action(data));
+      }));
   }
 }
 

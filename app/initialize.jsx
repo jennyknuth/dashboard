@@ -25,11 +25,12 @@ const store = createStore(mainApp);
 
 // App controllers
 import FanController from 'controllers/fan';
+import LEDController from 'controllers/led';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[FanController].forEach(ctrl => {
+[FanController, LEDController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();

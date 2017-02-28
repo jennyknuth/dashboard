@@ -24,7 +24,7 @@ const fan = (state, action) => {
         lastRead: action.data,
       };
     default:
-      return defaultState;
+      return state;
   }
 }
 
