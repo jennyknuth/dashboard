@@ -14,7 +14,7 @@ const Instructions = () => {
       <InstructionsIntro />
       <InstructionsList />
     </div>
-    <Button variant="affirmative" mod="floatRight">Next</Button>
+    <Button href="step1" variant="affirmative" mod="floatRight">Next</Button>
     </div>
   );
 };
