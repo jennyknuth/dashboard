@@ -11,7 +11,7 @@ const MainApp = (props) => {
     <div className="container">
       { props.children }
       <div className="right-panel">
-        <Steps />
+        <Steps activeRoute={props.children.props.route.path} />
         <Tweet />
       </div>
     </div>
