@@ -6,22 +6,18 @@ import SocketRoom from './socket-room';
 import Button from 'react-nuik/lib/components/button';
 import nio from 'niojs';
 
-import fan from 'theme/fan.scss';
+import fan from 'theme/led.scss';
 
 const Fan = ({ }) => {
   return (
-    <div className={fan.wrapper}>
-      <div className={fan.container}>
-        <FanIcon />
-        <FanGraph />
+    <div className={led.wrapper}>
+      <div className={led.container}>
+        <LedBulb />
       </div>
       <SocketRoom />
       <Button variant="affirmative" mod="floatRight">Next</Button>
     </div>
   );
 };
-// export default connect(
-//   mapStateToProps
-// )(Fan);
 
-export default Fan;
+export default Led;
