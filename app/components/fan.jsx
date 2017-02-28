@@ -10,13 +10,16 @@ import fan from 'theme/fan.scss';
 
 const Fan = ({ }) => {
   return (
-    <div className={fan.wrapper}>
-      <div className={fan.container}>
-        <FanIcon />
-        <FanGraph />
+    <div>
+      <h1>Fan Lab</h1>
+      <div className={fan.wrapper}>
+        <div className={fan.container}>
+          <FanIcon />
+          <FanGraph />
+        </div>
+        <SocketRoom />
+        <Button variant="affirmative" mod="floatRight">Next</Button>
       </div>
-      <SocketRoom />
-      <Button variant="affirmative" mod="floatRight">Next</Button>
     </div>
   );
 };
