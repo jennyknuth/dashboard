@@ -14,8 +14,4 @@ const SocketRoom = ({ data }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  data: state.socket.lastVal,
-});
-
-export default connect(mapStateToProps)(SocketRoom);
+export default SocketRoom;

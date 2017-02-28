@@ -10,20 +10,24 @@ import nio from 'niojs';
 import fan from 'theme/fan.scss';
 import button from 'theme/button.scss';
 
-const Fan = ({ }) => {
+const Fan = (props) => {
   return (
     <div className={fan.wrapper}>
       <div className={fan.container}>
-        <FanIcon />
-        <FanGraph />
+        <FanIcon fanOn={props.fanOn} />
+        <FanGraph vals={props.vals} />
       </div>
-      <SocketRoom />
+      <SocketRoom data={props.lastRead} />
       <Link to="step3" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
 };
-// export default connect(
-//   mapStateToProps
-// )(Fan);
 
-export default Fan;
+
+const mapStateToProps = (state) => {
+  return {
+    ...state.fan
+  }
+};
+
+export default connect(mapStateToProps)(Fan);

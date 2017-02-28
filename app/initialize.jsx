@@ -1,3 +1,4 @@
+// React essentials
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -13,18 +14,26 @@ import Fan from 'components/fan';
 import SensorTag from 'components/sensortag';
 import Flow from 'components/flow';
 
-import theme from './theme';
-import mainApp from 'reducers';
-import nio from 'niojs';
-import fanController from './controllers/fan';
 
+// For our theme provider
+import theme from 'theme';
+
+
+// Set up our redux store with tied to our mega reducer
+import mainApp from 'reducers';
 const store = createStore(mainApp);
 
-//todo: create rooms with kylie, and combo example
-nio.source.socketio('https://labtest.socket.nio.works', ['fan'])
-  .pipe(nio.func((data) => {
-    fanController(store.dispatch, data);
-  }));
+// App controllers
+import FanController from 'controllers/fan';
+
+// Initialize and start all of our controllers.
+// This can be optimized to start only when the proper
+// route is loaded
+[FanController].forEach(ctrl => {
+  const c = new ctrl();
+  c.initialize(store.dispatch);
+  c.start();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = (
