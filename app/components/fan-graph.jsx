@@ -55,8 +55,6 @@ const FanGraph = ({ time, accel }) => {
   </g>
 </svg>
 
-=> this === .bind(this)
-
 const mapStateToProps = (state) => {
   if (state.fan && state.fan.vals && state.fan.vals.length > 0) {
     console.log(state.fan.vals);

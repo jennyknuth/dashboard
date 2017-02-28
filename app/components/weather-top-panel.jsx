@@ -1,6 +1,6 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
-import WeatherTopForecast from './weather-top-panel-forecast';
+import WeatherBottomForecast from './weather-bottom-forecast';
 
 import weather from 'theme/weather.scss';
 import socketRoom from 'theme/socket-room.scss';
@@ -26,7 +26,7 @@ const WeatherTop = () => {
           </div>
         </div>
 
-        <WeatherTopForecast />
+        <WeatherBottomForecast />
       </div>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
