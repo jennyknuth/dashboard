@@ -12,13 +12,10 @@ import button from 'theme/button.scss';
 
 const Fan = ({ }) => {
   return (
-    <div>
-      <h1>Fan Lab</h1>
-      <div className={fan.wrapper}>
-        <div className={fan.container}>
-          <FanIcon />
-          <FanGraph />
-        </div>
+    <div className={fan.wrapper}>
+      <div className={fan.container}>
+        <FanIcon />
+        <FanGraph />
       </div>
       <SocketRoom />
       <Link to="step3" className={button.nextProjButton}>Next Project</Link>
