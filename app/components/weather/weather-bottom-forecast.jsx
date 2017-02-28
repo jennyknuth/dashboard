@@ -1,4 +1,5 @@
 import React from 'react';
+import WeatherIcons from 'react-weathericons';
 
 import weather from 'theme/weather.scss';
 
@@ -43,13 +44,13 @@ const WeatherTopForecast = (data) => {
       <h2>10 Day Forecast</h2>
       <ul>
         <li className={data.icon}>
-          <WeatherIcons className={data.icon} size="5x" />
+          <WeatherIcons name="cloud" size="5x" />
           <h4>{WeatherDay()}</h4>
-          <h5>{HandleHighLow()}</h5>
+          <h5>What?</h5>
         </li>
       </ul>
     </div>
   );
 };
 
-export default WeatherBottom;
+export default WeatherTopForecast;

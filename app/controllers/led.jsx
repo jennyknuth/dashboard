@@ -1,9 +1,8 @@
-import { fanRead } from '../actions/fan';
+import { fanRead } from '../actions/led';
 import { socketVal } from '../actions/socket';
 
-const handleFanRoom = (dispatch, data) => {
-  dispatch(fanRead(data));
-  dispatch(socketVal(data));
+const handleLedHex = (dispatch, data) => {
+  dispatch(ledRead(data));
 }
 
-export default handleFanRoom;
+export default handleLedHex;

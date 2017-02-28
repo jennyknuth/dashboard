@@ -1,5 +1,4 @@
-export const fanRead = ({ hex }) => ({
+export const ledRead = ({ hex }) => ({
   type: 'HEX_COLOR',
-  accel,
-  time,
+  hex,
 });

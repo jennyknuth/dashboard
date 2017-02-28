@@ -4,6 +4,7 @@
 
 .button {
   vertical-align: middle;
+  text-align: center;
 }
 
 .garbage {
@@ -14,3 +15,16 @@
 }
 
 .square { border-radius: 0; }
+
+.nextProjButton {
+  @extend .button;
+
+  float: right;
+  background-color: $palette-secondary;
+  &:hover, &:active, &:focus {
+    background-color: $palette-secondary;
+  }
+  text-decoration: none;
+  color: #FFF;
+  line-height: 1.9em;
+}

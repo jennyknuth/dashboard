@@ -11,7 +11,7 @@ module.exports = {
   server: {
     hostname: '0.0.0.0',
     port: 8080,
-    noPushState: true,
+    noPushState: false,
   },
   npm: {
     globals: {

@@ -28,10 +28,6 @@ const WeatherTop = () => {
 
         <WeatherBottomForecast />
       </div>
-      <h2 className={socketRoom.socketRoom}>Socket Room</h2>
-      <div className="socketOutput">
-        <textarea value="[sample output here]"></textarea>
-      </div>
     </div>
   );
 };
