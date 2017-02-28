@@ -29,11 +29,13 @@
       width: 196px;
       height: 187px;
       display: inline-block;
-      margin: 0;
       text-align: center;
       background-color: $palette-fan;
       border-radius: $border-radius 0 0 0;
       position:relative;
+      margin-top: -15px;
+      margin-left: -25px;
+      margin-bottom: -21px;
 
       &::after {
         content: '';
