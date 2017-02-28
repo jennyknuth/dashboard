@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FanIcon from './fan-top-icon';
-import FanGraph from './fan-graph';
-import SocketRoom from './socket-room';
+import { Link } from 'react-router';
+import FanIcon from 'components/fan/fan-top-icon';
+import FanGraph from 'components/fan/fan-graph';
+import SocketRoom from 'components/util/socket-room';
 import Button from 'react-nuik/lib/components/button';
 import nio from 'niojs';
 
 import fan from 'theme/fan.scss';
+import button from 'theme/button.scss';
 
 const Fan = ({ }) => {
   return (
@@ -17,9 +19,9 @@ const Fan = ({ }) => {
           <FanIcon />
           <FanGraph />
         </div>
-        <SocketRoom />
-        <Button variant="affirmative" mod="floatRight">Next</Button>
       </div>
+      <SocketRoom />
+      <Link to="step3" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
 };
