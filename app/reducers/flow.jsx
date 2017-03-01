@@ -2,6 +2,7 @@ const defaultState = {
   color: '#000000',
   flow: 0,
   lastRead: undefined,
+  vals: [],
 };
 
 const componentToHex = (c) => {
@@ -17,6 +18,9 @@ const flow = (state, action) => {
   if (state === undefined) {
     state = defaultState;
   }
+  if (state.vals.length > 10) {
+    state.vals.shift();
+  }
   switch (action.type) {
     case 'FLOW_READ': {
       const { red, blue, green, wind_flow } = action.data;
@@ -24,6 +28,10 @@ const flow = (state, action) => {
         ...state,
         lastRead: action.data,
         color: rgbToHex(red, green, blue),
+        vals: [...state['vals'], {
+          time: Date.now(),
+          value: wind_flow,
+        }],
         flow: wind_flow,
       };
     }

@@ -12,7 +12,7 @@ const Fan = (props) => {
   return (
     <div className={fan.wrapper}>
       <div className={fan.container}>
-        <FanIcon fanOn={props.fanOn} className={props.fanOn} />
+        <FanIcon fanOn={props.fanOn} className="fanIcon" />
         <FanGraph vals={props.vals} />
       </div>
       <SocketRoom data={props.lastRead} />

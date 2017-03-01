@@ -1,18 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import SocketRoom from 'components/util/socket-room';
 
-import led from 'theme/led.scss';
-import button from 'theme/button.scss';
+import flow from 'theme/flow.scss';
 
-const SensorTag = (props) => {
+const FlowLed = (props) => {
   return (
-    <div className={led.wrapper}>
-      <div className={led.container} style={{background: props.color}}>
-        <div className={led.lightbulbIcon}></div>
+    <div className={flow.rightWrapper}>
+      <div className={flow.rightContainer} style={{background: props.color}}>
+        <div className={flow.lightbulbIcon}></div>
       </div>
-      <Link to="step4" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
 };
@@ -23,4 +19,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SensorTag);
+export default connect(mapStateToProps)(FlowLed);

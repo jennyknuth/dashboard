@@ -4,7 +4,6 @@ import WeatherBottomForecast from './weather-bottom-forecast';
 
 import weather from 'theme/weather.scss';
 
-
 const WeatherTop = () => {
   const sampleForecastData = [
     {
