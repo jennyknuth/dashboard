@@ -7,6 +7,20 @@ import socketRoom from 'theme/socket-room.scss';
 
 
 const WeatherTop = () => {
+  const sampleForecastData = [
+    {
+      icon: 'cloud',
+      day: 'MON',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'rain',
+      day: 'TUE',
+      highTemp: 20,
+      lowTemp: 10,
+    },
+  ];
   return (
 
     <div className={weather.wrapper}>
@@ -26,7 +40,7 @@ const WeatherTop = () => {
           </div>
         </div>
 
-        <WeatherBottomForecast />
+        <WeatherBottomForecast forecastDays={sampleForecastData}/>
       </div>
     </div>
   );
