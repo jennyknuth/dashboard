@@ -5,7 +5,7 @@ import fan from 'theme/fan.scss';
 const FanIcon = ({ fanOn }) => {
   return (
     <div className={fan.left}>
-        <div className={fan.icon}>{(fanOn) ? 'ON' : 'OFF'}</div>
+        <div className={fan.icon} className={(fanOn) ? 'on' : 'off'}></div>
     </div>
   );
 };

@@ -4,10 +4,10 @@ import * as d3 from 'd3';
 const FanGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
-  const width = 600;
-  const height = width / 2;
-  const chartHeight = 125;
-  const chartWidth = 360;
+  const width = 610;
+  const height = 193;
+  const chartHeight = 198;
+  const chartWidth = 610;
 
   // find the extent of the data
   const timeExtent = d3.extent(vals, function(d) {
@@ -33,12 +33,12 @@ const FanGraph = ({ vals }) => {
     .curve(d3.curveMonotoneX);
 
   return (
-    <svg className='chart' viewBox={`0,0,${width},${height}`} width="45vw" >
+    <svg className='chart' viewBox={`0,0,${width},${height}`} width="54.7vw" >
       <g className='centralChart' transform={`translate(${margin.left}, ${margin.top})`} >
         <rect x={0} y={0} width={chartWidth} height={chartHeight} stroke='rgba(0,0,0,.2)' fill='#FFFFFF' />
         <path d={precipArea(vals)} fill='#F4BC26' stroke='none' />
-        <text x='105' y='30' fontFamily="Lato" fontWeight="300" fontSize="15">Accelerometer Data</text>
-        <text x='105' y='50' fontFamily="Lato" fontWeight="300" fontSize="12">Measured in g's (gravitational force)</text>
+        <text x='205' y='50' fontFamily="Lato" fontWeight="300" fontSize="20">Accelerometer Data</text>
+        <text x='145' y='80' fontFamily="Lato" fontWeight="300" fontSize="18">Measured in g's (gravitational force)</text>
       </g>
     </svg>
   );

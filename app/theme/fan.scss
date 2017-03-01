@@ -4,15 +4,15 @@
 
 .wrapper {
   width: 770px;
-  margin: 15px 50px 50px 0;
+  margin: 0 25px 15px 25px;
 
   .container {
     border: 2px solid $palette-border;
-    width: calc(100% - 48px);
+    width: calc(100% - 24px);
     display: inline-block;
-    padding: 15px 25px;
+    padding: 0 0 0 25px;
     border-radius: $border-radius $border-radius 0 0;
-    min-height: 150px;
+    height: 185px;
     border-color: $palette-border;
     background-color: #fff;
 
@@ -33,9 +33,9 @@
       background-color: $palette-fan;
       border-radius: $border-radius 0 0 0;
       position:relative;
-      margin-top: -15px;
       margin-left: -25px;
       margin-bottom: -21px;
+      float:left;
 
       &::after {
         content: '';
@@ -48,16 +48,16 @@
         width: 120px;
         background-repeat: no-repeat;
         background-size: 100%;
-        animation: spin 1s infinite;
-        animation-fill-mode: forwards;
-        animation-timing-function: linear;
 
       }
-
-      &.animate {
+      .off {
+        animation:none;
+      }
+      .on {
         &::after {
           animation: spin 1s infinite;
           animation-timing-function: linear;
+          animation-fill-mode: forwards;
         }
       }
     }
