@@ -1,7 +1,7 @@
 const defaultState = {
   vals: [],
   fanOn: false,
-  lastRead: undefined
+  lastRead: undefined,
 };
 
 const fan = (state, action) => {

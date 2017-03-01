@@ -1,17 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Button from 'react-nuik/lib/components/button';
 import SocketRoom from 'components/util/socket-room';
 
 import fan from 'theme/fan.scss';
 
-const Flow = ({ }) => {
+const Flow = (props) => {
   return (
     <div className={fan.wrapper}>
       <div className={fan.container}>
+        <div style={{color: props.color}}>The flow is {props.flow}</div>
       </div>
-      <SocketRoom />
+      <SocketRoom data={props.lastRead} />
     </div>
   );
 };
 
-export default Flow;
+const mapStateToProps = (state) => {
+  return {
+    ...state.flow
+  }
+};
+
+export default connect(mapStateToProps)(Flow);

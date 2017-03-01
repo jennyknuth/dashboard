@@ -14,10 +14,8 @@ import Fan from 'components/fan';
 import SensorTag from 'components/sensortag';
 import Flow from 'components/flow';
 
-
 // For our theme provider
 import theme from 'theme';
-
 
 // Set up our redux store with tied to our mega reducer
 import mainApp from 'reducers';
@@ -26,11 +24,13 @@ const store = createStore(mainApp);
 // App controllers
 import FanController from 'controllers/fan';
 import LEDController from 'controllers/led';
+import WeatherController from 'controllers/weather';
+import FlowController from 'controllers/flow';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[FanController, LEDController].forEach(ctrl => {
+[FanController, LEDController, WeatherController, FlowController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();

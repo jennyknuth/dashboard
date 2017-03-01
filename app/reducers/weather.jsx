@@ -1,11 +1,16 @@
-const fan = (state = {vals: []}, action) => {
+const defaultState = {
+  lastRead: undefined,
+};
+
+const weather = (state, action) => {
+  if (state === undefined) {
+    state = defaultState;
+  }
   switch (action.type) {
     case 'WEATHER':
       return {
         ...state,
-        vals: [...state['vals'], {
-          weather: action.weather,
-        }],
+        lastRead: action.data,
       };
     default:
       return state;

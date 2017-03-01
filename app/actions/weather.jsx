@@ -1,4 +1,4 @@
-export const weatherRead = ({ weather }) => ({
+export const weatherRead = (data) => ({
   type: 'WEATHER',
-  weather,
+  data,
 });

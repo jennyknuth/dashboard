@@ -1,7 +1,10 @@
-import { weather } from '../actions/weather';
+import { weatherRead } from 'actions/weather';
+import BaseController from 'controllers/base';
 
-const handleWeather = (dispatch, data) => {
-  dispatch(setWeather(data));
+class WeatherController extends BaseController {
+  start() {
+    this.bindSocketDataToAction('weather', weatherRead);
+  }
 }
 
-export default handleWeather;
+export default WeatherController;
