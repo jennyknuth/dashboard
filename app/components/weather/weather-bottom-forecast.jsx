@@ -45,8 +45,8 @@ const WeatherTopForecast = (data) => {
       <ul>
         <li className={data.icon}>
           <WeatherIcons name="cloud" size="5x" />
-          <h4>{WeatherDay()}</h4>
-          <h5>What?</h5>
+          <h4>{WeatherDay()}MON</h4>
+          <h5>50 / 40</h5>
         </li>
       </ul>
     </div>
