@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import WeatherTop from 'components/weather/weather-top-panel';
-import Button from 'react-nuik/lib/components/button';
 import SocketRoom from 'components/util/socket-room';
 
 import weather from 'theme/weather.scss';
@@ -23,7 +22,7 @@ const Weather = (props) => {
 const mapStateToProps = (state) => {
   return {
     ...state.weather
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Weather);

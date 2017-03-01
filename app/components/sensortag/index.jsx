@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Button from 'react-nuik/lib/components/button';
 import { Link } from 'react-router';
 import SocketRoom from 'components/util/socket-room';
 
@@ -22,7 +21,7 @@ const SensorTag = (props) => {
 const mapStateToProps = (state) => {
   return {
     ...state.led
-  }
+  };
 };
 
 export default connect(mapStateToProps)(SensorTag);

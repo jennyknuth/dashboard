@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 import FanIcon from 'components/fan/fan-top-icon';
 import FanGraph from 'components/fan/fan-graph';
 import SocketRoom from 'components/util/socket-room';
-import Button from 'react-nuik/lib/components/button';
-import nio from 'niojs';
 
 import fan from 'theme/fan.scss';
 import button from 'theme/button.scss';
@@ -27,7 +25,7 @@ const Fan = (props) => {
 const mapStateToProps = (state) => {
   return {
     ...state.fan
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Fan);

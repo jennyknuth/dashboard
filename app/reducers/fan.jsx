@@ -9,7 +9,7 @@ const fan = (state, action) => {
     state = defaultState;
   }
   switch (action.type) {
-    case 'FAN_READ':
+    case 'FAN_READ': {
       if (state.vals.length > 10) {
         state.vals.shift();
       }
@@ -23,9 +23,10 @@ const fan = (state, action) => {
         fanOn: fan_state,
         lastRead: action.data,
       };
+    }
     default:
       return state;
   }
-}
+};
 
 export default fan;

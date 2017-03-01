@@ -15,6 +15,6 @@ const weather = (state, action) => {
     default:
       return state;
   }
-}
+};
 
 export default weather;
