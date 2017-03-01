@@ -1,5 +1,5 @@
 const defaultState = {
-  color: '#000000',
+  color: '#ffffff',
   lastRead: undefined,
 };
 

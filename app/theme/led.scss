@@ -4,7 +4,7 @@
 
 .wrapper {
   width: 770px;
-  margin: 15px 50px 50px 0;
+  margin: 15px 50px 0px 0;
 
   .container {
     border: 2px solid $palette-border;
@@ -15,6 +15,20 @@
     min-height: 150px;
     border-color: $palette-border;
     background-color: #fff;
+    margin-bottom:-10px;
+    position:relative;
+
+    .lightbulbIcon {
+      background: url('img/lightbulb-icon.svg') no-repeat;
+      background-size: contain;
+      position:absolute;
+      left:52%;
+      transform: translateX(-50%);
+      width:150px;
+      height:70%;
+      background-size:contain;
+      margin-top:10px;
+    }
 
     h2, i {
       color: #fff;

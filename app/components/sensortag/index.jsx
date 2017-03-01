@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import SocketRoom from 'components/util/socket-room';
 
-import fan from 'theme/fan.scss';
+import led from 'theme/led.scss';
 import button from 'theme/button.scss';
 
 const SensorTag = (props) => {
   return (
-    <div className={fan.wrapper}>
-      <div className={fan.container}>
-        <div style={{color: props.color}}>Look at me, an LED!</div>
+    <div className={led.wrapper}>
+      <div className={led.container} style={{background: props.color}}>
+        <div className={led.lightbulbIcon}></div>
       </div>
       <SocketRoom data={props.lastRead} />
       <Link to="step4" className={button.nextProjButton}>Next Project</Link>
