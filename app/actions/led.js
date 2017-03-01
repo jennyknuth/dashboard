@@ -1,4 +1,4 @@
-export const ledRead = ({ hex }) => ({
+export const ledRead = (data) => ({
   type: 'HEX_COLOR',
-  hex,
+  data,
 });

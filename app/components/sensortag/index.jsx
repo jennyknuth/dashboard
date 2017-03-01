@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Button from 'react-nuik/lib/components/button';
 import { Link } from 'react-router';
 import SocketRoom from 'components/util/socket-room';
@@ -6,15 +7,22 @@ import SocketRoom from 'components/util/socket-room';
 import fan from 'theme/fan.scss';
 import button from 'theme/button.scss';
 
-const SensorTag = ({ }) => {
+const SensorTag = (props) => {
   return (
     <div className={fan.wrapper}>
       <div className={fan.container}>
+        <div style={{color: props.color}}>Look at me, an LED!</div>
       </div>
-      <SocketRoom />
+      <SocketRoom data={props.lastRead} />
       <Link to="step4" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
 };
 
-export default SensorTag;
+const mapStateToProps = (state) => {
+  return {
+    ...state.led
+  }
+};
+
+export default connect(mapStateToProps)(SensorTag);

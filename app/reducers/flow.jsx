@@ -1,5 +1,6 @@
 const defaultState = {
   color: "#000000",
+  flow: 0,
   lastRead: undefined,
 };
 
@@ -11,21 +12,22 @@ const rgbToHex = (red, green, blue) => {
   return "#" + componentToHex(red) + componentToHex(green) + componentToHex(blue);
 }
 
-const led = (state, action) => {
+const flow = (state, action) => {
   if (state === undefined) {
     state = defaultState;
   }
   switch (action.type) {
-    case 'HEX_COLOR':
-      const { red, blue, green} = action.data;
+    case 'FLOW_READ':
+      const { red, blue, green, wind_flow } = action.data;
       return {
         ...state,
         lastRead: action.data,
         color: rgbToHex(red, green, blue),
+        flow: wind_flow,
       };
     default:
       return state;
   }
 }
 
-export default led;
+export default flow;

@@ -1,9 +1,10 @@
-import { fanRead } from '../actions/fan';
-import { socketVal } from '../actions/socket';
+import { fanRead } from 'actions/fan';
+import BaseController from 'controllers/base';
 
-const handleFanRoom = (dispatch, data) => {
-  dispatch(fanRead(data));
-  dispatch(socketVal(data));
+class FanController extends BaseController {
+  start() {
+    this.bindSocketDataToAction('fan', fanRead);
+  }
 }
 
-export default handleFanRoom;
+export default FanController;
