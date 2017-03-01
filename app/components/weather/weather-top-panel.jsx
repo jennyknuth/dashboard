@@ -3,10 +3,70 @@ import WeatherIcons from 'react-weathericons';
 import WeatherBottomForecast from './weather-bottom-forecast';
 
 import weather from 'theme/weather.scss';
-import socketRoom from 'theme/socket-room.scss';
-
 
 const WeatherTop = () => {
+  const sampleForecastData = [
+    {
+      icon: 'cloud',
+      day: 'MON',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'rain',
+      day: 'TUE',
+      highTemp: 20,
+      lowTemp: 10,
+    },
+    {
+      icon: 'cloudy',
+      day: 'WED',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'rain-wind',
+      day: 'THU',
+      highTemp: 20,
+      lowTemp: 10,
+    },
+    {
+      icon: 'thunderstorm',
+      day: 'FRI',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'cloud',
+      day: 'SAT',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'rain',
+      day: 'SUN',
+      highTemp: 20,
+      lowTemp: 10,
+    },
+    {
+      icon: 'cloudy',
+      day: 'MON',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+    {
+      icon: 'rain-wind',
+      day: 'TUE',
+      highTemp: 20,
+      lowTemp: 10,
+    },
+    {
+      icon: 'thunderstorm',
+      day: 'WED',
+      highTemp: 50,
+      lowTemp: 40,
+    },
+  ];
   return (
 
     <div className={weather.wrapper}>
@@ -26,7 +86,7 @@ const WeatherTop = () => {
           </div>
         </div>
 
-        <WeatherBottomForecast />
+        <WeatherBottomForecast forecastDays={sampleForecastData}/>
       </div>
     </div>
   );

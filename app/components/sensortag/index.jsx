@@ -1,20 +1,29 @@
 import React from 'react';
-import Button from 'react-nuik/lib/components/button';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import SensorTagInstructions from 'components/sensortag/instructions';
 import SocketRoom from 'components/util/socket-room';
 
-import fan from 'theme/fan.scss';
+import led from 'theme/led.scss';
 import button from 'theme/button.scss';
 
-const SensorTag = ({ }) => {
+const SensorTag = (props) => {
   return (
-    <div className={fan.wrapper}>
-      <div className={fan.container}>
+    <div className={led.wrapper}>
+      <div className={led.container} style={{background: props.color}}>
+        <div className={led.lightbulbIcon}></div>
       </div>
-      <SocketRoom />
+      <SocketRoom data={props.lastRead} />
+      <SensorTagInstructions />
       <Link to="step4" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
 };
 
-export default SensorTag;
+const mapStateToProps = (state) => {
+  return {
+    ...state.led
+  };
+};
+
+export default connect(mapStateToProps)(SensorTag);

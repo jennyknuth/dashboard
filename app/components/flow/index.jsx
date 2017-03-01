@@ -1,17 +1,35 @@
 import React from 'react';
-import Button from 'react-nuik/lib/components/button';
+import { connect } from 'react-redux';
+import FlowInstructions from 'components/flow/instructions';
 import SocketRoom from 'components/util/socket-room';
+import FlowGraph from 'components/flow/flow-graph';
+import FlowLed from 'components/flow/flow-led';
+import FlowFan from 'components/flow/flow-fan';
+import FlowWindSpeed from 'components/flow/flow-windspeed';
 
-import fan from 'theme/fan.scss';
+import flow from 'theme/flow.scss';
 
-const Flow = ({ }) => {
+const Flow = (props) => {
   return (
-    <div className={fan.wrapper}>
-      <div className={fan.container}>
+    <div className={flow.wrapper}>
+      <div className={flow.container}>
+        <FlowFan fanOn={props.fanOn} className={props.fan_state} />
+        <FlowWindSpeed data={props.flow} />
+        <FlowLed />
       </div>
-      <SocketRoom />
+      <div>
+        <FlowGraph vals={props.vals}/>
+      </div>
+      <SocketRoom data={props.lastRead} />
+      <FlowInstructions />
     </div>
   );
 };
 
-export default Flow;
+const mapStateToProps = (state) => {
+  return {
+    ...state.flow
+  };
+};
+
+export default connect(mapStateToProps)(Flow);
