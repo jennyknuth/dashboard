@@ -75,6 +75,11 @@
   }
 }
 
+.section_header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .button-inherit {
   @extend .button;
   background-color: $palette-secondary;
