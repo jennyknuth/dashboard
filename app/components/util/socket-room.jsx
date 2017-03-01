@@ -1,7 +1,6 @@
 import React from 'react';
 import socketRoom from 'theme/socket-room.scss';
 
-
 const SocketRoom = ({ data }) => {
   return (
     <div>

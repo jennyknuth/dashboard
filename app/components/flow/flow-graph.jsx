@@ -1,7 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 
-const FanGraph = ({ vals }) => {
+const FlowGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
   const width = 610;
@@ -44,4 +44,4 @@ const FanGraph = ({ vals }) => {
   );
 };
 
-export default FanGraph;
+export default FlowGraph;
