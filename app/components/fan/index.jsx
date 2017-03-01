@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import FanIcon from 'components/fan/fan-top-icon';
 import FanGraph from 'components/fan/fan-graph';
+import FanInstructions from 'components/fan/instructions';
 import SocketRoom from 'components/util/socket-room';
 
 import fan from 'theme/fan.scss';
@@ -16,6 +17,7 @@ const Fan = (props) => {
         <FanGraph vals={props.vals} />
       </div>
       <SocketRoom data={props.lastRead} />
+      <FanInstructions />
       <Link to="step3" className={button.nextProjButton}>Next Project</Link>
     </div>
   );
