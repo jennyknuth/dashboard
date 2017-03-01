@@ -10,8 +10,9 @@ const ForecastDay = (props) => {
       <h4>{props.day}</h4>
       <h5>{props.highTemp} / {props.lowTemp}</h5>
     </li>
-  )
-}
+  );
+};
+
 const WeatherBottomForecast = (props) => {
   return (
 
