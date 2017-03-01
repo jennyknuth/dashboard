@@ -16,19 +16,19 @@ const Steps = ({ activeRoute }) => {
     <List variant='numbered' mod='progress-list' className={steps.step_list}>
       <StepLink to="step1" activePathCheck="step1" currentPath={activeRoute}>
         <h3>Weather Lab</h3>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+        <span>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
       <StepLink to="step2" activePathCheck="step2" currentPath={activeRoute}>
         <h3>Fan Lab</h3>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+        <span>Shake your mobile phone to turn the desktop fan on and off.</span>
       </StepLink>
       <StepLink to="step3" activePathCheck="step3" currentPath={activeRoute}>
         <h3>SensorTag Lab</h3>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+        <span>Flip over a bluetooth connected SensorTag to turn on and off an LED.</span>
       </StepLink>
       <StepLink to="step4" activePathCheck="step4" currentPath={activeRoute}>
         <h3>Wind Flow Lab</h3>
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+        <span>Shake your mobile phone to turn on the fan. Then detect the wind speed to turn on the LED.</span>
       </StepLink>
     </List>
   );
