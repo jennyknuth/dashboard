@@ -1,5 +1,4 @@
 import React from 'react';
-import InstructionsList from './instructions-list';
 import InstructionsVideo from './instructions-video';
 import instructions from 'theme/instructions.scss';
 

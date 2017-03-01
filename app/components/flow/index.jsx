@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Button from 'react-nuik/lib/components/button';
 import SocketRoom from 'components/util/socket-room';
 
 import fan from 'theme/fan.scss';
@@ -19,7 +18,7 @@ const Flow = (props) => {
 const mapStateToProps = (state) => {
   return {
     ...state.flow
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Flow);

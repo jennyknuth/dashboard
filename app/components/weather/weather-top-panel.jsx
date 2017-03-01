@@ -3,7 +3,6 @@ import WeatherIcons from 'react-weathericons';
 import WeatherBottomForecast from './weather-bottom-forecast';
 
 import weather from 'theme/weather.scss';
-import socketRoom from 'theme/socket-room.scss';
 
 
 const WeatherTop = () => {
