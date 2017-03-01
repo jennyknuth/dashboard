@@ -1,10 +1,11 @@
 // React essentials
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
 import { ThemeProvider } from 'react-css-themr';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import config from 'config';
 
 // Our app pages
 import MainApp from 'components/app';
@@ -36,11 +37,20 @@ import FlowController from 'controllers/flow';
   c.start();
 });
 
+// Router and path setup
+// We use our configured APP_ROOT to allow us to
+// host this app in a subfolder and not the root
+// of the domain
+import { createHistory } from 'history';
+const history = useRouterHistory(createHistory)({
+  basename: config.APP_ROOT
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
           <Route path="/" component={MainApp}>
             <IndexRoute component={Instructions} title="Welcome" />
             <Route path="step1" component={Weather} title="Weather Lab" />

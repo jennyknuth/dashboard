@@ -1,3 +1,4 @@
 {
 	"SOCKET_HOST": "//labtest.socket.nio.works",
+	"APP_ROOT": "",
 }
