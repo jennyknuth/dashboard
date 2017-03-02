@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import BlankSlate from 'components/util/blank-slate';
 import FlowInstructions from 'components/flow/instructions';
 import SocketRoom from 'components/util/socket-room';
 import FlowGraph from 'components/flow/flow-graph';
@@ -12,15 +13,17 @@ import flow from 'theme/flow.scss';
 const Flow = (props) => {
   return (
     <div className={flow.wrapper}>
-      <div className={flow.container}>
-        <FlowFan fanOn={props.fanOn} className={props.fan_state} />
-        <FlowWindSpeed data={props.flow} />
-        <FlowLed />
-      </div>
-      <div>
-        <FlowGraph vals={props.vals}/>
-      </div>
-      <SocketRoom data={props.lastRead} />
+      <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
+        <div className={flow.container}>
+          <FlowFan fanOn={props.fanOn} className={props.fan_state} />
+          <FlowWindSpeed data={props.flow} />
+          <FlowLed />
+        </div>
+        <div>
+          <FlowGraph vals={props.vals}/>
+        </div>
+        <SocketRoom data={props.lastRead} />
+      </BlankSlate>
       <FlowInstructions />
     </div>
   );

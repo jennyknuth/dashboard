@@ -1,0 +1,18 @@
+@import "_palette";
+@import "_global";
+
+.slate {
+    width: 770px;
+    padding: 50px 25px;
+    position: relative;
+
+    border: 2px solid $palette-border;
+    width: calc(100% - 48px);
+    display: inline-block;
+    border-radius: $border-radius;
+    border-color: $palette-border;
+    color: #a9a9a9;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
