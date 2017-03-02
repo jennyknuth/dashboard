@@ -15,26 +15,26 @@
     min-height: 150px;
     border-color: $palette-border;
     background-color: #fff;
-    text-align:center;
+    text-align: center;
 
     > div {
       margin-top: -10px;
     }
+
     h2, i {
       color: #fff;
       display: inline-block;
       margin-right: 25px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
       font-size: 5rem;
-      margin-bottom:0;
+      margin-bottom: 0;
     }
 
     .left {
-    width: 521px;
-    height: 245px;
-    display: inline-block;
-    margin: -20px 0 0 0;
-    text-align: center;
+      width: 521px;
+      height: 245px;
+      display: inline-block;
+      margin: -20px 0 0 0;
+      text-align: center;
     }
 
     .warm {
@@ -43,6 +43,7 @@
         border-radius: 0 14px 0 0;
       }
     }
+
     .right {
       width: 247px;
       display: inline-block;
@@ -56,67 +57,69 @@
       }
 
       h4 {
-        font-size:20px;
-        font-weight:bold;
-        text-align:center;
-        width:100%;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
       }
     }
 
     div {
       position: relative;
-      right:0;
-    &.cold {
-      background-image: url("img/cold.png");
-      background-repeat: no-repeat;
-      margin: -37px -27px;
-      height: 245px;
-      border-radius: 12px 12px 0 0;
-      background-color: $weather-cold;
-      background-size: contain;
-      text-align:left;
+      right: 0;
+
+      &.cold {
+        background-image: url("img/cold.png");
+        background-repeat: no-repeat;
+        margin: -37px -27px;
+        height: 245px;
+        border-radius: 12px 12px 0 0;
+        background-color: $weather-cold;
+        background-size: contain;
+        text-align: left;
+      }
+
+      &.cool {
+        background-image: url("img/cool.png");
+        background-repeat: no-repeat;
+        margin: -18px -27px;
+        height: 245px;
+        border-radius: 12px 12px 0 0;
+        background-color: $weather-cool;
+        background-size: contain;
+        text-align: left;
+      }
+
+      &.warm {
+        background-image: url("img/warm.png");
+        background-repeat: no-repeat;
+        margin: 0;
+        height: 245px;
+        border-radius: 12px 12px 0 0;
+        background-color: $weather-warm;
+        background-size: contain;
+        text-align: left;
+      }
+
+      &.hot {
+        background-image: url("img/hot.png");
+        background-repeat: no-repeat;
+        margin: -18px -27px;
+        height: 245px;
+        border-radius: 12px 12px 0 0;
+        background-color: $weather-hot;
+        background-size: contain;
+        text-align: left;
+      }
     }
 
-    &.cool {
-      background-image: url("img/cool.png");
-      background-repeat: no-repeat;
-      margin: -18px -27px;
-      height: 245px;
-      border-radius: 12px 12px 0 0;
-      background-color: $weather-cool;
-      background-size: contain;
-      text-align:left;
-    }
-
-    &.warm {
-      background-image: url("img/warm.png");
-      background-repeat: no-repeat;
-      margin: 0;
-      height: 245px;
-      border-radius: 12px 12px 0 0;
-      background-color: $weather-warm;
-      background-size: contain;
-      text-align:left;
-    }
-
-    &.hot {
-      background-image: url("img/hot.png");
-      background-repeat: no-repeat;
-      margin: -18px -27px;
-      height: 245px;
-      border-radius: 12px 12px 0 0;
-      background-color: $weather-hot;
-      background-size: contain;
-      text-align:left;
-    }
-  }
     h4 {
       font-size: 16px;
       color: #fff;
     }
 
     .current {
-      display:block;
+      display: block;
     }
   }
 
@@ -132,13 +135,12 @@
     background: rgba(255,255,255,.2);
 
     h3 {
-      display:inline-block;
-      text-align:center;
-      flex:1;
-      margin:0;
+      display: inline-block;
+      text-align: center;
+      flex: 1;
+      margin: 0;
       color: #fff;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      position:relative;
+      position: relative;
 
       &:first-child {
         &::after{
@@ -156,16 +158,16 @@
   }
 
   .forecast {
-    position:relative;
+    position: relative;
 
     > h2 {
-      margin-bottom:35px;
+      margin-bottom: 35px;
       position: relative;
-      z-index:3;
+      z-index: 3;
       font-size: 1.3em;
       color: #555;
       text-shadow: none;
-      margin-top:36px;
+      margin-top: 36px;
 
       &::before {
         content: '';
@@ -180,10 +182,11 @@
         border-radius: 4px;
 
       }
+
       &::after {
         content: '';
         height: 1px;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #c5c5c5;
         display: block;
         width: 450%;
         position: absolute;
@@ -202,86 +205,86 @@
 
       li {
         text-indent: none;
-        display:inline-block;
+        display: inline-block;
         box-shadow: 0 1px 2px rgba(0,0,0,.5);
         border-radius: 3px;
-        text-align:center;
-        width:110px;
-        height:110px;
+        text-align: center;
+        width: 110px;
+        height: 110px;
         margin-right: 15px;
         margin-bottom: 15px;
-        }
+      }
 
-        .dayWarm {
-            color: $weather-warm;
-        }
-
-        .dayHot {
-          color: $weather-hot;
-        }
-
-        .dayCool {
-          color: $weather-cool;
-
-        }
-
-        .dayCold {
-          color: $weather-cold;
-        }
-
-        i {
-          font-size: 2em !important;
-          padding: 10px;
-          margin: 0 auto;
+      .dayWarm {
           color: $weather-warm;
-          text-shadow:none;
-        }
+      }
 
-        h3 {
-          margin :0;
-          font-weight:bold;
-          color:$palette-primary;
-        }
+      .dayHot {
+        color: $weather-hot;
+      }
 
-        h4 {
-          margin: 0;
-          font-weight:bold;
-          margin-top: 5px;
-          font-size:1.1em;
-          color:$palette-primary;
-          margin-bottom: 5px;
-        }
+      .dayCool {
+        color: $weather-cool;
 
-        h5 {
-          font-weight: bold;
-          color:$palette-primary;
-          margin:0;
-          font-size: .9em;
-        }
+      }
+
+      .dayCold {
+        color: $weather-cold;
+      }
+
+      i {
+        font-size: 2em !important;
+        padding: 10px;
+        margin: 0 auto;
+        color: $weather-warm;
+        text-shadow: none;
+      }
+
+      h3 {
+        margin :0;
+        font-weight: bold;
+        color: $palette-primary;
+      }
+
+      h4 {
+        margin: 0;
+        font-weight: 400;
+        margin-top: 5px;
+        font-size: 1.1em;
+        color: $palette-primary;
+        margin-bottom: 5px;
+      }
+
+      h5 {
+        font-weight: bold;
+        color: $palette-primary;
+        margin: 0;
+        font-size: .9em;
       }
     }
+  }
 
-    h2 {
-      &.socketRoom {
-        background-color: #565656;
-        display: block;
-        height: 50px;
-        margin-top: 0px;
-        color: #fff;
-        padding: 10px 0 10px 20px;
-        line-height: 50px;
-        font-size: 1.2em;
-        width: calc(100% - 16px);
-      }
+  h2 {
+    &.socketRoom {
+      background-color: #565656;
+      display: block;
+      height: 50px;
+      margin-top: 0px;
+      color: #fff;
+      padding: 10px 0 10px 20px;
+      line-height: 50px;
+      font-size: 1.2em;
+      width: calc(100% - 16px);
     }
+  }
 
-    textarea {
-      width: calc(100% - 28px);
-      min-height: 100px;
-      padding: 15px;
-      font-size: 1em;
-      margin-top: -17px;
-      border-radius:0 0 6px 6px;
-      border: 2px solid $palette-border;
-    }
+  textarea {
+    width: calc(100% - 28px);
+    min-height: 100px;
+    padding: 15px;
+    font-size: 1em;
+    margin-top: -17px;
+    border-radius: 0 0 6px 6px;
+    border: 2px solid $palette-border;
+  }
 }

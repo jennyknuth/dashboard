@@ -27,6 +27,8 @@ const FanGraph = ({ vals }) => {
     .domain([0, 15])
     .range([chartHeight, 0]);
 
+  const scaleRender = d3
+
   // less generic area and line functions
   const precipArea = d3.area()
     .x(d => xScale(d.time))
@@ -36,13 +38,12 @@ const FanGraph = ({ vals }) => {
 
   return (
     <div className={fan.graphContainer}>
-    <div className={fan.graphScale} />
       <svg className='chart' viewBox={`0,0,${width},${height}`} width="40vw" preserveAspectRatio="none">
         <g className='centralChart' transform={`translate(${margin.left}, ${margin.top})`} >
           <rect x={0} y={0} width={chartWidth} height={chartHeight} stroke='rgba(0,0,0,.2)' fill='#FFFFFF' />
           <path d={precipArea(vals)} fill='#F4BC26' stroke='none' />
-          <text x='205' y='50' fontFamily="Lato" fontWeight="300" fontSize="20">Accelerometer Data</text>
-          <text x='195' y='80' fontFamily="Lato" fontWeight="300" fontSize="12">Measured in g's (gravitational force)</text>
+          <text x='185' y='50' fontFamily="Lato" fontWeight="400" fontSize="28">Accelerometer Data</text>
+          <text x='185' y='80' fontFamily="Lato" fontWeight="300" fontSize="16">Measured in g's (gravitational force)</text>
         </g>
       </svg>
     </div>
