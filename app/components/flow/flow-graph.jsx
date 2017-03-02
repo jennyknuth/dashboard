@@ -5,8 +5,8 @@ const FlowGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
   const width = 610;
-  const height = 193;
-  const chartHeight = 198;
+  const height = 199;
+  const chartHeight = 199;
   const chartWidth = 610;
 
   // find the extent of the data

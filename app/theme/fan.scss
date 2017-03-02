@@ -3,18 +3,20 @@
 @import "_global";
 
 .wrapper {
-  width: 770px;
-  margin: 0 25px 15px 25px;
+  width: 740px;
+  margin: 0 50px 0px 0;
 
   .container {
     border: 2px solid $palette-border;
-    width: 746px;
+    width: 717px;
     display: inline-block;
     padding: 0 0 0 25px;
     border-radius: $border-radius $border-radius 0 0;
-    height: 185px;
+    height: 175px;
     border-color: $palette-border;
     background-color: #fff;
+    overflow: hidden;
+    margin-bottom: -3px;
 
     h2, i {
       color: #fff;
@@ -26,8 +28,8 @@
     }
 
     .left {
-      width: 196px;
-      height: 187px;
+      width: 187px;
+      height: 181px;
       display: inline-block;
       text-align: center;
       background-color: $palette-fan;
@@ -42,28 +44,27 @@
         background: url(img/icon-fan.svg);
         display: block;
         position: absolute;
-        left: 34px;
+        left: 50%;
         top: 34px;
         height: 120px;
         width: 120px;
         background-repeat: no-repeat;
         background-size: 100%;
+        transform: translateX(-50%);
 
       }
-      .off {
-        animation:none;
-      }
-      .on {
+
+      &.animate {
         &::after {
           animation: spin 1s infinite;
-          animation-timing-function: linear;
           animation-fill-mode: forwards;
+          left: 18%;
         }
       }
     }
 
     .chartContainer {
-      width: calc(100% - 171px);
+      width: calc(100% - 200px);
       display: inline-block;
 
       svg {
@@ -137,6 +138,11 @@
     margin-top: -17px;
     border-radius:0 0 6px 6px;
     border: 2px solid $palette-border;
+  }
+
+  svg {
+    width: 77.4%;
+    height: 100%;
   }
 
 

@@ -14,7 +14,7 @@
 }
 .wrapper {
   width: 770px;
-  margin: 15px 50px 0px 0;
+  margin: 0 50px 0px 0;
 
   .container {
     border: 2px solid #D8D8D8;
@@ -144,10 +144,10 @@
         width:100%;
       }
 
-    .graphWrapper {
-      display:block;
+      .graphWrapper {
+        display:block;
+      }
     }
-  }
 
     h4 {
       font-size: 16px;

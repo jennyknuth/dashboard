@@ -1,12 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import fan from 'theme/fan.scss';
 
 const FanIcon = ({ fanOn }) => {
+  const className = {
+    [fan.left]: true,
+    [fan.animate]: fanOn,
+  };
   return (
-    <div className={fan.left}>
-        <div className={fan.icon} className={(fanOn) ? 'on' : 'off'}></div>
-    </div>
+    <div className={classNames(className)}></div>
   );
 };
 
