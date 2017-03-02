@@ -22,6 +22,7 @@ const led = (state, action) => {
       return {
         ...state,
         lastRead: action.data,
+        red,
         color: rgbToHex(red, green, blue),
       };
     }
