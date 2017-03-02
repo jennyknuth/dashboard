@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import FlowInstructions from 'components/flow/instructions';
 import SocketRoom from 'components/util/socket-room';
 import FlowGraph from 'components/flow/flow-graph';
 import FlowLed from 'components/flow/flow-led';
@@ -20,6 +21,7 @@ const Flow = (props) => {
         <FlowGraph vals={props.vals}/>
       </div>
       <SocketRoom data={props.lastRead} />
+      <FlowInstructions />
     </div>
   );
 };
