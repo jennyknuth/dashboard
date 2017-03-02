@@ -2,8 +2,10 @@
 @import "_typography";
 @import "_global";
 
-h2 {
-  &.socketRoom {
+.socketRoomWrapper {
+
+  h2 {
+    &.socketRoom {
       background-color: #565656;
       display: block;
       height: 50px;
@@ -12,7 +14,7 @@ h2 {
       padding: 10px 0 10px 20px;
       line-height: 50px;
       font-size: 1.2em;
-      width: calc(100% - 16px);
+      width: calc(100% - 14px);
     }
   }
 
@@ -25,3 +27,4 @@ h2 {
     border-radius:0 0 6px 6px;
     border: 2px solid $palette-border;
   }
+}
