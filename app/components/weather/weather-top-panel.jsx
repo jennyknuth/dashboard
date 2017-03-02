@@ -1,6 +1,7 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
 import WeatherBottomForecast from './weather-bottom-forecast';
+import convertIcon from './weather-icon-converter';
 
 import weather from 'theme/weather.scss';
 
@@ -10,8 +11,8 @@ const WeatherTop = ({ current, forecast }) => {
       <div className={weather.container}>
         <div className={weather.warm}>
           <div className={weather.left}>
-            <h2>{current.temp}</h2>
-            <WeatherIcons name={current.icon} size="5x" />
+            <h2>{current.temp}°</h2>
+            <WeatherIcons name={convertIcon[current.icon]} size="5x" />
             <div className={weather.feelslike}>
               <h3>Feels Like {current.feels_like}°</h3>
               <h3>Wind {current.wind_dir} {current.wind_mph}mph</h3>

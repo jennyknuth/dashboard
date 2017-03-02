@@ -124,32 +124,38 @@
   }
 
   .feelslike {
-    display: flex;
+    display: table;
     text-align: center;
-    width: 294px;
+    width: 344px;
     margin: 0 auto;
     border: 1px solid rgba(255,255,255,.4);
     padding: 10px;
     border-radius: 10px;
-    height: 18px;
+    height: auto;
     background: rgba(255,255,255,.2);
+    transform: translateX(-9px);
 
     h3 {
-      display: inline-block;
+      vertical-align: middle;
+      display: table-cell;
       text-align: center;
-      flex: 1;
+      padding: 5px;
       margin: 0;
       color: #fff;
       position: relative;
 
       &:first-child {
-        &::after{
+        margin-top: 10px;
+      }
+
+      &:last-child {
+        &::before{
           content: '';
           display: block;
           width: 1px;
-          height: 38px;
+          height: calc(100% + 20px);
           position: absolute;
-          right: 0px;
+          left: 0px;
           border-right: 1px solid rgba(255, 255, 255, 0.4);
           top: -8px;
         }

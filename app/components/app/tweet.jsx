@@ -8,7 +8,7 @@ const Tweet = () => {
     <div className={twitter.tweet}>
       <h2>Tweet</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <Button variant="primary">Send Tweet</Button>
+      <Button href="https://twitter.com/intent/tweet?text=https://nio.school/labtest/" variant="primary">Send Tweet</Button>
     </div>
   );
 };
