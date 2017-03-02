@@ -27,8 +27,6 @@ const FanGraph = ({ vals }) => {
     .domain([0, 15])
     .range([chartHeight, 0]);
 
-  const scaleRender = d3
-
   // less generic area and line functions
   const precipArea = d3.area()
     .x(d => xScale(d.time))

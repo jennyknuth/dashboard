@@ -1,12 +1,12 @@
 import React from 'react';
 import socketRoom from 'theme/socket-room.scss';
 
-const SocketRoom = ({ data }) => {
+const SocketRoom = ({ data, height }) => {
   return (
     <div>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
-        <textarea readOnly value={JSON.stringify(data, null, 4)}></textarea>
+        <textarea readOnly rows={height} value={JSON.stringify(data, null, 4)}></textarea>
       </div>
     </div>
   );

@@ -14,9 +14,9 @@ const Weather = (props) => {
     <div className={weather.wrapper}>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
         <div className={weather.container}>
-          <WeatherTop />
+          <WeatherTop current={props.current} forecast={props.forecast} />
         </div>
-        <SocketRoom data={props.lastRead}/>
+        <SocketRoom data={props.lastRead} height="20" />
       </BlankSlate>
       <WeatherInstructions />
       <Link to="step2" className={button.nextProjButton}>Next Project</Link>
