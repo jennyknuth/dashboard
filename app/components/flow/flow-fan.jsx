@@ -1,12 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import flow from 'theme/flow.scss';
 
 const FlowFan = ({ fanOn }) => {
+  const className = {
+    [flow.left]: true,
+    [flow.animate]: fanOn,
+  };
   return (
-    <div className={flow.left}>
-        <div className={flow.icon} className={(fanOn) ? 'on' : 'off'}></div>
-    </div>
+    <div className={classNames(className)}></div>
   );
 };
 

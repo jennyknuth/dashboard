@@ -3,6 +3,7 @@ const defaultState = {
   flow: 0,
   lastRead: undefined,
   vals: [],
+  fanOn: false,
 };
 
 const componentToHex = (c) => {
@@ -33,6 +34,7 @@ const flow = (state, action) => {
           value: wind_flow,
         }],
         flow: wind_flow,
+        fanOn: action.data.fan_state,
       };
     }
     default:

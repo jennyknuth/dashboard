@@ -26,6 +26,15 @@
       padding: 20px 40px;
       min-width: 1280px;
 
+      h1 {
+        font-size: 35px;
+        position: relative;
+        max-width: 1200px;
+        display: block;
+        margin: 20px auto;
+        margin-bottom: 40px;
+      }
+
       div {
         > .container {
           min-width:1000px;

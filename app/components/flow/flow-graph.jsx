@@ -37,8 +37,8 @@ const FlowGraph = ({ vals }) => {
       <g className='centralChart' transform={`translate(${margin.left}, ${margin.top})`} >
         <rect x={0} y={0} width={chartWidth} height={chartHeight} stroke='rgba(0,0,0,.2)' fill='#FFFFFF' />
         <path d={precipArea(vals)} fill='#F4BC26' stroke='none' />
-        <text x='220' y='50' fontFamily="Lato" fontWeight="300" fontSize="20">Accelerometer Data</text>
-        <text x='215' y='80' fontFamily="Lato" fontWeight="300" fontSize="12">Measured in g's (gravitational force)</text>
+        <text x='213' y='50' fontFamily="Lato" fontWeight="400" fontSize="20">Accelerometer Data</text>
+        <text x='207' y='70' fontFamily="Lato" fontWeight="300" fontSize="12">Measured in g's (gravitational force)</text>
       </g>
     </svg>
   );

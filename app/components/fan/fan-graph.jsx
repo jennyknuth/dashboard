@@ -27,6 +27,8 @@ const FanGraph = ({ vals }) => {
     .domain([0, 15])
     .range([chartHeight, 0]);
 
+  const scaleRender = d3
+
   // less generic area and line functions
   const precipArea = d3.area()
     .x(d => xScale(d.time))
@@ -36,7 +38,6 @@ const FanGraph = ({ vals }) => {
 
   return (
     <div className={fan.graphContainer}>
-    <div className={fan.graphScale} />
       <svg className='chart' viewBox={`0,0,${width},${height}`} width="40vw" preserveAspectRatio="none">
         <g className='centralChart' transform={`translate(${margin.left}, ${margin.top})`} >
           <rect x={0} y={0} width={chartWidth} height={chartHeight} stroke='rgba(0,0,0,.2)' fill='#FFFFFF' />
