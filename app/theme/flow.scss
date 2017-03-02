@@ -127,6 +127,7 @@
         &::after {
           animation: spin 1s infinite;
           animation-fill-mode: forwards;
+          animation-timing-function: linear;
           left: 25%;
         }
       }
