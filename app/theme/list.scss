@@ -21,17 +21,12 @@
       padding: 0;
       text-indent: 0;
     }
-
-    span {
-      margin: 0 0 0 10px;
+    h3 {
+      font-weight: 400;
     }
-
-    &:last-child {
-      span {
-        &::after {
-          display:none;
-        }
-      }
+    span {
+      font-weight: 300;
+      margin: 0 0 0 10px;
     }
 
     &::after {
