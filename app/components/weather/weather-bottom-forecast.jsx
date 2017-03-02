@@ -7,8 +7,8 @@ const ForecastDay = (props) => {
   return (
     <li>
       <WeatherIcons name={props.icon} size="5x" />
-      <h4>{props.day}</h4>
-      <h5>{props.highTemp} / {props.lowTemp}</h5>
+      <h4>{props.date}</h4>
+      <h5>{props.high} / {props.low}</h5>
     </li>
   );
 };
