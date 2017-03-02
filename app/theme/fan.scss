@@ -8,7 +8,7 @@
 
   .container {
     border: 2px solid $palette-border;
-    width: 717px;
+    width: 716px;
     display: inline-block;
     padding: 0 0 0 25px;
     border-radius: $border-radius $border-radius 0 0;
@@ -17,6 +17,7 @@
     background-color: #fff;
     overflow: hidden;
     margin-bottom: -3px;
+    position:relative;
 
     h2, i {
       color: #fff;
@@ -64,8 +65,13 @@
     }
 
     .chartContainer {
-      width: calc(100% - 200px);
-      display: inline-block;
+      .chartWrapper {
+        right: -169px;
+        top: 0;
+        bottom: -10px;
+        left: 187px;
+        position:absolute;
+      }
 
       svg {
         max-height: 100%;
