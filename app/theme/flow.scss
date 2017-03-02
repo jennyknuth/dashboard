@@ -18,7 +18,7 @@
 
   .container {
     border: 2px solid #D8D8D8;
-    width: calc(100% - 4px);
+    width: calc(100% + 2px);
     padding: 0;
     border-radius: 13px 13px 0 0;
     height: 185px;
@@ -156,25 +156,6 @@
     }
   }
 
-  .graphWrapper {
-    width:calc(100%-196px);
-  }
-
-  h2 {
-    &.socketRoom {
-      background-color: #565656;
-      display: block;
-      height: 50px;
-      margin-top: 0px;
-      color: #fff;
-      padding: 10px 0 10px 20px;
-      line-height: 50px;
-      font-size: 1.2em;
-      width: calc(100% - 16px);
-      z-index:2;
-    }
-  }
-
   textarea {
     width: calc(100% - 28px);
     min-height: 100px;
@@ -186,7 +167,7 @@
   }
 
   svg {
-    width: 100%;
+    width: calc(100% + 4px);
     height: 100%;
   }
 }

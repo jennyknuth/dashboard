@@ -3,7 +3,7 @@ import socketRoom from 'theme/socket-room.scss';
 
 const SocketRoom = ({ data, height }) => {
   return (
-    <div>
+    <div className={socketRoom.socketRoomWrapper}>
       <h2 className={socketRoom.socketRoom}>Socket Room</h2>
       <div className="socketOutput">
         <textarea readOnly rows={height} value={JSON.stringify(data, null, 4)}></textarea>
