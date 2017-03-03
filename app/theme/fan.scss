@@ -142,7 +142,7 @@
     padding: 15px;
     font-size: 1em;
     margin-top: -17px;
-    border-radius:0 0 6px 6px;
+    border-radius:0 0 $border-radius $border-radius;
     border: 2px solid $palette-border;
   }
 

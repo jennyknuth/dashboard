@@ -41,8 +41,8 @@ const FanGraph = ({ vals }) => {
           <g className='centralChart' transform={`translate(${margin.left}, ${margin.top})`} >
             <rect x={0} y={0} width={chartWidth} height={chartHeight} stroke='rgba(0,0,0,.2)' fill='#FFFFFF' />
             <path d={precipArea(vals)} fill='#F4BC26' stroke='none' />
-            <text x='185' y='50' fontFamily="Lato" fontWeight="400" fontSize="28">Accelerometer Data</text>
-            <text x='185' y='80' fontFamily="Lato" fontWeight="300" fontSize="16">Measured in g's (gravitational force)</text>
+            <text x='185' y='50' fontFamily="Lato" fontWeight="400" fontSize="28" fill="#565656">Accelerometer Data</text>
+            <text x='185' y='80' fontFamily="Lato" fontWeight="300" fontSize="16" fill="#565656">Measured in g's (gravitational force)</text>
           </g>
         </svg>
       </div>
