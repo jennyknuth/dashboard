@@ -5,7 +5,7 @@
 
 .wrapper {
     width: 690px;
-    margin: 0 47px 0px 0;
+    margin: 20px 47px 0px 0;
     padding: 15px 25px 2.2em;
     position: relative;
     border: 2px solid $palette-border;
@@ -109,4 +109,13 @@
   width: 4em;
   min-width: 0;
   min-height: 0;
+}
+
+ol {
+    margin-top: 15px;
+
+  li {
+    position: relative;
+    margin-bottom: 25px;
+  }
 }

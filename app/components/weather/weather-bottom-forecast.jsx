@@ -15,7 +15,6 @@ const ForecastDay = (props) => {
 };
 
 const WeatherBottomForecast = (props) => {
-  console.log(props);
   return (
     <div className={weather.forecast}>
       <h2>10 Day Forecast</h2>

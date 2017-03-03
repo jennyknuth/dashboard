@@ -18,6 +18,6 @@ const convertIcons = {
   'sunny': 'wu-sunny',
   'tstorms': 'wu-tstorms',
   'unknown': 'wu-unknown',
-}
+};
 
 export default convertIcons;
