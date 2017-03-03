@@ -2,18 +2,18 @@ import React from 'react';
 import List from 'react-nuik/lib/components/list';
 import { Link } from 'react-router';
 
-import steps from 'theme/steps.scss';
+import list from 'theme/list.scss';
 
 const StepLink = ({ to, activePathCheck, currentPath, ...props }) => {
-  const activeness = (activePathCheck == currentPath || !(currentPath)) ? steps.active : steps.inactive;
-  return <Link to={to} className={`${activeness} ${steps.step}`}>
+  const activeness = (activePathCheck == currentPath || !(currentPath)) ? list.active : list.inactive;
+  return <Link to={to} className={`${activeness} ${list.step}`}>
     {props.children}
   </Link>;
 };
 
 const Steps = ({ activeRoute }) => {
   return (
-    <List variant='numbered' mod='progress-list' className={steps.step_list}>
+    <List variant='numbered' mod='progress-list' className={list.step_list}>
       <StepLink to="step1" activePathCheck="step1" currentPath={activeRoute}>
         <h3>Weather Lab</h3>
         <span>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
