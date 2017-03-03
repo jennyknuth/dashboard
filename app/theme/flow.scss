@@ -18,7 +18,7 @@
 
   .container {
     border: 2px solid #D8D8D8;
-    width: calc(100% + 2px);
+    width: calc(100% - 4px);
     padding: 0;
     border-radius: 13px 13px 0 0;
     height: 185px;
@@ -127,7 +127,6 @@
         &::after {
           animation: spin 1s infinite;
           animation-fill-mode: forwards;
-          animation-timing-function: linear;
           left: 25%;
         }
       }
@@ -156,6 +155,25 @@
     }
   }
 
+  .graphWrapper {
+    width:calc(100%-196px);
+  }
+
+  h2 {
+    &.socketRoom {
+      background-color: #565656;
+      display: block;
+      height: 50px;
+      margin-top: 0px;
+      color: #fff;
+      padding: 10px 0 10px 20px;
+      line-height: 50px;
+      font-size: 1.2em;
+      width: calc(100% - 16px);
+      z-index:2;
+    }
+  }
+
   textarea {
     width: calc(100% - 28px);
     min-height: 100px;
@@ -167,7 +185,7 @@
   }
 
   svg {
-    width: calc(100% + 4px);
+    width: 100%;
     height: 100%;
   }
 }
