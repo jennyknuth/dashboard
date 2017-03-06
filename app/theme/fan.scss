@@ -8,6 +8,7 @@
 
   .container {
     border: 2px solid $palette-border;
+    border-bottom: 0px;
     width: 716px;
     display: inline-block;
     padding: 0 0 0 25px;
@@ -120,30 +121,6 @@
         }
       }
     }
-  }
-
-  h2 {
-    &.socketRoom {
-      background-color: #565656;
-      display: block;
-      height: 50px;
-      margin-top: 0px;
-      color: #fff;
-      padding: 10px 0 10px 20px;
-      line-height: 50px;
-      font-size: 1.2em;
-      width: calc(100% - 16px);
-    }
-  }
-
-  textarea {
-    width: calc(100% - 28px);
-    min-height: 100px;
-    padding: 15px;
-    font-size: 1em;
-    margin-top: -17px;
-    border-radius:0 0 $border-radius $border-radius;
-    border: 2px solid $palette-border;
   }
 
   svg {

@@ -9,6 +9,7 @@
 
 .garbage {
   background-color: green;
+
   &:hover {
     background-color: rgba(green, 0.6);
   }
@@ -21,9 +22,11 @@
 
   float: right;
   background-color: $palette-secondary;
+
   &:hover, &:active, &:focus {
     background-color: $palette-secondary;
   }
+
   text-decoration: none;
   color: #FFF;
   line-height: 1.9em;
