@@ -17,7 +17,7 @@ const ForecastDay = (props) => {
 const WeatherBottomForecast = (props) => {
   return (
     <div className={weather.forecast}>
-      <h2>10 Day Forecast</h2>
+      <h2 className={weather.forecastHeader}>10 Day Forecast</h2>
       <ul>
         {props.forecastDays.map((forecastDay, idx) => (
           <ForecastDay {...forecastDay} key={idx} />
