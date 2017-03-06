@@ -34,6 +34,15 @@ module.exports = {
     sass: {
       mode: 'native',
       modules: true
-    }
+    },
+    static: {
+      processors: [
+        require('html-brunch-static')({
+          processors: [
+            require('marked-brunch-static') ({})
+          ]
+        })
+      ]
+    },
   }
 }

@@ -28,6 +28,9 @@ import LEDController from 'controllers/led';
 import WeatherController from 'controllers/weather';
 import FlowController from 'controllers/flow';
 
+// React-Markdown [brunch] module for importing *.md files
+import reactmd from 'react-markdown';
+
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
