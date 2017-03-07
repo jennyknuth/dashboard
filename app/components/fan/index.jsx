@@ -6,11 +6,17 @@ import FanIcon from 'components/fan/fan-top-icon';
 import FanGraph from 'components/fan/fan-graph';
 import FanInstructions from 'components/fan/instructions';
 import SocketRoom from 'components/util/socket-room';
+import classNames from 'classnames';
 
 import fan from 'theme/fan.scss';
-import button from 'theme/button.scss';
+import classes from 'theme/button.scss';
 
 const Fan = (props) => {
+  const linkClassNames = classNames (
+    classes.button,
+    classes.link,
+    classes.primary,
+  );
   return (
     <div className={fan.wrapper}>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
@@ -21,7 +27,7 @@ const Fan = (props) => {
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
       <FanInstructions />
-      <Link to="step3" className={button.nextProjButton}>Next Project</Link>
+      <Link to="step3" className={linkClassNames}>Next Project</Link>
     </div>
   );
 };

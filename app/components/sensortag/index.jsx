@@ -4,11 +4,18 @@ import { Link } from 'react-router';
 import BlankSlate from 'components/util/blank-slate';
 import SensorTagInstructions from 'components/sensortag/instructions';
 import SocketRoom from 'components/util/socket-room';
+import classNames from 'classnames';
 
 import led from 'theme/led.scss';
-import button from 'theme/button.scss';
+import classes from 'theme/button.scss';
 
 const SensorTag = (props) => {
+  const linkClassNames = classNames (
+    classes.button,
+    classes.link,
+    classes.primary,
+  );
+
   return (
     <div className={led.wrapper}>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
@@ -18,7 +25,7 @@ const SensorTag = (props) => {
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
       <SensorTagInstructions />
-      <Link to="step4" className={button.nextProjButton}>Next Project</Link>
+      <Link to="step4" className={linkClassNames}>Next Project</Link>
     </div>
   );
 };
