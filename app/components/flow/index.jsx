@@ -7,6 +7,7 @@ import FlowGraph from 'components/flow/flow-graph';
 import FlowLed from 'components/flow/flow-led';
 import FlowFan from 'components/flow/flow-fan';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
+import InstructionsVideo from 'components/instructions/instructions-video';
 
 import flow from 'theme/flow.scss';
 import layout from 'theme/layout.scss';
@@ -26,6 +27,7 @@ const Flow = (props) => {
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
       <div className={layout.paper}>
+        <InstructionsVideo />
         <FlowInstructions />
       </div>
     </div>

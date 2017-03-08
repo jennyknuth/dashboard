@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import BlankSlate from 'components/util/blank-slate';
 import WeatherTop from 'components/weather/weather-top-panel';
 import WeatherInstructions from 'components/weather/instructions';
+import InstructionsVideo from 'components/instructions/instructions-video';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';
 
@@ -15,6 +16,7 @@ const Weather = (props) => {
     classes.button,
     classes.link,
     classes.primary,
+    classes.large,
   );
 
   return (
@@ -26,6 +28,7 @@ const Weather = (props) => {
         <SocketRoom data={props.lastRead} height="20" />
       </BlankSlate>
       <div className={layout.paper}>
+        <InstructionsVideo />
         <WeatherInstructions />
       </div>
       <div className={layout.rightBlock}>

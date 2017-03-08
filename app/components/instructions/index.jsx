@@ -6,6 +6,7 @@ import layout from 'theme/layout.scss';
 import classes from 'theme/button.scss';
 
 import Content from './instructions';
+import InstructionsVideo from './instructions-video.jsx';
 
 const Instructions = () => {
   const linkClassNames = classNames (
@@ -18,6 +19,7 @@ const Instructions = () => {
     <div className={layout.paper}>
       <div >
         <h2>Instructions</h2>
+        <InstructionsVideo />
         <Content />
       </div>
       <div className={layout.rightBlock}>
