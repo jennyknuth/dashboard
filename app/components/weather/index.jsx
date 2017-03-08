@@ -7,8 +7,8 @@ import WeatherInstructions from 'components/weather/instructions';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';
 
-import weather from 'theme/weather.scss';
 import classes from 'theme/button.scss';
+import layout from 'theme/layout.scss';
 
 const Weather = (props) => {
   const linkClassNames = classNames (
@@ -18,15 +18,19 @@ const Weather = (props) => {
   );
 
   return (
-    <div className={weather.wrapper}>
+    <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
-        <div className={weather.container}>
+        <div className={layout.paper}>
           <WeatherTop current={props.current} forecast={props.forecast} />
         </div>
         <SocketRoom data={props.lastRead} height="20" />
       </BlankSlate>
-      <WeatherInstructions />
-      <Link to="step2" className={linkClassNames}>Next Project</Link>
+      <div className={layout.paper}>
+        <WeatherInstructions />
+      </div>
+      <div className={layout.rightBlock}>
+        <Link to="step2" className={linkClassNames}>Next Project</Link>
+      </div>
     </div>
   );
 };

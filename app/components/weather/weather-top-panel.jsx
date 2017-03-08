@@ -3,13 +3,13 @@ import WeatherIcons from 'react-weathericons';
 import WeatherBottomForecast from './weather-bottom-forecast';
 import convertIcon from './weather-icon-converter';
 
-import wrapper from 'theme/wrapper.scss';
+// import wrapper from 'theme/wrapper.scss';
 import weather from 'theme/weather.scss';
 
 const WeatherTop = ({ current, forecast }) => {
   return (
-    <div className={wrapper.wrapper}>
-      <div className={wrapper.container}>
+    <div >
+      <div >
         <div className={weather.warm}>
           <div className={weather.left}>
             <h2>{current.temp}°</h2>

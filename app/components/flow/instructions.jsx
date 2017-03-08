@@ -1,12 +1,12 @@
 import React from 'react';
-import CollapsableInstructions from 'components/instructions/collapsable';
+import CollapsibleInstructions from 'components/instructions/collapsible';
 
 import Content from './flow-instructions.md';
 
 const FlowInstructions = () => (
-    <CollapsableInstructions>
+    <CollapsibleInstructions>
       <Content />
-    </CollapsableInstructions>
+    </CollapsibleInstructions>
 );
 
 export default FlowInstructions;

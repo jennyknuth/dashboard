@@ -2,123 +2,95 @@
 @import "_typography";
 @import "_global";
 
-.wrapper {
-  width: 740px;
-  margin: 0 50px 0px 0;
-
-  .container {
-    border: 2px solid $palette-border;
-    border-bottom: 0px;
-    width: 716px;
+  .left {
+    width: 187px;
+    height: 181px;
     display: inline-block;
-    padding: 0 0 0 25px;
-    border-radius: $border-radius $border-radius 0 0;
-    height: 175px;
-    border-color: $palette-border;
-    background-color: #fff;
-    overflow: hidden;
-    margin-bottom: -3px;
+    text-align: center;
+    background-color: $palette-fan;
+    border-radius: $border-radius 0 0 0;
+    position:relative;
+    margin-left: -25px;
+    margin-bottom: -21px;
+    float:left;
+
+    &::after {
+      content: '';
+      background: url(img/icon-fan.svg);
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 34px;
+      height: 120px;
+      width: 120px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      transform: translateX(-50%);
+    }
+
+    &.animate {
+      &::after {
+        animation: spin 1s infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        left: 18%;
+      }
+    }
+  }
+
+  .chartContainer {
+    .chartWrapper {
+      right: -169px;
+      top: 0;
+      bottom: -10px;
+      left: 187px;
+      position:absolute;
+    }
+
+    svg {
+      max-height: 100%;
+      max-weight: 100%;
+    }
+  }
+
+  .right {
+    width: 541px;
+    display: inline-block;
+    height: 187px;
+    position: absolute;
+
+    i {
+      margin-top: 57px;
+      margin-left: 57pxpx;
+    }
+
+    h4 {
+      font-size:20px;
+      font-weight:bold;
+      text-align:center;
+      width:100%;
+    }
+  }
+
+  h3 {
+    display:inline-block;
+    text-align:center;
+    flex:1;
+    margin:0;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
     position:relative;
 
-    h2, i {
-      color: #fff;
-      display: inline-block;
-      margin-right: 25px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      font-size: 5rem;
-      margin-bottom:0;
-    }
-
-    .left {
-      width: 187px;
-      height: 181px;
-      display: inline-block;
-      text-align: center;
-      background-color: $palette-fan;
-      border-radius: $border-radius 0 0 0;
-      position:relative;
-      margin-left: -25px;
-      margin-bottom: -21px;
-      float:left;
-
-      &::after {
+    &:first-child {
+      &::after{
         content: '';
-        background: url(img/icon-fan.svg);
         display: block;
+        width: 1px;
+        height: 38px;
         position: absolute;
-        left: 50%;
-        top: 34px;
-        height: 120px;
-        width: 120px;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        transform: translateX(-50%);
-      }
-
-      &.animate {
-        &::after {
-          animation: spin 1s infinite;
-          animation-fill-mode: forwards;
-          animation-timing-function: linear;
-          left: 18%;
-        }
-      }
-    }
-
-    .chartContainer {
-      .chartWrapper {
-        right: -169px;
-        top: 0;
-        bottom: -10px;
-        left: 187px;
-        position:absolute;
-      }
-
-      svg {
-        max-height: 100%;
-        max-weight: 100%;
-      }
-    }
-
-    .right {
-      width: 541px;
-      display: inline-block;
-      height: 187px;
-      position: absolute;
-
-      i {
-        margin-top: 57px;
-        margin-left: 57pxpx;
-      }
-
-      h4 {
-        font-size:20px;
-        font-weight:bold;
-        text-align:center;
-        width:100%;
-      }
-    }
-
-    h3 {
-      display:inline-block;
-      text-align:center;
-      flex:1;
-      margin:0;
-      color: #fff;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      position:relative;
-
-      &:first-child {
-        &::after{
-          content: '';
-          display: block;
-          width: 1px;
-          height: 38px;
-          position: absolute;
-          right: 0px;
-          border-right: 1px solid rgba(255, 255, 255, 0.4);
-          top: -8px;
-        }
+        right: 0px;
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+        top: -8px;
       }
     }
   }
@@ -127,7 +99,6 @@
     width: 77.4%;
     height: 100%;
   }
-}
 
 @keyframes spin {
   0% {

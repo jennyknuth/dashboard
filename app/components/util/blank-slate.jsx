@@ -3,7 +3,7 @@
  * some data value is truthy
  */
 import React from 'react';
-import blankSlateStyle from 'theme/blank-slate.scss';
+import layout from 'theme/layout.scss';
 
 const BlankSlate = React.createClass({
 
@@ -28,7 +28,11 @@ const BlankSlate = React.createClass({
       return <div>{this.props.children}</div>;
     }
 
-    return <div className={blankSlateStyle.slate}>{this.props.message}</div>;
+    return (
+      <div className={`${layout.paper} ${layout.centeredBlock}`}>
+        {this.props.message}
+      </div>
+    );
   },
 });
 

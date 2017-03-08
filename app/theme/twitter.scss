@@ -3,15 +3,6 @@
 @import "_global";
 
 .tweet {
-  border: 2px solid $palette-border;
-  width: calc(100% - 10px);
-  display: inline-block;
-  padding: 15px 25px;
-  border-radius: $border-radius;
-  min-height: 150px;
-  border-color: $palette-border;
-  background-color: #fff;
-  margin-left: 20px;
 
   h2 {
     font-weight:400;

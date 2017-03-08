@@ -9,6 +9,7 @@ import FlowFan from 'components/flow/flow-fan';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import flow from 'theme/flow.scss';
+import layout from 'theme/layout.scss';
 
 const Flow = (props) => {
   return (
@@ -24,7 +25,9 @@ const Flow = (props) => {
         </div>
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
-      <FlowInstructions />
+      <div className={layout.paper}>
+        <FlowInstructions />
+      </div>
     </div>
   );
 };

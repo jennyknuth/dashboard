@@ -3,12 +3,15 @@
 @import "_global";
 @import "node_modules/nio-css-theme/dist/modules/list";
 
+.numbered {
+  margin: 0;
+}
+
 .progress-list {
   display:inline-block;
   background-color: #ffffff;
   border: 2px solid $palette-border;
   border-radius: $border-radius;
-  width: 100%;
   padding-top: 25px;
 
   li {
@@ -64,9 +67,6 @@
       transform: translateY(-50%);
     }
   }
-}
-
-.step_list {
 }
 
 .step {

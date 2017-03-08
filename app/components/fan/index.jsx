@@ -10,6 +10,7 @@ import classNames from 'classnames';
 
 import fan from 'theme/fan.scss';
 import classes from 'theme/button.scss';
+import layout from 'theme/layout.scss';
 
 const Fan = (props) => {
   const linkClassNames = classNames (
@@ -20,18 +21,21 @@ const Fan = (props) => {
   return (
     <div className={fan.wrapper}>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
-        <div className={fan.container}>
+        <div className={layout.paper}>
           <FanIcon fanOn={props.fanOn} className="fanIcon" />
           <FanGraph vals={props.vals} />
+          <SocketRoom data={props.lastRead} />
         </div>
-        <SocketRoom data={props.lastRead} />
       </BlankSlate>
-      <FanInstructions />
-      <Link to="step3" className={linkClassNames}>Next Project</Link>
+      <div className={layout.paper}>
+        <FanInstructions />
+      </div>
+      <div className={layout.rightBlock}>
+        <Link to="step3" className={linkClassNames}>Next Project</Link>
+      </div>
     </div>
   );
 };
-
 
 const mapStateToProps = (state) => {
   return {

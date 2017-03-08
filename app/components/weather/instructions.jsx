@@ -1,13 +1,13 @@
 import React from 'react';
 
-import CollapsableInstructions from 'components/instructions/collapsable';
+import CollapsibleInstructions from 'components/instructions/collapsible';
 import Content from './weather-instructions.md';
 
 
 const WeatherInstructions = () => (
-  <CollapsableInstructions>
+  <CollapsibleInstructions>
     <Content />
-  </CollapsableInstructions>
+  </CollapsibleInstructions>
 );
 
 export default WeatherInstructions;

@@ -3,9 +3,8 @@ import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 
 import instructions from 'theme/instructions.scss';
-import button from 'theme/button.scss';
 
-const CollapsableInstructions = React.createClass({
+const CollapsibleInstructions = React.createClass({
 
   getInitialState() {
     return {
@@ -22,7 +21,7 @@ const CollapsableInstructions = React.createClass({
   getContentClassName() {
     const classes = {};
     classes[instructions.collapsed] = !this.state.isOpened;
-    classes[instructions.container] = 'true';
+    classes[instructions.instructions] = 'true';
     return classNames(classes);
   },
 
@@ -32,7 +31,7 @@ const CollapsableInstructions = React.createClass({
 
   render() {
     return (
-      <div className={instructions.wrapper}>
+      <div>
         <div className={this.getContentClassName()}>
           <h2>Instructions</h2>
           {this.props.children}
@@ -43,4 +42,4 @@ const CollapsableInstructions = React.createClass({
   },
 });
 
-export default CollapsableInstructions;
+export default CollapsibleInstructions;

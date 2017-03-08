@@ -8,6 +8,7 @@ import classNames from 'classnames';
 
 import led from 'theme/led.scss';
 import classes from 'theme/button.scss';
+import layout from 'theme/layout.scss';
 
 const SensorTag = (props) => {
   const linkClassNames = classNames (
@@ -17,15 +18,19 @@ const SensorTag = (props) => {
   );
 
   return (
-    <div className={led.wrapper}>
+    <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
         <div className={led.container} style={{background: props.color}}>
           <div className={led.lightbulbIcon}></div>
         </div>
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
-      <SensorTagInstructions />
-      <Link to="step4" className={linkClassNames}>Next Project</Link>
+      <div className={layout.paper}>
+        <SensorTagInstructions />
+      </div>
+      <div className={layout.rightBlock}>
+        <Link to="step4" className={linkClassNames}>Next Project</Link>
+      </div>
     </div>
   );
 };

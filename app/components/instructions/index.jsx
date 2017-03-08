@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
-import instructions from 'theme/instructions.scss';
+import layout from 'theme/layout.scss';
 import classes from 'theme/button.scss';
 
 import Content from './instructions';
@@ -15,12 +15,14 @@ const Instructions = () => {
   );
 
   return (
-    <div className={instructions.wrapper}>
-      <div className={instructions.container}>
-      <h2>Instructions</h2>
-      <Content />
-    </div>
-    <Link to="step1" className={linkClassNames}>Get Started!</Link>
+    <div className={layout.paper}>
+      <div >
+        <h2>Instructions</h2>
+        <Content />
+      </div>
+      <div className={layout.rightBlock}>
+        <Link to="step1" className={linkClassNames}>Get Started!</Link>
+      </div>
     </div>
   );
 };
