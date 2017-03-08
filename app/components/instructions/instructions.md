@@ -1,10 +1,15 @@
+<video controls height='200px' style="float: right; margin-left: 20px" src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" >
+  <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
+  <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg" />
+  <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+  <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
+</video>
 You will be working through four separate n.io School Labs (labs) to experience and explore the capabilities of n.io.
 
 * Lab 1: Get Local Weather via SMS Text
 * Lab 2: Shake Phone to Control Fan
 * Lab 3: SensorTag controls LED Light
 * Lab 4: Shake Phone, Start Fan, Measure Windflow, Light LED
-
 
 Each running instance of n.io has its own Designer application. You will interact with the Designer application to perform the steps outlined in each lab. Different instances of n.io can be accessed by adding different parameters to the end of the url. For example: /?prod=labtest as can be seen below, or /?instanceIp=[your_ip_address], which we will use in the later labs.
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import BlankSlate from 'components/util/blank-slate';
 import SensorTagInstructions from 'components/sensortag/instructions';
-import InstructionsVideo from 'components/instructions/instructions-video';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';
 
@@ -28,7 +27,6 @@ const SensorTag = (props) => {
         <SocketRoom data={props.lastRead} />
       </BlankSlate>
       <div className={layout.paper}>
-        <InstructionsVideo />
         <SensorTagInstructions />
       </div>
       <div className={layout.rightBlock}>

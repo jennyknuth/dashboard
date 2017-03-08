@@ -5,7 +5,6 @@ import BlankSlate from 'components/util/blank-slate';
 import FanIcon from 'components/fan/fan-top-icon';
 import FanGraph from 'components/fan/fan-graph';
 import FanInstructions from 'components/fan/instructions';
-import InstructionsVideo from 'components/instructions/instructions-video';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';
 
@@ -30,7 +29,6 @@ const Fan = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <InstructionsVideo />
         <FanInstructions />
       </div>
       <div className={layout.rightBlock}>

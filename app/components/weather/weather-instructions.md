@@ -1,3 +1,10 @@
+<video controls height='200px' style="float: right; margin-left: 20px" src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" >
+  <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
+  <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg" />
+  <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+  <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
+</video>
+
 In Lab 1, n.io will get the weather at your current location and send you a text message that contains the gathered weather data. The weather will also be displyed in the Lab 1 user interface. You will first build the n.io service to recognize your location, ping the WeatherUnderground API for weather data, send that data back to you in a text message, and display the results at: nio.school/lab1.
 
 ## Designer Instructions
