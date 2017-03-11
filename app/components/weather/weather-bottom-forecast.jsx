@@ -5,26 +5,34 @@ import convertIcon from './weather-icon-converter';
 import weather from 'theme/weather.scss';
 
 const ForecastDay = (props) => {
+  const iconClass = props.icon === 'clear' ? 'clear' : 'gray';
   return (
-    <li>
-      <WeatherIcons name={convertIcon[props.icon]} size="5x" />
-      <h4>{props.date}</h4>
-      <h5>{props.high}° / {props.low}°</h5>
-    </li>
-  );
-};
-
-const WeatherBottomForecast = (props) => {
-  return (
-    <div className={weather.forecast}>
-      <h2 className={weather.forecastHeader}>10 Day Forecast</h2>
-      <ul>
-        {props.forecastDays.map((forecastDay, idx) => (
-          <ForecastDay {...forecastDay} key={idx} />
-        ))}
-      </ul>
+    <div className={weather.forecastTile}>
+      <WeatherIcons className={weather[iconClass]} name={convertIcon[props.icon]} size="2x" />
+      <h2 className={weather.day}>{props.date}</h2>
+      <div className={weather.highLow}>{props.high}° / {props.low}°</div>
     </div>
   );
 };
 
-export default WeatherBottomForecast;
+const WeatherForecast = ({forecastDays}) => {
+  const forecast = forecastDays.map((day, i) =>
+    (<ForecastDay {...day} key={i} />)
+  );
+
+  return (
+    <div className={weather.forecastSection}>
+      <h2 className={weather.forecastHeader}>10 Day Forecast</h2>
+      <div className={weather.forecast}>
+        {forecast}
+      </div>
+    </div>
+  );
+};
+
+export default WeatherForecast;
+
+
+// {props.forecastDays.map((forecastDay, idx) => (
+//   <ForecastDay {...forecastDay} key={idx} />
+// ))}

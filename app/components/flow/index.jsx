@@ -8,12 +8,10 @@ import FlowLed from 'components/flow/flow-led';
 import FlowFan from 'components/flow/flow-fan';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
-import flow from 'theme/flow.scss';
 import layout from 'theme/layout.scss';
 import lab from 'theme/lab.scss';
 
 const Flow = (props) => {
-  console.log(props);
   return (
     <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">

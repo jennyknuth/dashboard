@@ -10,7 +10,7 @@
 }
 
 .header {
-  height: 200px;
+  height: 225px;
   display: flex;
   flex-direction: row;
   border-bottom: 2px solid $palette-border;
@@ -24,6 +24,8 @@
   height: 200px;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
 }
 
 .socketHeader {
@@ -31,6 +33,7 @@
   display: block;
   height: 50px;
   margin-top: 0px;
+  margin-bottom: 0px;
   color: #fff;
   text-indent: 16px;
   line-height: 50px;
@@ -43,7 +46,7 @@
 .socketData {
   width: 100%;
   border: none;
-  padding: 25px;
+  margin: 2rem;
   font-size: 1em;
   font-weight: bolder;
   white-space: pre;
