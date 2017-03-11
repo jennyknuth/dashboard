@@ -10,20 +10,22 @@ import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import flow from 'theme/flow.scss';
 import layout from 'theme/layout.scss';
+import lab from 'theme/lab.scss';
 
 const Flow = (props) => {
+  console.log(props);
   return (
-    <div className={flow.wrapper}>
+    <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
-        <div className={flow.container}>
-          <FlowFan fanOn={props.fanOn} className={props.fan_state} />
-          <FlowWindSpeed data={props.flow} />
-          <FlowLed />
-        </div>
-        <div>
+        <div className={lab.labData}>
+          <div className={lab.header}>
+            <FlowFan fanOn={props.fanOn} />
+            <FlowWindSpeed data={props.flow} />
+            <FlowLed />
+          </div>
           <FlowGraph vals={props.vals}/>
+          <SocketRoom data={props.lastRead} />
         </div>
-        <SocketRoom data={props.lastRead} />
       </BlankSlate>
       <div className={layout.paper}>
         <FlowInstructions />

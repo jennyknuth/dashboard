@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import flow from 'theme/flow.scss';
 
 const FlowLed = (props) => {
+  const className = classNames(
+    flow.light,
+    flow.lightbulbIcon
+  );
   return (
-    <div className={flow.rightWrapper}>
-      <div className={flow.rightContainer} style={{background: props.color}}>
-        <div className={flow.lightbulbIcon}></div>
-      </div>
-    </div>
+    <div className={className} style={{backgroundColor: props.color}} />
   );
 };
 

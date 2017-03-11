@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames';
 
 import layout from 'theme/layout.scss';
+import instructions from 'theme/instructions.scss';
 import classes from 'theme/button.scss';
 
 import Content from './instructions';
@@ -16,7 +17,7 @@ const Instructions = () => {
 
   return (
     <div className={layout.paper}>
-      <div >
+      <div className={instructions.instructions}>
         <h2>Instructions</h2>
         <Content />
       </div>

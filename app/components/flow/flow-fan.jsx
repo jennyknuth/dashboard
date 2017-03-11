@@ -4,12 +4,13 @@ import classNames from 'classnames';
 import flow from 'theme/flow.scss';
 
 const FlowFan = ({ fanOn }) => {
-  const className = {
-    [flow.left]: true,
-    [flow.animate]: fanOn,
-  };
+  const className = classNames (
+    flow.fan,
+    fanOn && flow.active
+  );
+
   return (
-    <div className={classNames(className)}></div>
+    <div className={className}></div>
   );
 };
 

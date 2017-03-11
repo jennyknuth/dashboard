@@ -8,66 +8,16 @@
   overflow: auto;
   padding-bottom: 28px;
   transition: max-height 1s;
+  font-weight:300;
 
   &.collapsed {
     max-height: 300px;
     overflow: hidden;
     transition: max-height 1s;
   }
-
-  // .intro {
-  //   display:flex;
-  // }
-  //
-  // h1 {
-  //   width:100%;
-  //   font-weight: 400;
-  // }
-
-  // p:not(li > p) {
-  //   display: inline-block;
-  //   width: 65%;
-  //   float: left;
-  // }
-  //
-  // p {
-  //   font-weight:300;
-  // }
-  //
-  // video {
-  //   display: inline-block;
-  //   width: 300px;
-  //   height: 178px;
-  //   float: right;
-  //   margin-left:20px;
-  // }
-
-  ul {
-      margin-top: 30px;
-
-    li {
-      position:relative;
-      margin-bottom:30px;
-
-      &::before {
-        position:absolute;
-        top:50%;
-        transform: translateY(-50%);
-        left:-50px;
-      }
-    }
+  p {
+    font-weight:300;
   }
-}
-
-// .video {
-//   display: inline-block;
-//   float: right;
-//   margin-left:20px;
-// }
-// 
-.section_header {
-  font-size: 20px;
-  font-weight: bold;
 }
 
 .collapseButton {
@@ -75,9 +25,9 @@
 
   background-color: $palette-secondary;
   color: #FFF;
-  line-height: 1.9em;
+  line-height: 2em;
   position: absolute;
-  bottom: -2em;
+  bottom: -4.5em;
   left: 2em;
   margin: 0;
   height: 4em;
@@ -86,15 +36,6 @@
   min-height: 0;
   &:hover, &:active, &:focus {
     background-color: $palette-secondary;
-  }
-}
-
-ol {
-    margin-top: 15px;
-
-  li {
-    position: relative;
-    margin-bottom: 25px;
   }
 }
 

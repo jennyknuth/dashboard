@@ -1,12 +1,13 @@
 import React from 'react';
-import socketRoom from 'theme/socket-room.scss';
+import lab from 'theme/lab.scss';
 
 const SocketRoom = ({ data, height }) => {
+  const formattedData = JSON.stringify(data, null, 4);
   return (
-    <div className={socketRoom.socketRoomWrapper}>
-      <h2 className={socketRoom.socketRoom}>Real-Time Socket Data</h2>
-      <div className="socketOutput">
-        <textarea readOnly rows={height} value={JSON.stringify(data, null, 4)}></textarea>
+    <div>
+      <h2 className={lab.socketHeader}>Real-Time Socket Data</h2>
+      <div className={lab.socketRoom}>
+        <div className={lab.socketData} >{formattedData}</div>
       </div>
     </div>
   );

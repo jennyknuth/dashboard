@@ -32,11 +32,11 @@
   border: 2px solid $palette-border;
   display: block;
   border-radius: $border-radius;
-  border-color: $palette-border;
   color: #a9a9a9;
   background-color: #fff;
   font-size: 20px;
   margin-top: 50px;
+  overflow: hidden;
   &:first-child{
     margin-top: 0;
   }
