@@ -14,10 +14,11 @@ const FlowLed = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    ...state.led
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     ...state.led
+//   };
+// };
 
-export default connect(mapStateToProps)(FlowLed);
+export default FlowLed;
+// export default connect(mapStateToProps)(FlowLed);
