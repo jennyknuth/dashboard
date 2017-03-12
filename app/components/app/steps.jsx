@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
-import list from 'theme/list.scss';
+import stepper from 'theme/stepper.scss';
 
 const StepLink = ({ to, stepId, currentPath, ...props }) => {
   const activeLink = stepId === currentPath;
   const linkClasses = classNames(
-    list.step,
-    activeLink && list.active
+    stepper.step,
+    activeLink && stepper.active
   );
 
   return (
@@ -20,10 +20,10 @@ const StepLink = ({ to, stepId, currentPath, ...props }) => {
 
 const Steps = ({ activeRoute }) => {
   return (
-    <div className={list.stepper}>
+    <div className={stepper.stepper}>
       <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
         <h2>Weather Lab</h2>
-        <span className={list.light}>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
+        <span className={stepper.light}>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
       <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
         <h2>Fan Lab</h2>
@@ -42,6 +42,3 @@ const Steps = ({ activeRoute }) => {
 };
 
 export default Steps;
-
-// <List variant='numbered' mod='progress-list' className={list.step_list}>
-// </List>
