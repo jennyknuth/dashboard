@@ -2,11 +2,10 @@
 @import "_global";
 
 .app {
-  margin: 80px 0 auto;
+  margin: 0 auto;
   padding: 20px 40px;
   min-width: 1280px;
   background-color:$palette-background;
-  box-shadow: 0 -80px 0 0 $palette-primary;
 }
 
 .container {
