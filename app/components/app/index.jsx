@@ -8,10 +8,10 @@ const MainApp = (props) => {
   return (
   <div>
     <header className={header.header}>
-      <div>
+      <a className={header.link} href="/">
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
-      </div>
+      </a>
       <div className={header.info}>Questions? Call XXX-XXX-XXX MF 9–5 MST</div>
     </header>
     <div className={layout.app}>

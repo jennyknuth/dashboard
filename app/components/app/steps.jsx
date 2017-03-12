@@ -1,5 +1,4 @@
 import React from 'react';
-// import List from 'react-nuik/lib/components/list';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
@@ -20,23 +19,22 @@ const StepLink = ({ to, stepId, currentPath, ...props }) => {
 };
 
 const Steps = ({ activeRoute }) => {
-  // const routes = ['lab1', 'lab2', 'lab3', 'lab4'];
   return (
-    <div className={list.progressList}>
+    <div className={list.stepper}>
       <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
-        <h3>Weather Lab</h3>
-        <span>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
+        <h2>Weather Lab</h2>
+        <span className={list.light}>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
       <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
-        <h3>Fan Lab</h3>
+        <h2>Fan Lab</h2>
         <span>Shake your mobile phone to turn the desktop fan on and off.</span>
       </StepLink>
       <StepLink to="lab3" stepId="lab3" currentPath={activeRoute}>
-        <h3>SensorTag Lab</h3>
+        <h2>SensorTag Lab</h2>
         <span>Flip over a bluetooth connected SensorTag to turn on and off an LED.</span>
       </StepLink>
       <StepLink to="lab4" stepId="lab4" currentPath={activeRoute}>
-        <h3>Wind Flow Lab</h3>
+        <h2>Wind Flow Lab</h2>
         <span>Shake your mobile phone to turn on the fan. Then detect the wind speed to turn on the LED.</span>
       </StepLink>
     </div>

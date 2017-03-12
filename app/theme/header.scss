@@ -9,6 +9,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
 
 .logo {
