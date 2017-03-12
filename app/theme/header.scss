@@ -1,0 +1,30 @@
+@import "_palette";
+
+.header {
+  position: relative;
+  height: 80px;
+  background-color: $palette-primary;
+  color: $palette-background;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  height: 40px;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: super;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.info {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+}
