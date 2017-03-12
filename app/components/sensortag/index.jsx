@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import BlankSlate from 'components/util/blank-slate';
-import FlowLed from 'components/flow/flow-led';
+import BlankSlate from 'components/blank-slate';
+import Light from 'components/flow-led';
 import SensorTagInstructions from 'components/sensortag/instructions';
-import SocketRoom from 'components/util/socket-room';
+import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
 
 import classes from 'theme/button.scss';
@@ -24,7 +24,7 @@ const SensorTag = (props) => {
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
         <div className={lab.labData}>
           <div className={lab.header}>
-            <FlowLed color={props.color} />
+            <Light color={props.color} />
           </div>
           <SocketRoom data={props.lastRead} />
         </div>

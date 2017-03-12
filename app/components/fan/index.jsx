@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import BlankSlate from 'components/util/blank-slate';
-import FanIcon from 'components/flow/flow-fan';
-import FanGraph from 'components/flow/flow-graph';
+import BlankSlate from 'components/blank-slate';
+import FanIcon from 'components/flow-fan';
+import FanGraph from 'components/flow-graph';
 import FanInstructions from 'components/fan/instructions';
-import SocketRoom from 'components/util/socket-room';
+import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
 
 import classes from 'theme/button.scss';
