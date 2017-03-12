@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import BlankSlate from 'components/blank-slate';
-import FanIcon from 'components/flow-fan';
-import FanGraph from 'components/flow-graph';
+import FanIcon from 'components/fan-graphic';
+import AccelGraph from 'components/accel-graph';
 import FanInstructions from 'components/fan/instructions';
 import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
@@ -27,7 +27,7 @@ const FanLab = (props) => {
           <div className={lab.header}>
             <FanIcon className={fan.fan} fanOn={props.fanOn} />
             <div className={fan.graph}>
-              <FanGraph vals={props.vals} />
+              <AccelGraph vals={props.vals} />
             </div>
           </div>
           <SocketRoom data={props.lastRead} />

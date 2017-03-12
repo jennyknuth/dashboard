@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import BlankSlate from 'components/blank-slate';
-import Light from 'components/flow-led';
+import Light from 'components/light-graphic';
 import SensorTagInstructions from 'components/sensortag/instructions';
 import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';

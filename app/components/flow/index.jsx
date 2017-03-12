@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import BlankSlate from 'components/blank-slate';
 import FlowInstructions from 'components/flow/instructions';
 import SocketRoom from 'components/socket-room';
-import FlowGraph from 'components/flow-graph';
-import FlowLed from 'components/flow-led';
-import FlowFan from 'components/flow-fan';
+import AccelGraph from 'components/accel-graph';
+import LightGraphic from 'components/light-graphic';
+import FanGraphic from 'components/fan-graphic';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';
@@ -18,12 +18,12 @@ const Flow = (props) => {
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
         <div className={lab.labData}>
           <div className={lab.header}>
-            <FlowFan fanOn={props.fanOn} />
+            <FanGraphic fanOn={props.fanOn} />
             <FlowWindSpeed data={props.flow} />
-            <FlowLed color={props.color}/>
+            <LightGraphic color={props.color}/>
           </div>
           <div className={flow.graph}>
-            <FlowGraph vals={props.vals}/>
+            <AccelGraph vals={props.vals}/>
           </div>
           <SocketRoom data={props.lastRead} />
         </div>
