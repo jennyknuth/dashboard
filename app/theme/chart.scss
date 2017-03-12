@@ -2,13 +2,8 @@
 @import "_typography";
 @import "_global";
 
-.chart {
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
-
 .title {
+  text-align: center;
   position: relative;
   h2 {
     margin-bottom: 0;

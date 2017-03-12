@@ -33,15 +33,9 @@ const FlowGraph = ({ vals }) => {
     .curve(d3.curveMonotoneX);
 
   return (
-    <div className={chart.chart}>
-      <div className={chart.title}>
-        <h2>Accelerometer Data</h2>
-        <h3>measured in g's (gravitational force)</h3>
-      </div>
-      <svg className={chart.svg} viewBox={`0,0,${width},${height}`} height={height} preserveAspectRatio="none">
-        <path d={precipArea(vals)} fill='#F4BC26' stroke='none' transform={`translate(${margin.left}, ${margin.top})`}/>
-      </svg>
-    </div>
+    <svg className={chart.svg} viewBox={`0,0,${width},${height}`} height={height} preserveAspectRatio="none">
+      <path d={precipArea(vals)} fill='#F4BC26' stroke='none' transform={`translate(${margin.left}, ${margin.top})`}/>
+    </svg>
   );
 };
 

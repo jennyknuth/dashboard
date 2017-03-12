@@ -1,16 +1,11 @@
 import React from 'react';
-import classNames from 'classnames';
 
-import flow from 'theme/flow.scss';
+import led from 'theme/led.scss';
 
-const FlowLed = (props) => {
-  const className = classNames(
-    flow.light,
-    flow.lightbulbIcon
-  );
+const LEDlight = (props) => {
   return (
-    <div className={className} style={{backgroundColor: props.color}} />
+    <div className={led.light} style={{backgroundColor: props.color}} />
   );
 };
 
-export default FlowLed;
+export default LEDlight;

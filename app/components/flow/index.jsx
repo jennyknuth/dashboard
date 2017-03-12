@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import BlankSlate from 'components/blank-slate';
 import FlowInstructions from 'components/flow/instructions';
 import SocketRoom from 'components/socket-room';
-import AccelGraph from 'components/accel-graph';
+import AreaGraph from 'components/area-graph';
 import LightGraphic from 'components/light-graphic';
 import FanGraphic from 'components/fan-graphic';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';
 import lab from 'theme/lab.scss';
-import flow from 'theme/flow.scss';
+import chart from 'theme/chart.scss';
 
 const Flow = (props) => {
   return (
@@ -22,8 +22,12 @@ const Flow = (props) => {
             <FlowWindSpeed data={props.flow} />
             <LightGraphic color={props.color}/>
           </div>
-          <div className={flow.graph}>
-            <AccelGraph vals={props.vals}/>
+          <div>
+            <div className={chart.title}>
+              <h2>Windflow Data</h2>
+              <h3>measured in mph</h3>
+            </div>
+            <AreaGraph vals={props.vals}/>
           </div>
           <SocketRoom data={props.lastRead} />
         </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import flow from 'theme/flow.scss';
+import fanIcon from 'theme/fanIcon.scss';
 
-const FlowFan = ({ fanOn }) => {
+const FanIcon = ({ fanOn }) => {
   const className = classNames (
-    flow.fan,
-    fanOn && flow.active
+    fanIcon.fan,
+    fanOn && fanIcon.active
   );
 
   return (
@@ -14,4 +14,4 @@ const FlowFan = ({ fanOn }) => {
   );
 };
 
-export default FlowFan;
+export default FanIcon;
