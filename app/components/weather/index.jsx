@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import BlankSlate from 'components/util/blank-slate';
 import WeatherTop from 'components/weather/weather-top-panel';
-import WeatherForecast from './weather-bottom-forecast';
+import WeatherForecast from './weather-forecast';
 import WeatherInstructions from 'components/weather/instructions';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';

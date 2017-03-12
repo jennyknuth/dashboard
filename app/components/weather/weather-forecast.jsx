@@ -31,8 +31,3 @@ const WeatherForecast = ({forecastDays}) => {
 };
 
 export default WeatherForecast;
-
-
-// {props.forecastDays.map((forecastDay, idx) => (
-//   <ForecastDay {...forecastDay} key={idx} />
-// ))}

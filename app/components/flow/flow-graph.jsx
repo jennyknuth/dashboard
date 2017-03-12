@@ -1,13 +1,13 @@
 import React from 'react';
 import * as d3 from 'd3';
 
-import flow from 'theme/flow.scss';
+import chart from 'theme/chart.scss';
 
 const FlowGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
   const width = 600;
-  const height = 250;
+  const height = 150;
   const chartHeight = height - margin.top - margin.bottom;
   const chartWidth = width - margin.left - margin.right;
 
@@ -33,13 +33,15 @@ const FlowGraph = ({ vals }) => {
     .curve(d3.curveMonotoneX);
 
   return (
-    <svg className={flow.chart} viewBox={`0,0,${width},${height}`} width={width} >
-      <g transform={`translate(${margin.left}, ${margin.top})`} >
-        <path d={precipArea(vals)} fill='#F4BC26' stroke='none' />
-        <text x='213' y='50' fontFamily="Lato" fontWeight="400" fontSize="20">Accelerometer Data</text>
-        <text x='207' y='70' fontFamily="Lato" fontWeight="300" fontSize="12">Measured in g's (gravitational force)</text>
-      </g>
-    </svg>
+    <div className={chart.chart}>
+      <div className={chart.title}>
+        <h2>Accelerometer Data</h2>
+        <h3>measured in g's (gravitational force)</h3>
+      </div>
+      <svg className={chart.svg} viewBox={`0,0,${width},${height}`} height={height} preserveAspectRatio="none">
+        <path d={precipArea(vals)} fill='#F4BC26' stroke='none' transform={`translate(${margin.left}, ${margin.top})`}/>
+      </svg>
+    </div>
   );
 };
 

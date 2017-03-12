@@ -2,17 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import BlankSlate from 'components/util/blank-slate';
-import FanIcon from 'components/fan/fan-top-icon';
-import FanGraph from 'components/fan/fan-graph';
+import FanIcon from 'components/flow/flow-fan';
+import FanGraph from 'components/flow/flow-graph';
 import FanInstructions from 'components/fan/instructions';
 import SocketRoom from 'components/util/socket-room';
 import classNames from 'classnames';
 
-import fan from 'theme/fan.scss';
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
+import lab from 'theme/lab.scss';
+import fan from 'theme/fan.scss';
 
-const Fan = (props) => {
+const FanLab = (props) => {
   const linkClassNames = classNames (
     classes.button,
     classes.link,
@@ -20,11 +21,15 @@ const Fan = (props) => {
     classes.large,
   );
   return (
-    <div className={fan.wrapper}>
+    <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">
-        <div className={layout.paper}>
-          <FanIcon fanOn={props.fanOn} className="fanIcon" />
-          <FanGraph vals={props.vals} />
+        <div className={lab.labData}>
+          <div className={lab.header}>
+            <FanIcon className={fan.fan} fanOn={props.fanOn} />
+            <div className={fan.graph}>
+              <FanGraph vals={props.vals} />
+            </div>
+          </div>
           <SocketRoom data={props.lastRead} />
         </div>
       </BlankSlate>
@@ -44,4 +49,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Fan);
+export default connect(mapStateToProps)(FanLab);

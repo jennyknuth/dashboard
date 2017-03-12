@@ -14,10 +14,7 @@
   display: flex;
   flex-direction: row;
   border-bottom: 2px solid $palette-border;
-}
-
-.filling {
-  flex: 2;
+  overflow: hidden;
 }
 
 .socketRoom {
@@ -40,7 +37,6 @@
   font-size: 1.2em;
   width: 100%;
   border-bottom: 2px solid $palette-border;
-  border-top: 2px solid $palette-border;
 }
 
 .socketData {

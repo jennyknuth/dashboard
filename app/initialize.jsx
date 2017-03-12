@@ -11,7 +11,7 @@ import config from 'config';
 import MainApp from 'components/app';
 import Instructions from 'components/instructions';
 import Weather from 'components/weather';
-import Fan from 'components/fan';
+import FanLab from 'components/fan';
 import SensorTag from 'components/sensortag';
 import Flow from 'components/flow';
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <Route path="/" component={MainApp}>
             <IndexRoute component={Instructions} title="Welcome" />
             <Route path="step1" component={Weather} title="Weather Lab" />
-            <Route path="step2" component={Fan} title="Fan Lab" />
+            <Route path="step2" component={FanLab} title="Fan Lab" />
             <Route path="step3" component={SensorTag} title="SensorTag Lab" />
             <Route path="step4" component={Flow} title="Wind Flow Lab" />
           </Route>

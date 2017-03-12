@@ -10,6 +10,7 @@ import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';
 import lab from 'theme/lab.scss';
+import flow from 'theme/flow.scss';
 
 const Flow = (props) => {
   return (
@@ -19,9 +20,11 @@ const Flow = (props) => {
           <div className={lab.header}>
             <FlowFan fanOn={props.fanOn} />
             <FlowWindSpeed data={props.flow} />
-            <FlowLed />
+            <FlowLed color={props.color}/>
           </div>
-          <FlowGraph vals={props.vals}/>
+          <div className={flow.graph}>
+            <FlowGraph vals={props.vals}/>
+          </div>
           <SocketRoom data={props.lastRead} />
         </div>
       </BlankSlate>
