@@ -1,37 +1,49 @@
 import React from 'react';
-import List from 'react-nuik/lib/components/list';
+// import List from 'react-nuik/lib/components/list';
 import { Link } from 'react-router';
+import classNames from 'classnames';
 
 import list from 'theme/list.scss';
 
-const StepLink = ({ to, activePathCheck, currentPath, ...props }) => {
-  const activeness = (activePathCheck == currentPath || !(currentPath)) ? list.active : list.inactive;
-  return <Link to={to} className={`${activeness} ${list.step}`}>
-    {props.children}
-  </Link>;
+const StepLink = ({ to, stepId, currentPath, ...props }) => {
+  const activeLink = stepId === currentPath;
+  const linkClasses = classNames(
+    list.step,
+    activeLink && list.active
+  );
+
+  return (
+    <Link to={to} className={linkClasses}>
+      {props.children}
+    </Link>
+  );
 };
 
 const Steps = ({ activeRoute }) => {
+  // const routes = ['lab1', 'lab2', 'lab3', 'lab4'];
   return (
-    <List variant='numbered' mod='progress-list' className={list.step_list}>
-      <StepLink to="step1" activePathCheck="step1" currentPath={activeRoute}>
+    <div className={list.progressList}>
+      <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
         <h3>Weather Lab</h3>
         <span>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
-      <StepLink to="step2" activePathCheck="step2" currentPath={activeRoute}>
+      <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
         <h3>Fan Lab</h3>
         <span>Shake your mobile phone to turn the desktop fan on and off.</span>
       </StepLink>
-      <StepLink to="step3" activePathCheck="step3" currentPath={activeRoute}>
+      <StepLink to="lab3" stepId="lab3" currentPath={activeRoute}>
         <h3>SensorTag Lab</h3>
         <span>Flip over a bluetooth connected SensorTag to turn on and off an LED.</span>
       </StepLink>
-      <StepLink to="step4" activePathCheck="step4" currentPath={activeRoute}>
+      <StepLink to="lab4" stepId="lab4" currentPath={activeRoute}>
         <h3>Wind Flow Lab</h3>
         <span>Shake your mobile phone to turn on the fan. Then detect the wind speed to turn on the LED.</span>
       </StepLink>
-    </List>
+    </div>
   );
 };
 
 export default Steps;
+
+// <List variant='numbered' mod='progress-list' className={list.step_list}>
+// </List>

@@ -33,7 +33,7 @@ const SensorTag = (props) => {
         <SensorTagInstructions />
       </div>
       <div className={layout.rightBlock}>
-        <Link to="step4" className={linkClassNames}>Next Project</Link>
+        <Link to="lab4" className={linkClassNames}>Next Project</Link>
       </div>
     </div>
   );

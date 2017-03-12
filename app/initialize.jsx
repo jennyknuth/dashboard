@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <Router history={history}>
           <Route path="/" component={MainApp}>
             <IndexRoute component={Instructions} title="Welcome" />
-            <Route path="step1" component={Weather} title="Weather Lab" />
-            <Route path="step2" component={FanLab} title="Fan Lab" />
-            <Route path="step3" component={SensorTag} title="SensorTag Lab" />
-            <Route path="step4" component={Flow} title="Wind Flow Lab" />
+            <Route path="lab1" component={Weather} title="Weather Lab" />
+            <Route path="lab2" component={FanLab} title="Fan Lab" />
+            <Route path="lab3" component={SensorTag} title="SensorTag Lab" />
+            <Route path="lab4" component={Flow} title="Wind Flow Lab" />
           </Route>
         </Router>
       </Provider>

@@ -1,40 +1,40 @@
 @import "_palette";
 @import "_typography";
 @import "_global";
-@import "node_modules/nio-css-theme/dist/modules/list";
+// @import "node_modules/nio-css-theme/dist/modules/list";
 
 .numbered {
   margin: 0;
 }
 
-.progress-list {
+.progressList {
   display:inline-block;
   background-color: #ffffff;
   border: 2px solid $palette-border;
   border-radius: $border-radius;
   padding-top: 25px;
 
-  li {
-    position: relative;
-    margin-bottom: 60px;
-    margin-right: 20px;
-
-    h3, span {
-      display: block;
-      margin: 15px 0 10px 10px;
-      padding: 0;
-      text-indent: 0;
-    }
-
-    h3 {
-      font-weight: 400;
-    }
-
-    span {
-      font-weight: 300;
-      margin: 0 0 0 10px;
-    }
-
+  // li {
+  //   position: relative;
+  //   margin-bottom: 60px;
+  //   margin-right: 20px;
+  //
+  //   h3, span {
+  //     display: block;
+  //     margin: 15px 0 10px 10px;
+  //     padding: 0;
+  //     text-indent: 0;
+  //   }
+  //
+  //   h3 {
+  //     font-weight: 400;
+  //   }
+  //
+  //   span {
+  //     font-weight: 300;
+  //     margin: 0 0 0 10px;
+  //   }
+  //
     a {
       &::after {
         content: '';
@@ -66,7 +66,7 @@
       top: 50%;
       transform: translateY(-50%);
     }
-  }
+  // }
 }
 
 .step {

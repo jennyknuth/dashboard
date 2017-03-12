@@ -35,7 +35,7 @@ const Weather = (props) => {
         <WeatherInstructions />
       </div>
       <div className={layout.rightBlock}>
-        <Link to="step2" className={linkClassNames}>Next Project</Link>
+        <Link to="lab2" className={linkClassNames}>Next Project</Link>
       </div>
     </div>
   );
