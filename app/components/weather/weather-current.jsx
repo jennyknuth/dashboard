@@ -1,7 +1,8 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
-import convertIcon from './weather-icon-converter';
 import classNames from 'classnames';
+
+import convertIcon from './weather-icon-converter';
 
 import weather from 'theme/weather.scss';
 

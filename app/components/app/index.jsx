@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Steps from 'components/app/steps';
 import Tweet from 'components/app/tweet';
+
 import layout from 'theme/layout.scss';
 import header from 'theme/header.scss';
 

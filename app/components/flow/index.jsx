@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BlankSlate from 'components/blank-slate';
+
+import BlankSlate from 'components/shared/blank-slate';
+import SocketRoom from 'components/shared/socket-room';
+import AreaGraph from 'components/shared/area-graph';
+import LightGraphic from 'components/shared/light-graphic';
+import FanGraphic from 'components/shared/fan-graphic';
+
 import FlowInstructions from 'components/flow/instructions';
-import SocketRoom from 'components/socket-room';
-import AreaGraph from 'components/area-graph';
-import LightGraphic from 'components/light-graphic';
-import FanGraphic from 'components/fan-graphic';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';

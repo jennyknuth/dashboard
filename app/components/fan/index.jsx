@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import BlankSlate from 'components/blank-slate';
-import FanIcon from 'components/fan-graphic';
-import AreaGraph from 'components/area-graph';
-import FanInstructions from 'components/fan/instructions';
-import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
+
+import BlankSlate from 'components/shared/blank-slate';
+import FanIcon from 'components/shared/fan-graphic';
+import AreaGraph from 'components/shared/area-graph';
+import SocketRoom from 'components/shared/socket-room';
+import FanInstructions from 'components/fan/instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';

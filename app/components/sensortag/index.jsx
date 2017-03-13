@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import BlankSlate from 'components/blank-slate';
-import Light from 'components/light-graphic';
-import SensorTagInstructions from 'components/sensortag/instructions';
-import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
+
+import BlankSlate from 'components/shared/blank-slate';
+import Light from 'components/shared/light-graphic';
+import SocketRoom from 'components/shared/socket-room';
+
+import SensorTagInstructions from 'components/sensortag/instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';

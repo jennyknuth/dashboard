@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import BlankSlate from 'components/blank-slate';
-import WeatherTop from 'components/weather/weather-top-panel';
-import WeatherForecast from './weather-forecast';
-import WeatherInstructions from 'components/weather/instructions';
-import SocketRoom from 'components/socket-room';
 import classNames from 'classnames';
+
+import BlankSlate from 'components/shared/blank-slate';
+import SocketRoom from 'components/shared/socket-room';
+
+import WeatherTop from 'components/weather/weather-current';
+import WeatherForecast from 'components/weather/weather-forecast';
+import WeatherInstructions from 'components/weather/instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
