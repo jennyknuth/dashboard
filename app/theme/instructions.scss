@@ -8,6 +8,7 @@
   padding-bottom: 28px;
   transition: max-height 1s;
   font-weight:300;
+  font-size: 14px;
 
   &.collapsed {
     max-height: 300px;
@@ -15,8 +16,24 @@
     transition: max-height 1s;
   }
 
+  h2 {
+    margin-top: 0;
+    font-size: 23px;
+  }
+
   code {
     @extend .block;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  li {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
   }
 
 }

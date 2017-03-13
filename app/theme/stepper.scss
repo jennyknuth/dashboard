@@ -7,7 +7,7 @@
   background-color: white;
   border: 2px solid $palette-border;
   border-radius: $border-radius;
-  padding: 2rem 4rem 4rem 4rem;
+  padding: 3rem 4rem 0.5rem 4rem;
   counter-reset: section;
   span {
     font-weight: 300;
@@ -15,10 +15,12 @@
 }
 
 .step {
+  display: block;
   position: relative;
   text-decoration: none;
   color: $palette-primary;
   counter-increment: section;
+  min-height: 120px;
 
   &::after {
     content: counter(section);
@@ -33,7 +35,7 @@
     height: 4rem;
     border-radius: 50%;
     left: -6rem;
-    top: -2.8rem;
+    top: 0;
   }
   &.active {
     &::after {
