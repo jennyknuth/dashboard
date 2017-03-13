@@ -1,4 +1,4 @@
-@import "_palette";
+@import "palette";
 
 .block {
   font-size: 90%;
@@ -13,11 +13,11 @@
   width: auto;
   display: block;
   clear: both;
-  color: #555555;
+  color: $palette-primary;
   padding: 1em 1em;
   margin: 15px 15px 15px 0;
-  background: #f4f4f4;
-  border: solid 1px #e1e1e1
+  background: $palette-background;
+  border: solid 1px $palette-border;
 }
 
 .inline {
@@ -26,7 +26,7 @@
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
   display: inline;
-  color: #555555;
+  color: $palette-primary;
   padding: 2px 7px;
   background: #f4f4f4;
 }

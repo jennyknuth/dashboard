@@ -1,0 +1,50 @@
+@import "palette";
+@import "global";
+
+.app {
+  margin: 0 auto;
+  padding: 20px 40px;
+  min-width: 1280px;
+  background-color:$palette-background;
+}
+
+.container {
+  margin: 80px auto;
+  min-width: 1280px;
+  display: flex;
+}
+
+.centeredBlock {
+  display: block;
+  text-align: center;
+}
+
+.rightBlock {
+  margin: 2rem 0;
+  display: block;
+  text-align: right;
+}
+
+.paper {
+  padding: 3rem;
+  position: relative;
+  border: 2px solid $palette-border;
+  display: block;
+  border-radius: $border-radius;
+  background-color: #fff;
+  font-size: 20px;
+  margin-top: 50px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.bigPanel {
+  position: relative;
+  padding-right: 5%;
+  flex: 2;
+}
+
+.smallPanel {
+  flex: 1;
+}

@@ -1,0 +1,21 @@
+@import "palette";
+
+.title {
+  text-align: center;
+  position: relative;
+  h2 {
+    margin-bottom: 0;
+  }
+  h3 {
+    margin: 0;
+    color: $palette-border;
+    font-weight: 300;
+  }
+}
+
+.svg {
+  position: relative;
+  top: 4px;
+  width: 100%;
+  border-bottom: 2px solid $palette-border;
+}

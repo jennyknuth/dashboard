@@ -1,9 +1,9 @@
-@import "_palette";
-@import "_global";
+@import "palette";
+@import "global";
 
 h1, h2, h3, h4, h5, p, li {
   color: $palette-primary;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 h1 {
@@ -36,4 +36,5 @@ h2 {
 
 p {
   font-size: 18px;
+  font-weight: 300;
 }

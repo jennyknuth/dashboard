@@ -9,9 +9,9 @@ import config from 'config';
 
 // Our app pages
 import MainApp from 'components/app';
-import Instructions from 'components/instructions';
+import Intro from 'components/intro';
 import Weather from 'components/weather';
-import Fan from 'components/fan';
+import FanLab from 'components/fan';
 import SensorTag from 'components/sensortag';
 import Flow from 'components/flow';
 
@@ -29,7 +29,7 @@ import WeatherController from 'controllers/weather';
 import FlowController from 'controllers/flow';
 
 // React-Markdown [brunch] module for importing *.md files
-import reactmd from 'react-markdown';
+import 'react-markdown';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={MainApp}>
-            <IndexRoute component={Instructions} title="Welcome" />
-            <Route path="step1" component={Weather} title="Weather Lab" />
-            <Route path="step2" component={Fan} title="Fan Lab" />
-            <Route path="step3" component={SensorTag} title="SensorTag Lab" />
-            <Route path="step4" component={Flow} title="Wind Flow Lab" />
+            <IndexRoute component={Intro} title="Welcome" />
+            <Route path="lab1" component={Weather} title="Weather Lab" />
+            <Route path="lab2" component={FanLab} title="Fan Lab" />
+            <Route path="lab3" component={SensorTag} title="SensorTag Lab" />
+            <Route path="lab4" component={Flow} title="Wind Flow Lab" />
           </Route>
         </Router>
       </Provider>

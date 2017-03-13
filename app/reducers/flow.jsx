@@ -24,14 +24,14 @@ const flow = (state, action) => {
   }
   switch (action.type) {
     case 'FLOW_READ': {
-      const { red, blue, green, wind_flow } = action.data;
+      const { red, blue, green, wind_flow, accel } = action.data;
       return {
         ...state,
         lastRead: action.data,
         color: rgbToHex(red, green, blue),
         vals: [...state['vals'], {
           time: Date.now(),
-          value: wind_flow,
+          value: accel,
         }],
         flow: wind_flow,
         fanOn: action.data.fan_state,

@@ -1,160 +1,29 @@
-@import "_palette";
-@import "_typography";
-@import "_global";
+@import "palette";
 
-.wrapper {
-  width: 740px;
-  margin: 0 50px 0px 0;
-
-  .container {
-    border: 1px solid #D8D8D8;
-    border-bottom: 0px;
-    width: 100%;
-    padding: 0;
-    border-radius: 13px 13px 0 0;
-    height: 185px;
-    border-color: #D8D8D8;
-    background-color: #fff;
-    margin-bottom: 0;
-    position: relative;
-    display: flex;
-    padding-bottom: 0;
-
-    .container {
-      .innerWrapper {
-        width:33.3%;
-        display:inline-block;
-      }
-    }
-
-    .centerWrapper {
-      background-color: $palette-secondary;
-      text-align:center;
-      flex:1;
-      height: 187px;
-
-      .centerContainer {
-        background-color:none;
-
-        h2 {
-          font-size: 3.8em;
-          font-weight: 500;
-          text-shadow: none;
-          margin: 0;
-        }
-
-        h3 {
-          font-size: 1.25em;
-          color: #fff;
-          font-weight: 300;
-          margin: 20px 0 0 0;
-        }
-
-        h4 {
-          font-size: 3.2em;
-          margin: -5px 0 0 0;
-          font-weight: 200;
-        }
-      }
-    }
-
-    .rightWrapper {
-      display:inline-block;
-      width: calc(33.3% + 12px);
-      border-radius: 0 $border-radius 0 0;
-      overflow:hidden;
-      height: 186px;
-
-      .rightContainer {
-        width: 100%;
-        margin-top: -15px;
-        margin-right: -25px;
-        height:201px;
-
-        .lightbulbIcon {
-          background: url(img/lightbulb-icon.svg) no-repeat;
-          width: 100%;
-          height: 186px;
-          background-size: 26%;
-          background-position: 100px 50px;
-        }
-      }
-    }
-
-    h2, i {
-      color: #fff;
-      display: inline-block;
-      margin-right: 25px;
-      text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      font-size: 5rem;
-      margin-bottom:0;
-    }
-
-    .left {
-      width: 100%;
-      height: 187px;
-      display: inline-block;
-      text-align: center;
-      background-color: $palette-fan;
-      border-radius: $border-radius 0 0 0;
-      position:relative;
-      flex:1;
-
-      &::after {
-        content: '';
-        background: url(img/icon-fan.svg);
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 34px;
-        height: 120px;
-        width: 120px;
-        transform: translateX(-50%);
-        background-repeat: no-repeat;
-        background-size: 100%;
-      }
-
-      &.animate {
-        &::after {
-          animation: spin 1s infinite;
-          animation-fill-mode: forwards;
-          animation-timing-function: linear;
-          left: 25%;
-        }
-      }
-    }
-
-    .right {
-      display: inline-block;
-      height: 187px;
-      position: absolute;
-
-      h4 {
-        font-size:20px;
-        font-weight:bold;
-        text-align:center;
-        width:100%;
-      }
-
-    }
-
-    h4 {
-      font-size: 16px;
-      color: #fff;
-    }
-  }
-
-  svg {
-    width: calc(100% + 3px);
-    height: 100%;
-  }
+// styles for middle section of header
+.speed {
+  background-color: $palette-secondary;
+  text-align: center;
+  flex:1;
+  color: #fff;
+  border-right: 2px solid $palette-border;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(-360deg);
-  }
+.value {
+  font-size: 5em;
+  font-weight: 500;
+  text-shadow: none;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin: 20px 0 0 0;
+}
+
+.units {
+  font-size: 3em;
+  margin: -5px 0 0 0;
+  font-weight: 200;
 }
