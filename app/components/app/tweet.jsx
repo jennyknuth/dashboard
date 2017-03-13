@@ -9,6 +9,7 @@ const Tweet = (props) => {
     'Wind Flow Lab': 'lab4',
   };
   const url = `https://twitter.com/intent/tweet?text=https://nio.school/labtest/${labId[props.title]}`;
+  // window.location
 
   return (
     <div>

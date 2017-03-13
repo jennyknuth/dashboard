@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import Steps from 'components/app/steps';
 import Tweet from 'components/app/tweet';
@@ -10,10 +11,10 @@ const MainApp = (props) => {
   return (
   <div>
     <header className={header.header}>
-      <a className={header.link} href="/labtest">
+      <Link className={header.link} href="/">
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
-      </a>
+      </Link>
       <div className={header.info}>Questions? Call XXX-XXX-XXX MF 9–5 MST</div>
     </header>
     <div className={layout.app}>
