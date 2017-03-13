@@ -23,7 +23,7 @@ const MainApp = (props) => {
         <div className={layout.smallPanel}>
           <Steps activeRoute={props.children.props.route.path} />
           <div className={layout.paper}>
-            <Tweet />
+            <Tweet title={props.children.props.route.title}/>
           </div>
         </div>
       </div>
