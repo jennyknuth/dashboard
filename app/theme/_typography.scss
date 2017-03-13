@@ -1,7 +1,7 @@
 @import "palette";
 @import "global";
 
-h1, h2, h3, h4, h5, p, li {
+h1, h2, h3, h4, h5 {
   color: $palette-primary;
   font-weight: 400;
 }
@@ -31,10 +31,7 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
-}
-
-p {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 23px;
+  margin-top: 0;
+  margin-bottom: 0.25em;
 }

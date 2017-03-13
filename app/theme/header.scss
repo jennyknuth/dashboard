@@ -3,7 +3,7 @@
 // styles for application header
 .header {
   position: relative;
-  height: 60px;
+  height: 40px;
   background-color: $palette-primary;
   color: $palette-background;
   padding: 1rem;
@@ -22,18 +22,18 @@
 
 .logo {
   display: inline-block;
-  height: 40px;
+  height: 30px;
 }
 
 .name {
   display: inline-block;
   vertical-align: super;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 300;
 }
 
 .info {
   display: inline-block;
   position: relative;
-  font-size: 18px;
+  font-size: 14px;
 }
