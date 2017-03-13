@@ -7,7 +7,8 @@ import BlankSlate from 'components/shared/blank-slate';
 import FanIcon from 'components/shared/fan-graphic';
 import AreaGraph from 'components/shared/area-graph';
 import SocketRoom from 'components/shared/socket-room';
-import FanInstructions from 'components/fan/instructions';
+import Instructions from 'components/shared/collapsible';
+import Content from 'components/fan/fan-instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
@@ -41,7 +42,7 @@ const FanLab = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <FanInstructions />
+        <Instructions><Content/></Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="lab3" className={linkClassNames}>Next Project</Link>

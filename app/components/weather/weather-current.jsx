@@ -2,7 +2,7 @@ import React from 'react';
 import WeatherIcons from 'react-weathericons';
 import classNames from 'classnames';
 
-import convertIcon from './weather-icon-converter';
+import convertIcon from 'components/weather/weather-icon-converter';
 
 import weather from 'theme/weather.scss';
 

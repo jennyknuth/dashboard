@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import BlankSlate from 'components/shared/blank-slate';
 import Light from 'components/shared/light-graphic';
 import SocketRoom from 'components/shared/socket-room';
-
-import SensorTagInstructions from 'components/sensortag/instructions';
+import Instructions from 'components/shared/collapsible';
+import Content from 'components/flow/flow-instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
@@ -32,7 +32,7 @@ const SensorTag = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <SensorTagInstructions />
+        <Instructions><Content/></Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="lab4" className={linkClassNames}>Next Project</Link>

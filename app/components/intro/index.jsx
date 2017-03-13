@@ -6,7 +6,7 @@ import layout from 'theme/layout.scss';
 import instructions from 'theme/instructions.scss';
 import classes from 'theme/button.scss';
 
-import Content from './instructions';
+import Content from 'components/intro/intro';
 
 const Instructions = () => {
   const linkClassNames = classNames (

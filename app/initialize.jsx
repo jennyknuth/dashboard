@@ -9,7 +9,7 @@ import config from 'config';
 
 // Our app pages
 import MainApp from 'components/app';
-import Instructions from 'components/instructions';
+import Intro from 'components/intro';
 import Weather from 'components/weather';
 import FanLab from 'components/fan';
 import SensorTag from 'components/sensortag';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={MainApp}>
-            <IndexRoute component={Instructions} title="Welcome" />
+            <IndexRoute component={Intro} title="Welcome" />
             <Route path="lab1" component={Weather} title="Weather Lab" />
             <Route path="lab2" component={FanLab} title="Fan Lab" />
             <Route path="lab3" component={SensorTag} title="SensorTag Lab" />

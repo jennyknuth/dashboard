@@ -5,10 +5,11 @@ import classNames from 'classnames';
 
 import BlankSlate from 'components/shared/blank-slate';
 import SocketRoom from 'components/shared/socket-room';
+import Instructions from 'components/shared/collapsible';
 
 import WeatherTop from 'components/weather/weather-current';
 import WeatherForecast from 'components/weather/weather-forecast';
-import WeatherInstructions from 'components/weather/instructions';
+import Content from 'components/weather/weather-instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
@@ -34,7 +35,7 @@ const Weather = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <WeatherInstructions />
+        <Instructions><Content/></Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="lab2" className={linkClassNames}>Next Project</Link>

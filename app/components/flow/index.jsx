@@ -6,8 +6,9 @@ import SocketRoom from 'components/shared/socket-room';
 import AreaGraph from 'components/shared/area-graph';
 import LightGraphic from 'components/shared/light-graphic';
 import FanGraphic from 'components/shared/fan-graphic';
+import Instructions from 'components/shared/collapsible';
+import Content from 'components/flow/flow-instructions';
 
-import FlowInstructions from 'components/flow/instructions';
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';
@@ -35,7 +36,7 @@ const Flow = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <FlowInstructions />
+      <Instructions><Content/></Instructions>
       </div>
     </div>
   );

@@ -12,9 +12,9 @@ const Tweet = (props) => {
 
   return (
     <div>
-      <h2>Tweet</h2>
-      <p>n.io school's {props.title} page</p>
-      <Button href={url} variant="primary">Send Tweet!</Button>
+      <h2>Twitter</h2>
+      <p>Tweet n.io school's {props.title} page</p>
+      <Button href={url} variant="primary">Send Tweet</Button>
     </div>
   );
 };
