@@ -1,5 +1,5 @@
-@import "_palette";
-@import "_global";
+@import "palette";
+@import "global";
 
 .app {
   margin: 0 auto;
@@ -31,7 +31,6 @@
   border: 2px solid $palette-border;
   display: block;
   border-radius: $border-radius;
-  color: #a9a9a9;
   background-color: #fff;
   font-size: 20px;
   margin-top: 50px;

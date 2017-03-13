@@ -1,6 +1,4 @@
 @import "_palette";
-@import "_typography";
-@import "_global";
 
 // weather top section
 .weatherHeader {
@@ -104,8 +102,10 @@
 }
 
 .forecastTile {
-  margin: 1rem 0.5%;
-  padding: 1rem;
+  margin: 1rem 0;
+  padding: 2rem 1rem;
+  width: 8.5vw;
+  min-width: 100px;
   text-align: center;
   box-shadow: 1px 2px 9px 3px rgba($palette-border, 0.3);
 }

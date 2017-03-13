@@ -1,7 +1,6 @@
-@import "_palette";
-@import "_typography";
-@import "_global";
+@import "palette";
 
+// styles for middle section of header
 .speed {
   background-color: $palette-secondary;
   text-align: center;
@@ -11,7 +10,7 @@
 }
 
 .value {
-  font-size: 3.8em;
+  font-size: 5em;
   font-weight: 500;
   text-shadow: none;
   margin: 0;
@@ -24,7 +23,7 @@
 }
 
 .units {
-  font-size: 3.2em;
+  font-size: 3em;
   margin: -5px 0 0 0;
   font-weight: 200;
 }

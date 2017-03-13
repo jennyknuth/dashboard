@@ -1,5 +1,5 @@
-@import "_palette";
-@import "_global";
+@import "palette";
+@import "global";
 
 .labData {
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 .socketHeader {
-  background-color: #566265;
+  background-color: $palette-primary;
   display: block;
   height: 50px;
   margin-top: 0px;

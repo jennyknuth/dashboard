@@ -1,10 +1,9 @@
-@import "_palette";
-@import "_typography";
-@import "_global";
+@import "palette";
+@import "code";
 @import "node_modules/nio-css-theme/dist/modules/button";
 
 .instructions {
-  max-height: none; // need to specify max-height for transition to work
+  max-height: none; // for transition to work, a value for max-height would need to be specified
   overflow: auto;
   padding-bottom: 28px;
   transition: max-height 1s;
@@ -15,9 +14,11 @@
     overflow: hidden;
     transition: max-height 1s;
   }
-  p {
-    font-weight:300;
+
+  code {
+    @extend .block;
   }
+
 }
 
 .collapseButton {
@@ -36,11 +37,4 @@
   &:hover, &:active, &:focus {
     background-color: $palette-secondary;
   }
-}
-
-code {
-  background: #c5c5c5;
-  display:inline-block;
-  padding:5px;
-  margin: 10px 0;
 }

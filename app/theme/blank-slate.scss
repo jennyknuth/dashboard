@@ -1,5 +1,5 @@
-@import "_palette";
-@import "_global";
+@import "palette";
+@import "global";
 
 .slate {
     width: 770px;
@@ -11,7 +11,7 @@
     display: inline-block;
     border-radius: $border-radius;
     border-color: $palette-border;
-    color: #a9a9a9;
+    color: $palette-inactive;
     background-color: #fff;
     font-size: 20px;
     text-align: center;
