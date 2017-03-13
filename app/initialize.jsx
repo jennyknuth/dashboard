@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router history={history}>
-          <Route path="/labtest" component={MainApp}>
+          <Route path="/" component={MainApp}>
             <IndexRoute component={Intro} title="Welcome" />
             <Route path="lab1" component={Weather} title="Weather Lab" />
             <Route path="lab2" component={FanLab} title="Fan Lab" />
