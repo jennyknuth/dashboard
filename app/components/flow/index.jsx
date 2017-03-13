@@ -24,8 +24,8 @@ const Flow = (props) => {
           </div>
           <div>
             <div className={chart.title}>
-              <h2>Windflow Data</h2>
-              <h3>measured in mph</h3>
+              <h2>Accelerometer Data</h2>
+              <h3>measured in g's (gravitational force)</h3>
             </div>
             <AreaGraph vals={props.vals}/>
           </div>
