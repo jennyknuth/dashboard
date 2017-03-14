@@ -9,14 +9,19 @@ import classes from 'theme/button.scss';
 import Content from 'components/intro/intro';
 
 const Instructions = () => {
-  const linkClassNames = classNames (
+  const linkClassNames = classNames(
     classes.button,
     classes.link,
     classes.primary,
   );
 
+  const introClassNames = classNames(
+    layout.paper,
+    layout.intro
+  );
+
   return (
-    <div className={layout.paper}>
+    <div className={introClassNames}>
       <div className={instructions.instructions}>
         <h2>Instructions</h2>
         <Content />

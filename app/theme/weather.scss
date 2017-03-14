@@ -19,28 +19,28 @@
   background-image: url("img/hot.png");
   background-repeat: no-repeat;
   background-color: $weather-hot;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .warm {
   background-image: url("img/warm.png");
   background-repeat: no-repeat;
   background-color: $weather-warm;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .cool {
   background-image: url("img/cool.png");
   background-repeat: no-repeat;
   background-color: $weather-cool;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .cold {
   background-image: url("img/cold.png");
   background-repeat: no-repeat;
   background-color: $weather-cold;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .details {
@@ -89,25 +89,27 @@
 
 // weather forecast section
 .forecastSection {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0;
   background-color: white;
 }
+
 .forecastHeader {
   margin-top: 0;
   text-align: center;
 }
 
 .forecast {
+  width: 85%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .forecastTile {
-  margin: 1rem 0;
-  padding: 2rem 1rem;
-  width: 8.5vw;
-  min-width: 100px;
+  margin: 1rem;
+  padding: 2rem 0;
+  width: calc(20% - 2rem);
   text-align: center;
   box-shadow: 1px 2px 9px 3px rgba($palette-border, 0.3);
 }
@@ -119,7 +121,7 @@
 }
 
 .highLow {
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.15rem;
 }
 
 .clear {
