@@ -5,13 +5,14 @@
   margin: 0 auto;
   padding: 20px 40px;
   background-color:$palette-background;
+  min-width: $minwidth;
 }
 
 .container {
   margin: 80px auto;
   display: flex;
   flex-wrap: wrap;
-  @media (min-width: 1131px) {
+  @media (min-width: $breakpoint) {
     flex-wrap: nowrap;
   }
 }
@@ -25,6 +26,10 @@
   margin: 2rem 0;
   display: block;
   text-align: right;
+}
+
+.hide {
+  display: none;
 }
 
 .paper {
@@ -46,7 +51,8 @@
 
 .bigPanel {
   position: relative;
-  @media (min-width: 1131px) {
+  width: 100%;
+  @media (min-width: $breakpoint) {
     padding-right: 5%;
     flex: 2;
   }
@@ -54,7 +60,7 @@
 
 .smallPanel {
   width: 100%;
-  @media (min-width: 1131px) {
+  @media (min-width: $breakpoint) {
     flex: 1;
   }
 }

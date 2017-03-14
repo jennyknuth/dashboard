@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import classNames from 'classnames';
 
 import Steps from 'components/app/steps';
 import HorizontalStepper from 'components/app/horizontal-stepper';
@@ -10,10 +11,15 @@ import header from 'theme/header.scss';
 import stepper from 'theme/stepper.scss';
 
 const MainApp = (props) => {
+  const horizontalClasses = classNames(
+    stepper.horizontalStepper,
+    props.children.props.route.title === 'Welcome' && layout.hide
+  );
+
   return (
   <div>
     <header className={header.header}>
-      <Link className={header.link} href="/">
+      <Link className={header.link} to="/">
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
       </Link>
@@ -23,7 +29,7 @@ const MainApp = (props) => {
       <h1>{props.children.props.route.title}</h1>
       <div className={layout.container}>
         <div className={layout.bigPanel}>
-          <div className={stepper.horizontalStepper}>
+          <div className={horizontalClasses}>
             <div className={layout.paper}>
               <HorizontalStepper activeRoute={props.children.props.route.path} />
             </div>
