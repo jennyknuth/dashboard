@@ -7,7 +7,7 @@ import BlankSlate from 'components/shared/blank-slate';
 import Light from 'components/shared/light-graphic';
 import SocketRoom from 'components/shared/socket-room';
 import Instructions from 'components/shared/collapsible';
-import Content from 'components/flow/flow-instructions';
+import Content from 'components/sensortag/sensortag-instructions';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';

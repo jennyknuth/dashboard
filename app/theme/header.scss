@@ -16,7 +16,7 @@
 .link {
   text-decoration: none;
   &:visited {
-    color: inherit;
+    color: $palette-background;
   }
 }
 

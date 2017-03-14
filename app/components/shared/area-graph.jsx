@@ -7,7 +7,7 @@ const FlowGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
   const width = 600;
-  const height = 150;
+  const height = 250 ;
   const chartHeight = height - margin.top - margin.bottom;
   const chartWidth = width - margin.left - margin.right;
 
@@ -33,7 +33,7 @@ const FlowGraph = ({ vals }) => {
     .curve(d3.curveMonotoneX);
 
   return (
-    <svg className={chart.svg} viewBox={`0,0,${width},${height}`} height={height} preserveAspectRatio="none">
+    <svg className={chart.svg} viewBox={`0,0,${width},${height}`} preserveAspectRatio="none">
       <path d={precipArea(vals)} fill='#F4BC26' stroke='none' transform={`translate(${margin.left}, ${margin.top})`}/>
     </svg>
   );
