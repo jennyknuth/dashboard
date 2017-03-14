@@ -7,7 +7,7 @@
   overflow: hidden;
   border-radius: $border-radius;
   border: 2px solid $palette-border;
-  @media (max-width: 1131px) {
+  @media (max-width: $breakpoint) {
     margin-top: 50px;
   }
 
