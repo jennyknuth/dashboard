@@ -19,7 +19,7 @@ const MainApp = (props) => {
   return (
   <div>
     <header className={header.header}>
-      <Link className={header.link} href="/">
+      <Link className={header.link} to="/">
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
       </Link>
