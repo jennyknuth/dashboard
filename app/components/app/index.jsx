@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Steps from 'components/app/steps';
+import HorizontalStepper from 'components/app/horizontal-stepper';
 import Tweet from 'components/app/tweet';
 
 import layout from 'theme/layout.scss';
 import header from 'theme/header.scss';
+import stepper from 'theme/stepper.scss';
 
 const MainApp = (props) => {
   return (
@@ -21,6 +23,11 @@ const MainApp = (props) => {
       <h1>{props.children.props.route.title}</h1>
       <div className={layout.container}>
         <div className={layout.bigPanel}>
+          <div className={stepper.horizontalStepper}>
+            <div className={layout.paper}>
+              <HorizontalStepper activeRoute={props.children.props.route.path} />
+            </div>
+          </div>
           { props.children }
         </div>
         <div className={layout.smallPanel}>

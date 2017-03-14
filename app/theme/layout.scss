@@ -4,14 +4,16 @@
 .app {
   margin: 0 auto;
   padding: 20px 40px;
-  min-width: 1280px;
   background-color:$palette-background;
 }
 
 .container {
   margin: 80px auto;
-  min-width: 1280px;
   display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 1131px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .centeredBlock {
@@ -38,12 +40,21 @@
   }
 }
 
+.intro {
+  margin-top: 0;
+}
+
 .bigPanel {
   position: relative;
-  padding-right: 5%;
-  flex: 2;
+  @media (min-width: 1131px) {
+    padding-right: 5%;
+    flex: 2;
+  }
 }
 
 .smallPanel {
-  flex: 1;
+  width: 100%;
+  @media (min-width: 1131px) {
+    flex: 1;
+  }
 }

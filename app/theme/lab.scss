@@ -7,6 +7,10 @@
   overflow: hidden;
   border-radius: $border-radius;
   border: 2px solid $palette-border;
+  @media (max-width: 1131px) {
+    margin-top: 50px;
+  }
+
 }
 
 .header {
