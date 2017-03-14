@@ -25,7 +25,7 @@ const Flow = (props) => {
             <FlowWindSpeed data={props.flow} />
             <LightGraphic color={props.color}/>
           </div>
-          <div>
+          <div className={lab.filling}>
             <div className={chart.title}>
               <h2>Accelerometer Data</h2>
               <h3>measured in g's (gravitational force)</h3>
