@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 20px 40px;
   background-color:$palette-background;
+  min-width: $minwidth;
 }
 
 .container {
@@ -50,7 +51,7 @@
 
 .bigPanel {
   position: relative;
-  flex: 1;
+  width: 100%;
   @media (min-width: $breakpoint) {
     padding-right: 5%;
     flex: 2;
