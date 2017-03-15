@@ -7,10 +7,56 @@
   background-color: white;
   border: 2px solid $palette-border;
   border-radius: $border-radius;
-  padding: 3rem 4rem 0.5rem 4rem;
+  padding: 3rem 3rem 1rem 4rem;
   counter-reset: section;
   span {
     font-weight: 300;
+  }
+  @media (max-width: $breakpoint) {
+    display: none;
+  }
+}
+
+.horizontalStepper {
+  a {
+    display: inline-block;
+    min-width: 125px;
+    text-align: center;
+    margin: 0.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: $breakpoint) {
+    display: none
+  }
+}
+
+.horizontalStep {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: $palette-primary;
+  counter-increment: section;
+
+  &::after {
+    content: counter(section);
+    text-align: center;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: white;
+    background-color: $palette-inactive;
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    left: 2.3rem;
+    top: -4.2rem;
+  }
+  &.active {
+    &::after {
+      background-color: $palette-secondary;
+      box-shadow: 0 1px 8px 1px $palette-inactive;
+    }
   }
 }
 
@@ -37,10 +83,29 @@
     left: -6rem;
     top: 0;
   }
-  &.active {
-    &::after {
-      background-color: $palette-fan;
-      box-shadow: 0 1px 8px 1px $palette-inactive;
-    }
+}
+
+.active {
+  &::after {
+    background-color: $palette-secondary;
+    box-shadow: 0 1px 8px 1px $palette-inactive;
   }
+}
+
+.border {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 82%;
+  border-top: 2px solid $palette-border;
+  h2 {
+    margin-top: 23px;
+  }
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
