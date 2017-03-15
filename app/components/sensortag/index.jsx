@@ -17,7 +17,7 @@ const SensorTag = (props) => {
   const linkClassNames = classNames (
     classes.button,
     classes.link,
-    classes.primary,
+    classes.affirmative,
     classes.large,
   );
 

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  color: $palette-background;
+  color: white;
 }
 .summary {
   flex: 2;
@@ -47,10 +47,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-weight: 400;
 }
 
 .temp {
   font-size: 5rem;
+  font-weight: 400;
   margin-right: 2rem;
 }
 
