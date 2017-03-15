@@ -23,7 +23,7 @@ const Steps = ({ activeRoute }) => {
     <div className={stepper.stepper}>
       <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
         <h2>Weather Lab</h2>
-        <span className={stepper.light}>Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
+        <span >Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
       <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
         <h2>Fan Lab</h2>
