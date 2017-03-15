@@ -43,8 +43,7 @@ In Lab 1, n.io will get the weather at your current location and send you a text
 1. Press `OK` to the `“https://n.io” Would Like To Use Your Current Location` prompt
 1. Enter a name and email and click `Login`
 
-##### You will see a screen that looks like:
-[INSERT SCREENSHOT OF MOBILE]
+![](./img/instructions/mobile.png)
 
 ##### You will soon receive a text from n.io with the weather of your current location
 
