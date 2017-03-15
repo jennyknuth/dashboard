@@ -16,16 +16,6 @@
   }
 }
 
-.centeredBlock {
-  display: block;
-  text-align: center;
-}
-
-.rightBlock {
-  margin: 2rem 0;
-  display: block;
-  text-align: right;
-}
 
 .hide {
   display: none;
@@ -39,18 +29,28 @@
   border-radius: $border-radius;
   background-color: #fff;
   margin-top: 50px;
-  &:first-child{
+}
+
+.noDataBlock {
+  display: block;
+  text-align: center;
+  &.paper {
     margin-top: 0;
   }
 }
 
-.intro {
-  margin-top: 0;
+.rightBlock {
+  margin: 2rem 0;
+  display: block;
+  text-align: right;
 }
 
 .bigPanel {
   position: relative;
   width: 100%;
+  & > .paper {
+    margin-top: 0;
+  }
   @media (min-width: $breakpoint) {
     padding-right: 5%;
     flex: 2;
