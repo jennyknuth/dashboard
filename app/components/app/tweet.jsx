@@ -9,7 +9,7 @@ const Tweet = () => {
     <div>
       <h2>TweetTweet</h2>
       <p>We would love to hear from you! Give us a shout out if you are enjoying n.io software.</p>
-      <Button href={url} variant="primary">Send Tweet</Button>
+      <Button href={url} size="large" variant="primary">Send Tweet</Button>
     </div>
   );
 };
