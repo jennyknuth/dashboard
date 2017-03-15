@@ -5,17 +5,48 @@
   <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
 </video>
 
-In Lab 1, n.io will get the weather at your current location and send you a text message that contains the gathered weather data. The weather will also be displyed in the Lab 1 user interface. You will first build the n.io service to recognize your location, ping the WeatherUnderground API for weather data, send that data back to you in a text message, and display the results at: nio.school/lab1.
+In Lab 1, n.io will get the weather at your current location and send you a text message that contains the gathered weather data. The weather will also be displayed in the Lab 1 user interface. The n.io service that determines your location, pings the [WeatherUnderground API](https://www.wunderground.com/weather/api/) for weather data, and displays the results at: `nio.school/labtest/lab1` has already been built for you. You will have to enter your name and mobile phone number into the specified block so n.io can send you a text message.
 
-## Designer Instructions
+#### Designer Instructions
+##### Follow these steps for Lab 1: Weather via SMS Text
+1. Go to `designer.n.io` to access the Designer
+1. Click on [insert system name] on the left side panel
+1. Click on [insert instance name] located on the left side of the screen
+1. Click on the `Lab1` service
 
-  1. Go to designer.n.io/?prod=labtest to access the Designer.
-  2. Create a new service by clicking Service List tab and clicking the Add Service button
-    * Name it `Lab1` and click "Submit"
-    * Name it ```{`The weather in {{ $current_observation['display_location']['full'] }} is currently {{ $current_observation['temperature_string'] }} and {{ $current_observation['weather'] }}!`}``` and click "Submit"
+##### Sending an SMS via the Twilio Service
+>The TwilioSMS block sends an SMS to the specified recipient using the Twilio service.
 
-## Subscribing to location data
+1. Click on the three dots in the upper right hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
+1. Click on `+` in the `Recipients` attribute
+1. Fill in the following configuration fields:
+     - **Number**: `{{ [your number] }}`    Eg: `{{ 5555555555 }}`
+     - **Name**: `{{ [your name] }}`     Eg: `{{ John }}`
+1. Click `save` at the bottom of the panel
 
-  1. The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified Topic, while Subscriber blocks listen for those signals and pass them on to their respective services. In this case, the LocationLookup service is publishing to the Location topic. We will configure the Subscriber block by modifying the Topic field in the block to pick up the signals from the end of the LocationLookup service that has been provided for you.
-  2. Drag a Subscriber block onto your canvas
-  3. Name it MyLocation and click “Submit”
+##### Save the `Lab1` service
+1. Click the down arrow next to the `Lab1` label at the top of the screen
+1. Click `save`
+
+##### Start the `Lab1` and `WeatherDataHandler` services
+1. Click on `Lab1` in the left side pane if it’s not already highlighted
+1. Click on the down arrow next to the `Lab1` label at the top of the screen
+1. Click `start`
+1. Click on the `WeatherDataHandler` in the left side pane
+1. Click on the down arrow next to the `WeatherDataHandler` label at the top of the screen
+1. Click `start`
+
+##### Congratulations you have successfully configured your first n.io service!!
+
+##### Utilizing your n.io instance:
+1. With your n.io services successfully started, use your mobile phone browser to go to `nio.school/mobiletest`
+1. Press `OK` to the `“https://n.io” Would Like To Use Your Current Location` prompt
+1. Enter a name and email and click `Login`
+
+![](./img/instructions/mobile.png)
+
+##### You will soon receive a text from n.io with the weather of your current location
+
+##### Navigate to `nio.school/labtest/lab1` in your browser to see the output of this lab in your web user interface
+
+##### You should see data similar to below, but with your current location’s weather data: [INSERT SCREENSHOT OF LAB1 OUTPUT]
