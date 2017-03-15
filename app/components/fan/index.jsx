@@ -20,7 +20,7 @@ const FanLab = (props) => {
   const linkClassNames = classNames(
     classes.button,
     classes.link,
-    classes.primary,
+    classes.affirmative,
     classes.large,
   );
 
@@ -31,11 +31,11 @@ const FanLab = (props) => {
           <div className={lab.header}>
             <FanIcon className={fan.fan} fanOn={props.fanOn} />
             <div className={fan.graph}>
+              <AreaGraph vals={props.vals} />
               <div className={chart.title}>
                 <h2>Accelerometer Data</h2>
-                <h3>measured in g's (gravitational force)</h3>
+                <h3>measured in g's (gravitational&nbsp;force)</h3>
               </div>
-              <AreaGraph vals={props.vals} />
             </div>
           </div>
           <SocketRoom data={props.lastRead} />

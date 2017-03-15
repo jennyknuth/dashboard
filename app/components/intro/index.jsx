@@ -12,7 +12,7 @@ const Instructions = () => {
   const linkClassNames = classNames(
     classes.button,
     classes.link,
-    classes.primary,
+    classes.affirmative,
   );
 
   const introClassNames = classNames(
