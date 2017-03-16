@@ -5,7 +5,7 @@
   <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
 </video>
 
-In this lab you will shake your phone to control a fan. When n.io senses enough movement from your phone’s accelerometer, the fan will toggle on or off. Directing the fan at the wind-flow sensor will increase the sensor’s reading. When n.io senses enough wind speed, the LED will light. To turn the fan off, shake your phone again. The wind speed will drop, n.io will sense this change, and the LED will turn off. You will be able to view the state of the fan and LED along with the wind speed and accelerometer data here: [https://nio.school/labtest/lab4](https://nio.school/labtest/lab4).
+In this lab you will shake your phone to control a fan. When n.io senses enough movement from your phone’s accelerometer, the fan will toggle on or off. Directing the fan at the wind-flow sensor will increase the sensor’s reading. When n.io senses enough wind speed, the LED will light. To turn the fan off, shake your phone again. The wind speed will drop, n.io will sense this change, and the LED will turn off. You will be able to view the state of the fan and LED along with the wind speed and accelerometer data here: [https://nio.school/labtest/flow](https://nio.school/labtest/flow).
 
 ### Hardware Instructions
 As long as the fan is still connected to the relay on the breadboard, point it toward the wind-flow sensor (shown below):
@@ -73,19 +73,20 @@ There are two parts to building this service. First, you will need to detect sha
 Signal flow is defined by clicking on the blue dot at the bottom of a block and dragging the connection to the blue dot at the top of the appropriate block in the service you are creating.
 
   1. Connect `WindFlowSim` to `ReadWindFlow`
+
   1. Connect `ReadWindFlow` to `WindFlowThresholdState`
   1. Connect `WindFlowThresholdState` to `ColorAndWindFlow`
   1. Connect `ColorAndWindFlow` to `Blink1` and `WindFlowSocket`
   1. Save the `Lab4` service
   1. Your service should look similar to this:
 
-      ![lab 4 service](./img/instructions/lab4-service.png)
+      ![lab 4 service](./img/instructions/flow-service.png)
 
   1. Start the `Lab4` service
 
 ### Go checkout the output!
 
-Once the service has successfully started, navigate to [https://nio.school/lab4](https://nio.school/lab4) in your browser.
+Once the service has successfully started, navigate to [https://nio.school/flow](https://nio.school/flow) in your browser.
 
 Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://n.io/mobile). Shake your phone to turn on the fan, which will increase the wind flow and light the LED.
 
@@ -93,4 +94,4 @@ Shake your phone again to turn the fan off, which will decrease the wind flow se
 
 You should see data that looks similar to this:
 
-![lab 4 output](./img/instructions/lab4-output.png)
+![lab 4 output](./img/instructions/flow-output.png)
