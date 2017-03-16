@@ -21,19 +21,19 @@ const StepLink = ({ to, stepId, currentPath, ...props }) => {
 const Steps = ({ activeRoute }) => {
   return (
     <div className={stepper.stepper}>
-      <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
+      <StepLink to="weather" stepId="weather" currentPath={activeRoute}>
         <h2>Weather Lab</h2>
         <span >Get the weather and 10 day forecast at your current location and send a text containing the gathered weather data.</span>
       </StepLink>
-      <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
+      <StepLink to="fan" stepId="fan" currentPath={activeRoute}>
         <h2>Fan Lab</h2>
         <span>Shake your mobile phone to turn the desktop fan on and off.</span>
       </StepLink>
-      <StepLink to="lab3" stepId="lab3" currentPath={activeRoute}>
+      <StepLink to="sensorTag" stepId="sensorTag" currentPath={activeRoute}>
         <h2>SensorTag Lab</h2>
         <span>Flip over a bluetooth connected SensorTag to turn on and off an LED.</span>
       </StepLink>
-      <StepLink to="lab4" stepId="lab4" currentPath={activeRoute}>
+      <StepLink to="flow" stepId="flow" currentPath={activeRoute}>
         <h2>Wind Flow Lab</h2>
         <span>Shake your mobile phone to turn on the fan. Then detect the wind speed to turn on the LED.</span>
       </StepLink>

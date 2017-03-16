@@ -27,7 +27,7 @@ const Instructions = () => {
         <Content />
       </div>
       <div className={layout.rightBlock}>
-        <Link to="lab1" className={linkClassNames}>Get Started!</Link>
+        <Link to="weather" className={linkClassNames}>Get Started!</Link>
       </div>
     </div>
   );
