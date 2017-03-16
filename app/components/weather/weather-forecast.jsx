@@ -5,7 +5,7 @@ import convertIcon from './weather-icon-converter';
 import weather from 'theme/weather.scss';
 
 const ForecastDay = (props) => {
-  const iconClass = props.icon === 'clear' || 'sunny' ? 'clear' : 'gray';
+  const iconClass = props.icon === ('clear' || 'sunny') ? 'clear' : 'gray';
   return (
     <div className={weather.forecastTile}>
       <WeatherIcons className={weather[iconClass]} name={convertIcon[props.icon]} size="2x" />

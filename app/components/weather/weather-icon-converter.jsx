@@ -7,7 +7,7 @@ const convertIcons = {
   'clear': 'wu-clear',
   'cloudy': 'wu-cloudy',
   'flurries': 'wu-flurries',
-  'fog': 'wu-cloudy',
+  'fog': 'fog',
   'hazy': 'wu-hazy',
   'mostlycloudy': 'wu-mostlycloudy',
   'mostlysunny': 'wu-mostlysunny',
@@ -18,7 +18,7 @@ const convertIcons = {
   'snow': 'wu-snow',
   'sunny': 'wu-sunny',
   'tstorms': 'wu-tstorms',
-  'unknown': 'wu-unknown',
+  'unknown': 'moon-new',
 };
 
 export default convertIcons;
