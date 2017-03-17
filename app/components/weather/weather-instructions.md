@@ -6,7 +6,7 @@ Once you start the services, n.io will detect your phone's location when you log
 
 ### Designer Instructions
 
-  1. Go to [designer.n.io](https://designer.n.io) to access the Designer
+  1. Go to [designer.n.io](https://designer.n.io) to access the designer
 
   1. Click on **int** on the left side panel
   1. Click on **intro-lab-1** located on the left side of the screen

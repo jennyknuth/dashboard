@@ -21,7 +21,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 #### Subscribe to the phone’s shake data
 >The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for those signals and pass them on to their respective services. In this case, the `DetectShake` service is publishing to the `shake` topic. We will configure the Subscriber block by modifying the `Topic` field in the block to pick up the signals from the end of the `DetectShake` service that has been provided for you
 
-  1. Click on the **Sub** category on the right side pane of the Designer
+  1. Click on the **Sub** category on the right side pane of the designer
 
   1. Drag the `+ Subscriber` template block onto your canvas
   1. Name it `SubscribeShake` and click `accept`
@@ -38,7 +38,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 #### Strip signal of everything but acceleration data
 >`DynamicFields` blocks are used to reformat incoming signals that are assigned by the `fields` attribute. If the `Exclude existing fields?` checkbox is checked, previous key:value pairs will be discarded and the block will only pass on the key:value pairs you configure in the configuration panel. If the `Exclude existing fields?` checkbox is not checked, it will combine the key:value pairs you configure with the existing signal.
 
-  1. Click on the **DF** category on the right side pane of the Designer
+  1. Click on the **DF** category on the right side pane of the designer
 
   1. Drag the `+ Dynamic Fields` template block onto your canvas
   1. Name it `GetAccelData` and click `accept`
@@ -56,7 +56,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 #### Publish shake data to fan
 
-  1. Click on the **Pub** category on the right side pane of the Designer
+  1. Click on the **Pub** category on the right side pane of the designer
 
   1. Drag the `+ Publisher` template block onto your canvas
   1. Name it `PublishFan` and click `accept`
