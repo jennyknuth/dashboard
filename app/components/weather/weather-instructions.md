@@ -25,12 +25,6 @@ Once you start the services, n.io will detect your phone's location when you log
        **Name:** `{{ [your name] }}`     (for example: `{{ John }}`)
   1. Click `save` at the bottom of the panel
 
-#### Save the `Lab1` service
-
-  1. Click the down arrow next to the `Lab1` label at the top of the screen
-
-  1. Click `save`
-
 #### Start the `Lab1` and `WeatherDataHandler` services
 
   1. Click on `Lab1` in the left side pane if it’s not already highlighted
@@ -41,7 +35,7 @@ Once you start the services, n.io will detect your phone's location when you log
   1. Click on the down arrow next to the `WeatherDataHandler` label at the top of the screen
   1. Click `start`
 
-Congratulations you have successfully configured your first n.io block and started your first n.io services!!
+## Congratulations you have successfully configured your first n.io block and started your first n.io services!!
 
 ### Use your n.io instance
 
