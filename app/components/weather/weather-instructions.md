@@ -2,7 +2,7 @@ In this lab, n.io will get the weather at your current location and send you a t
 
 The n.io service that determines your location, pings the [WeatherUnderground API](https://www.wunderground.com/weather/api/) for weather data, and displays the results (above, at https://nio.school/[your unique lab number]/weather) has already been built for you.
 
-Once you start the services, n.io will detect your phone's location when you log in to `nio.school/mobiletest`. In addition, when you enter your name and mobile phone number into the specified block, n.io will send you a text message with the weather information.
+Once you start the services, n.io will detect your phone's location when you use your phone to log in to [nio.school/mobiletest](https://nio.school/mobiletest). In addition, when you enter your name and mobile phone number into the specified block, n.io will send you a text message with the weather information.
 
 ### Designer Instructions
 1. Go to [https://designer.n.io](https://designer.n.io), to access the designer
