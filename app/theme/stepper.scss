@@ -34,7 +34,7 @@
   display: block;
   position: relative;
   text-decoration: none;
-  color: $palette-primary;
+  color: $palette-black;
   counter-increment: section;
 
   &::after {
@@ -64,7 +64,7 @@
   display: block;
   position: relative;
   text-decoration: none;
-  color: $palette-primary;
+  color: $palette-black;
   counter-increment: section;
   min-height: 120px;
 

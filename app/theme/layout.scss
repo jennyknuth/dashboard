@@ -34,8 +34,11 @@
   display: block;
   text-align: center;
   color: $palette-subtitle;
-  &.paper {
-    margin-top: 0;
+  @media (min-width: $breakpoint) {
+
+    &.paper {
+      margin-top: 0;
+    }
   }
 }
 

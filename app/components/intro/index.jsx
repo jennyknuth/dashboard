@@ -13,6 +13,7 @@ const Instructions = () => {
     classes.button,
     classes.link,
     classes.affirmative,
+    classes.large
   );
 
   return (
