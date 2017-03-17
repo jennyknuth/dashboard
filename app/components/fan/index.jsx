@@ -45,7 +45,7 @@ const FanLab = (props) => {
         <Instructions><Content/></Instructions>
       </div>
       <div className={layout.rightBlock}>
-        <Link to="lab3" className={linkClassNames}>Next Project</Link>
+        <Link to="sensorTag" className={linkClassNames}>Next Project</Link>
       </div>
     </div>
   );

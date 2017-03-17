@@ -23,16 +23,16 @@ const HorizontalStepper = ({ activeRoute }) => {
     <div>
       <div className={stepper.border} />
       <div className={stepper.box} >
-        <StepLink to="lab1" stepId="lab1" currentPath={activeRoute}>
+        <StepLink to="weather" stepId="weather" currentPath={activeRoute}>
           <h2>Weather Lab</h2>
         </StepLink>
-        <StepLink to="lab2" stepId="lab2" currentPath={activeRoute}>
+        <StepLink to="fan" stepId="fan" currentPath={activeRoute}>
           <h2>Fan Lab</h2>
         </StepLink>
-        <StepLink to="lab3" stepId="lab3" currentPath={activeRoute}>
+        <StepLink to="sensorTag" stepId="sensorTag" currentPath={activeRoute}>
           <h2>SensorTag Lab</h2>
         </StepLink>
-        <StepLink to="lab4" stepId="lab4" currentPath={activeRoute}>
+        <StepLink to="flow" stepId="flow" currentPath={activeRoute}>
           <h2>Wind Flow Lab</h2>
         </StepLink>
       </div>
