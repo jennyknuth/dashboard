@@ -1,5 +1,7 @@
 You will be working through four separate n.io school labs to experience and explore the capabilities of n.io.
 
+You will be working through four separate n.io School Labs to experience and explore the capabilities of n.io.
+
 * Lab 1: Get Local Weather via SMS Text
 * Lab 2: Shake Phone to Control Fan
 * Lab 3: SensorTag controls LED Light
