@@ -3,7 +3,8 @@ import Button from 'react-nuik/lib/components/button';
 
 const Tweet = () => {
   const tweetText = 'I just completed my first experience with @poweredbynio! ' + window.location.href;
-  const url = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  const tweetText2 = 'Fun with an IoT kit from n.io—Accelerometer, GPS, Text, Cloud, LED, Wind Flow Sensor, n.io software—it all works! @poweredbynio';
+  const url = `https://twitter.com/intent/tweet?text=${tweetText2}`;
 
   return (
     <div>

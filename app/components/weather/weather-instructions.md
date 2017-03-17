@@ -1,42 +1,37 @@
-<video controls height='200px' style="float: right; margin-left: 20px" src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" >
-  <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
-  <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg" />
-  <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
-  <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
-</video>
+In this lab, n.io will get the weather at your current location and send you a text message that contains the gathered weather data.
 
-In this lab, n.io will get the weather at your current location and send you a text message that contains the gathered weather data. The weather will also be displayed in your personal user interface. The n.io service that determines your location, pings the [WeatherUnderground API](https://www.wunderground.com/weather/api/) for weather data, and displays the results above (at `nio.school/[your unique lab number]/weather`) has already been built for you. Once your start the services, n.io will detect your phone's location after you have logged in to `nio.school/mobiletest`. You can also enter your name and mobile phone number into the specified block so n.io can send you a text message.
+The n.io service that determines your location, pings the [WeatherUnderground API](https://www.wunderground.com/weather/api/) for weather data, and displays the results (above, at `nio.school/[your unique lab number]/weather`) has already been built for you.
+
+Once you start the services, n.io will detect your phone's location when you log in to `nio.school/mobiletest`. In addition, when you enter your name and mobile phone number into the specified block, n.io will send you a text message with the weather information.
 
 ### Designer Instructions
 
   1. Go to [designer.n.io](https://designer.n.io) to access the Designer
 
-  1. Click on [insert system name] on the left side panel
-  1. Click on [insert instance name] located on the left side of the screen
+  1. Click on **int** on the left side panel
+  1. Click on **intro-lab-1** located on the left side of the screen
   1. Click on the `Lab1` service
 
-  * Sending an SMS via the Twilio Service
-    > The TwilioSMS block sends an SMS to the specified recipient using the Twilio service.
+#### Send an SMS via the Twilio Service
+> The TwilioSMS block sends an SMS to the specified recipient using the Twilio service.
 
-    1. Click on the three dots in the upper right hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
+  1. Click on the three dots in the upper right hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
 
-    1. Click on `+` in the `Recipients` attribute
+  1. Click on `+` in the **Recipients** attribute
+  1. Fill in the following configuration fields:
 
-    1. Fill in the following configuration fields:
+       **Number:** `{{ [your number] }}`    (for example: `{{ 5555555555 }}`)
 
-         Number: `{{ [your number] }}`    (for example: `{{ 5555555555 }}`)
+       **Name:** `{{ [your name] }}`     (for example: `{{ John }}`)
+  1. Click `save` at the bottom of the panel
 
-         Name: `{{ [your name] }}`     (for example: `{{ John }}`)
+#### Save the `Lab1` service
 
-    1. Click `save` at the bottom of the panel
+  1. Click the down arrow next to the `Lab1` label at the top of the screen
 
-* Save the `Lab1` service
+  1. Click `save`
 
-    1. Click the down arrow next to the `Lab1` label at the top of the screen
-
-    1. Click `save`
-
-* Start the `Lab1` and `WeatherDataHandler` services
+#### Start the `Lab1` and `WeatherDataHandler` services
 
   1. Click on `Lab1` in the left side pane if it’s not already highlighted
 
@@ -46,9 +41,9 @@ In this lab, n.io will get the weather at your current location and send you a t
   1. Click on the down arrow next to the `WeatherDataHandler` label at the top of the screen
   1. Click `start`
 
-Congratulations you have successfully configured your first block and started your first n.io services!!
+Congratulations you have successfully configured your first n.io block and started your first n.io services!!
 
-### Using your n.io instance
+### Use your n.io instance
 
   1. With your n.io services successfully started, use your mobile phone browser to go to `nio.school/mobiletest`
 
@@ -59,4 +54,4 @@ Congratulations you have successfully configured your first block and started yo
 
 You will soon receive a text from n.io with the weather at your current location.
 
-See the output at the top of this screen (or at `nio.school/[your unique lab number]/weather`). You will see current conditions, a 10-day forecast, and the streaming data being published by n.io.
+Scroll to the top of this page (`nio.school/[your unique lab number]/weather`) to see the output of your services. You should see the current weather conditions, a 10-day forecast, and the streaming data being published by n.io.

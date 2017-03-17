@@ -17,8 +17,8 @@ In the first lab we will use an instance (installation) of n.io running in the c
 
 Each service running in an instance of n.io will transform the data coming from sensors or APIs into useful information that n.io can then use to control other devices. For example, a service could send you important updates or alerts or send changes to a website.
 
-Each service is composed of blocks. The majority of these blocks take incoming signals, transform or manipulate the data in some way, and then pass the new signal into the next block in a service.
+Each service is composed of blocks. The majority of these blocks take incoming signals, transform or manipulate the data in some way, and then pass the new signal into the next block in the service.
 
-You will also be integrating n.io into this website. This is your personal site, set up to respond to signals from the services you create. The site demonstrates the simplicity of integrating devices, signals, and human interaction.
+n.io will also be integrated into this website. This is your personal site (`nio.school/[your unique lab number]`), and it is set up to respond to signals from the services you create. You will see your results in action. This `nio.school` site is another demonstration of how n.io can make integrating devices, signals, and human interactions simple.
 
-We would like to stress the importance of configuring the blocks you will use to make your first services with n.io correctly. Feel free to copy and paste the code snippets from this example into your block configurations to ensure correct syntax. Many times, if data isn’t flowing through services as you expect, it could be because something wasn’t capitalized correctly or there is a spelling error somewhere in your configurations.
+We would like to stress the importance of correctly configuring the blocks you will use. Feel free to copy and paste the code snippets from this example into your block configurations to ensure exact syntax. Many times, if data isn’t flowing through services as you expect, it's because something wasn’t capitalized correctly or there is a spelling error somewhere in your configurations.
