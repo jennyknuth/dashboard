@@ -16,7 +16,6 @@
   }
 }
 
-
 .hide {
   display: none;
 }
@@ -34,6 +33,7 @@
 .noDataBlock {
   display: block;
   text-align: center;
+  color: $palette-subtitle;
   &.paper {
     margin-top: 0;
   }
