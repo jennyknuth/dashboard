@@ -16,6 +16,7 @@ import lab from 'theme/lab.scss';
 import chart from 'theme/chart.scss';
 
 const Flow = (props) => {
+  console.log(props.lastRead);
   return (
     <div>
       <BlankSlate visibilityData={props.lastRead} message="This area will populate once the service is built and sending data.">

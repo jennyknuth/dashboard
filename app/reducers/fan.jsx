@@ -9,19 +9,24 @@ const fan = (state, action) => {
     state = defaultState;
   }
   switch (action.type) {
-    case 'FAN_READ': {
+    case 'FAN_READ':
+      return {
+        ...state,
+        fanOn: action.data.fan_state,
+        lastRead: action.data,
+      };
+    case 'ACCEL_READ': {
       if (state.vals.length > 10) {
         state.vals.shift();
       }
-      const { accel, fan_state } = action.data;
+      const { accel } = action.data;
       return {
         ...state,
         vals: [...state['vals'], {
           value: accel,
           time: Date.now(),
         }],
-        fanOn: fan_state,
-        lastRead: action.data,
+        // lastRead: action.data,
       };
     }
     default:
