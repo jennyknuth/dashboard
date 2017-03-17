@@ -13,6 +13,7 @@ import stepper from 'theme/stepper.scss';
 const MainApp = (props) => {
   const horizontalClasses = classNames(
     stepper.horizontalStepper,
+    layout.paper,
     props.children.props.route.title === 'Welcome' && layout.hide
   );
 
@@ -30,9 +31,7 @@ const MainApp = (props) => {
       <div className={layout.container}>
         <div className={layout.bigPanel}>
           <div className={horizontalClasses}>
-            <div className={layout.paper}>
-              <HorizontalStepper activeRoute={props.children.props.route.path} />
-            </div>
+            <HorizontalStepper activeRoute={props.children.props.route.path} />
           </div>
           { props.children }
         </div>

@@ -15,13 +15,8 @@ const Instructions = () => {
     classes.affirmative,
   );
 
-  const introClassNames = classNames(
-    layout.paper,
-    layout.intro
-  );
-
   return (
-    <div className={introClassNames}>
+    <div className={layout.paper}>
       <div className={instructions.instructions}>
         <h2>Instructions</h2>
         <Content />

@@ -29,7 +29,7 @@ const BlankSlate = React.createClass({
     }
 
     return (
-      <div className={`${layout.paper} ${layout.centeredBlock}`}>
+      <div className={`${layout.paper} ${layout.noDataBlock}`}>
         {this.props.message}
       </div>
     );
