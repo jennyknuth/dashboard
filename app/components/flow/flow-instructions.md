@@ -15,79 +15,112 @@ As long as the fan is still connected to the relay on the breadboard, point it t
 
 3. Name it `Lab4`
 
-There are two parts to building this service. First, you will need to detect shakes from your mobile device to turn the fan on and off. Then, you will need n.io to read from the wind-flow sensor to determine when to turn on the Blink1 LED.
+  1. Make sure the `Lab2`, `DetectShake`, `MobileAccelDataHandler` and `FanToggler` services are still running
 
-#### Build Shake Detector
+  2. If they are not running, start each one
 
-  1. Click on the `Lab2` service
+#### Simulate signals to trigger Wind Flow Sensor reads
 
-  2. Make sure all the `Lab2` services that you previously built are still running
-  3. If they are not running, start each one
+  1. Click on the **CIS** category on the right side pane of the designer
 
-#### Read From Wind Flow Sensor
+  2. Drag the `+ Counter Interval Simulator` template block onto your canvas
+  2. Name it `WindFlowSim` and click `accept`
+  2. Click the three dots in the upper right hand corner of the block to open the configuration panel
+  2. Keep the default configuration and click `save` at the bottom of the panel
 
-  1. Click on the **CIS** block type to expand its block list
+#### Read from the wind flow sensor
 
-  2. Drag the `WindFlowSim` block onto your canvas
-  1. Find the **GPIO** block that contains a 'ReadWindFlow'
-  2. Drag the `ReadWindFlow` block onto your canvas
-  <!-- 6. Drag the `GPIORead` block onto your canvas
-  7. Name it `ReadWindFlow` -->
-  8. Fill in the following configuration field:
-    **Pin:** 'GPIO-24'
-  9. Save block
-  10. Drag the `StateChange` block onto your canvas
-  11. Name it `WindFlowThresholdState`
-  12. Uncheck the `Exclude Existing Fields` box
-  13. Fill in the following configuration field:
+  1. Click on the **GPIO** category on the right side pane of the designer
+
+  2. Drag the `+ GPIO Read` template block onto your canvas
+  >Make sure the header on the top of the pane says `GPIO Read`
+
+  2. Name it `ReadWindFlow` and click `accept`
+  2. Click the three dots in the upper right hand corner of the block to open the configuration panel
+  2. Fill in the following configuration field:
+
+      **Pin:** `GPIO-24`
+
+  2. Click `save` at the bottom of the panel
+
+#### Turn on your LED by signaling a state change
+
+  1. Click on the **SC** category on the right side pane of the designer
+  1. Drag the `+ State Change` template block onto your campus
+  1. Name it `WindFlowThreshold` and click `accept`
+  1. Click the three dots in the upper right hand corner of the block to open the configuration panel
+  1. Uncheck the `Exclude Existing Fields` box
+  1. Fill in the following configuration field:
 
       **State:** `{{ $value > 1 }}`
-  14. Save block
-  15. Click on the **DF** type block to expand its block list
-  <!-- 16. Drag in `Blink1Colors` block
-  17. Click `Save Block As` -->
-  18. Drag `ColorAndWindFlow` block onto your canvas
-  19. Click the `+` inside the `Fields` attribute
-  20. Fill in the new field with the following name-value pair:
+  1. Click `save` at the bottom of the panel
+
+#### Add `wind_flow` attribute to signal
+  1. Click on the **DF** category on the right side pane of the designer
+  1. Drag the `+ Dynamic Fields` template block onto your canvas
+  1. Name it `ColorAndWindFlow` at click `accept`
+  1. Click the three dots in the upper right hand corner of the block to open the configuration panel
+  1. Click the `+` inside the `Fields` attribute
+  1. Fill in the new field with the following name-value pair:
 
       **Attribute Name:** `wind_flow`
 
-      **Attribute Value:** ``{{ $value }}`
+      **Attribute Value:** `{{ $value }}`
 
-  21. Save block
-  22. Click on the **B1** type block to expand its block list
-  23. Drag in the `Blink1` block
-  2. Keep it's default configuration
-  24. Click on the **SIO** type block to expand its block list
-  <!-- 25. Drag the `AccelSocket` block onto your canvas -->
-  <!-- 26. Click `Save Block As` -->
-  27. Drag the `WindFlowSocket` block onto your canvas
-  2. Change the `Socket.io Room` configuration field to `wind_flow`
+  1. Click `save` at the bottom of the panel
 
-### Connect and run your services
+#### Control the Blink1 LED
+  1. Click on the **B1** category on the right side pane of the designer
 
-Signal flow is defined by clicking on the blue dot at the bottom of a block and dragging the connection to the blue dot at the top of the appropriate block in the service you are creating.
+  1. Drag the `Blink1` block onto your canvas
+  >You created and configured this block in the SensorTag service
 
-  1. Connect `WindFlowSim` to `ReadWindFlow`
+#### Publish data to a Socket.IO room
+  1. Click on the **SIO** category on the right side pane of the designer
 
-  1. Connect `ReadWindFlow` to `WindFlowThresholdState`
-  1. Connect `WindFlowThresholdState` to `ColorAndWindFlow`
-  1. Connect `ColorAndWindFlow` to `Blink1` and `WindFlowSocket`
-  1. Save the `Lab4` service
+  1. Drag the `+ Socket IO` block onto your canvas
+  1. Name it `WindFlowSocket` and click `accept`
+  1. Click the three dots in the upper right hand corner of the block to open the configuration panel
+  1. Fill in the following configuration fields:
+
+      **SocketIo Host**: `[[ SOCKETIO_HOST ]]`
+
+      **Port**: `[[ SOCKETIO_PORT ]]`
+
+      **Socket.io Room**: `wind_flow`
+
+#### Connect and run your services
+
+>Signal flow is defined by clicking on the blue dot at the bottom of a block and dragging the connection to the blue dot at the top of the appropriate block in the service you are creating.
+
+  1. Connect the `WindFlowSim` block to the `ReadWindFlow` block
+
+  1. Connect the `ReadWindFlow` block to the `WindFlowThresholdState` block
+  1. Connect the `WindFlowThresholdState` block to the `ColorAndWindFlow` block
+  1. Connect the `ColorAndWindFlow` block to the `Blink1` block and also to the `WindFlowSocket` block
+
+#### Save the `Lab4` service
+
+  1. Click the down arrow next to the `Lab4` label at the top of the screen
+
+  1. Click `save`
+
   1. Your service should look similar to this:
 
-      ![lab 4 service](./img/instructions/flow-service.png)
+![lab 4 service](./img/instructions/flow-service.png)
 
-  1. Start the `Lab4` service
+#### Start the `Lab4` service
+
+1. Click the down arrow next to the `Lab4` label at the top of the screen
+
+1. Click `start`
 
 ### Go checkout the output!
 
-Once the service has successfully started, navigate to [https://nio.school/flow](https://nio.school/flow) in your browser.
+1. Once the service has successfully started, navigate to [https://nio.school/flow](https://nio.school/flow) in your browser
 
-Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://nio.school/mobiletest). Shake your phone to turn on the fan, which will increase the wind flow and light the LED.
+1. Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://nio.school/mobiletest). Shake your phone to turn on the fan, which will increase the wind flow sensor reading and light the LED
 
-Shake your phone again to turn the fan off, which will decrease the wind flow sensor reading and turn off the LED.
+1. Shake your phone again to turn the fan off, which will decrease the wind flow sensor reading and turn off the LED
 
-You should see data that looks similar to this:
-
-(`nio.school/[your unique lab number]/flow`)
+Scroll to the top of this page (`nio.school/[your unique lab number]/flow`) to see the output of your service.
