@@ -13,7 +13,7 @@
   width: auto;
   display: block;
   clear: both;
-  color: $palette-primary;
+  color: $palette-black;
   padding: 1em 1em;
   margin: 15px 15px 15px 0;
   background: $palette-background;
@@ -27,6 +27,6 @@
 
   display: inline;
   color: inherit;
-  padding: 2px 7px;
-  background: #f4f4f4;
+  padding: 2px 1px;
+  background: $palette-background;
 }
