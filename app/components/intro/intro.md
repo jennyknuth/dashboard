@@ -1,9 +1,3 @@
-<video controls height='200px' style="float: right; margin-left: 20px" src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" >
-  <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
-  <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg" />
-  <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
-  <source src="http://techslides.com/demos/sample-videos/small.3gp" type="video/3gp" />
-</video>
 
 You will be working through four separate n.io School Labs to experience and explore the capabilities of n.io.
 

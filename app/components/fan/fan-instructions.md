@@ -2,9 +2,10 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 ### Hardware Instructions
 
-1. Press the power button on the AT&T Unite Express. Wait for it to turn on fully before moving on to the next step. You will know it is ready when the screen looks similar to:
+1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
      ![wifi](./img/instructions/att-express.png)
+     <!-- Add up close image of screen -> image of one device connected -->
 
 1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
 
@@ -14,18 +15,20 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 ### Designer Instructions
 
-1. Create a new service by clicking the `+ add new service` button
+1. Click on **intro-lab-2** located on the left side of the screen
 
-1. Name it `Lab2`
+1. Create a new service by clicking the `+ add new service` button
+1. Name it `Lab2` and click `accept`
 
 #### Subscribe to the phone’s shake data
 >The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for those signals and pass them on to their respective services. In this case, the `DetectShake` service is publishing to the `shake` topic. We will configure the Subscriber block by modifying the `Topic` field in the block to pick up the signals from the end of the `DetectShake` service that has been provided for you
 
-  1. Click on the **Sub** category on the right side pane of the designer
+  1. On the right hand side you'll see a bunch of block categories. Scroll down until you see the **Sub** category
 
+  1. Click on the **Sub** category
   1. Drag the `+ Subscriber` template block onto your canvas
   1. Name it `SubscribeShake` and click `accept`
-  >Notice the blue dot in the upper left corner of the block. This means the block has unsaved configuration changes.
+  >Notice the yellow dot in the upper left corner of the block. This means the block has unsaved configuration changes.
 
   4. Click the three dots in the upper right hand corner of the block to open the configuration panel
 
@@ -44,7 +47,7 @@ In this lab you will build a service that will allow you to shake your phone to 
   1. Name it `GetAccelData` and click `accept`
   1. Click the three dots in the upper right hand corner of the block to open the configuration panel
   1. Check the `Exclude existing fields?` checkbox
-  1. Click on the `+` in the `Fields` attribute
+  1. Click on the `+ Fields` in the `Fields` attribute
   1. Fill in the following configuration fields:
 
        **Attribute Name:** `accel`
@@ -52,7 +55,7 @@ In this lab you will build a service that will allow you to shake your phone to 
        **Attribute Value:** `{{ $accel }}`
   >Surrounding a value with `{{ }}` will tell n.io to compile the value as Python code. Using a `$` character tells n.io to look at the value matching the specified key from the incoming signal. In this case, the incoming signal has an `accel` key and we want n.io to evaluate the `Attribute Value` field to be the same as the value of the `accel` key.
 
-  8. <p>Click <code>save</code> at the bottom of the panel</p>
+  8. Click `save` at the bottom of the panel
 
 #### Publish shake data to fan
 
@@ -60,17 +63,15 @@ In this lab you will build a service that will allow you to shake your phone to 
 
   1. Drag the `+ Publisher` template block onto your canvas
   1. Name it `PublishFan` and click `accept`
-  1. Click the three dots in the upper right hand corner of the block to open the configuration panel
   1. Fill in the following field:
 
        **Topic**: `fan`
-  6. Click `save` at the bottom of the panel
+  6. Save the block
 
 ### Connect and run your services
 >Signal flow is defined by clicking on the blue circle at the bottom of a block and dragging the connection to the blue circle at the top of the appropriate block in the service you are creating
 
 1. Connect the `SubscribeShake` block to the `GetAccelData` block
-
 1. Connect the `GetAccelData` block to the `PublishFan` block
 
 #### Save the `Lab2` service
@@ -79,15 +80,16 @@ In this lab you will build a service that will allow you to shake your phone to 
 
   1. Click `save`
 
-  3. Your service should look similar to this:
-
-![fan lab service](./img/instructions/fan-service.png)
-
 #### Start the `Lab2` service
 
 1. Click the down arrow next to the `Lab2` label at the top of the screen
 
 1. Click `start`
+
+##### Your service should look similar to this:
+
+![fan lab service](./img/instructions/fan-service.png)
+
 ## Congratulations you have successfully created your first n.io service!!
 
 ### Turn the fan on and off
