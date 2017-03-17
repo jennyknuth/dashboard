@@ -39,7 +39,7 @@ As long as the fan is still connected to the relay on the breadboard, point it t
   2. Click the three dots in the upper right hand corner of the block to open the configuration panel
   2. Fill in the following configuration field:
 
-      **Pin:** `GPIO-24`
+      **Pin:** `24`
 
   2. Click `save` at the bottom of the panel
 
