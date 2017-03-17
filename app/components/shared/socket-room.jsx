@@ -1,7 +1,7 @@
 import React from 'react';
 import lab from 'theme/lab.scss';
 
-const SocketRoom = ({ data, height }) => {
+const SocketRoom = ({ data }) => {
   const formattedData = JSON.stringify(data, null, 4);
   return (
     <div>

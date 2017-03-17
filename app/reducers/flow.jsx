@@ -1,5 +1,5 @@
 const defaultState = {
-  color: '#000000',
+  color: '#354042',
   flow: 0,
   lastRead: undefined,
   vals: [],
@@ -19,20 +19,34 @@ const flow = (state, action) => {
   if (state === undefined) {
     state = defaultState;
   }
-  if (state.vals.length > 10) {
-    state.vals.shift();
-  }
+  // if (state.vals.length > 10) {
+  //   state.vals.shift();
+  // }
   switch (action.type) {
+    case 'ACCEL_READ': {
+      if (state.vals.length > 10) {
+        state.vals.shift();
+      }
+      const { accel } = action.data;
+      return {
+        ...state,
+        vals: [...state['vals'], {
+          value: accel,
+          time: Date.now(),
+        }],
+        // lastRead: action.data,
+      };
+    }
     case 'FLOW_READ': {
-      const { red, blue, green, wind_flow, accel } = action.data;
+      const { red, blue, green, wind_flow } = action.data;
       return {
         ...state,
         lastRead: action.data,
         color: rgbToHex(red, green, blue),
-        vals: [...state['vals'], {
-          time: Date.now(),
-          value: accel,
-        }],
+        // vals: [...state['vals'], {
+        //   time: Date.now(),
+        //   value: accel,
+        // }],
         flow: wind_flow,
         fanOn: action.data.fan_state,
       };

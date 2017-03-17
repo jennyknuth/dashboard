@@ -2,7 +2,7 @@ In this lab you will shake your phone to control a fan. When n.io senses enough 
 
 To turn the fan off, shake your phone again. The wind speed will drop, n.io will sense this change, and the LED will turn off.
 
-After the service is built and running, you will be able to see the state of the LED in the box above (`nio.school/[your unique lab number]/flow`).
+After the service is built and running, you will be able to see the state of the LED in the box above (https://nio.school/[your unique lab number]/flow).
 
 ### Hardware Instructions
 As long as the fan is still connected to the relay on the breadboard, point it toward the wind-flow sensor (shown below):
