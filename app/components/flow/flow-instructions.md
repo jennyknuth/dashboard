@@ -34,10 +34,11 @@ As long as the fan is still connected to the relay on the breadboard, point it t
 1. Click on the **SC** category on the right side pane of the designer
 1. Drag the `+ State Change` template block onto your campus
 1. Name it `WindFlowThreshold`
-1. Uncheck the `Exclude Existing Fields` box
+1. Uncheck the `Exclude Existing Fields` checkbox
+1. Uncheck the `Load from Persistence?` checkbox
 1. Fill in the following configuration field:
 
-    **State:** `{{ $value < 2 }}`
+    **State:** `{{ $volts < 2 }}`
 1. Save the block
 
 #### Add `wind_flow` attribute to signal

@@ -72,11 +72,11 @@ After the service is built and running, you will be able to see the state of the
 2. Name it `Blink1`
 2. Fill in the following configuration fields:
 
-    **Red:** `{{ $red }}`
+    **Blue:** `{{ $blue }}`
 
     **Green:** `{{ $green }}`
 
-    **Blue:** `{{ $blue }}`
+    **Red:** `{{ $red }}`
 
 1. Save the block
 
