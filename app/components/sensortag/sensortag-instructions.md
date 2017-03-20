@@ -27,7 +27,7 @@ After the service is built and running, you will be able to see the state of the
 2. Save the block
 
 #### Turn on your LED by signaling a state change
->StateChange blocks maintain a state and when state changes, a signal is notified that contains the `state` and `prev_state`.
+>StateChange blocks maintain a state and when state changes, a signal is emitted that contains the `state` and `prev_state`.
 
 1. Click on the **SC** category on the right side pane of the designer
 2. Drag the `+ State Change` template block onto your canvas
@@ -60,7 +60,7 @@ After the service is built and running, you will be able to see the state of the
 
     **Attribute Value:** `{{ 203 if $state else 0 }}`
 
-  >Here we check if the state variable we set above is `True` or `False` (if it exists, it is `True`). The blue attribute will be set to 203 if state exists, otherwise, it is `False` and will be set to 0, meaning the LED should turn off.
+  >Here we check if the state variable we set above is `True` or `False` (if it exists, `$state` is `True`). The blue attribute will be set to 203 if state exists, otherwise, it is `False` and will be set to 0, meaning the LED should turn off.
 
   >Note: you can change the red/green/blue values from 65, 195, and 203 to set the Blink1 LED to whatever color you’d like. Each of the values ranges from 0-255, so to set the LED to lime green you would set them to `red: 0, green: 255, blue: 0`. Or to set it to purple you would change them to `red: 128, green: 0, blue: 128`.
 
@@ -113,6 +113,8 @@ After the service is built and running, you will be able to see the state of the
 
 ### Hardware Instructions
 Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth Dongle plugged into the Raspberry Pi. A small green LED on the bottom of the SensorTag will flash green.
+
+  ![Texas Instruments sensorTag](./img/instructions/sensortag.png)
 
 ### Turn the LED on and off
 Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off.

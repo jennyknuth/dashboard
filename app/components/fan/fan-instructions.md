@@ -12,13 +12,13 @@ In this lab you will build a service that will allow you to shake your phone to 
 1. Once the Raspberry Pi turns on, the red LED by the microUSB port should remain solid
 
 ### Designer Instructions
-1. Go to your intro instance in the designer ([https://designer.n.io](https://designer.n.io))
+1. Go to your **intro** instance in the designer ([https://designer.n.io](https://designer.n.io))
 1. Click on **intro-lab-2** located on the left side of the screen
 1. Create a new service by clicking the `+ add new service` button
 1. Name it `Lab2` and click `accept`
 
 #### Subscribe to the phone’s shake data
->The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for those signals and pass them on to their respective services. In this case, the `DetectShake` service is publishing to the `shake` topic. We will configure the Subscriber block by modifying the `Topic` field in the block to pick up the signals from the end of the `DetectShake` service that has been provided for you
+>The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for signals on specific topics and pass them in to their respective services. In this case, the `DetectShake` service provided for you is publishing signals on the `shake` topic. We will configure a Subscriber block to pick up the signals on this `shake` topic by modifying its `Topic` field.
 
 1. On the right hand side you'll see a bunch of block categories. Scroll down until you see the **Sub** category
 1. Click on the **Sub** category
@@ -33,7 +33,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 1. Click `save` at the bottom of the panel
 
 #### Strip signal of everything but acceleration data
->`DynamicFields` blocks are used to reformat incoming signals that are assigned by the `fields` attribute. If the `Exclude existing fields?` checkbox is checked, previous key:value pairs will be discarded and the block will only pass on the key:value pairs you configure in the configuration panel. If the `Exclude existing fields?` checkbox is not checked, it will combine the key:value pairs you configure with the existing signal.
+>`DynamicFields` blocks are used to reformat incoming signals that are assigned by the `fields` attribute. If the `Exclude existing fields?` checkbox is checked, previous key:value pairs will be discarded and the block will only pass on the key:value pairs you configure in the configuration panel. If the `Exclude existing fields?` checkbox is not checked, it will add the key:value pairs you configure to the existing signal.
 
   1. Click on the **DF** category on the right side pane of the designer
   1. Drag the `+ Dynamic Fields` template block onto your canvas
@@ -46,7 +46,7 @@ In this lab you will build a service that will allow you to shake your phone to 
        **Attribute Name:** `accel`
 
        **Attribute Value:** `{{ $accel }}`
-  >Surrounding a value with `{{ }}` will tell n.io to compile the value as Python code. Using a `$` character tells n.io to look at the value matching the specified key from the incoming signal. In this case, the incoming signal has an `accel` key and we want n.io to evaluate the `Attribute Value` field to be the same as the value of the `accel` key.
+  >Surrounding a value with `{{ }}` will tell n.io to compile the value as Python code. Using a `$` character tells n.io to look for a matching key from the incoming signal. In this case, the incoming signal has an `accel` key and we want n.io to evaluate the `Attribute Value` field to be the same as the value of the `accel` key.
 
   8. Click `save` at the bottom of the panel
 
@@ -68,17 +68,15 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 #### Save the `Lab2` service
 
-  1. Click the down arrow next to the `Lab2` label at the top of the screen
-
-  1. Click `save`
+1. Click the down arrow next to the `Lab2` label at the top of the screen
+1. Click `save`
 
 #### Start the `Lab2` service
 
 1. Click the down arrow next to the `Lab2` label at the top of the screen
-
 1. Click `start`
 
-##### Your service should look similar to this:
+#### Your service should look similar to this:
 
 ![fan lab service](./img/instructions/fan-service.png)
 
@@ -86,7 +84,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 ### Turn the fan on and off
 
-1. Using your mobile phone browser, login to **https://nio.school/mobiletest** again if you have left the page (allowing n.io to again access your location)
+1. Using your mobile phone browser, login to [nio.school/mobiletest](https://nio.school/mobiletest) again if you have left the page (allowing n.io to again access your location)
 1. Shake your phone to trigger movement of the accelerometer
 1. Once the signal has been transmitted through the web socket, the fan should turn on
 1. Shake your phone again to turn the fan off

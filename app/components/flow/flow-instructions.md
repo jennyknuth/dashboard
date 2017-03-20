@@ -1,20 +1,30 @@
-In this lab you will shake your phone to control a fan. When n.io senses enough movement from your phone’s accelerometer, the fan will toggle on and off. Directing the fan at the wind-flow sensor will increase the sensor’s reading. When n.io senses enough wind speed, the LED will light.
+In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity, the LED from Lab 3 will turn on.
 
-To turn the fan off, shake your phone again. The wind speed will drop, n.io will sense this change, and the LED will turn off.
+To turn the LED off, shake your phone to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will go dark.
 
-After the service is built and running, you will be able to see the state of the LED in the box above (https://nio.school/[your unique lab number]/flow).
+After the service is built and running, you will be able to see the state of the fan, accelerometer, and LED in the box above (**https://nio.school/[your unique lab number]/flow**).
 
 ### Hardware Instructions
-As long as the fan is still connected to the relay on the breadboard, point it toward the wind-flow sensor (shown below):
+Make sure your fan is directed toward the wind-flow sensor (shown below):
 
 ![wind flow sensor](./img/instructions/wind-sensor.png)
 
 ### Designer Instructions
-1. In the designer ([https://designer.n.io](https://designer.n.io)), stop `Lab3`
+
+#### Stop Lab 3
+> Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`
+
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to `Lab3` and from the down arrow next to the `Lab3` label at the top, click `stop`
+
+#### Start Lab 2
+> We will be reusing the services from Lab 2
+
+1. Make sure that in `Lab2`, the `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` services are still running
+1. If they are not running, start each one
+
+#### Create Lab 4
 1. Create a new service
 1. Name it `Lab4`
-1. Make sure the `Lab2`,  `DetectShake`,  `MobileAccelDataHandler` and `FanToggler` services are still running
-1. If they are not running, start each one
 
 #### Simulate signals to trigger Wind Flow Sensor reads
 1. Click on the **CIS** category on the right side pane of the designer
@@ -70,11 +80,11 @@ As long as the fan is still connected to the relay on the breadboard, point it t
 >In this step, you will reuse the `Blink1` block you created and configured in the SensorTag service
 
 1. Click on the **B1** category on the right side pane of the designer
-1. Drag the `Blink1` block onto your canvas
+1. Instead of using the block _template_ as we have done in the past, drag the pre-existing, pre-configured `Blink1` block onto your canvas and simply reuse it
 
 #### Publish data to a Socket.IO room
 1. Click on the **SIO** category on the right side pane of the designer
-1. Drag the `+ Socket IO` block onto your canvas
+1. Drag the `+ Socket IO` template block onto your canvas
 1. Name it `WindFlowSocket` and click `accept`
 1. Fill in the following configuration fields:
 
@@ -96,7 +106,6 @@ As long as the fan is still connected to the relay on the breadboard, point it t
 1. Click the down arrow next to the `Lab4` label at the top of the screen
 1. Click `save`
 
-
 #### Start the `Lab4` service
 1. Click the down arrow next to the `Lab4` label at the top of the screen
 1. Click `start`
@@ -104,10 +113,14 @@ As long as the fan is still connected to the relay on the breadboard, point it t
 
 ![lab 4 service](./img/instructions/flow-service.png)
 
-### Checkout the output!
+### Check the output!
 
-1. Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://nio.school/mobiletest). Shake your phone to turn on the fan, which will increase the wind flow sensor reading and light the LED
+1. Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://nio.school/mobiletest). Shake your phone to turn on the fan. This will increase the wind flow sensor reading and light the LED.
 
-1. Shake your phone again to turn the fan off, which will decrease the wind flow sensor reading and turn off the LED
+1. Shake your phone again to turn the fan off. This will decrease the wind flow sensor reading and turn off the LED
 
-Scroll to the top of this page (**https://nio.school/[your unique lab number]/flow**) to see the output of your service.
+1. Scroll to the top of this page (**https://nio.school/[your unique lab number]/flow**) to see the output of your service.
+
+## Congratulations!
+
+### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to n.io?
