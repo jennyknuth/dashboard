@@ -25,11 +25,11 @@ const BlankSlate = React.createClass({
 
   render() {
     if (this.state.shown || this.props.visibilityData) {
-      return <div>{this.props.children}</div>;
+      return <div id="slate">{this.props.children}</div>;
     }
 
     return (
-      <div className={`${layout.paper} ${layout.noDataBlock}`}>
+      <div className={`${layout.paper} ${layout.noDataBlock}`} id="slate">
         {this.props.message}
       </div>
     );

@@ -1,7 +1,7 @@
 In this lab you will build a service that will allow you to shake your phone to toggle the fan on and off. After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above (**https://nio.school/[your unique lab number]/fan**).
 
 ### Hardware Instructions
-1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to power your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
+1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
      ![wifi](./img/instructions/att-express.png)
      <!-- Add up close image of screen -> image of one device connected -->

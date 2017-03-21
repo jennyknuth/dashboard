@@ -49,17 +49,19 @@ const history = useRouterHistory(createHistory)({
   basename: config.APP_ROOT
 });
 
+const scrollTop = () => window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={MainApp}>
-            <IndexRoute component={Intro} title="Welcome" />
-            <Route path="weather" component={Weather} title="Weather Lab" />
-            <Route path="fan" component={FanLab} title="Fan Lab" />
-            <Route path="sensorTag" component={SensorTag} title="SensorTag Lab" />
-            <Route path="flow" component={Flow} title="Wind Flow Lab" />
+            <IndexRoute component={Intro} title="Welcome" onEnter={scrollTop} />
+            <Route path="weather" component={Weather} title="Weather Lab" onEnter={scrollTop} />
+            <Route path="fan" component={FanLab} title="Fan Lab" onEnter={scrollTop} />
+            <Route path="sensorTag" component={SensorTag} title="SensorTag Lab" onEnter={scrollTop} />
+            <Route path="flow" component={Flow} title="Wind Flow Lab" onEnter={scrollTop} />
           </Route>
         </Router>
       </Provider>

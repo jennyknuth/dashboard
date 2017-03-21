@@ -11,11 +11,10 @@ class CollapsibleInstructions  extends React.Component {
       isOpened: true
     };
 
-    this.toggleOpen = () => (
-      this.setState(
-        { isOpened: !this.state.isOpened }
-      )
-    );
+    this.toggleOpen = () => {
+      this.setState({ isOpened: !this.state.isOpened });
+      this.state.isOpened && document.getElementById('slate').scrollIntoView({block: 'end', behavior: 'smooth'});
+    };
   }
 
   render() {
