@@ -7,7 +7,7 @@
   width: 100%;
   color: white;
 }
-.summary {
+.current {
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -16,31 +16,99 @@
 }
 
 .hot {
-  background-image: url("img/hot.png");
+  background-image: url("img/weather/temp-hot.png");
   background-repeat: no-repeat;
   background-color: $weather-hot;
-  background-size: cover;
 }
 
 .warm {
-  background-image: url("img/warm.png");
+  background-image: url("img/weather/temp-warm.png");
   background-repeat: no-repeat;
   background-color: $weather-warm;
-  background-size: cover;
 }
 
 .cool {
-  background-image: url("img/cool.png");
+  background-image: url("img/weather/temp-cool.png");
   background-repeat: no-repeat;
   background-color: $weather-cool;
-  background-size: cover;
 }
 
 .cold {
-  background-image: url("img/cold.png");
+  background-image: url("img/weather/temp-cold.png");
   background-repeat: no-repeat;
   background-color: $weather-cold;
-  background-size: cover;
+}
+
+.nightClear {
+  background-image: url("img/weather/night-clear.png");
+  background-repeat: no-repeat;
+  background-color: $weather-night;
+}
+
+.nightCloudy {
+  background-image: url("img/weather/night-cloudy.png");
+  background-repeat: no-repeat;
+  background-color: $weather-night;
+}
+
+.nightFog {
+  background-image: url("img/weather/night-fog.png");
+  background-repeat: no-repeat;
+  background-color: $weather-night;
+}
+
+.nightRain {
+  background-image: url("img/weather/night-rain.png");
+  background-repeat: no-repeat;
+  background-color: $weather-night;
+}
+
+.nightSnow {
+  background-image: url("img/weather/temp-cold.png");
+  background-repeat: no-repeat;
+  background-color: $weather-night;
+}
+
+.dayClear {
+  background-image: url("img/weather/day-clear.png");
+  background-repeat: no-repeat;
+  background-color: $weather-day-clear;
+}
+
+.dayCloudy {
+  background-image: url("img/weather/day-cloudy.png");
+  background-repeat: no-repeat;
+  background-color: $weather-day-cloudy;
+}
+
+.dayFog {
+  background-image: url("img/weather/day-fog.png");
+  background-repeat: no-repeat;
+  background-color: $weather-day-fog;
+}
+
+.dayRain {
+  background-image: url("img/weather/day-rain.png");
+  background-repeat: no-repeat;
+  background-color: $weather-day-rain;
+}
+
+.daySnow {
+  background-image: url("img/weather/day-snow.png");
+  background-repeat: no-repeat;
+  background-color: $weather-day-snow;
+}
+
+.sand {
+  background-image: url("img/weather/sand.png");
+  background-repeat: no-repeat;
+  background-color: $weather-sand;
+}
+
+.storms {
+  background-image: url("img/weather/storms.png");
+  background-repeat: no-repeat;
+  background-color: $weather-storms;
 }
 
 .details {
@@ -127,7 +195,7 @@
 }
 
 .clear {
-  color: $weather-clear;
+  color: $weather-sunny;
 }
 
 .gray {
