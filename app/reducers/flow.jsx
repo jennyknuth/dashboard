@@ -12,16 +12,15 @@ const componentToHex = (c) => {
 };
 
 const rgbToHex = (red, green, blue) => {
-  return '#' + componentToHex(red) + componentToHex(green) + componentToHex(blue);
+  const hexCode = '#' + componentToHex(red) + componentToHex(green) + componentToHex(blue);
+  const color = hexCode === '#000000' ? '#354042' : hexCode;
+  return color;
 };
 
 const flow = (state, action) => {
   if (state === undefined) {
     state = defaultState;
   }
-  // if (state.vals.length > 10) {
-  //   state.vals.shift();
-  // }
   switch (action.type) {
     case 'ACCEL_READ': {
       if (state.vals.length > 10) {
@@ -34,7 +33,6 @@ const flow = (state, action) => {
           value: accel,
           time: Date.now(),
         }],
-        // lastRead: action.data,
       };
     }
     case 'FLOW_READ': {
@@ -43,14 +41,15 @@ const flow = (state, action) => {
         ...state,
         lastRead: action.data,
         color: rgbToHex(red, green, blue),
-        // vals: [...state['vals'], {
-        //   time: Date.now(),
-        //   value: accel,
-        // }],
         flow: wind_flow,
-        fanOn: action.data.fan_state,
       };
     }
+    case 'FAN_READ':
+      return {
+        ...state,
+        fanOn: action.data.fan_state,
+        lastRead: action.data,
+      };
     default:
       return state;
   }

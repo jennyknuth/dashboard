@@ -16,10 +16,6 @@
   }
 }
 
-.hide {
-  display: none;
-}
-
 .paper {
   padding: 3rem;
   position: relative;
@@ -65,4 +61,8 @@
   @media (min-width: $breakpoint) {
     flex: 1;
   }
+}
+
+.hide {
+  display: none;
 }

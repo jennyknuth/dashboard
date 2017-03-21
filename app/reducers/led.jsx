@@ -9,7 +9,9 @@ const componentToHex = (c) => {
 };
 
 const rgbToHex = (red, green, blue) => {
-  return '#' + componentToHex(red) + componentToHex(green) + componentToHex(blue);
+  const hexCode = '#' + componentToHex(red) + componentToHex(green) + componentToHex(blue);
+  const color = hexCode === '#000000' ? '#354042' : hexCode;
+  return color;
 };
 
 const led = (state, action) => {

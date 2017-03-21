@@ -7,11 +7,51 @@ import convertIcon from 'components/weather/weather-icon-converter';
 import weather from 'theme/weather.scss';
 
 const WeatherTop = ({ current }) => {
-  const relativeTemp = (current.temp < 32 ? 'cold' : current.temp < 60 ? 'cool' : current.temp < 80 ? 'warm' : 'hot');
 
-  const summaryClasses = classNames(
-    weather.summary,
-    weather[relativeTemp]
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  const isDay = ((currentHour < 21) && (currentHour > 5));
+
+  const relativeTemp = (current.temp < 32 ? 'cold' : current.temp < 65 ? 'cool' : current.temp < 80 ? 'warm' : 'hot');
+
+  // categorize weather
+  const snow = ['chanceflurries', 'chancesnow', 'flurries', 'snow'];
+  const rain = ['chancerain', 'chancesleet', 'rain', 'sleet'];
+  const cloudy = ['cloudy', 'mostlycloudy', 'mostlysunny', 'partlycloudy', 'partlysunny'];
+  const clear = ['clear', 'sunny'];
+  const storms = ['tstorms', 'chancetstorms'];
+
+  // divide into day and night classes
+  const nightImage = (
+    snow.indexOf(current.icon) >= 0 ? 'nightSnow' :
+    rain.indexOf(current.icon) >= 0 ? 'nightRain' :
+    cloudy.indexOf(current.icon) >= 0 ? 'nightCloudy' :
+    clear.indexOf(current.icon) >= 0 ? 'nightClear' :
+    current.icon === 'fog' ? 'nightFog' :
+    'nightCloudy'
+  );
+
+  // for day, show category or temp if no category
+  const dayImage = (
+    snow.indexOf(current.icon) >= 0 ? 'daySnow' :
+    rain.indexOf(current.icon) >= 0 ? 'dayRain' :
+    cloudy.indexOf(current.icon) >= 0 ? 'dayCloudy' :
+    clear.indexOf(current.icon) >= 0 ? 'dayClear' :
+    current.icon === 'fog' ? 'dayFog' :
+    relativeTemp
+  );
+
+  const weatherImage = (
+    current.icon === 'hazy' ? 'sand' :
+    storms.indexOf(current.icon) >= 0 ? 'storms' :
+    isDay ? dayImage :
+    nightImage
+  );
+
+  const currentClasses = classNames(
+    weather.current,
+    weather[weatherImage]
   );
 
   const detailClasses = classNames(
@@ -21,12 +61,12 @@ const WeatherTop = ({ current }) => {
 
   const locationClasses = classNames(
     weather.location,
-    weather[relativeTemp]
+    weather[weatherImage]
   );
 
   return (
     <div className={weather.weatherHeader}>
-      <div className={summaryClasses}>
+      <div className={currentClasses}>
         <div className={weather.details}>
           <div className={weather.temp}>{current.temp}°</div>
           <WeatherIcons name={convertIcon[current.icon]} size="5x" />
