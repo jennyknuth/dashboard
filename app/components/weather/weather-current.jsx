@@ -6,7 +6,7 @@ import convertIcon from 'components/weather/weather-icon-converter';
 
 import weather from 'theme/weather.scss';
 
-const WeatherTop = ({ current }) => {
+const WeatherCurrent = ({ current }) => {
 
   const now = new Date();
   const currentHour = now.getHours();
@@ -84,4 +84,4 @@ const WeatherTop = ({ current }) => {
   );
 };
 
-export default WeatherTop;
+export default WeatherCurrent;

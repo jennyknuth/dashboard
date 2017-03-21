@@ -11,11 +11,7 @@ class CollapsibleInstructions  extends React.Component {
       isOpened: true
     };
 
-    this.toggleOpen = () => (
-      this.setState(
-        { isOpened: !this.state.isOpened }
-      )
-    );
+    this.toggleOpen = () => this.setState({ isOpened: !this.state.isOpened });
   }
 
   render() {
