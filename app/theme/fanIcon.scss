@@ -11,22 +11,22 @@ $fan-animation: unique-id();
 }
 
 .fan {
-  margin:0;
   display: block;
   flex: 1;
-  text-align: center;
   background-color: $palette-primary;
   position:relative;
   border-right: 2px solid $palette-border;
 
   &::after {
     content: '';
+    position: absolute;
     display: block;
     background-image: url(img/icon-fan.svg);
     background-repeat: no-repeat;
-    background-size: 120px;
     background-position: 50% 50%;
+    background-size: 120px;
     height: 100%;
+    width: 100%;
   }
 }
 
