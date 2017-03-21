@@ -26,7 +26,6 @@ const fan = (state, action) => {
           value: accel,
           time: Date.now(),
         }],
-        // lastRead: action.data,
       };
     }
     default:

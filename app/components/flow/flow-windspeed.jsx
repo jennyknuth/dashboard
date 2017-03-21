@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import flow from 'theme/flow.scss';
 
 const FlowWindSpeed = (props) => {
+  const arrow = props.flow < 2 ? 'arrowUp' : 'arrowDown';
   return (
     <div className={flow.speed}>
       <div className={flow.fanWindSpeed}>
         <div className={flow.title} >Wind Speed</div>
-        <div className={flow.value} >{Math.round(props.flow * 100) / 100}</div>
-        <div className={flow.units}>MPH</div>
+        <div className={flow[arrow]} />
       </div>
     </div>
   );

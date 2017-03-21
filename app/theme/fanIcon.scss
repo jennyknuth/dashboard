@@ -6,7 +6,7 @@ $fan-animation: unique-id();
     transform: rotateZ(0deg);
   }
   100% {
-    transform: rotateZ(-360deg);
+    transform: rotateZ(360deg);
   }
 }
 
