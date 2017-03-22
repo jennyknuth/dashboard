@@ -123,4 +123,4 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 
 ## Congratulations!
 
-### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to n.io?
+### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to **n.io**?
