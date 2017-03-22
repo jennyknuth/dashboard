@@ -12,7 +12,7 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 ### Designer Instructions
 
 #### Stop Lab 3
-> Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`. We won't reuse the `Lab3` service, but we will reuse the Blink1 block (see below).
+> Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`. We won't reuse the `Lab3` service, but we will use the Blink1 block again (see below).
 
 1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and from the down arrow next to the `Lab3` label at the top, click `stop`
 
