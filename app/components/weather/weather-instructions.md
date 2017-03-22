@@ -6,14 +6,15 @@ Once you start the services, n.io will detect your phone's location when you use
 
 ### Designer Instructions
 1. Go to [https://designer.n.io](https://designer.n.io), to access the designer
-1. Click on **int** on the left side panel
-1. Click on **intro-lab-1** located on the left side of the screen
+1. Click on **lab** on the left side panel—this is your system
+1. Click on **cloud** located on the left side of the screen—this is the name of your instance, in this case, one that is in the 'cloud'
+1. Inside the instance you will find four pre-configured services: `MobileAccelDataHandler`, `LocationLookup`, `WeatherDataHandler`, and `Lab1`
 1. Click on the `Lab1` service
 
 #### Send an SMS via the Twilio Service
 > The TwilioSMS block sends an SMS to the specified recipient using the Twilio service.
 
-1. Click on the three dots in the upper right hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
+1. Click on the three dots in the upper right-hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
 1. Click on `+` in the **Recipients** attribute
 1. Fill in the following configuration fields:
 
@@ -29,16 +30,17 @@ Once you start the services, n.io will detect your phone's location when you use
 1. Click on the `WeatherDataHandler` in the left side pane
 1. Click on the down arrow next to the `WeatherDataHandler` label at the top of the screen
 1. Click `start`
+1. The `MobileAccelDataHandler` and `LocationLookup` services should already be running for you—if they are stopped, start them
 
 ## Congratulations you have successfully configured your first n.io block and started your first n.io services!!
 
 ### Use your n.io instance
-1. With your n.io services successfully started, use your mobile phone browser to go to your unique nio.school mobile addres (**nio.school/[your unique mobile address]**)
-1. Press `OK` to the `“https://n.io” Would Like To Use Your Current Location` prompt
+1. With your n.io services successfully started, use your mobile phone browser to go to your unique nio.school mobile address (**nio.school/[your unique mobile address]**)
+1. Press `OK` to the `Use Your Current Location` prompt
 1. Enter a name and email and click `Login`
 
   ![mobile screen shot](./img/instructions/mobile.png)
 
 You will soon receive a text from n.io with the weather at your current location.
 
-Scroll to the top of this page (**https://nio.school/[your unique lab number]/weather**) to see the output of your services. You should see the current weather conditions, a 10-day forecast, and the streaming data being published by n.io.
+Scroll to the top of this page (**https://nio.school/[your unique lab number]/weather**) to see the output of your services. You should see the current weather conditions, a 10-day forecast, and the data being published by n.io.

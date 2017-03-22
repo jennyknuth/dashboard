@@ -3,7 +3,7 @@ In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on
 After the service is built and running, you will be able to see the state of the LED in the box above (**https://nio.school/[your unique lab number]/sensorTag**).
 
 ### Designer Instructions
-1. In the designer ([https://designer.n.io](https://designer.n.io)), create a new service
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `pi` instance and create a new service
 1. Name it `Lab3`
 1. Click the `Lab3` service located on the left side of the screen
 
@@ -11,7 +11,7 @@ After the service is built and running, you will be able to see the state of the
 1. Click on the **CIS** category on the right side pane of the designer
 2. Drag the `+ Counter Interval Simulator` template block onto your canvas
 2. Name it `SensorTagSim` and click `accept`
-2. Click the three dots in the upper right hand corner of the block to open the configuration panel
+2. Click the three dots in the upper right-hand corner of the block to open the configuration panel
 2. Keep the default configuration and click `save` at the bottom of the panel
 
 #### Access the Texas Instruments sensor
@@ -112,7 +112,7 @@ After the service is built and running, you will be able to see the state of the
   ![lab 3 service](./img/instructions/sensorTag-service.png)
 
 ### Hardware Instructions
-Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth Dongle plugged into the Raspberry Pi. A small green LED on the bottom of the SensorTag will flash green.
+Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth Dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
 
   ![Texas Instruments sensorTag](./img/instructions/sensortag.png)
 
