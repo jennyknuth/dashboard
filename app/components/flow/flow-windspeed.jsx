@@ -45,6 +45,10 @@ const FlowWindSpeed = (props) => {
   );
 };
 
+FlowWindSpeed.propTypes = {
+  flow: React.PropTypes.number
+};
+
 const mapStateToProps = (state) => {
   return {
     ...state.flow

@@ -42,6 +42,14 @@ const Flow = (props) => {
   );
 };
 
+FlowWindSpeed.propTypes = {
+  fanOn: React.PropTypes.bool,
+  color: React.PropTypes.string,
+  lastRead: React.PropTypes.object,
+  flow: React.PropTypes.number,
+  vals: React.PropTypes.arrayOf(React.PropTypes.number)
+};
+
 const mapStateToProps = (state) => {
   return {
     ...state.flow

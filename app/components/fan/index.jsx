@@ -51,6 +51,12 @@ const FanLab = (props) => {
   );
 };
 
+FanLab.propTypes = {
+  fanOn: React.PropTypes.bool,
+  lastRead: React.PropTypes.object,
+  vals: React.PropTypes.arrayOf(React.PropTypes.number)
+};
+
 const mapStateToProps = (state) => {
   return {
     ...state.fan
