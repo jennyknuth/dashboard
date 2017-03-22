@@ -44,6 +44,12 @@ const Weather = (props) => {
   );
 };
 
+Weather.propTypes = {
+  lastRead: React.PropTypes.object,
+  current: React.PropTypes.object,
+  forecast: React.PropTypes.array
+};
+
 const mapStateToProps = (state) => {
   return {
     ...state.weather

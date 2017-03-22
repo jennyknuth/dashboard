@@ -84,4 +84,13 @@ const WeatherCurrent = ({ current }) => {
   );
 };
 
+WeatherCurrent.propTypes = {
+  temp: React.PropTypes.number,
+  icon: React.PropTypes.string,
+  feels_like: React.PropTypes.number,
+  wind_mph: React.PropTypes.number,
+  wind_dir: React.PropTypes.string,
+  location: React.PropTypes.string
+};
+
 export default WeatherCurrent;

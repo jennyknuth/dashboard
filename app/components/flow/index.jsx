@@ -47,7 +47,7 @@ FlowWindSpeed.propTypes = {
   color: React.PropTypes.string,
   lastRead: React.PropTypes.object,
   flow: React.PropTypes.number,
-  vals: React.PropTypes.arrayOf(React.PropTypes.number)
+  vals: React.PropTypes.arrayOf(React.PropTypes.object)
 };
 
 const mapStateToProps = (state) => {
