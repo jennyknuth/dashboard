@@ -24,7 +24,7 @@ const MainApp = (props) => {
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
       </Link>
-      <div className={header.info}>Questions? Call XXX-XXX-XXX MF 9–5 MST</div>
+      <div className={header.info}>Questions? Call (440) 973-6343 MF 9–5 MST</div>
     </header>
     <div className={layout.app}>
       <h1>{props.children.props.route.title}</h1>

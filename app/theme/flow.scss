@@ -10,28 +10,25 @@
   border-right: 2px solid $palette-border;
 }
 
-.title {
-  font-size: 1.25em;
-  font-weight: 300;
-  margin: 1.25rem 0 0 0;
-}
-
-%arrow {
+.wave {
   position: absolute;
-  top: 0.8rem;
-  height: 100%;
-  width: 100%;
-  background-image: url(img/arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 40%;
+  bottom: 5%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  stroke: white;
+  transition: transform 1s;
 }
 
-.arrowDown {
-  @extend %arrow;
-}
+.thirty {
+  transform: translateY(-30%);
 
-.arrowUp {
-  @extend %arrow;
-  transform: rotate(180deg);
+}
+.fifty {
+  transform: translateY(-50%);
+
+}
+.seventy {
+  transform: translateY(-70%);
+
 }
