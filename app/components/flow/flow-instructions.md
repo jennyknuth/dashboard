@@ -1,4 +1,4 @@
-In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity, the LED from Lab 3 will turn on.
+In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity, the Blink1 LED you used in Lab 3 will turn on.
 
 To turn the LED off, shake your phone to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will go dark.
 
@@ -12,15 +12,15 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 ### Designer Instructions
 
 #### Stop Lab 3
-> Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`
+> Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`. We won't reuse the `Lab3` service, but we will reuse the Blink1 block (see below).
 
-1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to `Lab3` and from the down arrow next to the `Lab3` label at the top, click `stop`
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and from the down arrow next to the `Lab3` label at the top, click `stop`
 
 #### Start Lab 2
 > We will be reusing the services from Lab 2
 
-1. Make sure that in `Lab2`, the `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` services are still running
-1. If they are not running, start each one
+1. Make sure that your `Lab2`, `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` services are still running
+1. If they are stopped, start each one
 
 #### Create Lab 4
 1. Create a new service
@@ -30,7 +30,7 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 1. Click on the **CIS** category on the right side pane of the designer
 2. Drag the `+ Counter Interval Simulator` template block onto your canvas
 2. Name it `WindFlowSim` and click `accept`
-2. Click the three dots in the upper right hand corner of the block to open the configuration panel
+2. Click the three dots in the upper right-hand corner of the block to open the configuration panel
 2. Keep the default configuration and click `save` at the bottom of the panel
 
 #### Read from the wind flow sensor
@@ -48,7 +48,7 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 1. Uncheck the `Load from Persistence?` checkbox
 1. Fill in the following configuration field:
 
-    **State:** `{{ 0 < $volts < 2.5 }}`
+    **State:** `{{ 0 < $volts < 2.8 }}`
 1. Save the block
 
 #### Add `wind_flow` attribute to signal
