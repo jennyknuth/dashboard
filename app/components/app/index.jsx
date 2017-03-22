@@ -24,7 +24,7 @@ const MainApp = (props) => {
         <img className={header.logo} src='img/niologo_white.png' />
         <div className={header.name}>school</div>
       </Link>
-      <div className={header.info}>Questions? Call (440) 973-6343 MF 9–5 MST</div>
+      <div className={header.info}><span>Questions?</span><span>(440) 973-6343</span><span>9–5 MST M–F</span></div>
     </header>
     <div className={layout.app}>
       <h1>{props.children.props.route.title}</h1>
@@ -38,7 +38,7 @@ const MainApp = (props) => {
         <div className={layout.smallPanel}>
           <Steps activeRoute={props.children.props.route.path} />
           <div className={layout.paper}>
-            <Tweet title={props.children.props.route.title}/>
+            <Tweet />
           </div>
         </div>
       </div>

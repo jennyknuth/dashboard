@@ -13,4 +13,8 @@ const SocketRoom = ({ data }) => {
   );
 };
 
+SocketRoom.propTypes = {
+  data: React.PropTypes.object
+};
+
 export default SocketRoom;

@@ -30,4 +30,8 @@ const WeatherForecast = ({forecastDays}) => {
   );
 };
 
+WeatherForecast.propTypes = {
+  forecastDays: React.PropTypes.arrayOf(React.PropTypes.object)
+};
+
 export default WeatherForecast;

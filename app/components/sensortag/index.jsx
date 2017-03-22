@@ -41,6 +41,11 @@ const SensorTag = (props) => {
   );
 };
 
+SensorTag.propTypes = {
+  lastRead: React.PropTypes.object,
+  color: React.PropTypes.string
+};
+
 const mapStateToProps = (state) => {
   return {
     ...state.led

@@ -39,4 +39,8 @@ const FlowGraph = ({ vals }) => {
   );
 };
 
+FlowGraph.propTypes = {
+  vals: React.PropTypes.arrayOf(React.PropTypes.object)
+};
+
 export default FlowGraph;

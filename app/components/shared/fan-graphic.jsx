@@ -14,4 +14,8 @@ const FanIcon = ({ fanOn }) => {
   );
 };
 
+FanIcon.propTypes = {
+  fanOn: React.PropTypes.bool
+};
+
 export default FanIcon;

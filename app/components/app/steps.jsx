@@ -41,4 +41,8 @@ const Steps = ({ activeRoute }) => {
   );
 };
 
+Steps.propTypes = {
+  activeRoute: React.PropTypes.string
+};
+
 export default Steps;

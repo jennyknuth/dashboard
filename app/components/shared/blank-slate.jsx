@@ -36,4 +36,9 @@ const BlankSlate = React.createClass({
   },
 });
 
+BlankSlate.propTypes = {
+  visibilityData: React.PropTypes.object,
+  message: React.PropTypes.string
+};
+
 export default BlankSlate;

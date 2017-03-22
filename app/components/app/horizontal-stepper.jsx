@@ -40,4 +40,8 @@ const HorizontalStepper = ({ activeRoute }) => {
   );
 };
 
+HorizontalStepper.propTypes = {
+  activeRoute: React.PropTypes.string
+};
+
 export default HorizontalStepper;
