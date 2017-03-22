@@ -48,7 +48,7 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 1. Uncheck the `Load from Persistence?` checkbox
 1. Fill in the following configuration field:
 
-    **State:** `{{ $volts < 2 }}`
+    **State:** `{{ 0 < $volts < 2.5 }}`
 1. Save the block
 
 #### Add `wind_flow` attribute to signal

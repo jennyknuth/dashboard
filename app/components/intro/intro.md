@@ -1,3 +1,5 @@
+<img src="./img/instructions/labkit.jpg" style="float: right; margin-bottom: 40px"/>
+
 You will be working through four separate n.io school labs to experience and explore the capabilities of n.io.
 
 * Lab 1: Get Local Weather via SMS Text

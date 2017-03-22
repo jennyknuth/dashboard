@@ -8,7 +8,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
 
-![Pi connected to computer](./img/instructions/pi.png)
+![Pi connected to computer](./img/instructions/pi.jpg)
 1. Once the Raspberry Pi turns on, the red LED by the microUSB port should remain solid
 
 ### Designer Instructions
