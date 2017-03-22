@@ -8,4 +8,8 @@ const LEDlight = (props) => {
   );
 };
 
+LEDlight.propTypes = {
+  color: React.PropTypes.string
+};
+
 export default LEDlight;

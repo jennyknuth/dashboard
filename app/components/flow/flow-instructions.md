@@ -115,7 +115,7 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 
 ### Check the output!
 
-1. Make sure your mobile phone browser is still connected to [https://n.io/mobile](https://nio.school/mobiletest). Shake your phone to turn on the fan. This will increase the wind flow sensor reading and light the LED.
+1. Make sure your mobile phone browser is still connected to your nio.school mobile site (**nio.school/[your unique mobile address]**). Shake your phone to turn on the fan. This will increase the wind flow sensor reading and light the LED.
 
 1. Shake your phone again to turn the fan off. This will decrease the wind flow sensor reading and turn off the LED
 

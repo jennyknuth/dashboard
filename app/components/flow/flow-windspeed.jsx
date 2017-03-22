@@ -7,7 +7,7 @@ import flow from 'theme/flow.scss';
 const FlowWindSpeed = (props) => {
   const getWindClasses = height => classNames(
     flow.wave,
-    props.flow < 2 && flow[height]
+    props.flow < 2.5 && props.flow !== 0 && flow[height]
   );
 
   return (
@@ -43,6 +43,10 @@ const FlowWindSpeed = (props) => {
       </div>
     </div>
   );
+};
+
+FlowWindSpeed.propTypes = {
+  flow: React.PropTypes.number
 };
 
 const mapStateToProps = (state) => {
