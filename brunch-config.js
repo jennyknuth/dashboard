@@ -35,14 +35,5 @@ module.exports = {
       mode: 'native',
       modules: true
     },
-    static: {
-      processors: [
-        require('html-brunch-static')({
-          processors: [
-            require('marked-brunch-static') ({})
-          ]
-        })
-      ]
-    },
   }
 }
