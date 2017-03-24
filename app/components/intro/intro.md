@@ -13,6 +13,6 @@ Each service running in an instance of n.io will transform the data coming from 
 
 Each service is composed of blocks. The majority of these blocks take incoming signals, transform or manipulate the data in some way, and then pass the new signal into the next block in the service.
 
-n.io will also be integrated into this website. This is your personal site (**https://nio.school/[your unique lab number]**), and it is set up to respond to signals from the services you create. You will see your results in action. This **https://nio.school** site is another demonstration of how n.io can make integrating devices, signals, and human interactions simple.
+n.io will also be integrated into this website. This is your personal site, and it is set up to respond to signals from the services you create. You will see your results in action as another demonstration of how n.io can make integrating devices, signals, and human interactions simple.
 
 We would like to stress the importance of correctly configuring the blocks you will use. Feel free to copy and paste the code snippets from this example into your block configurations to ensure exact syntax. Many times, if data isn’t flowing through services as you expect, it's because something wasn’t capitalized correctly or there is a spelling error somewhere in your configurations.

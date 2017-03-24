@@ -1,4 +1,4 @@
-In this lab you will build a service that will allow you to shake your phone to toggle the fan on and off. After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above (**https://nio.school/[your unique lab number]/fan**).
+In this lab you will build a service that will allow you to shake your phone to toggle the fan on and off. After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above.
 
 ### Hardware Instructions
 1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
@@ -17,6 +17,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 2. You should see three pre-configured services in the instance, `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` that should already be running—start them if they are stopped
 1. Create a new service by clicking the `+ add new service` button
 1. Name it `Lab2` and click `accept`
+1. Click on the `Lab2` service
 
 #### Subscribe to the phone’s shake data
 >The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for signals on specific topics and pass them in to their respective services. In this case, the `DetectShake` service provided for you is publishing signals on the `shake` topic. We will configure a Subscriber block to pick up the signals on this `shake` topic by modifying its `Topic` field.
@@ -85,9 +86,9 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 ### Turn the fan on and off
 
-1. Using your mobile phone browser, login to your nio.school mobile site (**nio.school/[your unique mobile address]**) again if you have left the page (allowing n.io to again access your location)
+1. Using your mobile phone browser, login to your nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}) again if you have left the page (allowing n.io to again access your location)
 1. Shake your phone and it's built-in accelerometer data will be transmitted to a web socket—n.io picks up the acceleration data from the web socket and triggers the fan to turn on
 1. Shake your phone again to turn the fan off
 
 
-Scroll to the top of this page (**https://nio.school/[your unique lab number]/fan**) to see the output of your service.
+Return to the top of this page to see the output of your service.

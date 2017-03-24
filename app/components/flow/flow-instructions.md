@@ -2,12 +2,16 @@ In this lab you will reuse the services from Lab 2 where you shake your phone an
 
 To turn the LED off, shake your phone to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will go dark.
 
-After the service is built and running, you will be able to see the state of the fan, accelerometer, and LED in the box above (**https://nio.school/[your unique lab number]/flow**).
+After the service is built and running, you will be able to see the state of the fan, accelerometer, and LED in the box above.
 
 ### Hardware Instructions
-Make sure your fan is directed toward the wind-flow sensor (shown below):
+1. Make sure your fan is directed toward the wind-flow sensor (shown below):
 
 ![wind flow sensor](./img/instructions/wind-sensor.png)
+
+1. Connect the wind-flow sensor battery to the wind-flow sensor's breadboard by inserting the end of the red 9v battery wire into one of the holes in the row with a red `+` that is next to the row marked with a blue `-`
+
+![battery](./img/instructions/battery.jpg)
 
 ### Designer Instructions
 
@@ -115,11 +119,11 @@ Make sure your fan is directed toward the wind-flow sensor (shown below):
 
 ### Check the output!
 
-1. Make sure your mobile phone browser is still connected to your nio.school mobile site (**nio.school/[your unique mobile address]**). Shake your phone to turn on the fan. This will increase the wind flow sensor reading and light the LED.
+1. Make sure your mobile phone browser is still connected to your nio.school mobile site [{{MOBILE_URL}}](MOBILE_URL). Shake your phone to turn on the fan. This will increase the wind flow sensor reading and light the LED.
 
 1. Shake your phone again to turn the fan off. This will decrease the wind flow sensor reading and turn off the LED
 
-1. Scroll to the top of this page (**https://nio.school/[your unique lab number]/flow**) to see the output of your service.
+1. Scroll to the top of this page to see the output of your service.
 
 ## Congratulations!
 
