@@ -1,6 +1,6 @@
 In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on and off. A SensorTag is a contained device with a number of sensors for IoT testing and use. The SensorTag is produced by Texas Instruments. When the SensorTag is facing up, the LED will turn on, and when you flip it over so the SensorTag is facing down, the LED will turn off.
 
-After the service is built and running, you will be able to see the state of the LED in the box above (**https://nio.school/[your unique lab number]/sensorTag**).
+After the service is built and running, you will be able to see the state of the LED in the box above.
 
 ### Designer Instructions
 1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `pi` instance and create a new service
@@ -36,7 +36,7 @@ After the service is built and running, you will be able to see the state of the
 
     **Initial State:** `{{ False }}`
 
-    **State:** `{{ $accelerometer[“z_accel_g”] > 0 }}`
+    **State:** `{{ $accelerometer["z_accel_g"] > 0 }}`
   >Here we set the state variable to `True` if the z_acceleration is > 0 and `False` if it’s < 0.
 
 1. Save the block
@@ -119,4 +119,4 @@ Click the small round power button on the side of the Texas Instruments SensorTa
 ### Turn the LED on and off
 Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off.
 
-Scroll to the top of this page (**https://nio.school/[your unique lab number]/sensorTag**) to see the output of your service.
+Return to the top of this page to see the output of your service.
