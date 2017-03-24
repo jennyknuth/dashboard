@@ -18,19 +18,22 @@ In this lab you will build a service that will allow you to shake your phone to 
 1. Create a new service by clicking the `+ add new service` button
 1. Name it `Lab2` and click `accept`
 
-#### Subscribe to the phone’s shake data
->The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified `Topic`, while Subscriber blocks listen for signals on specific topics and pass them in to their respective services. In this case, the `DetectShake` service provided for you is publishing signals on the `shake` topic. We will configure a Subscriber block to pick up the signals on this `shake` topic by modifying its `Topic` field.
+#### Listen to the phone’s shake data using Socket.IO
 
-1. On the right-hand side you'll see a bunch of block categories. Scroll down until you see the **Sub** category
-1. Click on the **Sub** category
-1. Drag the `+ Subscriber` template block onto your canvas
-1. Name it `SubscribeShake` and click `accept`
+1. On the right-hand side you'll see a bunch of block categories. Scroll down until you see the **SIO** category
+1. Click on the **SIO** category
+1. Drag the `+ Socket IO` template block onto your canvas
+1. Name it `ShakeSocket` and click `accept`
 >Notice the yellow dot in the upper left corner of the block. This means the block has unsaved configuration changes.
 
 4. Click the three dots in the upper right-hand corner of the block to open the configuration panel
 1. To configure your block, fill in the following field:
 
-     **Topic:** `shake`
+     **Port:** `80`
+
+     **Socket.io Room:** `shake`
+
+     **SocketIo Host:** `[[SOCKETIO_HOST]]`
 1. Click `save` at the bottom of the panel
 
 #### Strip signal of everything but acceleration data
@@ -52,6 +55,7 @@ In this lab you will build a service that will allow you to shake your phone to 
   8. Click `save` at the bottom of the panel
 
 #### Publish shake data to fan
+>The Subscriber and Publisher blocks are used to send signals between services. A Publisher block posts signals to a specified Topic, while Subscriber blocks listen for signals on specific topics and pass them in to their respective services. 
 
   1. Click on the **Pub** category on the right side pane of the designer
   1. Drag the `+ Publisher` template block onto your canvas
