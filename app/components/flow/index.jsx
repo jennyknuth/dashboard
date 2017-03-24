@@ -9,6 +9,8 @@ import FanGraphic from 'components/shared/fan-graphic';
 import Instructions from 'components/shared/collapsible';
 import Content from 'components/flow/flow-instructions';
 
+import replacements from 'components/shared/replacements';
+
 import FlowWindSpeed from 'components/flow/flow-windspeed';
 
 import layout from 'theme/layout.scss';
@@ -36,7 +38,9 @@ const Flow = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-      <Instructions><Content/></Instructions>
+      <Instructions>
+        <Content replacements={replacements} />
+      </Instructions>
       </div>
     </div>
   );

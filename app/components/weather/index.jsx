@@ -10,6 +10,7 @@ import Instructions from 'components/shared/collapsible';
 import WeatherCurrent from 'components/weather/weather-current';
 import WeatherForecast from 'components/weather/weather-forecast';
 import Content from 'components/weather/weather-instructions';
+import replacements from 'components/shared/replacements';
 
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
@@ -35,7 +36,9 @@ const Weather = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <Instructions><Content/></Instructions>
+        <Instructions>
+          <Content replacements={replacements}/>
+        </Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="fan" className={linkClassNames}>Next Project</Link>

@@ -32,7 +32,9 @@ const SensorTag = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <Instructions><Content/></Instructions>
+        <Instructions>
+          <Content />
+        </Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="flow" className={linkClassNames}>Next Project</Link>

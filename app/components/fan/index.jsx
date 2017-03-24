@@ -10,6 +10,8 @@ import SocketRoom from 'components/shared/socket-room';
 import Instructions from 'components/shared/collapsible';
 import Content from 'components/fan/fan-instructions';
 
+import replacements from 'components/shared/replacements';
+
 import classes from 'theme/button.scss';
 import layout from 'theme/layout.scss';
 import lab from 'theme/lab.scss';
@@ -42,7 +44,9 @@ const FanLab = (props) => {
         </div>
       </BlankSlate>
       <div className={layout.paper}>
-        <Instructions><Content/></Instructions>
+        <Instructions>
+          <Content replacements={replacements} />
+        </Instructions>
       </div>
       <div className={layout.rightBlock}>
         <Link to="sensorTag" className={linkClassNames}>Next Project</Link>

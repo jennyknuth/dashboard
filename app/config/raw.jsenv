@@ -1,4 +1,5 @@
 {
 	"SOCKET_HOST": "//labtest.socket.nio.works",
 	"APP_ROOT": "",
+	"MOBILE_URL": "https://nio.school/mobiletest",
 }
