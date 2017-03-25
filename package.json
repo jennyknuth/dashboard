@@ -10,6 +10,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build --production",
+    "build:dev": "brunch build",
     "lint": "eslint app/",
     "test": "mocha",
     "verify": "eslint app/ && mocha",
