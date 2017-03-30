@@ -1,20 +1,22 @@
 In this lab you will build a service that will allow you to shake your phone to toggle the fan on and off. After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above.
 
 ### Hardware Instructions
-1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
-
-     ![wifi](./img/instructions/att-express.png)
-     <!-- Add up close image of screen -> image of one device connected -->
+1. Plug the black WiFi antenna into the black Panda Wireless dongle on the side of the Raspberry Pi 
 
 1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
 
 ![Pi connected to computer](./img/instructions/pi.jpg)
 1. Once the Raspberry Pi turns on, the red LED by the microUSB port should remain solid
 
+1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
+
+     ![wifi](./img/instructions/att-express.png)
+     <!-- Add up close image of screen -> image of one device connected -->
+
 ### Designer Instructions
 1. Go to your **lab** system in the designer ([https://designer.n.io](https://designer.n.io))
-1. This time, click on the instance named **pi** located on the left side of the screen—this instance (installation) of n.io is coming from the Pi computer you just powered on
-2. You should see three pre-configured services in the instance, `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` that should already be running—start them if they are stopped
+1. This time, click on the instance named **{{PI_INSTANCE}}** located on the left side of the screen—this instance (installation) of n.io is coming from the Pi computer you just powered on
+2. You should see a pre-configured service in the instance, `FanToggler` that should already be running. If not, start it
 1. Create a new service by clicking the `+ add new service` button
 1. Name it `Lab2` and click `accept`
 1. Click on the `Lab2` service
@@ -25,9 +27,11 @@ In this lab you will build a service that will allow you to shake your phone to 
 1. Click on the **SIO** category
 1. Drag the `+ Socket IO` template block onto your canvas
 1. Name it `ShakeSocket` and click `accept`
->Notice the yellow dot in the upper left corner of the block. This means the block has unsaved configuration changes.
 
 4. Click the three dots in the upper right-hand corner of the block to open the configuration panel
+
+1. Check the `Listen to SocketIo Room` checkbox
+
 1. To configure your block, fill in the following field:
 
      **Port:** `80`
@@ -69,7 +73,7 @@ In this lab you will build a service that will allow you to shake your phone to 
 ### Connect and run your services
 >Signal flow is defined by clicking on the blue circle at the bottom of a block and dragging the connection to the blue circle at the top of the appropriate block in the service you are creating
 
-1. Connect the `SubscribeShake` block to the `GetAccelData` block
+1. Connect the `ShakeSocket` block to the `GetAccelData` block
 1. Connect the `GetAccelData` block to the `PublishFan` block
 
 #### Save the `Lab2` service
@@ -96,3 +100,21 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 
 Return to the top of this page to see the output of your service.
+
+### Troubleshooting instructions 
+
+**Check for loose connections**
+* Check that all wires are connected
+* Verify that the wind flow sensor is seated in the breadboard
+
+**Check power**
+* Ensure that the USB cable is connected to the Pi and a computer
+* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
+* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+
+**Check network**
+* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
+
+**Check configuration**
+* Review lab instructions to ensure all steps were followed correctly
+
