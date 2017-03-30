@@ -128,7 +128,7 @@ Return to the top of this page to see the output of your service.
 * The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your {{PI_INSTANCE}} instance, follow the power and networking troubleshooting steps below.
 
 **Saved blocks**
-* Make sure that all blocks are saved in your `Lab2` service. You should not see any of the little yellow or blue badges on the top left of the blocks - these indicate that the block has unsaved changes.
+* Make sure that all blocks are saved in your `Lab3` service. You should not see any of the little yellow or blue badges on the top left of the blocks - these indicate that the block has unsaved changes.
 
 **Check for loose connections**
 * Check that all wires are connected
