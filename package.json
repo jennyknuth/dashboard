@@ -1,11 +1,11 @@
 {
-  "name": "nuik-test-theme",
-  "description": "A test application trying out nuik and nuik-nio",
-  "author": "J. Holmes",
+  "name": "n.io-intro-lab",
+  "description": "Instructions and output from introductory nio.school labs",
+  "author": "n.io",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nioinnovation/ui-kit"
+    "url": "https://github.com/nioinnovation/intro_lab"
   },
   "scripts": {
     "start": "brunch watch --server",

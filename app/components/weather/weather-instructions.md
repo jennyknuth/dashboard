@@ -2,7 +2,7 @@ In this lab, n.io will get the weather at your current location and send you a t
 
 The n.io service that determines your location, pings the [WeatherUnderground API](https://www.wunderground.com/weather/api/) for weather data, and displays the results above has already been built for you.
 
-Once you start the services, n.io will detect your phone's location when you use your phone to log in to your unique nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}). In addition, when you enter your name and mobile phone number into the specified block, n.io will send you a text message with the weather information.
+Once you start the services, n.io will detect your phone's location when you connect to your unique nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}). In addition, when you enter your name and mobile phone number into the specified block, n.io will send you a text message with the weather information.
 
 ### Designer Instructions
 1. Go to [https://designer.n.io](https://designer.n.io), to access the designer
@@ -36,13 +36,12 @@ Once you start the services, n.io will detect your phone's location when you use
 
 ![service menu](./img/instructions/service-menu.png)
 
-
 ## Congratulations you have successfully configured your first n.io block and started your first n.io services!!
 
 ### Use your n.io instance
 1. With your n.io services successfully started, use your mobile phone browser to go to your unique nio.school mobile address [{{MOBILE_URL}}]({{MOBILE_URL}})
 1. Press `OK` to the `Use Your Current Location` prompt
-1. Enter a name and email and click `Login`
+1. Your phone screen should look similar to this:
 
   ![mobile screen shot](./img/instructions/mobile.png)
 
@@ -54,3 +53,4 @@ Return to the top of this page to see the output of your services. You should se
 
 * Check that your `Lab1` service is configured according to the instructions
 * Check that the `LocationLookup`, `MobileAccelDataHandler`, `WeatherDataHandler`, and `Lab1` services are all started and running
+* Check that location services are enabled for the web browser on your phone and that you have allowed access to your current location

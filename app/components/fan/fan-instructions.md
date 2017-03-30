@@ -95,10 +95,9 @@ In this lab you will build a service that will allow you to shake your phone to 
 
 ### Turn the fan on and off
 
-1. Using your mobile phone browser, login to your nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}) again if you have left the page (allowing n.io to again access your location)
+1. Using your mobile phone browser, navigate to your nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}) again if you have left the page (allowing n.io to again access your location)
 1. Shake your phone and it's built-in accelerometer data will be transmitted to a web socket—n.io picks up the acceleration data from the web socket and triggers the fan to turn on
 1. Shake your phone again to turn the fan off
-
 
 Return to the top of this page to see the output of your service.
 
