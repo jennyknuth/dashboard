@@ -7,7 +7,7 @@ Once you start the services, n.io will detect your phone's location when you use
 ### Designer Instructions
 1. Go to [https://designer.n.io](https://designer.n.io), to access the designer
 1. Click on **lab** on the left side panel—this is your system
-1. Click on **cloud#** located on the left side of the screen—this is the name of your instance, in this case, one that is in the 'cloud'
+1. Click on **{{CLOUD_INSTANCE}}** located on the left side of the screen—this is the name of your instance, in this case, one that is in the 'cloud'
 1. Inside the instance you will find four pre-configured services: `LocationLookup`, `MobileAccelDataHandler`, `DetectShakes`, and `WeatherDataHandler`
 1. Click on the `Lab1` service
 
