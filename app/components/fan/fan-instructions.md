@@ -6,8 +6,9 @@ The cloud is fun, but n.io gets way more fun when we get hardware involved! In t
 ![WiFi antenna](./img/instructions/panda.jpg)
 1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi. You can also use a USB cube that goes to the wall if that is more convenient - we only use USB for powering the Pi.
 
+
 ![Pi connected to computer](./img/instructions/pi.jpg)
-1. Once the Raspberry Pi turns on, the red LED by the microUSB port on the Pi should remain solid
+3. Once the Raspberry Pi turns on, the red LED by the microUSB port on the Pi should remain solid
 
 1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable — you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
@@ -98,10 +99,9 @@ The cloud is fun, but n.io gets way more fun when we get hardware involved! In t
 
 ### Turn the fan on and off
 
-1. Using your mobile phone browser, login to your nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}) again if you have left the page (allowing n.io to again access your location)
+1. Using your mobile phone browser, navigate to your nio.school mobile site [{{MOBILE_URL}}]({{MOBILE_URL}}) again if you have left the page (allowing n.io to again access your location)
 1. Shake your phone and it's built-in accelerometer data will be transmitted to a web socket—n.io picks up the acceleration data from the web socket and triggers the fan to turn on
 1. Shake your phone again to turn the fan off
-
 
 Return to the top of this page to see the output of your service.
 

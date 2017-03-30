@@ -36,13 +36,12 @@ Once you start the services and log in to your unique nio.schol mobile site, n.i
 
 ![service menu](./img/instructions/service-menu.png)
 
-
 ## Congratulations you have successfully configured your first n.io block and started your first n.io services!!
 
 ### Use your n.io instance
 1. With your n.io services successfully started, use your mobile phone browser to go to your unique nio.school mobile address [{{MOBILE_URL}}]({{MOBILE_URL}})
 1. Press `OK` to the `Use Your Current Location` prompt
-1. You should see accelerometer, gyroscope, and location data points on the screen.
+1. You should see accelerometer, gyroscope, and location data points on the screen, similar to this:
 
   ![mobile screen shot](./img/instructions/mobile.png)
 
@@ -56,3 +55,4 @@ Return to the top of this page to see the output of your services. You should se
 * Check that the `LocationLookup`, `MobileAccelDataHandler`, `WeatherDataHandler`, and `Lab1` services are all started and running
 * The `WeatherDataHandler` service is set up to poll the weather API once and only once per run. If you started the weather service before starting the service that sends the text message `Lab1` then it's possible the weather poll happened but the text wasn't sent because the service was off. To re-poll the weather API restart the `WeatherDataHandler` service (first stop service, then start it) and then make sure your mobile device browser is active on the mobile site.
 * Make sure the mobile web site is active and your phone is not asleep. If you see the gyroscope numbers on the site changing as you move your phone the site is working
+* Check that location services are enabled for the web browser on your phone and that you have allowed access to your current location
