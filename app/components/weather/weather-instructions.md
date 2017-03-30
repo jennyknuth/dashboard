@@ -7,20 +7,21 @@ Once you start the services, n.io will detect your phone's location when you use
 ### Designer Instructions
 1. Go to [https://designer.n.io](https://designer.n.io), to access the designer
 1. Click on **lab** on the left side panel—this is your system
-1. Click on **cloud** located on the left side of the screen—this is the name of your instance, in this case, one that is in the 'cloud'
-1. Inside the instance you will find four pre-configured services: `MobileAccelDataHandler`, `LocationLookup`, `WeatherDataHandler`, and `Lab1`
+1. Click on **cloud#** located on the left side of the screen—this is the name of your instance, in this case, one that is in the 'cloud'
+1. Inside the instance you will find four pre-configured services: `LocationLookup`, `MobileAccelDataHandler`, `DetectShakes`, and `WeatherDataHandler`
 1. Click on the `Lab1` service
 
 #### Send an SMS via the Twilio Service
 > The TwilioSMS block sends an SMS to the specified recipient using the Twilio service.
 
 1. Click on the three dots in the upper right-hand corner of the `SendWeatherText` Twilio SMS block to open the configuration panel
-1. Click on `+` in the **Recipients** attribute
+1. Click on `+ Recipients` in the **Recipients** attribute
 1. Fill in the following configuration fields:
 
-     **Number:** `{{ [your number] }}`    (for example: `{{ 5555555555 }}`)
+     **Name:** `[your name]`     (for example: `Doug`)
+     
+     **Number:** `[your number]`    (for example: `5555555555`)
 
-     **Name:** `{{ [your name] }}`     (for example: `{{ John }}`)
 1. Click `save` at the bottom of the panel
 
 #### Start the `Lab1` and `WeatherDataHandler` services
@@ -47,4 +48,23 @@ Once you start the services, n.io will detect your phone's location when you use
 
 You will soon receive a text from n.io with the weather at your current location.
 
-Return to the top of this page to see the output of your services. You should see the current weather conditions, a 10-day forecast, and the data being published by n.io.
+Return to the top of this page to see the output of your services. You should see the current weather conditions in the web user interface, a 10-day forecast, and the data being published by n.io.
+
+### Troubleshooting instructions 
+
+**Check for loose connections**
+* Check that all wires are connected
+* Verify that the wind flow sensor is seated in the breadboard
+
+**Check power**
+* Ensure that the USB cable is connected to the Pi and a computer
+* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
+* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+
+**Check network**
+* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
+
+**Check configuration**
+* Review lab instructions to ensure all steps were followed correctly
+
+
