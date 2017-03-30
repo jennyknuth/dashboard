@@ -3,7 +3,7 @@ In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on
 After the service is built and running, you will be able to see the state of the LED in the box above.
 
 ### Designer Instructions
-1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `pi` instance and create a new service
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `{{PI_INSTANCE}}` instance and create a new service
 1. Name it `Lab3`
 1. Click the `Lab3` service located on the left side of the screen
 
@@ -23,7 +23,6 @@ After the service is built and running, you will be able to see the state of the
 
     **Device Address:** `[[SENSORTAG_ADDRESS]]`
 
-2. From the list of **Sensors** select `Accelerometer`
 2. Save the block
 
 #### Turn on your LED by signaling a state change
@@ -120,3 +119,20 @@ Click the small round power button on the side of the Texas Instruments SensorTa
 Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off.
 
 Return to the top of this page to see the output of your service.
+
+### Troubleshooting instructions 
+
+**Check for loose connections**
+* Check that all wires are connected
+* Verify that the wind flow sensor is seated in the breadboard
+
+**Check power**
+* Ensure that the USB cable is connected to the Pi and a computer
+* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
+* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+
+**Check network**
+* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
+
+**Check configuration**
+* Review lab instructions to ensure all steps were followed correctly
