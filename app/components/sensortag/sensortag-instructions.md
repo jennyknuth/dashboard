@@ -1,4 +1,4 @@
-In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on and off. A SensorTag is a contained device with a number of sensors for IoT testing and use. The SensorTag is produced by Texas Instruments. When the SensorTag is facing up, the LED will turn on, and when you flip it over so the SensorTag is facing down, the LED will turn off.
+In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on and off. A SensorTag is a bluetooth connected device that contains a number of sensors for IoT testing and use. The SensorTag is produced by Texas Instruments. When the SensorTag is facing up, the LED will turn on, and when you flip it over so the SensorTag is facing down, the LED will turn off.
 
 After the service is built and running, you will be able to see the state of the LED in the box above.
 
@@ -8,11 +8,13 @@ After the service is built and running, you will be able to see the state of the
 1. Click the `Lab3` service located on the left side of the screen
 
 #### Simulate signals to trigger SensorTag reads
-1. Click on the **CIS** category on the right side pane of the designer
-2. Drag the `+ Counter Interval Simulator` template block onto your canvas
+> A lot of blocks (for example, the Sensor Tag Read block) rely on incoming signals to know when to perform their actions. As a result, there are a set of blocks called simulator blocks that we often use to generate signals in order to "drive" the action of a subsequent block. In this demo, the `IdentityIntervalSimulator` block will drive the polling of the `SensorTagRead` block.
+
+1. Click on the **IIS** category on the right side pane of the designer
+2. Drag the `+ Identity Interval Simulator` template block onto your canvas
 2. Name it `SensorTagSim` and click `accept`
 2. Click the three dots in the upper right-hand corner of the block to open the configuration panel
-2. Keep the default configuration and click `save` at the bottom of the panel
+2. Keep the default configuration and click `save` at the bottom of the panel. This block configuration will tell the block to emit an empty signal every second.
 
 #### Access the Texas Instruments sensor
 1. Click on the **STR** category on the right side pane of the designer
@@ -23,10 +25,10 @@ After the service is built and running, you will be able to see the state of the
 
     **Device Address:** `[[SENSORTAG_ADDRESS]]`
 
-2. Save the block
+2. Save the block. You have just told your sensor tag block to connect via bluetooth to your sensor tag (address stored in a variable called `SENSORTAG_ADDRESS` for you).
 
 #### Turn on your LED by signaling a state change
->StateChange blocks maintain a state and when state changes, a signal is emitted that contains the `state` and `prev_state`.
+>StateChange blocks maintain a state and only notify signals when the state changes. This is a useful block for detecting when some conditions have changed—in this case, when the orientation of the SensorTag has changed. Each time the block's state changes, a signal is emitted that contains both the new state (`state`) and the previous state (`prev_state`).
 
 1. Click on the **SC** category on the right side pane of the designer
 2. Drag the `+ State Change` template block onto your canvas
@@ -111,16 +113,22 @@ After the service is built and running, you will be able to see the state of the
   ![lab 3 service](./img/instructions/sensorTag-service.png)
 
 ### Hardware Instructions
-Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth Dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
+Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth 'plugable' dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
 
   ![Texas Instruments sensorTag](./img/instructions/sensortag.png)
 
 ### Turn the LED on and off
-Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off.
+Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off. The "face" of the sensor tag is defined internally as the side that has the slots where you can see the circuit board. The TI logo is the bottom of the sensor tag. Therefore, when the circuit board side is facing up your USB light should be on.
 
 Return to the top of this page to see the output of your service.
 
 ### Troubleshooting guide
+
+**oops! Unable to Connect**
+* The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your {{PI_INSTANCE}} instance, follow the power and networking troubleshooting steps below.
+
+**Saved blocks**
+* Make sure that all blocks are saved in your `Lab3` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
 
 **Check for loose connections**
 * Check that all wires are connected
