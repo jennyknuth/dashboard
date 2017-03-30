@@ -1,11 +1,11 @@
 In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity, the Blink1 LED you used in Lab 3 will turn on.
 
-To turn the LED off, shake your phone to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will go dark.
+Shake your phone again to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will turn off.
 
 After the service is built and running, you will be able to see the state of the fan, accelerometer, and LED in the box above.
 
 ### Hardware Instructions
-1. Connect the wind-flow sensor battery to the wind-flow sensor's breadboard by inserting the end of the red 9v battery wire into one of the holes in the row with a red `+` that is next to the row marked with a blue `-`
+1. Insert the 9v battery into the 9v battery holder
 
 ![battery](./img/instructions/battery.jpg)
 
@@ -43,7 +43,7 @@ After the service is built and running, you will be able to see the state of the
 
 #### Turn on your LED by signaling a state change
 1. Click on the **SC** category on the right side pane of the designer
-1. Drag the `+ State Change` template block onto your campus
+1. Drag the `+ State Change` template block onto your canvas
 1. Name it `WindFlowThreshold`
 1. Uncheck the `Exclude Existing Fields` checkbox
 1. Uncheck the `Load from Persistence?` checkbox
@@ -122,11 +122,7 @@ After the service is built and running, you will be able to see the state of the
 
 1. Scroll to the top of this page to see the output of your service.
 
-## Congratulations!
-
-### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to **n.io**?
-
-### Troubleshooting instructions 
+### Troubleshooting guide
 
 **Check for loose connections**
 * Check that all wires are connected
@@ -134,11 +130,17 @@ After the service is built and running, you will be able to see the state of the
 
 **Check power**
 * Ensure that the USB cable is connected to the Pi and a computer
-* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
-* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+* Ensure that the AT&T Unite Express is on
+* Ensure that the 9 volt battery is in place
 
 **Check network**
 * Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
 
 **Check configuration**
+* Make sure that your `Lab3` service is stopped
+* Make sure that your `Lab2` and `FanToggler` services are still running
 * Review lab instructions to ensure all steps were followed correctly
+
+## Congratulations!
+
+### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to **n.io**?

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
+import replacements from 'components/shared/replacements';
+
 import BlankSlate from 'components/shared/blank-slate';
 import Light from 'components/shared/light-graphic';
 import SocketRoom from 'components/shared/socket-room';
@@ -33,7 +35,7 @@ const SensorTag = (props) => {
       </BlankSlate>
       <div className={layout.paper}>
         <Instructions>
-          <Content />
+          <Content replacements={replacements} />
         </Instructions>
       </div>
       <div className={layout.rightBlock}>
