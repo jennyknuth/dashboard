@@ -5,10 +5,6 @@ To turn the LED off, shake your phone to turn off the fan. The wind speed will d
 After the service is built and running, you will be able to see the state of the fan, accelerometer, and LED in the box above.
 
 ### Hardware Instructions
-1. Make sure your fan is directed toward the wind-flow sensor (shown below):
-
-![wind flow sensor](./img/instructions/wind-sensor.png)
-
 1. Connect the wind-flow sensor battery to the wind-flow sensor's breadboard by inserting the end of the red 9v battery wire into one of the holes in the row with a red `+` that is next to the row marked with a blue `-`
 
 ![battery](./img/instructions/battery.jpg)
@@ -23,12 +19,13 @@ After the service is built and running, you will be able to see the state of the
 #### Start Lab 2
 > We will be reusing the services from Lab 2
 
-1. Make sure that your `Lab2`, `DetectShake`, `MobileAccelDataHandler`, and `FanToggler` services are still running
+1. Make sure that your `Lab2` and `FanToggler` services are still running
 1. If they are stopped, start each one
 
 #### Create Lab 4
 1. Create a new service
 1. Name it `Lab4`
+1. Select the `Lab4` service
 
 #### Simulate signals to trigger Wind Flow Sensor reads
 1. Click on the **CIS** category on the right side pane of the designer
@@ -128,3 +125,20 @@ After the service is built and running, you will be able to see the state of the
 ## Congratulations!
 
 ### This is the end of this edition of n.io school. You have configured n.io blocks, services, and instances; talked to the cloud and the edge; and connected to hardware, your phone, the weather, and a website. Where else can you go? What do you want to **n.io**?
+
+### Troubleshooting instructions 
+
+**Check for loose connections**
+* Check that all wires are connected
+* Verify that the wind flow sensor is seated in the breadboard
+
+**Check power**
+* Ensure that the USB cable is connected to the Pi and a computer
+* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
+* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+
+**Check network**
+* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
+
+**Check configuration**
+* Review lab instructions to ensure all steps were followed correctly
