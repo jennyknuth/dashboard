@@ -1,4 +1,6 @@
-Since n.io deals with both hardware inputs and outputs, it is often a useful platform in desiging control systems. In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity across the sensor the Blink1 LED you used in Lab 3 will turn on.
+Since n.io deals with both hardware inputs and outputs, it is often a useful platform in desiging control systems. In this lab you will reuse the services from Lab 2 where you shake your phone and control a fan. In addition, the fan will be directed at a wind-flow sensor. When n.io senses enough wind velocity across the sensor the Blink1 LED you used in Lab 3 will turn on. The wind-flow sensor is on the breadboard in front of the fan and looks like this:
+
+![wind-flow sensor](./img/instructions/wind-sensor.png)
 
 Shake your phone again to turn off the fan. The wind speed will drop, the change will be sensed by n.io, and the LED will turn off.
 
@@ -35,7 +37,7 @@ After the service is built and running, you will be able to see the state of the
 2. Keep the default configuration and click `save` at the bottom of the panel
 
 #### Read from the wind flow sensor
-> We will use the `MCP30 0x` block to read values from the wind flow sensor. Just like the `SensorTagRead` block, it works by polling the sensor when it receives incoming signals. You can begin to imagine the modularity that n.io provides now - swapping out a different sensor or hardware type means only having to replace one block in a service!
+> We will use the `MCP30 0x` block to read values from the wind flow sensor. Just like the `SensorTagRead` block, it works by polling the sensor when it receives incoming signals. You can begin to imagine the modularity that n.io provides now—swapping out a different sensor or hardware type means only having to replace one block in a service!
 
 1. Click on the **MCP3** category on the right side pane of the designer
 2. Drag the `+ MCP30 0x` template block onto your canvas
@@ -132,7 +134,7 @@ After the service is built and running, you will be able to see the state of the
 * The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your {{PI_INSTANCE}} instance, follow the power and networking troubleshooting steps below.
 
 **Saved blocks**
-* Make sure that all blocks are saved in your `Lab4` service. You should not see any of the little yellow or blue badges on the top left of the blocks - these indicate that the block has unsaved changes.
+* Make sure that all blocks are saved in your `Lab4` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
 
 **Check for loose connections**
 * Check that all wires are connected
@@ -141,7 +143,7 @@ After the service is built and running, you will be able to see the state of the
 **Check power**
 * Ensure that the USB cable is connected to the Pi and a computer
 * Ensure that the AT&T Unite Express is on
-* Ensure that the 9 volt battery is in place
+* Ensure that the 9 volt battery is in place and has charge
 
 **Check network**
 * Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.

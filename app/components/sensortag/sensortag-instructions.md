@@ -28,7 +28,7 @@ After the service is built and running, you will be able to see the state of the
 2. Save the block. You have just told your sensor tag block to connect via bluetooth to your sensor tag (address stored in a variable called `SENSORTAG_ADDRESS` for you).
 
 #### Turn on your LED by signaling a state change
->StateChange blocks maintain a state and only notify signals when the state changes. This is a useful block for detecting when some conditions have changed - in this case, when the orientation of the SensorTag has changed. Each time the block's state changes a signal is emitted that contains both the new state (`state`) and the previous state (`prev_state`).
+>StateChange blocks maintain a state and only notify signals when the state changes. This is a useful block for detecting when some conditions have changed—in this case, when the orientation of the SensorTag has changed. Each time the block's state changes, a signal is emitted that contains both the new state (`state`) and the previous state (`prev_state`).
 
 1. Click on the **SC** category on the right side pane of the designer
 2. Drag the `+ State Change` template block onto your canvas
@@ -113,12 +113,12 @@ After the service is built and running, you will be able to see the state of the
   ![lab 3 service](./img/instructions/sensorTag-service.png)
 
 ### Hardware Instructions
-Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth Dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
+Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth 'plugable' dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
 
   ![Texas Instruments sensorTag](./img/instructions/sensortag.png)
 
 ### Turn the LED on and off
-Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off. The "top" of the sensor tag is defined internally as the side that has the slots where you can see the circuit board through. The TI logo is the bottom of the sensor tag. Therefore, when the circuit board side is facing up your USB light should be on.
+Flip the Texas Instruments SensorTag from face up to face down to turn the LED on and off. The "face" of the sensor tag is defined internally as the side that has the slots where you can see the circuit board. The TI logo is the bottom of the sensor tag. Therefore, when the circuit board side is facing up your USB light should be on.
 
 Return to the top of this page to see the output of your service.
 
@@ -128,7 +128,7 @@ Return to the top of this page to see the output of your service.
 * The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your {{PI_INSTANCE}} instance, follow the power and networking troubleshooting steps below.
 
 **Saved blocks**
-* Make sure that all blocks are saved in your `Lab3` service. You should not see any of the little yellow or blue badges on the top left of the blocks - these indicate that the block has unsaved changes.
+* Make sure that all blocks are saved in your `Lab3` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
 
 **Check for loose connections**
 * Check that all wires are connected
