@@ -4,10 +4,10 @@ In this lab you will build a service that will allow you to shake your phone to 
 1. Plug the black WiFi antenna into the black Panda Wireless dongle on the side of the Raspberry Pi
 
 ![WiFi antenna](./img/instructions/panda.jpg)
-1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
+2. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
 
 ![Pi connected to computer](./img/instructions/pi.jpg)
-1. Once the Raspberry Pi turns on, the red LED by the microUSB port on the Pi should remain solid
+3. Once the Raspberry Pi turns on, the red LED by the microUSB port on the Pi should remain solid
 
 1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
