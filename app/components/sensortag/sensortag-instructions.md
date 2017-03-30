@@ -3,7 +3,7 @@ In this lab you will be using the red SensorTag to turn the Blink1 LED dongle on
 After the service is built and running, you will be able to see the state of the LED in the box above.
 
 ### Designer Instructions
-1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `{{PI_INSTANCE}}` instance and create a new service
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your **{{PI_INSTANCE}}** instance and create a new service
 1. Name it `Lab3`
 1. Click the `Lab3` service located on the left side of the screen
 
@@ -36,15 +36,15 @@ After the service is built and running, you will be able to see the state of the
     **Initial State:** `{{ False }}`
 
     **State:** `{{ $accelerometer["z_accel_g"] > 0 }}`
-  >Here we set the state variable to `True` if the z_acceleration is > 0 and `False` if it’s < 0.
+>Here we set the state variable to `True` if the z_acceleration is > 0 and `False` if it’s < 0.
 
-1. Save the block
+5. Save the block
 
 #### Set the LED color using `DynamicFields` Block
 1. Drag a `DynamicFields` block onto your canvas
 1. Name it `Blink1Colors`
 1. Begin your block configuration by checking the box next to `Exclude existing fields?`
-1. Click the `+` inside **Fields** 3 times
+1. Click the `+` inside **Fields** attribute *3 times*
 1. Fill in each field with the following Name/Value pairs:
 
     **Attribute Name:** `red`
@@ -59,11 +59,11 @@ After the service is built and running, you will be able to see the state of the
 
     **Attribute Value:** `{{ 203 if $state else 0 }}`
 
-  >Here we check if the state variable we set above is `True` or `False` (if it exists, `$state` is `True`). The blue attribute will be set to 203 if state exists, otherwise, it is `False` and will be set to 0, meaning the LED should turn off.
+>Here we check if the state variable we set above is `True` or `False` (if it exists, `$state` is `True`). The blue attribute will be set to 203 if state exists, otherwise, it is `False` and will be set to 0, meaning the LED should turn off.
 
-  >Note: you can change the red/green/blue values from 65, 195, and 203 to set the Blink1 LED to whatever color you’d like. Each of the values ranges from 0-255, so to set the LED to lime green you would set them to `red: 0, green: 255, blue: 0`. Or to set it to purple you would change them to `red: 128, green: 0, blue: 128`.
+>Note: you can change the red/green/blue values from 65, 195, and 203 to set the Blink1 LED to whatever color you’d like. Each of the values ranges from 0-255, so to set the LED to lime green you would set them to `red: 0, green: 255, blue: 0`. Or to set it to purple you would change them to `red: 128, green: 0, blue: 128`.
 
-1. Save the block
+6. Save the block
 
 #### Control the Blink1 LED
 1. Click on the **B1** category on the right side pane of the designer
@@ -120,16 +120,15 @@ Flip the Texas Instruments SensorTag from face up to face down to turn the LED o
 
 Return to the top of this page to see the output of your service.
 
-### Troubleshooting instructions 
+### Troubleshooting guide
 
 **Check for loose connections**
 * Check that all wires are connected
-* Verify that the wind flow sensor is seated in the breadboard
 
 **Check power**
 * Ensure that the USB cable is connected to the Pi and a computer
-* Ensure that the AT&T Unite Express is on for Fan Lab, SensorTag Lab, and the Wind Flow Lab
-* Ensure that the 9 volt battery is in place for the Wind Flow Lab
+* Ensure that the AT&T Unite Express is on
+* Check that the sensorTag is on
 
 **Check network**
 * Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
