@@ -1,15 +1,15 @@
-In this lab you will build a service that will allow you to shake your phone to toggle the fan on and off. After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above.
+The cloud is fun, but n.io gets way more fun when we get hardware involved! In this lab you will build a service that will allow you to shake your phone to turn the fan on and off. The cloud instance and the pi instance will work together to achieve this! After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above.
 
 ### Hardware Instructions
 1. Plug the black WiFi antenna into the black Panda Wireless dongle on the side of the Raspberry Pi
 
 ![WiFi antenna](./img/instructions/panda.jpg)
-1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi
+1. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi. You can also use a USB cube that goes to the wall if that is more convenient - we only use USB for powering the Pi.
 
 ![Pi connected to computer](./img/instructions/pi.jpg)
 1. Once the Raspberry Pi turns on, the red LED by the microUSB port on the Pi should remain solid
 
-1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
+1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable — you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
      ![wifi](./img/instructions/att-express.png)
      <!-- Add up close image of screen -> image of one device connected -->
@@ -17,33 +17,36 @@ In this lab you will build a service that will allow you to shake your phone to 
 ### Designer Instructions
 1. Go to your **lab** system in the designer ([https://designer.n.io](https://designer.n.io))
 1. This time, click on the instance named **{{PI_INSTANCE}}** located on the left side of the screen—this instance (installation) of n.io is coming from the Pi computer you just powered on
-2. You should see a pre-configured service in the instance, `FanToggler`, that should already be running. If not, start it
+1. You should see a pre-configured service in the instance, `FanToggler`, that should already be running. If not, start it
 1. Create a new service by clicking the `+ add new service` button
 1. Name it `Lab2` and click `accept`
-1. Click on the `Lab2` service
+1. Click on the `Lab2` service on the left to activate it, bringing up a blank canvas
 
 #### Listen to the phone’s shake data using Socket.IO
 
-1. On the right-hand side you'll see a bunch of block categories. Scroll down until you see the **SIO** category
+1. On the right-hand side you'll see a bunch of block types. These represent the blocks that are installed on your n.io instance. Scroll down until you see the **SIO** label, which represents the `SocketIO` block type.
 1. Click on the **SIO** category
-1. Drag the `+ Socket IO` template block onto your canvas
-1. Name it `ShakeSocket` and click `accept`
+1. Add a new instance of this block to your service by dragging the `+ Socket IO` template block onto your canvas
+1. Name it `ShakeSocket` and click `accept`. This block will subscribe to data from the cloud instance and will receive a signal every time you shake your phone.
 
-4. Click the three dots in the upper right-hand corner of the block to open the configuration panel
-
-1. Check the `Listen to SocketIo Room` checkbox
+1. Click the three dots in the upper right-hand corner of the block to open the configuration panel
 
 1. To configure your block, fill in the following fields:
 
+     **Listen to SocketIo Room**: `<checked>`
+     
      **Port:** `80`
 
      **Socket.io Room:** `shake`
 
      **SocketIo Host:** `[[SOCKETIO_HOST]]`
+     
+  This tells the block to subscribe to socket data from your socket server (this has been pre-stored in a variable called `SOCKETIO_HOST` for you) and listen for data in the `shake` room.
+  
 1. Click `save` at the bottom of the panel
 
 #### Strip signal of everything but acceleration data
->`DynamicFields` blocks are used to reformat incoming signals that are assigned by the `fields` attribute. If the `Exclude existing fields?` checkbox is checked, previous key:value pairs will be discarded and the block will only pass on the key:value pairs you configure in the configuration panel. If the `Exclude existing fields?` checkbox is not checked, it will add the key:value pairs you configure to the existing signal.
+>`DynamicFields` blocks are used to reformat incoming signals that are assigned by the `fields` attribute. It is one of the most commonly used blocks in all of n.io. If the `Exclude existing fields?` checkbox is checked, previous key:value pairs will be discarded and the block will only pass on the key:value pairs you configure in the configuration panel. If the `Exclude existing fields?` checkbox is not checked, it will add the key:value pairs you configure to the existing signal.
 
   1. Click on the **DF** category on the right side pane of the designer
   1. Drag the `+ Dynamic Fields` template block onto your canvas
@@ -103,6 +106,12 @@ In this lab you will build a service that will allow you to shake your phone to 
 Return to the top of this page to see the output of your service.
 
 ### Troubleshooting guide
+
+**oops! Unable to Connect**
+* The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your {{PI_INSTANCE}} instance, follow the power and networking troubleshooting steps below.
+
+**Saved blocks**
+* Make sure that all blocks are saved in your `Lab2` service. You should not see any of the little yellow or blue badges on the top left of the blocks - these indicate that the block has unsaved changes.
 
 **Check for loose connections**
 * Check that all wires are connected
