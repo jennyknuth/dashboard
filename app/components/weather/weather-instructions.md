@@ -26,11 +26,11 @@ In addition, when you enter your name and mobile phone number into the specified
 
 #### Start the `Lab1` and `WeatherDataHandler` services
 1. Click on `Lab1` in the left side pane—this will select the Lab1 service for editing and starting
-1. Click the `start` ("play") icon on the top navigation bar—this will start the Lab1 service. You can tell that a service has been started successfully by checking that a "play" icon appears next to the service name in the left-hand service list. You can also know by clicking the service name in the top control bar and making sure that the only available action is `stop`. If it says `start`, that means the service is stopped and can be started.
+1. Click the `start` ("play") icon on the top command bar—this will start the Lab1 service. You can tell that a service has been started successfully by checking that a "play" icon appears next to the service name in the left-hand service list. You can also know by clicking the service name in the top control bar and making sure that the only available action is `stop`. If it says `start`, that means the service is stopped and can be started.
 1. Click on the `WeatherDataHandler` in the left side pane
-1. Click the `start` icon on the top navigation bar
+1. Click the `start` icon on the top command bar
 1. The `MobileAccelDataHandler` and `LocationLookup` services should already be running for you—if they are stopped, start them
-1. The navigation bar at the top allows you to save your service, start a service if it is stopped, and stop a service (if it is started), among other options, and looks like this
+1. The command bar at the top allows you to save your service, start a service if it is stopped, and stop a service (if it is started), among other options, and looks like this
 
 ![service menu](./img/instructions/service-menu.png)
 
@@ -49,8 +49,8 @@ Return to the top of this page to see the output of your services. You should se
 
 ### Troubleshooting guide
 
-* Be sure that you added yourself as a recipient in the `SendWeatherText` block in the `Lab1` service and clicked save
-* Check that the `LocationLookup`, `MobileAccelDataHandler`, `WeatherDataHandler`, and `Lab1` services are all started and running
+* Be sure that you added yourself as a recipient in the `SendWeatherText` block in the `Lab1` service and clicked save.
+* Check that the `LocationLookup`, `MobileAccelDataHandler`, `WeatherDataHandler`, and `Lab1` services are all started and running.
 * The `WeatherDataHandler` service is set up to poll the weather API once and only once per run. If you started the weather service before starting the service that sends the text message `Lab1` then it's possible the weather poll happened but the text wasn't sent because the service was off. To re-poll the weather API restart the `WeatherDataHandler` service (first stop service, then start it) and then make sure your mobile device browser is active on the mobile site.
-* Make sure the mobile web site is active and your phone is not asleep. If you see the gyroscope numbers on the site changing as you move your phone, the site is working
-* Check that location services are enabled for the web browser on your phone and that you have allowed access to your current location
+* Make sure the mobile web site is active and your phone is not asleep. If you see the gyroscope numbers on the site changing as you move your phone, the site is working.
+* Check that location services are enabled for the web browser on your phone and that you have allowed access to your current location.

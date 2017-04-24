@@ -16,7 +16,7 @@ After the service is built and running, you will be able to see the state of the
 #### Stop Lab 3
 > Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`. We won't reuse the `Lab3` service, but we will use the Blink1 block again (see below).
 
-1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and click the `stop` icon on the top navigation bar
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and click the `stop` icon on the command bar at the top of your screen
 
 #### Start Lab 2
 > We will be reusing the services from Lab 2
@@ -110,10 +110,10 @@ After the service is built and running, you will be able to see the state of the
 1. Connect the `ColorAndWindFlow` block to the `Blink1` block and also to the `WindFlowSocket` block
 
 #### Save the `Lab4` service
-1. Click the `save` icon on the top navigation bar
+1. Click the `save` icon on the top command bar
 
 #### Start the `Lab4` service
-1. Click the `start` icon on the top navigation bar
+1. Click the `start` icon on the top command bar
 1. Your service should look similar to this:
 
 ![lab 4 service](./img/instructions/flow-service.png)
@@ -135,21 +135,22 @@ After the service is built and running, you will be able to see the state of the
 * Make sure that all blocks are saved in your `Lab4` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
 
 **Check for loose connections**
-* Check that all wires are connected
-* Verify that the wind flow sensor is seated in the breadboard
+* Check that all wires are connected.
+* Verify that the wind flow sensor is seated in the breadboard.
 
 **Check power**
-* Ensure that the USB cable is connected to the Pi and a computer
-* Ensure that the AT&T Unite Express is on
-* Ensure that the 9 volt battery is in place and has charge
+* Ensure that the USB cable is connected to the Pi and a computer.
+* Ensure that the AT&T Unite Express is on.
+* Ensure that the 9 volt battery is in place and has charge.
 
 **Check network**
 * Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
 
 **Check configuration**
-* Make sure that your `Lab3` service is stopped
-* Make sure that your `Lab2` and `FanToggler` services are still running
-* Review lab instructions to ensure all steps were followed correctly
+* Make sure that your `Lab3` service is stopped.
+* Make sure that your `Lab2` and `FanToggler` services are still running.
+* Review lab instructions to ensure all steps were followed correctly.
+* Make sure all configuration field values are spelled exactly as described in these instructions.
 
 ## Congratulations!
 
