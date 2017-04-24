@@ -16,7 +16,7 @@ After the service is built and running, you will be able to see the state of the
 #### Stop Lab 3
 > Because the Blink1 LED can only receive signals from one service at a time, to run this lab, you need to stop `Lab3`. We won't reuse the `Lab3` service, but we will use the Blink1 block again (see below).
 
-1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and from the down arrow next to the `Lab3` label at the top, click `stop`
+1. In the designer ([https://designer.n.io](https://designer.n.io)), navigate to your `Lab3` service and click the `stop` icon on the top navigation bar
 
 #### Start Lab 2
 > We will be reusing the services from Lab 2
@@ -110,12 +110,10 @@ After the service is built and running, you will be able to see the state of the
 1. Connect the `ColorAndWindFlow` block to the `Blink1` block and also to the `WindFlowSocket` block
 
 #### Save the `Lab4` service
-1. Click the down arrow next to the `Lab4` label at the top of the screen
-1. Click `save`
+1. Click the `save` icon on the top navigation bar
 
 #### Start the `Lab4` service
-1. Click the down arrow next to the `Lab4` label at the top of the screen
-1. Click `start`
+1. Click the `start` icon on the top navigation bar
 1. Your service should look similar to this:
 
 ![lab 4 service](./img/instructions/flow-service.png)

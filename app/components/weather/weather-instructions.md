@@ -26,13 +26,11 @@ In addition, when you enter your name and mobile phone number into the specified
 
 #### Start the `Lab1` and `WeatherDataHandler` services
 1. Click on `Lab1` in the left side pane—this will select the Lab1 service for editing and starting
-1. Click on the down arrow next to the `Lab1` label at the top of the screen—this is the service control bar
-1. Click `start`—this will start the Lab1 service. You can tell that a service has been started successfully by checking that a "play" icon appears next to the service name in the left-hand service list. You can also know by clicking the service name in the top control bar and making sure that the only available action is `stop`. If it says `start`, that means the service is stopped and can be started.
+1. Click the `start` ("play") icon on the top navigation bar—this will start the Lab1 service. You can tell that a service has been started successfully by checking that a "play" icon appears next to the service name in the left-hand service list. You can also know by clicking the service name in the top control bar and making sure that the only available action is `stop`. If it says `start`, that means the service is stopped and can be started.
 1. Click on the `WeatherDataHandler` in the left side pane
-1. Click on the down arrow next to the `WeatherDataHandler` label at the top of the screen
-1. Click `start`
+1. Click the `start` icon on the top navigation bar
 1. The `MobileAccelDataHandler` and `LocationLookup` services should already be running for you—if they are stopped, start them
-1. The dropdown menu at the top allows you to save your service, start a service if it is stopped, and stop a service (if it is started), among other options, and looks like this
+1. The navigation bar at the top allows you to save your service, start a service if it is stopped, and stop a service (if it is started), among other options, and looks like this
 
 ![service menu](./img/instructions/service-menu.png)
 

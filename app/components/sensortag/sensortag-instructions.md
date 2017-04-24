@@ -101,12 +101,10 @@ After the service is built and running, you will be able to see the state of the
 1. Connect the `Blink1Colors` block to the `Blink1` block and to the `Blink1Socket` block
 
 #### Save the `Lab3` service
-1. Click the down arrow next to the `Lab3` label at the top of the screen
-1. Click `save`
+1. Click the `save` icon on the top navigation bar
 
 #### Start the `Lab3` service
-1. Click the down arrow next to the `Lab3` label at the top of the screen
-1. Click `start`
+1. Click the `start` icon on the top navigation bar
 
 #### Your service should look similar to this:
 

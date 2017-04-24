@@ -19,7 +19,11 @@ The cloud is fun, but n.io gets way more fun when we get hardware involved! In t
 1. Go to your **lab** system in the designer ([https://designer.n.io](https://designer.n.io))
 1. This time, click on the instance named **{{PI_INSTANCE}}** located on the left side of the screen—this instance (installation) of n.io is coming from the Pi computer you just powered on
 1. You should see a pre-configured service in the instance, `FanToggler`, that should already be running. If not, start it.
-1. Create a new service by clicking the `+ add new service` button
+1. Again, click on **{{PI_INSTANCE}}** on the left side of your screen if you have navigated away from it
+1. Create a new service by clicking the `+ add new service` button on the navigation bar at the top
+
+     ![add service button](./img/instructions/add-service.png)
+
 1. Name it `Lab2` and click `accept`
 1. Click on the `Lab2` service on the left to activate it, bringing up a blank canvas
 
@@ -83,13 +87,11 @@ The cloud is fun, but n.io gets way more fun when we get hardware involved! In t
 
 #### Save the `Lab2` service
 
-1. Click the down arrow next to the `Lab2` label at the top of the screen
-1. Click `save`
+1. Click the `save` icon on the top navigation bar
 
 #### Start the `Lab2` service
 
-1. Click the down arrow next to the `Lab2` label at the top of the screen
-1. Click `start`
+1. Click the `start` icon on the top navigation bar
 
 #### Your service should look similar to this:
 
@@ -108,10 +110,10 @@ Return to the top of this page to see the output of your service.
 ### Troubleshooting guide
 
 **oops! Unable to Connect**
-* The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your **{{PI_INSTANCE}}** instance, follow the power and networking troubleshooting steps below.
+* The system designer is somewhat unique from many web applications in that it connects **directly** to your n.io instances. So if you try to load an instance and you see the unable to connect message it means that your browser is unable to reach the instance. You can retry a connection by closing the instance and reopening it in the designer by clicking on the instance name. If you are unable to connect to your **{{PI_INSTANCE}}** instance, follow the power and networking troubleshooting steps below
 
 **Saved blocks**
-* Make sure that all blocks are saved in your `Lab2` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
+* Make sure that all blocks are saved in your `Lab2` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes
 
 **Check for loose connections**
 * Check that all wires are connected
@@ -121,7 +123,7 @@ Return to the top of this page to see the output of your service.
 * Ensure that the AT&T Unite Express is on
 
 **Check network**
-* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
+* Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express
 
 **Check configuration**
-* Review lab instructions to ensure all steps were followed correctly
+* Review lab instructions to ensure all steps were followed correctly (including all configuration field values spelled exactly as described in these instructions)
