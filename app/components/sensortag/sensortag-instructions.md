@@ -101,12 +101,10 @@ After the service is built and running, you will be able to see the state of the
 1. Connect the `Blink1Colors` block to the `Blink1` block and to the `Blink1Socket` block
 
 #### Save the `Lab3` service
-1. Click the down arrow next to the `Lab3` label at the top of the screen
-1. Click `save`
+1. Click the `save` icon on the top command bar
 
 #### Start the `Lab3` service
-1. Click the down arrow next to the `Lab3` label at the top of the screen
-1. Click `start`
+1. Click the `start` icon on the top command bar
 
 #### Your service should look similar to this:
 
@@ -131,15 +129,16 @@ Return to the top of this page to see the output of your service.
 * Make sure that all blocks are saved in your `Lab3` service. You should not see any of the little yellow or blue badges on the top left of the blocks—these indicate that the block has unsaved changes.
 
 **Check for loose connections**
-* Check that all wires are connected
+* Check that all wires are connected.
 
 **Check power**
-* Ensure that the USB cable is connected to the Pi and a computer
-* Ensure that the AT&T Unite Express is on
-* Check that the sensorTag is on
+* Ensure that the USB cable is connected to the Pi and a computer.
+* Ensure that the AT&T Unite Express is on.
+* Check that the SensorTag is on.
 
 **Check network**
 * Ensure that the AT&T Unite Express shows a red 1 indicating that it is connected to the Pi. If not, power both off, connect the USB cable to the Pi, and then restart the AT&T Unite Express.
 
 **Check configuration**
-* Review lab instructions to ensure all steps were followed correctly
+* Review lab instructions to ensure all steps were followed correctly.
+* Make sure all configuration field values are spelled exactly as described in these instructions.
