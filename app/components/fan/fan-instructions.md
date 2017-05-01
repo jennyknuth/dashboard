@@ -13,7 +13,6 @@ The cloud is fun, but n.io gets way more fun when we get hardware involved! In t
 1. Press the power button on the AT&T Unite Express. You may need to hold it down for a couple of seconds. You can let go of the power button when the AT&T symbol lights up the screen. (If you want to charge your AT&T Unite Express, simply plug it in to your computer with a microUSB cable—you can ignore the prompt to install any drivers.) Wait for it to turn on fully before moving on to the next step. You will know it's connected when there is a notification badge with a `1` next to the wireless icon (shown below):
 
      ![wifi](./img/instructions/att-express.png)
-     <!-- Add up close image of screen -> image of one device connected -->
 
 ### Designer Instructions
 1. Go to your **lab** system in the designer ([https://designer.n.io](https://designer.n.io))
