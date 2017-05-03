@@ -113,6 +113,8 @@ After the service is built and running, you will be able to see the state of the
 ### Hardware Instructions
 Click the small round power button on the side of the Texas Instruments SensorTag provided in your kit to connect it to the Bluetooth 'plugable' dongle plugged into the Raspberry Pi. A small green LED on the face of the SensorTag will flash green.
 
+>Note: if the `Lab3` service is running, the green LED on the face of the SensorTag will not flash on and off. If at any point you're not sure whether the SensorTag is on and connected to the Raspberry Pi via Bluetooth, stop the `Lab3` service and check that the green LED begins to flash. If the LED is flashing correctly, start the service once again and continue onto the next steps. 
+
   ![Texas Instruments sensorTag](./img/instructions/sensortag.png)
 
 ### Turn the LED on and off

@@ -1,7 +1,7 @@
 The cloud is fun, but n.io gets way more fun when we get hardware involved! In this lab you will build a service that will allow you to shake your phone to turn the fan on and off. The cloud instance and the pi instance will work together to achieve this! After the service is built and running, you will be able to see the state of the fan and the shake pattern from the accelerometer in the box above.
 
 ### Hardware Instructions
-1. Plug the black WiFi antenna into the black Panda Wireless dongle on the side of the Raspberry Pi
+1. Screw the black WiFi antenna into the black Panda Wireless dongle on the side of the Raspberry Pi
 
 ![WiFi antenna](./img/instructions/panda.jpg)
 2. Plug in the microUSB cable to the correct port on the Raspberry Pi and plug the other end into a USB port on your computer to power on the Pi. You can also use a USB cube that goes to the wall if that is more convenient—we only use USB for powering the Pi.
