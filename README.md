@@ -1,6 +1,6 @@
-# n.io Intro Lab
+# socinio Dashboard
 
-The UI that accompanies the nio.school introduction labs.
+The UI that displays project stats
 
 ## Development
 
@@ -16,5 +16,3 @@ To build a minified version usable for production:
 ```
 npm run build
 ```
-
-The `master` branch is kept in sync via a Jenkins job with https://nio.school/labtest. All other labs (e.g. `lab1`, `lab2`) are also kept in sync.

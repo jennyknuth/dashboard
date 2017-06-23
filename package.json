@@ -1,11 +1,11 @@
 {
-  "name": "n.io-intro-lab",
-  "description": "Instructions and output from introductory nio.school labs",
+  "name": "socinio-dashboard",
+  "description": "Streams project stats to a UI",
   "author": "n.io",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nioinnovation/intro_lab"
+    "url": "https://github.com/nioinnovation/socinio-dashboard"
   },
   "scripts": {
     "start": "brunch watch --server",
