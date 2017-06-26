@@ -12,6 +12,7 @@ import MainApp from 'components/app';
 import Intro from 'components/intro';
 import Weather from 'components/weather';
 import FanLab from 'components/fan';
+import Dashboard from 'components/dashboard';
 import SensorTag from 'components/sensortag';
 import Flow from 'components/flow';
 
@@ -24,6 +25,7 @@ const store = createStore(mainApp);
 
 // App controllers
 import FanController from 'controllers/fan';
+import DashboardController from 'controllers/dashboard';
 import LEDController from 'controllers/led';
 import WeatherController from 'controllers/weather';
 import FlowController from 'controllers/flow';
@@ -34,7 +36,7 @@ import 'react-markdown';
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[FanController, LEDController, WeatherController, FlowController].forEach(ctrl => {
+[FanController, LEDController, WeatherController, FlowController, DashboardController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <Router history={history}>
           <Route path="/" component={MainApp}>
             <IndexRoute component={Intro} title="Welcome" onEnter={scrollTop} />
+            <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
             <Route path="weather" component={Weather} title="Weather Lab" onEnter={scrollTop} />
             <Route path="fan" component={FanLab} title="Fan Lab" onEnter={scrollTop} />
             <Route path="sensorTag" component={SensorTag} title="SensorTag Lab" onEnter={scrollTop} />

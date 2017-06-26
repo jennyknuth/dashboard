@@ -28,6 +28,12 @@ const fan = (state, action) => {
         }],
       };
     }
+    case 'CLOCK': {
+      return {
+        ...state,
+        foo: action.data,
+      };
+    }
     default:
       return state;
   }

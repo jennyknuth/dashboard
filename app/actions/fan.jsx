@@ -7,3 +7,8 @@ export const accelRead = (data) => ({
   type: 'ACCEL_READ',
   data,
 });
+
+export const clock = (data) => ({
+  type: 'CLOCK',
+  data,
+});
