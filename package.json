@@ -1,6 +1,6 @@
 {
   "name": "socinio-dashboard",
-  "description": "Streams project stats to a UI",
+  "description": "Stream project stats to project dashboards",
   "author": "n.io",
   "version": "1.0.0",
   "repository": {
@@ -40,8 +40,6 @@
     "jsenv-brunch": "^2.0.0",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
-    "react-weathericons": "^1.0.3",
-    "reactmd-brunch": "^0.1.4",
     "sass-brunch": "^2.7.0",
     "uglify-js-brunch": "^2.0.1"
   },
@@ -54,7 +52,6 @@
     "react-css-themr": "^2.0.0",
     "react-dom": "^15.4.2",
     "react-fontawesome": "^1.5.0",
-    "react-markdown": "^2.4.6",
     "react-nuik": "^0.0.x",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
