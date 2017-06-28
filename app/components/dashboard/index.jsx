@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 
 import BarGraph from 'components/shared/bar-graph';
 
-import lab from 'theme/lab.scss';
+import layout from 'theme/layout';
 
 const Dashboard = ({ timely, time }) => {
-  console.log('Dashboard', timely, time);
 
   const staticData = {
     'n.io': {
@@ -24,7 +23,7 @@ const Dashboard = ({ timely, time }) => {
     }
   };
   return (
-    <div className={lab.labData}>
+    <div className={layout.paper}>
       { <BarGraph data={staticData['n.io']} />}
     </div>
   );

@@ -10,6 +10,7 @@ import config from 'config';
 // Our app pages
 import MainApp from 'components/app';
 import Dashboard from 'components/dashboard';
+import ProductDashboard from 'components/productDashboard';
 
 // For our theme provider
 import theme from 'theme';
@@ -20,11 +21,12 @@ const store = createStore(mainApp);
 
 // App controllers
 import DashboardController from 'controllers/dashboard';
+import ProductController from 'controllers/product';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[DashboardController].forEach(ctrl => {
+[DashboardController, ProductController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <Router history={history}>
           <Route path="/" component={MainApp}>
             <IndexRoute component={Dashboard} title="Welcome" onEnter={scrollTop} />
-            <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
+            <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={scrollTop} />
           </Route>
         </Router>
       </Provider>

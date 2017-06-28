@@ -2,24 +2,21 @@
 @import "global";
 
 .app {
+  width: 100vw;
   margin: 0 auto;
   padding: 20px 40px;
   background-color:$palette-background;
 }
 
-.container {
-  margin: 80px auto;
+.artboard {
+  height: 60%;
+  margin: 2rem auto 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  @media (min-width: $breakpoint) {
-    flex-wrap: nowrap;
-  }
 }
 
 .paper {
   padding: 3rem;
   position: relative;
-  border: 2px solid $palette-border;
   display: block;
   border-radius: $border-radius;
   background-color: #fff;

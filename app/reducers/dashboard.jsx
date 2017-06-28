@@ -1,7 +1,7 @@
 const defaultState = {
   lastRead: undefined,
   time: {},
-  timely: {},
+  ops: {},
 };
 
 const dashboard = (state, action) => {
@@ -9,10 +9,10 @@ const dashboard = (state, action) => {
     state = defaultState;
   }
   switch (action.type) {
-    case 'TIMELY_HOURS':
+    case 'OPERATIONS':
       return {
         ...state,
-        timely: action.data,
+        ops: action.data,
       };
     case 'CLOCK': {
       return {

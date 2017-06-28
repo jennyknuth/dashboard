@@ -1,5 +1,5 @@
-export const timelyHours = (data) => ({
-  type: 'TIMELY_HOURS',
+export const ops = (data) => ({
+  type: 'OPERATIONS',
   data,
 });
 

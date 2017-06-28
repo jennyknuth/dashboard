@@ -1,10 +1,10 @@
-import { clock, timelyHours } from 'actions/dashboard';
+import { clock, ops } from 'actions/dashboard';
 import BaseController from 'controllers/base';
 
 class DashboardController extends BaseController {
   start() {
     this.bindSocketDataToAction('clock', clock);
-    this.bindSocketDataToAction('timely-hours', timelyHours);
+    this.bindSocketDataToAction('ops', ops);
   }
 }
 

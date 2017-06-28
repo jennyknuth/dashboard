@@ -1,8 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
 
-import chart from 'theme/chart.scss';
-
 const FlowGraph = ({ vals }) => {
   // set up chart boundaries and margins
   const margin = { top: 0, bottom: 0, left: 0, right: 0 };
@@ -33,7 +31,11 @@ const FlowGraph = ({ vals }) => {
     .curve(d3.curveMonotoneX);
 
   return (
-    <svg className={chart.svg} viewBox={`0,0,${width},${height}`} preserveAspectRatio="none">
+    <svg
+      viewBox={`0,0,${width},${height}`}
+      preserveAspectRatio="xMidYMin slice"
+      style={{width: '100%', paddingBottom: '100%', height: '1px', overflow: 'visible'}}
+    >
       <path d={precipArea(vals)} fill='#F4BC26' stroke='none' transform={`translate(${margin.left}, ${margin.top})`}/>
     </svg>
   );
