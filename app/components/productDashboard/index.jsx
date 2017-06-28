@@ -12,19 +12,17 @@ const ProductDashboard = (props) => {
   return (
     <div>
       <div className={layout.paper}>
-        <h3>Pubkeeper</h3>
+        <h3>API</h3>
         <TrafficLight
-          data={props.pubkeeper}
-          total={props.pubkeeperTotal}
-          redValue={props.pubkeeper['To Do ']}
-          yellowValue={props.pubkeeper['In Progress']}
-          greenValue={props.pubkeeper.Done}
+          total={props.apiTotal}
+          redValue={props.api['To Do ']}
+          yellowValue={props.api['In Progress']}
+          greenValue={props.api.Done}
         />
       </div>
       <div className={layout.paper}>
         <h3>Designer</h3>
         <TrafficLight
-          data={props.designer}
           total={props.designerTotal}
           redValue={props.designer['To Do ']}
           yellowValue={props.designer['In Progress']}
@@ -32,13 +30,12 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={layout.paper}>
-        <h3>API</h3>
+        <h3>Pubkeeper</h3>
         <TrafficLight
-          data={props.api}
-          total={props.apiTotal}
-          redValue={props.api['To Do ']}
-          yellowValue={props.api['In Progress']}
-          greenValue={props.api.Done}
+          total={props.pubkeeperTotal}
+          redValue={props.pubkeeper['To Do ']}
+          yellowValue={props.pubkeeper['In Progress']}
+          greenValue={props.pubkeeper.Done}
         />
       </div>
       <div className={layout.paper}>

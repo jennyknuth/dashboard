@@ -1,7 +1,7 @@
 // React essentials
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
+import { Router, Route, IndexRedirect, useRouterHistory } from 'react-router';
 import { ThemeProvider } from 'react-css-themr';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -11,6 +11,8 @@ import config from 'config';
 import MainApp from 'components/app';
 import Dashboard from 'components/dashboard';
 import ProductDashboard from 'components/productDashboard';
+import IndustrialDashboard from 'components/industrialDashboard';
+import AgricultureDashboard from 'components/agricultureDashboard';
 
 // For our theme provider
 import theme from 'theme';
@@ -22,11 +24,13 @@ const store = createStore(mainApp);
 // App controllers
 import DashboardController from 'controllers/dashboard';
 import ProductController from 'controllers/product';
+import IndustrialController from 'controllers/industrial';
+import AgricultureController from 'controllers/agriculture';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[DashboardController, ProductController].forEach(ctrl => {
+[DashboardController, ProductController, IndustrialController, AgricultureController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();
@@ -49,8 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={MainApp}>
-            <IndexRoute component={Dashboard} title="Welcome" onEnter={scrollTop} />
+            <IndexRedirect to='dashboard' />
+            <Route path="socinio" component={Dashboard} title="Product Dashboard" onEnter={scrollTop} />
             <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={scrollTop} />
+            <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={scrollTop} />
+            <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={scrollTop} />
           </Route>
         </Router>
       </Provider>
