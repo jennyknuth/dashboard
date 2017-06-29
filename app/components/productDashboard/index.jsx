@@ -10,7 +10,7 @@ const ProductDashboard = (props) => {
   console.log('ProductDashboard', props);
 
   return (
-    <div>
+    <div className={layout.artboard}>
       <div className={layout.paper}>
         <h3>API</h3>
         <TrafficLight

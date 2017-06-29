@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 
 import BarGraph from 'components/shared/bar-graph';
 import Clock from 'components/shared/clock';
-import DisplayList from 'components/shared/displayList';
+import DisplayList from 'components/shared/display-list';
 import Statistic from 'components/shared/statistic';
 
 import layout from 'theme/layout';
 
-const Dashboard = ({ timely, time, openPositions, applicants }) => {
-  console.log('Dashboard props', applicants);
+const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) => {
+  console.log('Dashboard props', typeof employeeCount);
 
   return (
-    <div>
+    <div className={layout.artboard}>
       <div className={layout.paper}>
+        <h3>Hours Worked</h3>
         { <BarGraph data={timely && timely} />}
       </div>
       <div className={layout.paper}>
@@ -32,6 +33,10 @@ const Dashboard = ({ timely, time, openPositions, applicants }) => {
       <div className={layout.paper}>
         <h3>Applicants</h3>
         <Statistic label='' unit='' value={applicants.count} />
+      </div>
+      <div className={layout.paper}>
+        <h3>Employees</h3>
+        <Statistic value={employeeCount} />
       </div>
     </div>
   );

@@ -4,10 +4,12 @@ const defaultState = {
   time: {},
   timely: {},
   dgs: {},
+  zenReply: {},
 };
 
 const industrial = (state, action) => {
   const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
+  const displayTime = (hour, min) => (`${hour}:${min}`);
   if (state === undefined) {
     state = defaultState;
   }
@@ -27,6 +29,12 @@ const industrial = (state, action) => {
       return {
         ...state,
         time: action.data,
+      };
+    }
+    case 'ZEN_REPLY': {
+      return {
+        ...state,
+        zenReply: displayTime(action.data['average-reply-hours'], action.data['average-reply-minutes']),
       };
     }
     default:

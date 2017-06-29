@@ -1,13 +1,18 @@
 import map from 'lodash/map';
+
 const defaultState = {
   lastRead: undefined,
   time: {},
   timely: {},
-  openPositions: {},
-  applicants: {},
+  openPositions: [],
+  applicants: 'n/a',
+  employeeCount: 'n/a',
 };
 
 const dashboard = (state, action) => {
+  // const removeType = obj => filter(obj, (value, key) => key !== 'type');
+  const listKeys = obj => map(obj, (value, key) => key);
+  const listKeysRemoveType = obj => listKeys(obj).filter((key) => key !== 'type');
   if (state === undefined) {
     state = defaultState;
   }
@@ -26,13 +31,19 @@ const dashboard = (state, action) => {
     case 'OPEN_POSITIONS': {
       return {
         ...state,
-        openPositions: map(action.data, (d, key) => key),
+        openPositions: listKeysRemoveType(action.data),
       };
     }
     case 'APPLICANTS': {
       return {
         ...state,
         applicants: action.data,
+      };
+    }
+    case 'EMPLOYEE_COUNT': {
+      return {
+        ...state,
+        employeeCount: action.data.Employees,
       };
     }
     default:

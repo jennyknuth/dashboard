@@ -6,7 +6,7 @@ const DisplayList = ({ data }) => {
   console.log('DisplayList', data);
 
   return (
-    <List>
+    <List >
       {data && data.map(d => d)}
     </List>
   );

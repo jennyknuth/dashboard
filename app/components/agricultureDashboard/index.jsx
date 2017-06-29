@@ -10,7 +10,7 @@ const AgricultureDashboard = (props) => {
   console.log('AgricultureDashboard', props);
 
   return (
-    <div>
+    <div className={layout.artboard}>
       <div className={layout.paper}>
         <h3>DVP</h3>
         <TrafficLight

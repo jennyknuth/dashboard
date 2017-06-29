@@ -17,3 +17,8 @@ export const applicants = (data) => ({
   type: 'APPLICANTS',
   data,
 });
+
+export const employeeCount = (data) => ({
+  type: 'EMPLOYEE_COUNT',
+  data,
+});

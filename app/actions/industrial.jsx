@@ -12,3 +12,8 @@ export const clock = (data) => ({
   type: 'CLOCK',
   data,
 });
+
+export const zenReplyTime = (data) => ({
+  type: 'ZEN_REPLY',
+  data,
+});
