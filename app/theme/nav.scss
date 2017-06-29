@@ -10,6 +10,7 @@
   display: block;
   text-decoration: none;
   margin: 1rem 0;
+  position: relative;
 }
 .item {
   @extend %item;
@@ -26,6 +27,6 @@
     border-radius: 3px;
     background-color: $palette-secondary;
     top: -4px;
-    left: -46px;
+    left: -26px;
   }
 }

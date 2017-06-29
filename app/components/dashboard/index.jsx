@@ -9,20 +9,21 @@ import Statistic from 'components/shared/statistic';
 
 import layout from 'theme/layout';
 
-const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) => {
+const Dashboard = ({ opsTimely, time, openPositions, applicants, employeeCount }) => {
   const barGraphClasses = classNames(
     layout.paper,
-    layout.barGraph,
+    layout.bigBarGraph,
   );
 
   return (
     <div className={layout.artboard}>
       <div className={barGraphClasses}>
+        <h2>Q2</h2>
         <h3>Hours Worked</h3>
-        { <BarGraph data={timely && timely} />}
+        { <BarGraph data={opsTimely && opsTimely} />}
       </div>
       <div className={layout.paper}>
-        <h3>Employees</h3>
+        <h2>Employees</h2>
         <Statistic value={employeeCount} />
       </div>
       <div className={layout.paper}>
@@ -35,11 +36,11 @@ const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) =
         />
       </div>
       <div className={layout.paper}>
-        <h3>Open Positions</h3>
+        <h2>Open Positions</h2>
         <DisplayList data={Array.from(openPositions)} />
       </div>
       <div className={layout.paper}>
-        <h3>Applicants</h3>
+        <h2>Applicants</h2>
         <Statistic label='' unit='' value={applicants.count} />
       </div>
     </div>
@@ -47,7 +48,7 @@ const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) =
 };
 
 Dashboard.propTypes = {
-  timely: React.PropTypes.object,
+  opsTimely: React.PropTypes.object,
   time: React.PropTypes.object,
   openPositions: React.PropTypes.array,
   applicants: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),

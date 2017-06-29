@@ -16,6 +16,7 @@ const AgricultureDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={layout.paper}>
+        <h2>JIRA epic</h2>
         <h3>DVP</h3>
         <TrafficLight
           total={props.dvpTotal}
@@ -25,9 +26,10 @@ const AgricultureDashboard = (props) => {
         />
       </div>
       <div className={barGraphClasses}>
+        <h2>Q2</h2>
         <h3>Hours Worked</h3>
         <div>
-          <BarGraph data={props.timely && props.timely} />
+          <BarGraph data={props.agTimely && props.agTimely} />
         </div>
       </div>
     </div>
@@ -35,7 +37,7 @@ const AgricultureDashboard = (props) => {
 };
 
 AgricultureDashboard.propTypes = {
-  timely: React.PropTypes.object,
+  agTimely: React.PropTypes.object,
   time: React.PropTypes.object,
 };
 

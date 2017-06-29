@@ -17,6 +17,7 @@ const IndustrialDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={layout.paper}>
+        <h2>JIRA epic</h2>
         <h3>DGS</h3>
         <TrafficLight
           total={props.dgsTotal}
@@ -26,11 +27,12 @@ const IndustrialDashboard = (props) => {
         />
       </div>
       <div className={barGraphClasses}>
+        <h2>Q2</h2>
         <h3>Hours Worked</h3>
-        <BarGraph data={props.timely && props.timely} />
+        <BarGraph data={props.industrialTimely && props.industrialTimely} />
       </div>
       <div className={layout.paper}>
-        <h3>Zen Desk</h3>
+        <h2>Zen Desk</h2>
         <h4>average reply time</h4>
         <Statistic value={props.zenReply && props.zenReply.toString()} />
       </div>
@@ -39,7 +41,7 @@ const IndustrialDashboard = (props) => {
 };
 
 IndustrialDashboard.propTypes = {
-  timely: React.PropTypes.object,
+  industrialTimely: React.PropTypes.object,
   time: React.PropTypes.object,
 };
 
