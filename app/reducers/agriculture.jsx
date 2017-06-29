@@ -2,7 +2,7 @@ import reduce from 'lodash/reduce';
 
 const defaultState = {
   time: {},
-  timely: {},
+  agTimely: {},
   dvp: {},
 };
 
@@ -12,10 +12,10 @@ const agriculture = (state, action) => {
     state = defaultState;
   }
   switch (action.type) {
-    case 'TIMELY_HOURS':
+    case 'AG_TIMELY':
       return {
         ...state,
-        timely: action.data,
+        agTimely: action.data,
       };
     case 'DVP':
       return {

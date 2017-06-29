@@ -4,7 +4,7 @@ export const dgs = (data) => ({
 });
 
 export const industrialTimelyHours = (data) => ({
-  type: 'TIMELY_HOURS',
+  type: 'INDUSTRIAL_TIMELY',
   data,
 });
 
