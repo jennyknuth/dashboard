@@ -24,7 +24,7 @@ const ProductDashboard = (props) => {
         <h3>Designer</h3>
         <TrafficLight
           total={props.designerTotal}
-          redValue={props.designer['To Do ']}
+          redValue={props.designer['To Do']}
           yellowValue={props.designer['In Progress']}
           greenValue={props.designer.Done}
         />
