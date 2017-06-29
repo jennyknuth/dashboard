@@ -7,3 +7,13 @@ export const clock = (data) => ({
   type: 'CLOCK',
   data,
 });
+
+export const openPositions = (data) => ({
+  type: 'OPEN_POSITIONS',
+  data,
+});
+
+export const applicants = (data) => ({
+  type: 'APPLICANTS',
+  data,
+});

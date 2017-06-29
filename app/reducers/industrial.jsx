@@ -7,7 +7,7 @@ const defaultState = {
 };
 
 const industrial = (state, action) => {
-  const total = reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0);
+  const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   if (state === undefined) {
     state = defaultState;
   }
@@ -21,7 +21,7 @@ const industrial = (state, action) => {
       return {
         ...state,
         dgs: action.data,
-        dgsTotal: total,
+        dgsTotal: getSum(action.data),
       };
     case 'CLOCK': {
       return {

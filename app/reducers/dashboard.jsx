@@ -1,7 +1,10 @@
+import map from 'lodash/map';
 const defaultState = {
   lastRead: undefined,
   time: {},
   timely: {},
+  openPositions: {},
+  applicants: {},
 };
 
 const dashboard = (state, action) => {
@@ -18,6 +21,18 @@ const dashboard = (state, action) => {
       return {
         ...state,
         time: action.data,
+      };
+    }
+    case 'OPEN_POSITIONS': {
+      return {
+        ...state,
+        openPositions: map(action.data, (d, key) => key),
+      };
+    }
+    case 'APPLICANTS': {
+      return {
+        ...state,
+        applicants: action.data,
       };
     }
     default:

@@ -9,7 +9,7 @@ const defaultState = {
 };
 
 const product = (state, action) => {
-  const total = reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0);
+  const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   if (state === undefined) {
     state = defaultState;
   }
@@ -23,19 +23,19 @@ const product = (state, action) => {
       return {
         ...state,
         pubkeeper: action.data,
-        pubkeeperTotal: total,
+        pubkeeperTotal: getSum(action.data),
       };
     case 'DESIGNER':
       return {
         ...state,
         designer: action.data,
-        designerTotal: total,
+        designerTotal: getSum(action.data),
       };
     case 'API':
       return {
         ...state,
         api: action.data,
-        apiTotal: total,
+        apiTotal: getSum(action.data),
       };
     case 'CLOCK': {
       return {

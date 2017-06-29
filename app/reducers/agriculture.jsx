@@ -7,7 +7,7 @@ const defaultState = {
 };
 
 const agriculture = (state, action) => {
-  const total = reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0);
+  const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   if (state === undefined) {
     state = defaultState;
   }
@@ -21,7 +21,7 @@ const agriculture = (state, action) => {
       return {
         ...state,
         dvp: action.data,
-        dvpTotal: total,
+        dvpTotal: getSum(action.data),
       };
     case 'CLOCK': {
       return {
