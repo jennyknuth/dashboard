@@ -39,7 +39,7 @@ const BarGraph = ({ data }) => {
             <rect x={xScale(k)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#D8D8D8' rx={borderRadius} ry={borderRadius} />
             <rect x={xScale(k)} y={yScale(data[k])} width={xScale.bandwidth()} height={chartHeight - yScale(data[k])} rx={borderRadius} ry={borderRadius} fill='#37C0C9'/>
             <text x={xScale(k)} dx={xScale.bandwidth() / 2} y={yScale(data[k])} dy={-5} textAnchor='middle'> {data[k]} </text>
-            <text x={xScale(k)} dx={xScale.bandwidth() / 2} y={yScale(0)} dy={20} textAnchor='middle'> {k.toLowerCase()} </text>
+            <text x={xScale(k)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle'> {k.toLowerCase()} </text>
           </g>
         )}
       </g>

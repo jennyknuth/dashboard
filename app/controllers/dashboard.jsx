@@ -1,10 +1,10 @@
-import { clock, ops } from 'actions/dashboard';
+import { clock, opsTimelyHours } from 'actions/dashboard';
 import BaseController from 'controllers/base';
 
 class DashboardController extends BaseController {
   start() {
     this.bindSocketDataToAction('clock', clock);
-    this.bindSocketDataToAction('ops', ops);
+    this.bindSocketDataToAction('nio-timely-hours', opsTimelyHours);
   }
 }
 

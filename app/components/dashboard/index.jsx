@@ -2,29 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import BarGraph from 'components/shared/bar-graph';
+import Clock from 'components/shared/clock';
 
 import layout from 'theme/layout';
 
 const Dashboard = ({ timely, time }) => {
+  console.log('Dashboard props', timely, time);
 
-  const staticData = {
-    'n.io': {
-      'Accounting & Finance ': 868,
-      'General Admin': 2814,
-      'Back-End/Services': 1099,
-      'Front-end': 1087,
-      'Community Development': 117,
-      'Learning & Innovation': 496,
-      'Operations / Management ': 1622,
-      'group': 'n.io',
-      'PTO & Holidays': 1659,
-      'Legal': 743,
-      'Marketing / Design': 1271
-    }
-  };
   return (
-    <div className={layout.paper}>
-      { <BarGraph data={staticData['n.io']} />}
+    <div>
+      <div className={layout.paper}>
+        { <BarGraph data={timely && timely} />}
+      </div>
+      <div className={layout.paper}>
+        <Clock
+          day={time.cur_day}
+          month={time.cur_month}
+          year={time.cur_year}
+          weekday={time.cur_weekday}
+          time={time.cur_time}
+        />
+      </div>
     </div>
   );
 };

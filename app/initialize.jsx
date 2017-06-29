@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <Provider store={store}>
         <Router history={history}>
           <Route path="/" component={MainApp}>
-            <IndexRedirect to='dashboard' />
-            <Route path="socinio" component={Dashboard} title="Product Dashboard" onEnter={scrollTop} />
+            <IndexRedirect to="dashboard" />
+            <Route path="socinio" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
+            <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
             <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={scrollTop} />
             <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={scrollTop} />
             <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={scrollTop} />

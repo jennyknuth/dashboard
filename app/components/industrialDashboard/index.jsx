@@ -22,7 +22,7 @@ const IndustrialDashboard = (props) => {
       </div>
       <div className={layout.paper}>
         <h3>Hours Worked</h3>
-        <BarGraph data={props.timely} />
+        <BarGraph data={props.timely && props.timely} />
       </div>
     </div>
   );
