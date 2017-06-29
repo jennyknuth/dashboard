@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const Statistic = ({ label, unit, value }) => {
-  console.log('Statistic', value);
 
   return (
     <div>

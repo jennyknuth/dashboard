@@ -1,17 +1,21 @@
 @import "palette";
 @import "global";
 
+.frame {
+  display: flex;
+}
+
 .app {
   margin: 0 auto;
   padding: 20px 40px;
   background-color:$palette-background;
+  width: 80%;
 }
 
 .pageTitle {
   &::after {
     content: '';
     display:block;
-    height:10px;
     width: 100px;
     height: 6px;
     background-color: $palette-secondary;

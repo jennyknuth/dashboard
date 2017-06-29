@@ -1,0 +1,31 @@
+@import "palette";
+@import "global";
+
+.bar {
+  width: 150px;
+  padding: 2rem;
+}
+
+%item {
+  display: block;
+  text-decoration: none;
+  margin: 1rem 0;
+}
+.item {
+  @extend %item;
+}
+
+.active {
+  @extend %item;
+  color: $palette-secondary;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 2rem;
+    width: 5px;
+    border-radius: 3px;
+    background-color: $palette-secondary;
+    top: -4px;
+    left: -46px;
+  }
+}
