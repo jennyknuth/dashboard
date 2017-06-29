@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import BarGraph from 'components/shared/bar-graph';
 import Clock from 'components/shared/clock';
@@ -9,13 +10,20 @@ import Statistic from 'components/shared/statistic';
 import layout from 'theme/layout';
 
 const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) => {
-  console.log('Dashboard props', typeof employeeCount);
+  const barGraphClasses = classNames(
+    layout.paper,
+    layout.barGraph,
+  );
 
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
+      <div className={barGraphClasses}>
         <h3>Hours Worked</h3>
         { <BarGraph data={timely && timely} />}
+      </div>
+      <div className={layout.paper}>
+        <h3>Employees</h3>
+        <Statistic value={employeeCount} />
       </div>
       <div className={layout.paper}>
         <Clock
@@ -33,10 +41,6 @@ const Dashboard = ({ timely, time, openPositions, applicants, employeeCount }) =
       <div className={layout.paper}>
         <h3>Applicants</h3>
         <Statistic label='' unit='' value={applicants.count} />
-      </div>
-      <div className={layout.paper}>
-        <h3>Employees</h3>
-        <Statistic value={employeeCount} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import BarGraph from 'components/shared/bar-graph';
 import TrafficLight from 'components/shared/traffic-light.jsx';
@@ -7,7 +8,10 @@ import TrafficLight from 'components/shared/traffic-light.jsx';
 import layout from 'theme/layout.scss';
 
 const ProductDashboard = (props) => {
-  console.log('ProductDashboard', props);
+  const barGraphClasses = classNames(
+    layout.paper,
+    layout.barGraph,
+  );
 
   return (
     <div className={layout.artboard}>
@@ -38,7 +42,7 @@ const ProductDashboard = (props) => {
           greenValue={props.pubkeeper.Done}
         />
       </div>
-      <div className={layout.paper}>
+      <div className={barGraphClasses}>
         <h3>Hours Worked</h3>
         <BarGraph data={props.timely && props.timely} />
       </div>
