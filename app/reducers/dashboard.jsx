@@ -3,14 +3,15 @@ import map from 'lodash/map';
 const defaultState = {
   lastRead: undefined,
   time: {},
-  opsTimely: {},
+  opsTimely: [],
   openPositions: [],
   applicants: 'n/a',
   employeeCount: 'n/a',
 };
 
 const dashboard = (state, action) => {
-  console.log(action);
+  const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
+  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
   const listKeys = obj => map(obj, (value, key) => key);
   const listKeysRemoveType = obj => listKeys(obj).filter((key) => key !== 'type');
   if (state === undefined) {
@@ -20,7 +21,7 @@ const dashboard = (state, action) => {
     case 'OPS_TIMELY':
       return {
         ...state,
-        opsTimely: action.data,
+        opsTimely: labelValueArrayRemoveType(action.data),
       };
     case 'CLOCK': {
       return {

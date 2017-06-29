@@ -1,4 +1,5 @@
 import reduce from 'lodash/reduce';
+import map from 'lodash/map';
 
 const defaultState = {
   time: {},
@@ -9,6 +10,8 @@ const defaultState = {
 };
 
 const product = (state, action) => {
+  const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
+  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
   const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   if (state === undefined) {
     state = defaultState;
@@ -17,7 +20,7 @@ const product = (state, action) => {
     case 'PRODUCT_TIMELY':
       return {
         ...state,
-        productTimely: action.data,
+        productTimely: labelValueArrayRemoveType(action.data),
       };
     case 'PUBKEEPER':
       return {

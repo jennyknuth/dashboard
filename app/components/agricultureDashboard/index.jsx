@@ -37,7 +37,7 @@ const AgricultureDashboard = (props) => {
 };
 
 AgricultureDashboard.propTypes = {
-  agTimely: React.PropTypes.object,
+  agTimely: React.PropTypes.array,
   time: React.PropTypes.object,
 };
 

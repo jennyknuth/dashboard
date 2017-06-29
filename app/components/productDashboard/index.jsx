@@ -55,7 +55,7 @@ const ProductDashboard = (props) => {
 };
 
 ProductDashboard.propTypes = {
-  productTimely: React.PropTypes.object,
+  productTimely: React.PropTypes.array,
   time: React.PropTypes.object,
 };
 

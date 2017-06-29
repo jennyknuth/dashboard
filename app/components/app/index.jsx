@@ -17,16 +17,12 @@ class MainApp extends React.Component {
   }
 
   selectedNav = (e) => {
-    console.log(e.target.name);
     const selection = this.state.selected === e.target.name ? undefined : e.target.name;
-    console.log(selection);
     this.setState({ selected: selection });
   };
 
   render() {
-    console.log(this.state.selected);
     const selectedClasses = (element) => {
-      console.log('in classNames', element);
       return classNames(
         this.state.selected === element ? nav.active : nav.item,
       );

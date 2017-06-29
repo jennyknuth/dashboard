@@ -48,7 +48,7 @@ const Dashboard = ({ opsTimely, time, openPositions, applicants, employeeCount }
 };
 
 Dashboard.propTypes = {
-  opsTimely: React.PropTypes.object,
+  opsTimely: React.PropTypes.array,
   time: React.PropTypes.object,
   openPositions: React.PropTypes.array,
   applicants: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),

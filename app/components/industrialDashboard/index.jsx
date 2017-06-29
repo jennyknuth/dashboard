@@ -41,7 +41,7 @@ const IndustrialDashboard = (props) => {
 };
 
 IndustrialDashboard.propTypes = {
-  industrialTimely: React.PropTypes.object,
+  industrialTimely: React.PropTypes.array,
   time: React.PropTypes.object,
 };
 
