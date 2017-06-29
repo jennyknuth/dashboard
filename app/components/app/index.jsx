@@ -14,8 +14,8 @@ const MainApp = (props) => {
       </Link>
     </header>
     <div className={layout.app}>
-      <h1>{props.children.props.route.title}</h1>
-      <div className={layout.artboard}>
+      <h1 className={layout.pageTitle}>{props.children.props.route.title}</h1>
+      <div>
         { props.children }
       </div>
     </div>

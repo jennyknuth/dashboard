@@ -1,5 +1,4 @@
 {
-	"SOCKET_HOST": "//labtest.socket.nio.works",
+	"SOCKET_HOST": "//dashboard.socket.nio.works",
 	"APP_ROOT": "",
-	"LAB_NUMBER": "test",
 }

@@ -10,24 +10,6 @@ h1 {
   font-size: 35px;
   position: relative;
   margin-bottom: 50px;
-
-  &::after {
-    content: '';
-    display:block;
-    height:10px;
-    width: 100px;
-    height: 6px;
-    background-color: $palette-secondary;
-    bottom: -20px;
-    position: absolute;
-    border-radius: $border-radius;
-  }
-
-  &:last-child {
-    &::after {
-      display:none;
-    }
-  }
 }
 
 h2 {

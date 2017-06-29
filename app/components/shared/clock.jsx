@@ -1,20 +1,33 @@
 import React from 'react';
+import classNames from 'classnames';
+
+import clock from 'theme/clock.scss';
 
 const Clock = ({day, month, year, weekday, time}) => {
   console.log('Clock', day, month, year, weekday, time);
+  const clockClasses = classNames(
+    'fa fa-clock-o',
+    clock.icon
+  )
 
   return (
     <div>
-        <div>
+      <div className={clock.date}>
+        <div className={clock.dayNumber}>
           {day}
         </div>
-        <div>
-          {month} {year}
+        <div className={clock.dateColumn}>
+          <div className={clock.monthYear}>
+            {month} {year}
+          </div>
+          <div className={clock.weekday}>
+            {weekday}
+          </div>
         </div>
-        <div>
-          {weekday}
-        </div>
-        <div>
+
+      </div>
+        <div className={clock.time}>
+          <i className={clockClasses}/>
           {time}
         </div>
       </div>
