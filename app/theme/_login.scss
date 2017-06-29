@@ -1,0 +1,69 @@
+@import "palette";
+@import "global";
+
+.loginContainer {
+  width: 320px;
+  margin: 0 auto 0 auto;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.auth0-lock-badge-bottom,
+.auth0-lock-close-button {
+  display: none;
+}
+
+.auth0-lock.auth0-lock {
+  .auth0-lock-header,
+  .auth0-lock-header-bg {
+    background: $palette-primary !important;
+    height: auto !important;
+  }
+  .auth0-lock-name {
+    display: none;
+  }
+  .auth0-lock-header-logo {
+    margin-bottom: 0 !important;
+    height:47px!important;
+  }
+  .auth0-global-message.auth0-global-message-error {
+    background: $palette-danger !important;
+  }
+  .auth0-lock-overlay {
+    background: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-submit {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 481px) {
+
+  .auth0-lock-container {
+    overflow: hidden;
+
+    .auth0-lock.auth0-lock.auth0-lock-opened {
+      display: block !important;
+
+      .auth0-lock-center {
+        display: block !important;
+        margin-top: 100px;
+      }
+
+      .auth0-lock-widget {
+        -webkit-transition: none !important;
+        transition: none !important;
+        -webkit-transition-delay: 0s !important;
+        transition-delay: 0s !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+      }
+    }
+  }
+}

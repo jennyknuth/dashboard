@@ -14,23 +14,22 @@ class MainApp extends React.Component {
       selected: undefined,
     };
     this.selectedNav = this.selectedNav.bind(this);
+    this.selectedClasses = this.selectedClasses.bind(this);
   }
 
-  selectedNav = (e) => {
-    console.log(e.target.name);
+  selectedNav(e) {
     const selection = this.state.selected === e.target.name ? undefined : e.target.name;
-    console.log(selection);
     this.setState({ selected: selection });
-  };
+  }
+
+  selectedClasses(element) {
+    return classNames(
+      this.state.selected === element ? nav.active : nav.item,
+    );
+  }
 
   render() {
-    console.log(this.state.selected);
-    const selectedClasses = (element) => {
-      console.log('in classNames', element);
-      return classNames(
-        this.state.selected === element ? nav.active : nav.item,
-      );
-    };
+    const { route: { auth } } = this.props;
 
     return (
     <div>
@@ -40,24 +39,31 @@ class MainApp extends React.Component {
         </Link>
       </header>
       <div className={layout.frame}>
-        <nav className={nav.bar}>
-          <List variant='none'>
-            <Link className={selectedClasses('industrial')} to="/industrial" name='industrial' onClick={(e) => this.selectedNav(e)}>
-              Industrial
-            </Link>
-            <Link className={selectedClasses('product')} to="/product" name='product' onClick={(e) => this.selectedNav(e)}>
-              Product
-            </Link>
-            <Link className={selectedClasses('agriculture')} to="/agriculture" name='agriculture' onClick={(e) => this.selectedNav(e)}>
-              Agriculture
-            </Link>
-            <Link className={selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => this.selectedNav(e)}>
-              Socinio
-            </Link>
-          </List>
-        </nav>
+        { auth.loggedIn() && (
+          <nav className={nav.bar}>
+            <List variant='none'>
+              <Link className={this.selectedClasses('industrial')} to="/industrial" name='industrial' onClick={(e) => this.selectedNav(e)}>
+                Industrial
+              </Link>
+              <Link className={this.selectedClasses('product')} to="/product" name='product' onClick={(e) => this.selectedNav(e)}>
+                Product
+              </Link>
+              <Link className={this.selectedClasses('agriculture')} to="/agriculture" name='agriculture' onClick={(e) => this.selectedNav(e)}>
+                Agriculture
+              </Link>
+              <Link className={this.selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => this.selectedNav(e)}>
+                Socinio
+              </Link>
+              <a className={this.selectedClasses('dashboard')} href='' name='logout' onClick={() => auth.logout()}>
+                Log Out
+              </a>
+            </List>
+          </nav>
+        )}
         <div className={layout.app}>
-          <h1 className={layout.pageTitle}>{this.props.children.props.route.title}</h1>
+          { auth.loggedIn() && (
+            <h1 className={layout.pageTitle}>{this.props.children.props.route.title}</h1>
+          )}
           <div>
             { this.props.children }
           </div>
@@ -65,7 +71,6 @@ class MainApp extends React.Component {
       </div>
     </div>
     );
-
   }
 }
 
