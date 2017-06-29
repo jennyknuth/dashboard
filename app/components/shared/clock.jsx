@@ -4,11 +4,10 @@ import classNames from 'classnames';
 import clock from 'theme/clock.scss';
 
 const Clock = ({day, month, year, weekday, time}) => {
-  console.log('Clock', day, month, year, weekday, time);
   const clockClasses = classNames(
     'fa fa-clock-o',
     clock.icon
-  )
+  );
 
   return (
     <div>
@@ -35,11 +34,11 @@ const Clock = ({day, month, year, weekday, time}) => {
 };
 
 Clock.propTypes = {
-  day: React.PropTypes.number,
-  month: React.PropTypes.number,
-  year: React.PropTypes.number,
-  weekday: React.PropTypes.number,
-  time: React.PropTypes.number,
+  day: React.PropTypes.string,
+  month: React.PropTypes.string,
+  year: React.PropTypes.string,
+  weekday: React.PropTypes.string,
+  time: React.PropTypes.string,
 };
 
 export default Clock;

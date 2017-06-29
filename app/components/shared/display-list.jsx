@@ -3,7 +3,6 @@ import List from 'react-nuik/lib/components/list';
 
 
 const DisplayList = ({ data }) => {
-  console.log('DisplayList', data);
 
   return (
     <List >

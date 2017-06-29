@@ -5,7 +5,6 @@ import priorities from 'theme/priorities';
 import progress from 'theme/progress';
 
 const TrafficLight = ({total, redValue, yellowValue, greenValue }) => {
-  console.log('TrafficLight', total, redValue, yellowValue, greenValue);
 
   return (
     <div>
