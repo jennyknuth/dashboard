@@ -13,9 +13,14 @@ const AgricultureDashboard = (props) => {
     layout.barGraph,
   );
 
+  const TrafficLightClasses = classNames(
+    layout.paper,
+    layout.trafficLight,
+  );
+
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
+      <div className={TrafficLightClasses}>
         <h2>JIRA epic</h2>
         <h3>DVP</h3>
         <TrafficLight
