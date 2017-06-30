@@ -27,6 +27,7 @@ const MainApp = (props) => {
         </Link>
       </header>
       <div className={layout.frame}>
+        { props.route.auth.loggedIn() && (
         <nav className={nav.bar}>
           <List variant='none'>
             <Link className={selectedClasses('industrial')} to="/industrial" name='industrial' onClick={(e) => selectedNav(e)}>
@@ -41,10 +42,16 @@ const MainApp = (props) => {
             <Link className={selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => selectedNav(e)}>
               Socinio
             </Link>
+            <a className={selectedClasses('logout')} href='' name='logout' onClick={() => props.route.auth.logout()}>
+              Log Out
+            </a>
           </List>
         </nav>
+        )}
         <div className={layout.app}>
+          { props.route.auth.loggedIn() && (
           <h1 className={layout.pageTitle}>{props.children.props.route.title}</h1>
+          )}
           <div>
             { props.children }
           </div>
