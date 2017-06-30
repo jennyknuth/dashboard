@@ -50,7 +50,7 @@ const BarGraph = ({ data }) => {
     <svg
       viewBox={`0,0,${width},${height}`}
       preserveAspectRatio="xMidYMin slice"
-      style={{width: '100%', paddingBottom: '100%', height: '1px', overflow: 'visible'}}
+      style={{width: '100%', paddingBottom: '45%', height: '1px', overflow: 'visible'}}
     >
       <g transform={`translate(${margin.left}, ${margin.top})`} >
         { dataWithShortLabels.map((d, i)=>
