@@ -17,11 +17,6 @@ const Dashboard = ({ opsTimely, time, openPositions, applicants, employeeCount }
 
   return (
     <div className={layout.artboard}>
-      <div className={barGraphClasses}>
-        <h2>Q2</h2>
-        <h3>Hours Worked</h3>
-        { <BarGraph data={opsTimely && opsTimely} />}
-      </div>
       <div className={layout.paper}>
         <h2>Employees</h2>
         <Statistic value={employeeCount} />
@@ -42,6 +37,11 @@ const Dashboard = ({ opsTimely, time, openPositions, applicants, employeeCount }
       <div className={layout.paper}>
         <h2>Applicants</h2>
         <Statistic label='' unit='' value={applicants.count} />
+      </div>
+      <div className={barGraphClasses}>
+        <h2>Q2</h2>
+        <h3>Hours Worked</h3>
+        { <BarGraph data={opsTimely && opsTimely} />}
       </div>
     </div>
   );
