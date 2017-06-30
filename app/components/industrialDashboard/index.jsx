@@ -14,10 +14,15 @@ const IndustrialDashboard = (props) => {
     layout.barGraph,
   );
 
+  const TrafficLightClasses = classNames(
+    layout.paper,
+    layout.trafficLight,
+  );
+
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
-        <h2>JIRA epic</h2>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
         <h3>DGS</h3>
         <TrafficLight
           total={props.dgsTotal}

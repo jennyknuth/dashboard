@@ -13,10 +13,15 @@ const ProductDashboard = (props) => {
     layout.barGraph,
   );
 
+  const TrafficLightClasses = classNames(
+    layout.paper,
+    layout.trafficLight,
+  );
+
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
-        <h2>JIRA epic</h2>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
         <h3>API</h3>
         <TrafficLight
           total={props.apiTotal}
@@ -25,8 +30,8 @@ const ProductDashboard = (props) => {
           greenValue={props.api.Done}
         />
       </div>
-      <div className={layout.paper}>
-        <h2>JIRA epic</h2>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
         <h3>Designer</h3>
         <TrafficLight
           total={props.designerTotal}
@@ -35,8 +40,8 @@ const ProductDashboard = (props) => {
           greenValue={props.designer.Done}
         />
       </div>
-      <div className={layout.paper}>
-        <h2>JIRA epic</h2>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
         <h3>Pubkeeper</h3>
         <TrafficLight
           total={props.pubkeeperTotal}
