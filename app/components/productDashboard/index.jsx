@@ -21,7 +21,7 @@ const ProductDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={TrafficLightClasses}>
-        <h2>JIRA epic</h2>
+        <h2>JIRA breakdown</h2>
         <h3>API</h3>
         <TrafficLight
           total={props.apiTotal}
@@ -31,7 +31,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA epic</h2>
+        <h2>JIRA breakdown</h2>
         <h3>Designer</h3>
         <TrafficLight
           total={props.designerTotal}
@@ -41,7 +41,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA epic</h2>
+        <h2>JIRA breakdown</h2>
         <h3>Pubkeeper</h3>
         <TrafficLight
           total={props.pubkeeperTotal}

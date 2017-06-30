@@ -22,7 +22,7 @@ const IndustrialDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={TrafficLightClasses}>
-        <h2>JIRA epic</h2>
+        <h2>JIRA breakdown</h2>
         <h3>DGS</h3>
         <TrafficLight
           total={props.dgsTotal}
