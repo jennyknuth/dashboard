@@ -2,7 +2,23 @@ import React from 'react';
 import * as d3 from 'd3';
 
 const BarGraph = ({ data }) => {
+  const labelShortener = {
+    'General Admin': 'Admin',
+    'Marketing / Design': 'Brand',
+    'Community Development': 'Outreach',
+    'Operations/Management': 'Operations',
+    'Operations / Management': 'Operations',
+    'Operations/Management ': 'Operations',
+    'Back-End/Services': 'Backend',
+    'Accounting and Finance': 'Finance',
+    'Accounting and Finance ': 'Finance',
+    'PTO and Holidays': 'PTO',
+    'Learning and Innovation': 'Innovation',
+    'Front-end': 'frontend',
+    'Front-End': 'frontend',
+  };
   const sortedData = data && data.sort((a, b) => d3.ascending(a.label, b.label));
+  const dataWithShortLabels = sortedData.map(d => labelShortener[d.label] ? {label: labelShortener[d.label], value: d.value} : d);
   const margin = { top: 10, bottom: 20, left: 0, right: 0 };
   const width = 600;
   const height = 250 ;
@@ -15,7 +31,7 @@ const BarGraph = ({ data }) => {
 
  // set up the scale functions using D3
   const xScale = d3.scaleBand()
-    .domain(data.map(d => d.label))
+    .domain(dataWithShortLabels.map(d => d.label))
     .range([0, chartWidth])
     .paddingInner(0.75)
     .paddingOuter(0.2);
@@ -31,7 +47,7 @@ const BarGraph = ({ data }) => {
       style={{width: '100%', paddingBottom: '100%', height: '1px', overflow: 'visible'}}
     >
       <g transform={`translate(${margin.left}, ${margin.top})`} >
-        { sortedData.map((d, i)=>
+        { dataWithShortLabels.map((d, i)=>
           <g key={`bar-${i}`}>
             <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#D8D8D8' rx={borderRadius} ry={borderRadius} />
             <rect x={xScale(d.label)} y={yScale(d.value)} width={xScale.bandwidth()} height={chartHeight - yScale(d.value)} rx={borderRadius} ry={borderRadius} fill='#37C0C9'/>
