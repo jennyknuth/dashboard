@@ -4,7 +4,7 @@ export const dvp = (data) => ({
 });
 
 export const agricultureTimelyHours = (data) => ({
-  type: 'TIMELY_HOURS',
+  type: 'AG_TIMELY',
   data,
 });
 

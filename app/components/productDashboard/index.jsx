@@ -16,6 +16,7 @@ const ProductDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={layout.paper}>
+        <h2>JIRA epic</h2>
         <h3>API</h3>
         <TrafficLight
           total={props.apiTotal}
@@ -25,6 +26,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={layout.paper}>
+        <h2>JIRA epic</h2>
         <h3>Designer</h3>
         <TrafficLight
           total={props.designerTotal}
@@ -34,6 +36,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={layout.paper}>
+        <h2>JIRA epic</h2>
         <h3>Pubkeeper</h3>
         <TrafficLight
           total={props.pubkeeperTotal}
@@ -43,15 +46,16 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={barGraphClasses}>
+        <h2>Q2</h2>
         <h3>Hours Worked</h3>
-        <BarGraph data={props.timely && props.timely} />
+        <BarGraph data={props.productTimely && props.productTimely} />
       </div>
     </div>
   );
 };
 
 ProductDashboard.propTypes = {
-  timely: React.PropTypes.object,
+  productTimely: React.PropTypes.array,
   time: React.PropTypes.object,
 };
 

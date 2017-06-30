@@ -14,7 +14,7 @@ export const api = (data) => ({
 });
 
 export const productTimelyHours = (data) => ({
-  type: 'TIMELY_HOURS',
+  type: 'PRODUCT_TIMELY',
   data,
 });
 
