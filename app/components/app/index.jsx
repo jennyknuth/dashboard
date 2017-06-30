@@ -38,7 +38,7 @@ class MainApp extends React.Component {
           <img className={header.logo} src='img/niologo_white.png' />
         </Link>
       </header>
-      <div className={layout.frame}>
+      <div id="contentHolder" className={layout.frame}>
         { auth.loggedIn() && (
           <nav className={nav.bar}>
             <List variant='none'>
@@ -54,7 +54,7 @@ class MainApp extends React.Component {
               <Link className={this.selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => this.selectedNav(e)}>
                 Socinio
               </Link>
-              <a className={this.selectedClasses('dashboard')} href='' name='logout' onClick={() => auth.logout()}>
+              <a className={this.selectedClasses('login')} href='' name='logout' onClick={() => auth.logout()}>
                 Log Out
               </a>
             </List>

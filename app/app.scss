@@ -18,5 +18,74 @@
   html, body {
     padding:0;
     margin:0;
+    &.auth0-lock-html{
+      background:none!important;
+      #contentHolder{
+        display:none!important;
+      }
+    }
+  }
+
+  .auth0-lock-container {
+    .auth0-lock-widget {
+      -webkit-transition: none !important;
+      transition: none !important;
+      -webkit-transition-delay: 0s !important;
+      transition-delay: 0s !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      -webkit-transform: none !important;
+      transform: none !important;
+    }
+
+    .auth0-lock.auth0-lock .auth0-lock-widget{
+      border: 1px solid $palette-primary;
+    }
+    .auth0-lock-badge-bottom,
+    .auth0-lock-close-button {
+      display: none;
+    }
+    .auth0-lock.auth0-lock {
+      .auth0-lock-header,
+      .auth0-lock-header-bg {
+        background: $palette-primary !important;
+        height: auto !important;
+      }
+      .auth0-lock-name {
+        display: none;
+      }
+      .auth0-lock-header-logo {
+        margin-bottom: 0 !important;
+        height: 47px !important;
+      }
+      .auth0-global-message.auth0-global-message-error {
+        background: $palette-danger !important;
+      }
+      .auth0-lock-overlay {
+        background: none !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    html.auth0-lock-html body > *{
+      display:block!important;
+    }
+
+    .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-no-submit .auth0-lock-body-content{
+      min-height:0!important;
+      height:auto!important;
+    }
+    .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget{
+      width:80%!important;
+      max-width:300px!important;
+      height:151px!important;
+      margin: 150px auto 0 auto;
+      position:relative!important;
+      border-radius: 5px!important;
+    }
+    .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-cred-pane{
+      border-radius: 5px!important;
+    }
   }
 }

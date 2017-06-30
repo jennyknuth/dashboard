@@ -31,8 +31,8 @@ const BarGraph = ({ data }) => {
   const valueExtent = d3.extent(data, d => d.value);
   const borderRadius = 5;
 
- // set up the scale functions using D3
- const fontScale = d3.scaleLinear()
+  // set up the scale functions using D3
+  const fontScale = d3.scaleLinear()
    .domain([0, 15])
    .range([0.8, 0.6]);
 
