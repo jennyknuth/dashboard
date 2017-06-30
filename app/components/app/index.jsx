@@ -39,7 +39,7 @@ const MainApp = (props) => {
               Agriculture
             </Link>
             <Link className={selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => selectedNav(e)}>
-              Socinio
+              Operations
             </Link>
           </List>
         </nav>
