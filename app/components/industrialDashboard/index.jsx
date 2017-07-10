@@ -37,8 +37,8 @@ const IndustrialDashboard = (props) => {
         <BarGraph data={props.industrialTimely && props.industrialTimely} />
       </div>
       <div className={layout.paper}>
-        <h2>Zen Desk</h2>
-        <h4>average reply time</h4>
+        <h2>Zendesk</h2>
+        <h4>Average Response Time</h4>
         <Statistic value={props.zenReply && props.zenReply.toString()} />
       </div>
     </div>

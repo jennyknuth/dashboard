@@ -12,7 +12,7 @@ const industrial = (state, action) => {
   const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
   const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
   const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
-  const displayTime = (hour, min) => (`${hour}:${min}`);
+  const displayTime = (hour, min) => (`${hour}h ${min}m`);
   if (state === undefined) {
     state = defaultState;
   }
