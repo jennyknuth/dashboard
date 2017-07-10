@@ -1,4 +1,4 @@
-# socinio Dashboard
+# company Dashboard
 
 The UI that displays project stats
 

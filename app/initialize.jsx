@@ -13,6 +13,7 @@ import Dashboard from 'components/dashboard';
 import ProductDashboard from 'components/productDashboard';
 import IndustrialDashboard from 'components/industrialDashboard';
 import AgricultureDashboard from 'components/agricultureDashboard';
+import Login from 'components/login';
 
 // For our theme provider
 import theme from 'theme';
@@ -45,14 +46,28 @@ const history = useRouterHistory(createHistory)({
   basename: config.APP_ROOT
 });
 
-const scrollTop = () => window.scrollTo(0, 0);
+// Authentication Service
+import { AuthService } from './services/AuthService';
+const AUTH = new AuthService(config.AUTH0_ACCT, config.AUTH0_URL);
+
+// validate authentication for private routes
+const requireAuth = (nextState, replace) => {
+  if (!AUTH.loggedIn()) replace({ pathname: '/login' });
+  window.scrollTo(0, 0);
+};
+
+// redirect if logged in and on the login page
+const checkAuth = (nextState, replace) => {
+  if (AUTH.loggedIn()) replace({ pathname: '/' });
+  window.scrollTo(0, 0);
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router history={history}>
-          <Route path="/" component={MainApp}>
+          <Route path="/" component={MainApp} auth={AUTH}>
             <IndexRedirect to="dashboard" />
             <Route path="operations" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
             <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
