@@ -30,17 +30,17 @@ const MainApp = (props) => {
         { props.route.auth.loggedIn() && (
         <nav className={nav.bar}>
           <List variant='none'>
-            <Link className={selectedClasses('industrial')} to="/industrial" name='industrial' onClick={(e) => selectedNav(e)}>
-              Industrial
+            <Link className={selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => selectedNav(e)}>
+              Operations
             </Link>
             <Link className={selectedClasses('product')} to="/product" name='product' onClick={(e) => selectedNav(e)}>
               Product
             </Link>
+            <Link className={selectedClasses('industrial')} to="/industrial" name='industrial' onClick={(e) => selectedNav(e)}>
+              Industrial
+            </Link>
             <Link className={selectedClasses('agriculture')} to="/agriculture" name='agriculture' onClick={(e) => selectedNav(e)}>
               Agriculture
-            </Link>
-            <Link className={selectedClasses('dashboard')} to="/dashboard" name='dashboard' onClick={(e) => selectedNav(e)}>
-              Operations
             </Link>
             <a className={selectedClasses('logout')} href='' name='logout' onClick={() => props.route.auth.logout()}>
               Log Out
