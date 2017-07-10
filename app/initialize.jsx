@@ -69,11 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <Router history={history}>
           <Route path="/" component={MainApp} auth={AUTH}>
             <IndexRedirect to="dashboard" />
-            <Route path="operations" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
-            <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={scrollTop} />
-            <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={scrollTop} />
-            <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={scrollTop} />
-            <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={scrollTop} />
+            <Route path="dashboard" component={Dashboard} title="Dashboard" onEnter={requireAuth} />
+            <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={requireAuth} />
+            <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={requireAuth} />
+            <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={requireAuth} />
+            <Route path="login" component={Login} onEnter={checkAuth} />
           </Route>
         </Router>
       </Provider>
