@@ -1,19 +1,9 @@
-export const dgs = (data) => ({
-  type: 'DGS',
-  data,
-});
-
-export const industrialTimelyHours = (data) => ({
-  type: 'INDUSTRIAL_TIMELY',
+export const industrial = (data) => ({
+  type: 'INDUSTRIAL',
   data,
 });
 
 export const clock = (data) => ({
   type: 'CLOCK',
-  data,
-});
-
-export const zenReplyTime = (data) => ({
-  type: 'ZEN_REPLY',
   data,
 });

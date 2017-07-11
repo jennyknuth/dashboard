@@ -39,7 +39,7 @@ const Dashboard = ({ opsTimely, time, openPositions, applicants, employeeCount }
         <Statistic label='' unit='' value={applicants.count} />
       </div>
       <div className={barGraphClasses}>
-        <h2>Q2</h2>
+        <h2>Q3</h2>
         <h3>Hours Worked</h3>
         { <BarGraph data={opsTimely && opsTimely} />}
       </div>

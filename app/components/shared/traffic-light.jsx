@@ -4,21 +4,21 @@ import Progress from 'react-nuik/lib/components/progress-bar';
 import priorities from 'theme/priorities';
 import progress from 'theme/progress';
 
-const TrafficLight = ({total, redValue, yellowValue, greenValue }) => {
+const TrafficLight = ({total, redValue, yellowValue, greenValue, redLabel, yellowLabel, greenLabel }) => {
 
   return (
     <div>
       <div className={priorities.priorities}>
         <div>
-          Backlog {redValue} of {total}
+          {redLabel} {redValue} of {total}
           <Progress className={progress.progress} percent={redValue / total} variant='danger' />
         </div>
         <div>
-          Doing {yellowValue} of {total}
+          {yellowLabel} {yellowValue} of {total}
           <Progress className={progress.progress} percent={yellowValue / total} variant='warning' />
         </div>
         <div>
-          Done {greenValue} of {total}
+          {greenLabel} {greenValue} of {total}
           <Progress className={progress.progress} percent={greenValue / total} variant='affirmative' />
         </div>
       </div>

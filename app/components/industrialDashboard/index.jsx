@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 import BarGraph from 'components/shared/bar-graph';
+import Clock from 'components/shared/clock';
 import TrafficLight from 'components/shared/traffic-light.jsx';
 import Statistic from 'components/shared/statistic.jsx';
 
@@ -25,28 +26,45 @@ const IndustrialDashboard = (props) => {
         <h2>JIRA breakdown</h2>
         <h3>DGS</h3>
         <TrafficLight
-          total={props.dgsTotal}
-          redValue={props.dgs['To Do ']}
-          yellowValue={props.dgs['In Progress']}
-          greenValue={props.dgs.Done}
+          total={props.jira_dgs_progress.dgsTotal}
+          redValue={props.jira_dgs_progress.dgs.red_value}
+          redLabel={props.jira_dgs_progress.dgs.red_label}
+          yellowValue={props.jira_dgs_progress.dgs.yellow_value}
+          yellowLabel={props.jira_dgs_progress.dgs.yellow_label}
+          greenValue={props.jira_dgs_progress.dgs.green_value}
+          greenLabel={props.jira_dgs_progress.dgs.green_label}
         />
       </div>
-      <div className={barGraphClasses}>
-        <h2>Q2</h2>
-        <h3>Hours Worked</h3>
-        <BarGraph data={props.industrialTimely && props.industrialTimely} />
+      <div className={layout.paper}>
+        <Clock
+          day={props.time && props.time.cur_day}
+          month={props.time && props.time.cur_month}
+          year={props.time && props.time.cur_year}
+          weekday={props.time && props.time.cur_weekday}
+          time={props.time && props.time.cur_time}
+        />
       </div>
       <div className={layout.paper}>
         <h2>Zendesk</h2>
         <h4>Average Response Time</h4>
-        <Statistic value={props.zenReply && props.zenReply.toString()} />
+        <Statistic value={props.zendesk_response_time && props.zendesk_response_time.toString()} />
+      </div>
+      <div className={barGraphClasses}>
+        <h2>Q{props.time.quarter}</h2>
+        <h3>Hours Worked</h3>
+        <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
       </div>
     </div>
   );
 };
 
 IndustrialDashboard.propTypes = {
-  industrialTimely: React.PropTypes.array,
+  timely_hours_ordinal: React.PropTypes.array,
+  zendesk_response_time: React.PropTypes.string,
+  zendesk_tickets_count: React.PropTypes.object,
+  zendesk_ticket_count: React.PropTypes.object,
+  jira_dgs_progress: React.PropTypes.object,
+  jira_dgs_critical_count: React.PropTypes.object,
   time: React.PropTypes.object,
 };
 

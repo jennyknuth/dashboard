@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 
+import Clock from 'components/shared/clock';
 import BarGraph from 'components/shared/bar-graph';
 import TrafficLight from 'components/shared/traffic-light.jsx';
 
@@ -24,17 +25,29 @@ const AgricultureDashboard = (props) => {
         <h2>JIRA breakdown</h2>
         <h3>DVP</h3>
         <TrafficLight
-          total={props.dvpTotal}
-          redValue={props.dvp['To Do ']}
-          yellowValue={props.dvp['In Progress']}
-          greenValue={props.dvp.Done}
+          total={props.jira_dvp_progress.dvpTotal}
+          redValue={props.jira_dvp_progress.dvp.red_value}
+          redLabel={props.jira_dvp_progress.dvp.red_label}
+          yellowValue={props.jira_dvp_progress.dvp.yellow_value}
+          yellowLabel={props.jira_dvp_progress.dvp.yellow_label}
+          greenValue={props.jira_dvp_progress.dvp.green_value}
+          greenLabel={props.jira_dvp_progress.dvp.green_label}
+        />
+      </div>
+      <div className={layout.paper}>
+        <Clock
+          day={props.time && props.time.cur_day}
+          month={props.time && props.time.cur_month}
+          year={props.time && props.time.cur_year}
+          weekday={props.time && props.time.cur_weekday}
+          time={props.time && props.time.cur_time}
         />
       </div>
       <div className={barGraphClasses}>
-        <h2>Q2</h2>
+        <h2>{`Q${props.time.quarter}`}</h2>
         <h3>Hours Worked</h3>
         <div>
-          <BarGraph data={props.agTimely && props.agTimely} />
+          <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
         </div>
       </div>
     </div>
@@ -42,7 +55,8 @@ const AgricultureDashboard = (props) => {
 };
 
 AgricultureDashboard.propTypes = {
-  agTimely: React.PropTypes.array,
+  timely_hours_ordinal: React.PropTypes.array,
+  jira_dvp_progress: React.PropTypes.object,
   time: React.PropTypes.object,
 };
 
