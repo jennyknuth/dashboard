@@ -23,11 +23,11 @@ const Dashboard = (props) => {
       </div>
       <div className={layout.paper}>
         <Clock
-          day={props.time && props.time.cur_day}
-          month={props.time && props.time.cur_month}
-          year={props.time && props.time.cur_year}
-          weekday={props.time && props.time.cur_weekday}
-          time={props.time && props.time.cur_time}
+          day={props.time && props.time.day}
+          month={props.time && props.time.month}
+          year={props.time && props.time.year}
+          weekday={props.time && props.time.weekday}
+          time={props.time && props.time.currentTime}
         />
       </div>
       <div className={layout.paper}>
