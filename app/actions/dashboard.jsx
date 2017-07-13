@@ -1,24 +1,9 @@
-export const opsTimelyHours = (data) => ({
-  type: 'OPS_TIMELY',
+export const operations = (data) => ({
+  type: 'OPERATIONS',
   data,
 });
 
 export const clock = (data) => ({
   type: 'CLOCK',
-  data,
-});
-
-export const openPositions = (data) => ({
-  type: 'OPEN_POSITIONS',
-  data,
-});
-
-export const applicants = (data) => ({
-  type: 'APPLICANTS',
-  data,
-});
-
-export const employeeCount = (data) => ({
-  type: 'EMPLOYEE_COUNT',
   data,
 });

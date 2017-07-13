@@ -3,7 +3,7 @@ import map from 'lodash/map';
 
 const defaultState = {
   time: {},
-  'timely_hours_ordinal': {},
+  'timely_hours_ordinal': [],
   'jira_dpv_progress': {},
 };
 
@@ -12,7 +12,6 @@ const agriculture = (state, action) => {
   const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
   const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   const formatData = (data) => {
-    console.log('in format data', data.type);
     switch (data.type) {
       case 'timely_hours_ordinal':
         return labelValueArrayRemoveType(data);

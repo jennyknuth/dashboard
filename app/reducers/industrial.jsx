@@ -4,7 +4,7 @@ import map from 'lodash/map';
 const defaultState = {
   time: {},
   zendesk_tickets_count: {},
-  timely_hours_ordinal: {},
+  timely_hours_ordinal: [],
   zendesk_response_time: '',
   jira_dgs_progress: {},
   jira_dgs_critical_count: {},
@@ -20,7 +20,7 @@ const industrial = (state, action) => {
       case 'timely_hours_ordinal':
         return labelValueArrayRemoveType(data);
       case 'zendesk_response_time':
-        return displayTime(data.average_reply_hours, data.average_reply_minutes);
+        return displayTime(data.average_response_hours, data.average_response_minutes);
       case 'jira_dgs_progress':
         return {
           dgs: action.data,

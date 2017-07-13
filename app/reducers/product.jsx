@@ -3,7 +3,7 @@ import map from 'lodash/map';
 
 const defaultState = {
   time: {},
-  timely_hours_ordinal: {},
+  timely_hours_ordinal: [],
   jira_api_progress: {},
   jira_pubkeeper_progress: {},
   jira_dgs_progress: {},
