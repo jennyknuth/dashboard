@@ -1,5 +1,6 @@
 import reduce from 'lodash/reduce';
 import map from 'lodash/map';
+import moment from 'moment';
 
 const defaultState = {
   time: {},
@@ -37,7 +38,14 @@ const agriculture = (state, action) => {
     case 'CLOCK': {
       return {
         ...state,
-        time: action.data,
+        quarter: action.data.quarter,
+        time: {
+          day: moment(action.data.cur_time).local().format('D'),
+          year: moment(action.data.cur_time).local().format('YYYY'),
+          month: moment(action.data.cur_time).local().format('MMMM'),
+          weekday: moment(action.data.cur_time).local().format('dddd'),
+          currentTime: moment(action.data.cur_time).format('LT'),
+        },
       };
     }
     default:

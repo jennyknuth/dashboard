@@ -1,5 +1,6 @@
 import reduce from 'lodash/reduce';
 import map from 'lodash/map';
+import moment from 'moment';
 
 const defaultState = {
   time: {},
@@ -12,7 +13,7 @@ const defaultState = {
 
 const industrial = (state, action) => {
   const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
-  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
+  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== ('type' || 'vertical'));
   const getSum = (data) => (reduce(action.data, (result, value, key) => result + (isNaN(value) ? 0 : value), 0));
   const displayTime = (hour, min) => (`${hour}h ${min}m`);
   const formatData = (data) => {
@@ -42,7 +43,14 @@ const industrial = (state, action) => {
     case 'CLOCK': {
       return {
         ...state,
-        time: action.data,
+        quarter: action.data.quarter,
+        time: {
+          day: moment(action.data.cur_time).local().format('D'),
+          year: moment(action.data.cur_time).local().format('YYYY'),
+          month: moment(action.data.cur_time).local().format('MMMM'),
+          weekday: moment(action.data.cur_time).local().format('dddd'),
+          currentTime: moment(action.data.cur_time).format('LT'),
+        },
       };
     }
     default:

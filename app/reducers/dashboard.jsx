@@ -1,4 +1,5 @@
 import map from 'lodash/map';
+import moment from 'moment';
 
 const defaultState = {
   time: {},
@@ -10,7 +11,7 @@ const defaultState = {
 
 const dashboard = (state, action) => {
   const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
-  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== 'type');
+  const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== ('type' || 'vertical'));
   const listKeys = obj => map(obj, (value, key) => key);
   const listKeysRemoveType = obj => listKeys(obj).filter((key) => key !== 'type');
   const formatData = (data) => {
@@ -35,7 +36,14 @@ const dashboard = (state, action) => {
     case 'CLOCK': {
       return {
         ...state,
-        time: action.data,
+        quarter: action.data.quarter,
+        time: {
+          day: moment(action.data.cur_time).local().format('D'),
+          year: moment(action.data.cur_time).local().format('YYYY'),
+          month: moment(action.data.cur_time).local().format('MMMM'),
+          weekday: moment(action.data.cur_time).local().format('dddd'),
+          currentTime: moment(action.data.cur_time).format('LT'),
+        },
       };
     }
     default:

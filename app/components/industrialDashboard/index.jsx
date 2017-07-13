@@ -37,11 +37,11 @@ const IndustrialDashboard = (props) => {
       </div>
       <div className={layout.paper}>
         <Clock
-          day={props.time && props.time.cur_day}
-          month={props.time && props.time.cur_month}
-          year={props.time && props.time.cur_year}
-          weekday={props.time && props.time.cur_weekday}
-          time={props.time && props.time.cur_time}
+          day={props.time && props.time.day}
+          month={props.time && props.time.month}
+          year={props.time && props.time.year}
+          weekday={props.time && props.time.weekday}
+          time={props.time && props.time.currentTime}
         />
       </div>
       <div className={layout.paper}>
@@ -50,7 +50,7 @@ const IndustrialDashboard = (props) => {
         <Statistic value={props.zendesk_response_time && props.zendesk_response_time.toString()} />
       </div>
       <div className={barGraphClasses}>
-        <h2>Q{props.time.quarter}</h2>
+        <h2>Q{props.quarter}</h2>
         <h3>Hours Worked</h3>
         <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
       </div>
