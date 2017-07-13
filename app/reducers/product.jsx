@@ -33,6 +33,21 @@ const product = (state, action) => {
           pubkeeper: action.data,
           pubkeeperTotal: getSum(action.data)
         };
+      case 'jira_des_progress':
+        return {
+          des: action.data,
+          desTotal: getSum(action.data)
+        };
+      case 'jira_ce_progress':
+        return {
+          ce: action.data,
+          ceTotal: getSum(action.data)
+        };
+      case 'jira_blk_progress':
+        return {
+          blk: action.data,
+          blkTotal: getSum(action.data)
+        };
       default:
         return action.data;
     }

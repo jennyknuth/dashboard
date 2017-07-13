@@ -27,6 +27,11 @@ const industrial = (state, action) => {
           dgs: action.data,
           dgsTotal: getSum(action.data)
         };
+      case 'jira_dgs_priority':
+        return {
+          dgs: action.data,
+          dgsTotal: getSum(action.data)
+        };
       default:
         return action.data;
     }

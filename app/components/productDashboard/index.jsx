@@ -21,6 +21,54 @@ const ProductDashboard = (props) => {
 
   return (
     <div className={layout.artboard}>
+      <div className={layout.paper}>
+        <Clock
+          day={props.time && props.time.day}
+          month={props.time && props.time.month}
+          year={props.time && props.time.year}
+          weekday={props.time && props.time.weekday}
+          time={props.time && props.time.currentTime}
+        />
+      </div>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
+        <h3>Design</h3>
+        <TrafficLight
+          total={props.jira_des_progress.desTotal}
+          redValue={props.jira_des_progress.des.red_value}
+          redLabel={props.jira_des_progress.des.red_label}
+          yellowValue={props.jira_des_progress.des.yellow_value}
+          yellowLabel={props.jira_des_progress.des.yellow_label}
+          greenValue={props.jira_des_progress.des.green_value}
+          greenLabel={props.jira_des_progress.des.green_label}
+        />
+      </div>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
+        <h3>Blocks</h3>
+        <TrafficLight
+          total={props.jira_blk_progress.blkTotal}
+          redValue={props.jira_blk_progress.blk.red_value}
+          redLabel={props.jira_blk_progress.blk.red_label}
+          yellowValue={props.jira_blk_progress.blk.yellow_value}
+          yellowLabel={props.jira_blk_progress.blk.yellow_label}
+          greenValue={props.jira_blk_progress.blk.green_value}
+          greenLabel={props.jira_blk_progress.blk.green_label}
+        />
+      </div>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA breakdown</h2>
+        <h3>Customer Engagement</h3>
+        <TrafficLight
+          total={props.jira_ce_progress.ceTotal}
+          redValue={props.jira_ce_progress.ce.red_value}
+          redLabel={props.jira_ce_progress.ce.red_label}
+          yellowValue={props.jira_ce_progress.ce.yellow_value}
+          yellowLabel={props.jira_ce_progress.ce.yellow_label}
+          greenValue={props.jira_ce_progress.ce.green_value}
+          greenLabel={props.jira_ce_progress.ce.green_label}
+        />
+      </div>
       <div className={TrafficLightClasses}>
         <h2>JIRA breakdown</h2>
         <h3>API</h3>
@@ -65,16 +113,6 @@ const ProductDashboard = (props) => {
         <h3>Hours Worked</h3>
         <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
       </div>
-      <div className={layout.paper}>
-        <Clock
-          day={props.time && props.time.day}
-          month={props.time && props.time.month}
-          year={props.time && props.time.year}
-          weekday={props.time && props.time.weekday}
-          time={props.time && props.time.currentTime}
-        />
-      </div>
-
     </div>
   );
 };
