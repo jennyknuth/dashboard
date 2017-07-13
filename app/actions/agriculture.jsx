@@ -1,10 +1,5 @@
-export const dvp = (data) => ({
-  type: 'DVP',
-  data,
-});
-
-export const agricultureTimelyHours = (data) => ({
-  type: 'AG_TIMELY',
+export const agriculture = (data) => ({
+  type: 'AGRICULTURE',
   data,
 });
 
