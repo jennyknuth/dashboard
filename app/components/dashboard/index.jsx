@@ -19,7 +19,7 @@ const Dashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={layout.paper}>
-        <h2>Employees</h2>
+        <h2>Number of Employees</h2>
         <Statistic value={props.slack_employees_count.employees} />
       </div>
       <div className={layout.paper}>

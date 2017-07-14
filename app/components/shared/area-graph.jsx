@@ -1,10 +1,11 @@
 import React from 'react';
 import * as d3 from 'd3';
+import moment from 'moment';
 
 const TimeSeriesGraph = ({ vals }) => {
 
   // set up chart boundaries and margins
-  const margin = { top: 0, bottom: 40, left: 0, right: 0 };
+  const margin = { top: 0, bottom: 40, left: 20, right: 40 };
   const width = 600;
   const height = 250 ;
   const chartHeight = height - margin.top - margin.bottom;
@@ -17,12 +18,14 @@ const TimeSeriesGraph = ({ vals }) => {
 
  // set up the scale functions using D3
   const xScale = d3.scaleTime()
-    .domain(timeExtent)
+    .domain([timeExtent[0], timeExtent[1] + 1000000])
     .range([0, chartWidth]);
 
   const yScale = d3.scaleLinear()
     .domain([(valueExtent[0] - 5), valueExtent[1]])
     .range([chartHeight, 0]);
+
+  const yTicks = yScale.ticks(5);
 
   // area function
   const areaPlot = d3.area()
@@ -43,10 +46,6 @@ const TimeSeriesGraph = ({ vals }) => {
       style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
     >
       <defs>
-        <radialGradient id='RadialGradientAreaGraph'>
-          <stop offset='0%' stopColor='#F4BC26'/>
-          <stop offset='100%' stopColor='white'/>
-        </radialGradient>
         <linearGradient id='LinearGradientAreaGraph' x1='0' x2='0' y1='0' y2='1'>
           <stop offset='0%' stopColor='#F4BC26' stopOpacity='0.4'/>
           <stop offset='100%' stopColor='white' stopOpacity='0'/>
@@ -55,7 +54,21 @@ const TimeSeriesGraph = ({ vals }) => {
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <path d={areaPlot(chronologicalVals)} fill='url(#LinearGradientAreaGraph)' stroke='none'/>
         <path d={linePlot(chronologicalVals)} stroke='#F4BC26' fill='none'/>
-        <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} stroke='gray'/>
+        <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} stroke='#eeeeee' strokeWidth={0.5}/>
+        {vals.map((d, i) => i > 0 ?
+          <text key={`time-${+d.time}`} x={xScale(+d.time)} y={chartHeight} dy={20} fill='#eee' stroke='none' textAnchor='end' fontSize='0.7rem'>
+            {moment(d.time, 'X').format('MMM').toLowerCase() }
+          </text> :
+          null)
+        }
+        {yTicks.map(d =>
+          <g key={`yTic-${d}`} >
+            <text x={chartWidth} dx={10} y={yScale(d)} dy={3} fill='#eee' stroke='none' textAnchor='start' fontSize='0.7rem'>
+              {d}
+            </text>
+            <line x1={0} x2={chartWidth} y1={yScale(d)} y2={yScale(d)} stroke='#eeeeee' strokeWidth={0.5} strokeDasharray='2,2'/>
+          </g>
+        )}
       </g>
     </svg>
   );
