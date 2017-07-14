@@ -2,8 +2,17 @@
 @import "global";
 
 .bar {
+  display: inline-block;
   width: 150px;
   padding: 2rem;
+  transition: width 500ms;
+  background-color: white;
+}
+
+.hidden {
+  width: 0;
+  padding: 0;
+  transition: width 500ms;
 }
 
 %item {
@@ -12,6 +21,7 @@
   margin: 1rem 0;
   position: relative;
 }
+
 .item {
   @extend %item;
 }
