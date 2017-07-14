@@ -5,7 +5,7 @@ import moment from 'moment';
 const TimeSeriesGraph = ({ vals }) => {
 
   // set up chart boundaries and margins
-  const margin = { top: 0, bottom: 40, left: 20, right: 40 };
+  const margin = { top: 0, bottom: 40, left: 0, right: 40 };
   const width = 600;
   const height = 250 ;
   const chartHeight = height - margin.top - margin.bottom;
@@ -50,11 +50,16 @@ const TimeSeriesGraph = ({ vals }) => {
           <stop offset='0%' stopColor='#F4BC26' stopOpacity='0.4'/>
           <stop offset='100%' stopColor='white' stopOpacity='0'/>
         </linearGradient>
+        <clipPath id='remove-ends'>
+          <rect x={25} y={0} width={chartWidth - 20} height={chartHeight} />
+        </clipPath>
       </defs>
-      <g transform={`translate(${margin.left}, ${margin.top})`}>
-        <path d={areaPlot(chronologicalVals)} fill='url(#LinearGradientAreaGraph)' stroke='none'/>
-        <path d={linePlot(chronologicalVals)} stroke='#F4BC26' fill='none'/>
-        <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} stroke='#eeeeee' strokeWidth={0.5}/>
+      <g transform={`translate(${margin.left}, ${margin.top})`} >
+        <g clipPath='url(#remove-ends)'>
+          <path d={areaPlot(chronologicalVals)} fill='url(#LinearGradientAreaGraph)' stroke='none' />
+          <path d={linePlot(chronologicalVals)} stroke='#F4BC26' fill='none'/>
+          <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} stroke='#eeeeee' strokeWidth={0.5}/>
+        </g>
         {vals.map((d, i) => i > 0 ?
           <text key={`time-${+d.time}`} x={xScale(+d.time)} y={chartHeight} dy={20} fill='#eee' stroke='none' textAnchor='end' fontSize='0.7rem'>
             {moment(d.time, 'X').format('MMM').toLowerCase() }
@@ -63,10 +68,10 @@ const TimeSeriesGraph = ({ vals }) => {
         }
         {yTicks.map(d =>
           <g key={`yTic-${d}`} >
-            <text x={chartWidth} dx={10} y={yScale(d)} dy={3} fill='#eee' stroke='none' textAnchor='start' fontSize='0.7rem'>
+            <text x={chartWidth} dx={5} y={yScale(d)} dy={3} fill='#eee' stroke='none' textAnchor='start' fontSize='0.7rem'>
               {d}
             </text>
-            <line x1={0} x2={chartWidth} y1={yScale(d)} y2={yScale(d)} stroke='#eeeeee' strokeWidth={0.5} strokeDasharray='2,2'/>
+            <line x1={0} x2={chartWidth} y1={yScale(d)} y2={yScale(d)} stroke='#eeeeee' strokeWidth={0.5} strokeDasharray='2,2' clipPath='url(#remove-ends)'/>
           </g>
         )}
       </g>

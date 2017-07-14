@@ -19,7 +19,7 @@ const Dashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={layout.paper}>
-        <h2>Number of Employees</h2>
+        <h2>Employees</h2>
         <Statistic value={props.slack_employees_count.employees} />
       </div>
       <div className={layout.paper}>
@@ -45,7 +45,7 @@ const Dashboard = (props) => {
         { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
       </div>
       <div className={barGraphClasses}>
-        <h2>Employees</h2>
+        <h2>Employees over Time</h2>
         { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
       </div>
     </div>
