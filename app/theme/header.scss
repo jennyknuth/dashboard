@@ -6,7 +6,7 @@
   height: 40px;
   background-color: $palette-black;
   color: $palette-background;
-  padding: 20px 40px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,9 +21,20 @@
   }
 }
 
+.icon {
+  margin-right: 1rem;
+  transition: 300ms;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: 300ms;
+}
+
 .logo {
   display: inline-block;
   height: 30px;
+  vertical-align: bottom;
 }
 
 .name {
