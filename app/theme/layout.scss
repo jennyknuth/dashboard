@@ -3,13 +3,13 @@
 
 .frame {
   display: flex;
+  background-color:$palette-background;
 }
 
 .app {
+  display: inline-block;
   margin: 0 auto;
   padding: 20px 40px;
-  background-color:$palette-background;
-  width: 80%;
 }
 
 .pageTitle {

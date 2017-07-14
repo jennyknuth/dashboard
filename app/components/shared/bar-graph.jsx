@@ -21,7 +21,7 @@ const BarGraph = ({ data }) => {
   const sortedData = data && data.sort((a, b) => d3.ascending(a.label, b.label));
   const dataWithShortLabels = data && sortedData.map(d => labelShortener[d.label] ? {label: labelShortener[d.label], value: d.value} : d);
   const numberOfBars = dataWithShortLabels && dataWithShortLabels.length;
-  const margin = { top: 10, bottom: 20, left: 0, right: 0 };
+  const margin = { top: 10, bottom: 20, left: 0, right: 40 };
   const width = 600;
   const height = 250 ;
   const chartHeight = height - margin.top - margin.bottom;
@@ -29,7 +29,7 @@ const BarGraph = ({ data }) => {
 
   // find the extent of the data
   const valueExtent = d3.extent(data, d => d.value);
-  const borderRadius = 5;
+  const borderRadius = 4;
 
   // set up the scale functions using D3
   const fontScale = d3.scaleLinear()
@@ -46,6 +46,8 @@ const BarGraph = ({ data }) => {
     .domain([valueExtent[0], valueExtent[1] + (valueExtent[1] * 0.1)])
     .range([chartHeight, 0]);
 
+  const yTicks = yScale.ticks(4);
+
   return (
     <svg
       viewBox={`0,0,${width},${height}`}
@@ -55,12 +57,16 @@ const BarGraph = ({ data }) => {
       <g transform={`translate(${margin.left}, ${margin.top})`} >
         { dataWithShortLabels.map((d, i)=>
           <g key={`bar-${i}`}>
-            <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#D8D8D8' rx={borderRadius} ry={borderRadius} />
+            <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#E6E9EE' rx={borderRadius} ry={borderRadius} />
+            <rect x={xScale(d.label)} y={chartHeight - 5} width={xScale.bandwidth()} height={5} fill='#E6E9EE'/>
             <rect x={xScale(d.label)} y={yScale(d.value)} width={xScale.bandwidth()} height={chartHeight - yScale(d.value)} rx={borderRadius} ry={borderRadius} fill='#37C0C9'/>
-            <line x1={xScale.bandwidth()} x2={chartWidth - xScale.bandwidth()} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#D8D8D8'/>
-            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={yScale(d.value)} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
-            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle'> {d.label.toLowerCase()} </text>
+            <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#E6E9EE'/>
+            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={Math.max(44, yScale(d.value))} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
+            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle' fill='#354042'> {d.label.toLowerCase()} </text>
           </g>
+        )}
+        { yTicks.map((d, i) =>
+          <text key={`hours-${d}`} x={chartWidth} y={yScale(d)} fill='#E6E9EE' fontSize={`${fontScale(numberOfBars)}rem`}>{d}</text>
         )}
       </g>
     </svg>

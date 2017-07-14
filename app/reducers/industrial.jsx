@@ -8,6 +8,7 @@ const defaultState = {
   timely_hours_ordinal: [],
   zendesk_response_time: '',
   jira_dgs_progress: {},
+  jira_dgs_priority: {},
   jira_dgs_critical_count: {},
 };
 
