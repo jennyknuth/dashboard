@@ -4,6 +4,7 @@ import moment from 'moment';
 const defaultState = {
   time: {},
   timely_hours_ordinal: [],
+  timely_employees_continuous: [],
   jazz_jobs_list: [],
   jazz_applicants_count: 'n/a',
   slack_employees_count: 'n/a',
@@ -12,12 +13,17 @@ const defaultState = {
 const dashboard = (state, action) => {
   const labelValueArray = obj => map(obj, (value, key) => ({ label: key, value: value }));
   const labelValueArrayRemoveType = obj => labelValueArray(obj).filter(item => item.label !== ('type' || 'vertical'));
+  const timeArray = obj => map(obj, (value, key) => (key !== 'type' ? { time: moment(key, 'YYYY-MM').format('X'), value: value } : undefined));
+  const timeArrayRemoveUndefined = obj => timeArray(obj).filter(item => item !== undefined);
+
   const listKeys = obj => map(obj, (value, key) => key);
   const listKeysRemoveType = obj => listKeys(obj).filter((key) => key !== 'type');
   const formatData = (data) => {
     switch (data.type) {
       case 'timely_hours_ordinal':
         return labelValueArrayRemoveType(data);
+      case 'timely_employees_continuous':
+        return timeArrayRemoveUndefined(data);
       case 'jazz_jobs_list':
         return listKeysRemoveType(data);
       default:
