@@ -40,13 +40,13 @@ const Dashboard = (props) => {
         <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
       </div>
       <div className={barGraphClasses}>
+        <h2>Number of Employees</h2>
+        { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
+      </div>
+      <div className={barGraphClasses}>
         <h2>Q3</h2>
         <h3>Hours Worked</h3>
         { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
-      </div>
-      <div className={barGraphClasses}>
-        <h2>Employees over Time</h2>
-        { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
       </div>
     </div>
   );

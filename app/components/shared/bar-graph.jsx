@@ -55,9 +55,9 @@ const BarGraph = ({ data }) => {
       <g transform={`translate(${margin.left}, ${margin.top})`} >
         { dataWithShortLabels.map((d, i)=>
           <g key={`bar-${i}`}>
-            <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#D8D8D8' rx={borderRadius} ry={borderRadius} />
+            <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#CED4DA' rx={borderRadius} ry={borderRadius} />
             <rect x={xScale(d.label)} y={yScale(d.value)} width={xScale.bandwidth()} height={chartHeight - yScale(d.value)} rx={borderRadius} ry={borderRadius} fill='#37C0C9'/>
-            <line x1={xScale.bandwidth()} x2={chartWidth - xScale.bandwidth()} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#D8D8D8'/>
+            <line x1={xScale.bandwidth()} x2={chartWidth - xScale.bandwidth()} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#CED4DA'/>
             <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={yScale(d.value)} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
             <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle'> {d.label.toLowerCase()} </text>
           </g>
