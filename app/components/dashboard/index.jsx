@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 import BarGraph from 'components/shared/bar-graph';
+import TimeSeriesGraph from 'components/shared/area-graph';
 import Clock from 'components/shared/clock';
 import DisplayList from 'components/shared/display-list';
 import Statistic from 'components/shared/statistic';
@@ -10,9 +11,9 @@ import Statistic from 'components/shared/statistic';
 import layout from 'theme/layout';
 
 const Dashboard = (props) => {
-  const barGraphClasses = classNames(
+  const barGraphClasses = (size) => classNames(
     layout.paper,
-    layout.bigBarGraph,
+    size === 'big' ? layout.bigBarGraph : layout.barGraph,
   );
 
   return (
@@ -38,7 +39,11 @@ const Dashboard = (props) => {
         <h2>Applicants</h2>
         <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
       </div>
-      <div className={barGraphClasses}>
+      <div className={barGraphClasses()}>
+        <h2>Number of Employees</h2>
+        { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
+      </div>
+      <div className={barGraphClasses('big')}>
         <h2>Q3</h2>
         <h3>Hours Worked</h3>
         { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
