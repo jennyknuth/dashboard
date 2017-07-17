@@ -31,6 +31,10 @@ const Dashboard = (props) => {
           time={props.time && props.time.currentTime}
         />
       </div>
+      <div className={barGraphClasses()}>
+        <h2>Number of Employees</h2>
+        { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
+      </div>
       <div className={layout.paper}>
         <h2>Open Positions</h2>
         <DisplayList data={Array.from(props.jazz_jobs_list)} />
@@ -38,10 +42,6 @@ const Dashboard = (props) => {
       <div className={layout.paper}>
         <h2>Applicants</h2>
         <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
-      </div>
-      <div className={barGraphClasses()}>
-        <h2>Number of Employees</h2>
-        { <TimeSeriesGraph vals={props.timely_employees_continuous && props.timely_employees_continuous} />}
       </div>
       <div className={barGraphClasses('big')}>
         <h2>Q3</h2>
