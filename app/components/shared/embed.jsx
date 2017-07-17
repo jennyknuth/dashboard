@@ -1,10 +1,10 @@
 import React from 'react';
 
+import embed from 'theme/embed';
 
-const EmbedScreen = ({ url }) => {
-  console.log(url);
+const EmbedScreen = ({ url, width, height }) => {
   return (
-    <iframe src={url && url} width='700' height='500'>
+    <iframe className={embed.iframe} src={url && url} width={width && width} height={height && height}>
       <p>Your browser does not support iframes.</p>
     </iframe>
   );
@@ -12,6 +12,8 @@ const EmbedScreen = ({ url }) => {
 
 EmbedScreen.propTypes = {
   url: React.PropTypes.string,
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
 };
 
 export default EmbedScreen;

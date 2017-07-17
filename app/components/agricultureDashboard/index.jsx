@@ -47,6 +47,8 @@ const AgricultureDashboard = (props) => {
       <div className={layout.paper}>
         <EmbedScreen
           url='https://n.io'
+          width={700}
+          height={500}
         />
       </div>
       <div className={barGraphClasses}>
