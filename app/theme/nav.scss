@@ -2,17 +2,18 @@
 @import "global";
 
 .bar {
-  display: inline-block;
-  width: 200px;
+  flex: 1;
   padding-left: 2rem;
-  transition: width 500ms;
+  transition: flex 500ms, min-width 500ms;
   background-color: white;
+  min-width: 125px;
 }
 
 .hidden {
-  width: 0;
+  flex: 0;
   padding: 0;
-  transition: width 500ms;
+  min-width: 0;
+  transition: flex 500ms, min-width 500ms;
 }
 
 %item {
