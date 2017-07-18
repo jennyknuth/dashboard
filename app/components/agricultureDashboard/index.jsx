@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import Clock from 'components/shared/clock';
 import BarGraph from 'components/shared/bar-graph';
-import TrafficLight from 'components/shared/traffic-light.jsx';
 import EmbedScreen from 'components/shared/embed.jsx';
 
 import layout from 'theme/layout.scss';
@@ -15,24 +14,13 @@ const AgricultureDashboard = (props) => {
     layout.barGraph,
   );
 
-  const TrafficLightClasses = classNames(
-    layout.paper,
-    layout.trafficLight,
-  );
-
   return (
     <div className={layout.artboard}>
-      <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
-        <h3>DVP</h3>
-        <TrafficLight
-          total={props.jira_dvp_progress.dvpTotal}
-          redValue={props.jira_dvp_progress.dvp.red_value}
-          redLabel={props.jira_dvp_progress.dvp.red_label}
-          yellowValue={props.jira_dvp_progress.dvp.yellow_value}
-          yellowLabel={props.jira_dvp_progress.dvp.yellow_label}
-          greenValue={props.jira_dvp_progress.dvp.green_value}
-          greenLabel={props.jira_dvp_progress.dvp.green_label}
+      <div className={layout.paper}>
+        <EmbedScreen
+          url='https://n.io'
+          width={700}
+          height={500}
         />
       </div>
       <div className={layout.paper}>
@@ -42,13 +30,6 @@ const AgricultureDashboard = (props) => {
           year={props.time && props.time.year}
           weekday={props.time && props.time.weekday}
           time={props.time && props.time.currentTime}
-        />
-      </div>
-      <div className={layout.paper}>
-        <EmbedScreen
-          url='https://n.io'
-          width={700}
-          height={500}
         />
       </div>
       <div className={barGraphClasses}>
