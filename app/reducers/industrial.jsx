@@ -8,7 +8,7 @@ const defaultState = {
   timely_hours_ordinal: [],
   zendesk_response_time: '',
   jira_dgs_progress: {},
-  jira_dgs_priority: {},
+  jira_dgs_priority_progress: {},
   jira_dgs_critical_count: {},
 };
 
@@ -28,7 +28,7 @@ const industrial = (state, action) => {
           dgs: action.data,
           dgsTotal: getSum(action.data)
         };
-      case 'jira_dgs_priority':
+      case 'jira_dgs_priority_progress':
         return {
           dgs: action.data,
           dgsTotal: getSum(action.data)
