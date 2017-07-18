@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Clock from 'components/shared/clock';
 import BarGraph from 'components/shared/bar-graph';
 import TrafficLight from 'components/shared/traffic-light.jsx';
+import EmbedScreen from 'components/shared/embed.jsx';
 
 import layout from 'theme/layout.scss';
 
@@ -41,6 +42,13 @@ const AgricultureDashboard = (props) => {
           year={props.time && props.time.year}
           weekday={props.time && props.time.weekday}
           time={props.time && props.time.currentTime}
+        />
+      </div>
+      <div className={layout.paper}>
+        <EmbedScreen
+          url='https://n.io'
+          width={700}
+          height={500}
         />
       </div>
       <div className={barGraphClasses}>

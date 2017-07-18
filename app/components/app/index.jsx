@@ -44,8 +44,8 @@ class MainApp extends React.Component {
     return (
       <div>
         <header className={header.header}>
+          <i className={iconClasses} onClick={toggleNav}/>
           <Link className={header.link} to="/">
-            <i className={iconClasses} onClick={toggleNav}/>
             <img className={header.logo} src='img/niologo_white.png' />
           </Link>
         </header>
