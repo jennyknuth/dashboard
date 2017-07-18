@@ -38,7 +38,7 @@ const IndustrialDashboard = (props) => {
       <div className={layout.paper}>
         <h2>JIRA</h2>
         <h4>Critical Tickets</h4>
-        <Statistic value={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.red_value} />
+        <Statistic value={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.red_value} />
       </div>
       <div className={layout.paper}>
         <Clock
@@ -53,13 +53,13 @@ const IndustrialDashboard = (props) => {
         <h2>JIRA Ticket</h2>
         <h3>Priority Level</h3>
         <TrafficLight
-          total={props.jira_dgs_priority && props.jira_dgs_priority.dgsTotal}
-          redValue={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.red_value}
-          redLabel={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.red_label}
-          yellowValue={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.yellow_value}
-          yellowLabel={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.yellow_label}
-          greenValue={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.green_value}
-          greenLabel={props.jira_dgs_priority.dgs && props.jira_dgs_priority.dgs.green_label}
+          total={props.jira_dgs_priority_progress && props.jira_dgs_priority_progress.dgsTotal}
+          redValue={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.red_value}
+          redLabel={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.red_label}
+          yellowValue={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.yellow_value}
+          yellowLabel={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.yellow_label}
+          greenValue={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.green_value}
+          greenLabel={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.green_label}
         />
       </div>
       <div className={barGraphClasses}>
@@ -86,7 +86,7 @@ IndustrialDashboard.propTypes = {
   zendesk_response_time: React.PropTypes.string,
   zendesk_tickets_count: React.PropTypes.object,
   jira_dgs_progress: React.PropTypes.object,
-  jira_dgs_priority: React.PropTypes.object,
+  jira_dgs_priority_progress: React.PropTypes.object,
   jira_dgs_critical_count: React.PropTypes.object,
   time: React.PropTypes.object,
 };
