@@ -8,6 +8,7 @@ const defaultState = {
   jazz_jobs_list: [],
   jazz_applicants_count: 'n/a',
   slack_employees_count: 'n/a',
+  kitchen_coffee_count: 'n/a',
 };
 
 const dashboard = (state, action) => {

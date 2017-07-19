@@ -23,6 +23,10 @@ const Dashboard = (props) => {
         <Statistic value={props.slack_employees_count.employees} />
       </div>
       <div className={layout.paper}>
+        <h2>Cups of Coffee Made Today</h2>
+        <Statistic value={props.kitchen_coffee_count.coffee_count} />
+      </div>
+      <div className={layout.paper}>
         <Clock
           day={props.time && props.time.day}
           month={props.time && props.time.month}
@@ -58,6 +62,7 @@ Dashboard.propTypes = {
   openPositions: React.PropTypes.array,
   applicants: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.object]),
   employeeCount: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
+  coffeeCount: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
 };
 
 const mapStateToProps = (state) => {
