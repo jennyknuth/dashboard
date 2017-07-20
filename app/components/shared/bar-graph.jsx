@@ -43,7 +43,7 @@ const BarGraph = ({ data }) => {
     .paddingOuter(0.2);
 
   const yScale = d3.scaleLinear()
-    .domain([valueExtent[0], valueExtent[1] + (valueExtent[1] * 0.1)])
+    .domain([0, valueExtent[1] + (valueExtent[1] * 0.1)])
     .range([chartHeight, 0]);
 
   const yTicks = yScale.ticks(4);
@@ -60,8 +60,9 @@ const BarGraph = ({ data }) => {
             <rect x={xScale(d.label)} y={0} width={xScale.bandwidth()} height={chartHeight} fill='#E6E9EE' rx={borderRadius} ry={borderRadius} />
             <rect x={xScale(d.label)} y={chartHeight - 5} width={xScale.bandwidth()} height={5} fill='#E6E9EE'/>
             <rect x={xScale(d.label)} y={yScale(d.value)} width={xScale.bandwidth()} height={chartHeight - yScale(d.value)} rx={borderRadius} ry={borderRadius} fill='#37C0C9'/>
+            <rect x={xScale(d.label)} y={chartHeight - 3} width={xScale.bandwidth()} height={3} fill='#37C0C9'/>
             <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#E6E9EE'/>
-            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={Math.max(44, yScale(d.value))} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
+            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={Math.min(chartHeight - 3, yScale(d.value))} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
             <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle' fill='#354042'> {d.label.toLowerCase()} </text>
           </g>
         )}
