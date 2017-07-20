@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Clock from 'components/shared/clock';
 import BarGraph from 'components/shared/bar-graph';
 import TrafficLight from 'components/shared/traffic-light.jsx';
+import Statistic from 'components/shared/statistic';
 
 import layout from 'theme/layout.scss';
 
@@ -29,6 +30,10 @@ const ProductDashboard = (props) => {
           weekday={props.time && props.time.weekday}
           time={props.time && props.time.currentTime}
         />
+      </div>
+      <div className={layout.paper}>
+        <h2>Days Left In Sprint</h2>
+        <Statistic value={props.jira_sprint_days_count.days_left} />
       </div>
       <div className={TrafficLightClasses}>
         <h2>JIRA breakdown</h2>

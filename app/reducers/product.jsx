@@ -8,6 +8,7 @@ const defaultState = {
   jira_api_progress: {},
   jira_pubkeeper_progress: {},
   jira_dgs_progress: {},
+  jira_sprint_days_count: 'n/a',
 };
 
 const product = (state, action) => {
