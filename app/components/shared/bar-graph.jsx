@@ -15,8 +15,8 @@ const BarGraph = ({ data }) => {
     'Accounting and Finance ': 'Finance',
     'PTO and Holidays': 'PTO',
     'Learning and Innovation': 'Innovation',
-    'Front-end': 'frontend',
-    'Front-End': 'frontend',
+    'Front-end': 'Frontend',
+    'Front-End': 'Frontend',
   };
   const sortedData = data && data.sort((a, b) => d3.ascending(a.label, b.label));
   const dataWithShortLabels = data && sortedData.map(d => labelShortener[d.label] ? {label: labelShortener[d.label], value: d.value} : d);
@@ -35,6 +35,10 @@ const BarGraph = ({ data }) => {
   const fontScale = d3.scaleLinear()
    .domain([0, 15])
    .range([0.8, 0.6]);
+
+  const labelScale = d3.scaleLinear()
+   .domain([0, 15])
+   .range([1.2, 0.6]);
 
   const xScale = d3.scaleBand()
     .domain(dataWithShortLabels.map(d => d.label))
@@ -63,7 +67,7 @@ const BarGraph = ({ data }) => {
             <rect x={xScale(d.label)} y={chartHeight - 3} width={xScale.bandwidth()} height={3} fill='#37C0C9'/>
             <line x1={0} x2={chartWidth} y1={chartHeight} y2={chartHeight} strokeWidth='0.5' stroke='#E6E9EE'/>
             <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={Math.min(chartHeight - 3, yScale(d.value))} dy={-3} textAnchor='middle' fill='#354042' fontSize={`${fontScale(numberOfBars)}rem`}> {d.value} </text>
-            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle' fill='#354042'> {d.label.toLowerCase()} </text>
+            <text x={xScale(d.label)} dx={xScale.bandwidth() / 2} y={chartHeight} dy={20} textAnchor='middle' fill='#354042' fontSize={`${labelScale(numberOfBars)}rem`}> {d.label} </text>
           </g>
         )}
         { yTicks.map((d, i) =>
