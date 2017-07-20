@@ -27,6 +27,10 @@ const Dashboard = (props) => {
         <Statistic value={props.kitchen_coffee_count.coffee_count} />
       </div>
       <div className={layout.paper}>
+      <h2>Kitchen Stream</h2>
+      <img src="http://65.112.205.134:8282/stream/video.mjpeg" width="250" height="200" />
+    </div>
+      <div className={layout.paper}>
         <Clock
           day={props.time && props.time.day}
           month={props.time && props.time.month}
