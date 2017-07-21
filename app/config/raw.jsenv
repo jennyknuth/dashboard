@@ -1,6 +1,6 @@
 {
 	SOCKET_HOST: '//dashboard.socket.nio.works',
 	APP_ROOT: '',
-  AUTH0_ACCT: 'iElDlAomj01krHksbvOBTODF0J0SAOf7',
-  AUTH0_URL: 'socinio-dashboard.auth0.com',
+  AUTH0_ACCT: '31A76xD4Wa7S4Sy3A0BOzJNPoZ3J8sMP',
+  AUTH0_URL: 'nio.auth0.com',
 }
