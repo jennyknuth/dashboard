@@ -18,7 +18,7 @@ const AgricultureDashboard = (props) => {
     <div className={layout.artboard}>
       <div className={layout.paper}>
         <EmbedScreen
-          url='https://n.io'
+          url='http://dev.dvp.nioinstances.com/'
           width={700}
           height={500}
         />
