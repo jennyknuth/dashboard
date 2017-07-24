@@ -4,6 +4,7 @@
 .frame {
   display: flex;
   background-color:$palette-background;
+  height: 100vw;
 }
 
 .app {
@@ -49,7 +50,7 @@
 }
 
 .barGraph {
-  width: 50%;
+  width: 40vw;
 }
 
 .trafficLight {

@@ -23,7 +23,7 @@ const IndustrialDashboard = (props) => {
   return (
     <div className={layout.artboard}>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>AZZ</h3>
         <TrafficLight
           total={props.jira_dgs_progress.dgsTotal}
@@ -40,15 +40,6 @@ const IndustrialDashboard = (props) => {
         <h4>Critical Tickets</h4>
         <Statistic value={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.red_value} />
       </div>
-      <div className={layout.paper}>
-        <Clock
-          day={props.time && props.time.day}
-          month={props.time && props.time.month}
-          year={props.time && props.time.year}
-          weekday={props.time && props.time.weekday}
-          time={props.time && props.time.currentTime}
-        />
-      </div>
       <div className={TrafficLightClasses}>
         <h2>JIRA Ticket</h2>
         <h3>Priority Level</h3>
@@ -62,11 +53,6 @@ const IndustrialDashboard = (props) => {
           greenLabel={props.jira_dgs_priority_progress.dgs && props.jira_dgs_priority_progress.dgs.green_label}
         />
       </div>
-      <div className={barGraphClasses}>
-        <h2>Q{props.quarter}</h2>
-        <h3>Hours Worked</h3>
-        <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
-      </div>
       <div className={layout.paper}>
         <h2>Zendesk</h2>
         <h4>Average Response Time</h4>
@@ -76,6 +62,20 @@ const IndustrialDashboard = (props) => {
         <h2>Zendesk</h2>
         <h4>Ticket Count</h4>
         <Statistic value={props.zendesk_tickets_count && props.zendesk_tickets_count.tickets} />
+      </div>
+      <div className={barGraphClasses}>
+        <h2>Q{props.quarter}</h2>
+        <h3>Hours Worked</h3>
+        <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
+      </div>
+      <div className={layout.paper}>
+        <Clock
+          day={props.time && props.time.day}
+          month={props.time && props.time.month}
+          year={props.time && props.time.year}
+          weekday={props.time && props.time.weekday}
+          time={props.time && props.time.currentTime}
+        />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ const BarGraph = ({ data }) => {
   const numberOfBars = dataWithShortLabels && dataWithShortLabels.length;
   const margin = { top: 10, bottom: 20, left: 0, right: 40 };
   const width = 600;
-  const height = 250 ;
+  const height = 225;
   const chartHeight = height - margin.top - margin.bottom;
   const chartWidth = width - margin.left - margin.right;
 
@@ -56,7 +56,7 @@ const BarGraph = ({ data }) => {
     <svg
       viewBox={`0,0,${width},${height}`}
       preserveAspectRatio="xMidYMin slice"
-      style={{width: '100%', paddingBottom: '45%', height: '1px', overflow: 'visible'}}
+      style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
     >
       <g transform={`translate(${margin.left}, ${margin.top})`} >
         { dataWithShortLabels.map((d, i)=>
