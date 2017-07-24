@@ -22,21 +22,8 @@ const ProductDashboard = (props) => {
 
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
-        <Clock
-          day={props.time && props.time.day}
-          month={props.time && props.time.month}
-          year={props.time && props.time.year}
-          weekday={props.time && props.time.weekday}
-          time={props.time && props.time.currentTime}
-        />
-      </div>
-      <div className={layout.paper}>
-        <h2>Days Left In Sprint</h2>
-        <Statistic value={props.jira_sprint_days_count.days_left} />
-      </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>Blocks</h3>
         <TrafficLight
           total={props.jira_blk_progress.blkTotal}
@@ -49,7 +36,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>Customer Engagement</h3>
         <TrafficLight
           total={props.jira_ce_progress.ceTotal}
@@ -62,7 +49,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>API</h3>
         <TrafficLight
           total={props.jira_api_progress.apiTotal}
@@ -75,7 +62,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>Designer</h3>
         <TrafficLight
           total={props.jira_designer_progress.designerTotal}
@@ -88,7 +75,7 @@ const ProductDashboard = (props) => {
         />
       </div>
       <div className={TrafficLightClasses}>
-        <h2>JIRA breakdown</h2>
+        <h2>JIRA Breakdown</h2>
         <h3>Pubkeeper</h3>
         <TrafficLight
           total={props.jira_pubkeeper_progress.pubkeeperTotal}
@@ -104,6 +91,11 @@ const ProductDashboard = (props) => {
         <h2>{`Q${props.quarter}`}</h2>
         <h3>Hours Worked</h3>
         <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
+      </div>
+      <div className={layout.paper}>
+        <h2>Sprint</h2>
+        <h3>Days Left</h3>
+        <Statistic value={props.jira_sprint_days_count.days_left} />
       </div>
     </div>
   );
