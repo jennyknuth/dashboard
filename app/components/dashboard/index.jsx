@@ -17,17 +17,19 @@ const Dashboard = (props) => {
 
   return (
     <div className={layout.artboard}>
-      <div className={layout.paper}>
-        <h2>Employees</h2>
-        <Statistic value={props.slack_employees_count.employees} />
+      <div className={barGraphClasses()}>
+        <h2>Q3</h2>
+        <h3>Hours Worked</h3>
+        { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
       </div>
       <div className={layout.paper}>
-        <h2>Open Positions</h2>
-        <DisplayList data={Array.from(props.jazz_jobs_list)} />
+        <h2>Cups of Coffee</h2>
+        <h3>Made Today</h3>
+        <Statistic value={props.kitchen_coffee_count.coffee_count} />
       </div>
       <div className={layout.paper}>
-        <h2>Applicants</h2>
-        <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
+        <h2>Kitchen Live Stream</h2>
+        <img src="http://65.112.205.134:8282/stream/video.mjpeg" width="350" height="275" />
       </div>
       <div className={layout.paper}>
         <Clock
@@ -39,18 +41,16 @@ const Dashboard = (props) => {
         />
       </div>
       <div className={layout.paper}>
-        <h2>Kitchen Live Stream</h2>
-        <img src="http://65.112.205.134:8282/stream/video.mjpeg" width="350" height="275" />
+        <h2>Employees</h2>
+        <Statistic value={props.slack_employees_count.employees} />
       </div>
       <div className={layout.paper}>
-        <h2>Cups of Coffee</h2>
-        <h3>Made Today</h3>
-        <Statistic value={props.kitchen_coffee_count.coffee_count} />
+        <h2>Open Positions</h2>
+        <DisplayList data={Array.from(props.jazz_jobs_list)} />
       </div>
-      <div className={barGraphClasses()}>
-        <h2>Q3</h2>
-        <h3>Hours Worked</h3>
-        { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
+      <div className={layout.paper}>
+        <h2>Applicants</h2>
+        <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
       </div>
     </div>
   );
