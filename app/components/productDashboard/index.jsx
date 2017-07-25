@@ -97,6 +97,16 @@ const ProductDashboard = (props) => {
         <h3>Days Left</h3>
         <Statistic value={props.jira_sprint_days_count.days_left} />
       </div>
+      <div className={layout.paper}>
+        <h2>Active Users</h2>
+        <h3>System Designer</h3>
+        <Statistic value={props.auth0_active_users_count.count} />
+      </div>
+      <div className={layout.paper}>
+        <h2>Total Users</h2>
+        <h3>System Designer</h3>
+        <Statistic value={props.auth0_total_user_count.count} />
+      </div>
     </div>
   );
 };
