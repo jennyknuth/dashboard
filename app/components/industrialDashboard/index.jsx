@@ -54,6 +54,11 @@ const IndustrialDashboard = (props) => {
         />
       </div>
       <div className={layout.paper}>
+        <h2>JIRA</h2>
+        <h4>Done Tickets</h4>
+        <Statistic value={props.jira_done_ticket_count.count} />
+      </div>
+      <div className={layout.paper}>
         <h2>Zendesk</h2>
         <h4>Average Response Time</h4>
         <Statistic value={props.zendesk_response_time && props.zendesk_response_time.toString()} />
