@@ -44,6 +44,8 @@ const Dashboard = (props) => {
         { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
       </div>
       <div className={layout.paper}>
+        <h2>Kitchen Live Stream</h2>
+        <img src="http://65.112.205.134:8282/stream/video.mjpeg" width="350" height="275" />
       </div>
       <div className={layout.paper}>
         <h2>Cups of Coffee</h2>
