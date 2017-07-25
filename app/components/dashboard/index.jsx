@@ -38,11 +38,6 @@ const Dashboard = (props) => {
           time={props.time && props.time.currentTime}
         />
       </div>
-      <div className={barGraphClasses()}>
-        <h2>Q3</h2>
-        <h3>Hours Worked</h3>
-        { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
-      </div>
       <div className={layout.paper}>
         <h2>Kitchen Live Stream</h2>
         <img src="http://65.112.205.134:8282/stream/video.mjpeg" width="350" height="275" />
@@ -51,6 +46,11 @@ const Dashboard = (props) => {
         <h2>Cups of Coffee</h2>
         <h3>Made Today</h3>
         <Statistic value={props.kitchen_coffee_count.coffee_count} />
+      </div>
+      <div className={barGraphClasses()}>
+        <h2>Q3</h2>
+        <h3>Hours Worked</h3>
+        { <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />}
       </div>
     </div>
   );
