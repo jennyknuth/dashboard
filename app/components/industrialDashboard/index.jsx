@@ -55,7 +55,7 @@ const IndustrialDashboard = (props) => {
       </div>
       <div className={layout.paper}>
         <h2>JIRA</h2>
-        <h4>Done Tickets</h4>
+        <h4>Tickets Done</h4>
         <Statistic value={props.jira_done_ticket_count.count} />
       </div>
       <div className={layout.paper}>
