@@ -1,9 +1,9 @@
 export const operations = (data) => ({
-  type: 'PROD_OPERATIONS',
+  type: 'OPERATIONS',
   data,
 });
 
 export const clock = (data) => ({
-  type: 'PROD_CLOCK',
+  type: 'CLOCK',
   data,
 });

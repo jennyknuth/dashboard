@@ -3,8 +3,8 @@ import BaseController from 'controllers/base';
 
 class ProductController extends BaseController {
   start() {
-    this.bindSocketDataToAction('clock', clock);
-    this.bindSocketDataToAction('product', product);
+    this.bindSocketDataToAction('prod_clock', clock);
+    this.bindSocketDataToAction('prod_product', product);
   }
 }
 
