@@ -1,9 +1,9 @@
 export const agriculture = (data) => ({
-  type: 'AGRICULTURE',
+  type: 'PROD_AGRICULTURE',
   data,
 });
 
 export const clock = (data) => ({
-  type: 'CLOCK',
+  type: 'PROD_CLOCK',
   data,
 });

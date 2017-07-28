@@ -1,9 +1,9 @@
 export const product = (data) => ({
-  type: 'PRODUCT',
+  type: 'PROD_PRODUCT',
   data,
 });
 
 export const clock = (data) => ({
-  type: 'CLOCK',
+  type: 'PROD_CLOCK',
   data,
 });
