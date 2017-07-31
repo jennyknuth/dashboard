@@ -8,6 +8,9 @@ const defaultState = {
   jira_api_progress: {},
   jira_pubkeeper_progress: {},
   jira_dgs_progress: {},
+  jira_ce_progress: {},
+  jira_devops_progress: {},
+  jira_nl_progress: {},
   jira_sprint_days_count: 'n/a',
 };
 
@@ -39,10 +42,20 @@ const product = (state, action) => {
           ce: action.data,
           ceTotal: getSum(action.data)
         };
+      case 'jira_devops_progress':
+        return {
+          devops: action.data,
+          devopsTotal: getSum(action.data)
+        };
       case 'jira_blk_progress':
         return {
           blk: action.data,
           blkTotal: getSum(action.data)
+        };
+      case 'jira_nl_progress':
+        return {
+          nl: action.data,
+          nlTotal: getSum(action.data)
         };
       default:
         return action.data;
