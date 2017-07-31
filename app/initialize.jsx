@@ -13,6 +13,7 @@ import Dashboard from 'components/dashboard';
 import ProductDashboard from 'components/productDashboard';
 import IndustrialDashboard from 'components/industrialDashboard';
 import AgricultureDashboard from 'components/agricultureDashboard';
+import CommunityBoard from 'components/communityBoard';
 import Login from 'components/login';
 
 // For our theme provider
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={requireAuth} />
             <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={requireAuth} />
             <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={requireAuth} />
+            <Route path="community" component={CommunityBoard} title="Community Board" onEnter={requireAuth} />
             <Route path="login" component={Login} onEnter={checkAuth} />
           </Route>
         </Router>
