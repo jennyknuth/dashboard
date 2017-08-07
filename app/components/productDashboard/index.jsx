@@ -63,6 +63,19 @@ const ProductDashboard = (props) => {
       </div>
       <div className={TrafficLightClasses}>
         <h2>JIRA Breakdown</h2>
+        <h3>DevOps</h3>
+        <TrafficLight
+          total={props.jira_devops_progress.devopsTotal}
+          redValue={props.jira_devops_progress.devops.red_value}
+          redLabel={props.jira_devops_progress.devops.red_label}
+          yellowValue={props.jira_devops_progress.devops.yellow_value}
+          yellowLabel={props.jira_devops_progress.devops.yellow_label}
+          greenValue={props.jira_devops_progress.devops.green_value}
+          greenLabel={props.jira_devops_progress.devops.green_label}
+        />
+      </div>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA Breakdown</h2>
         <h3>Designer</h3>
         <TrafficLight
           total={props.jira_designer_progress.designerTotal}
@@ -72,6 +85,24 @@ const ProductDashboard = (props) => {
           yellowLabel={props.jira_designer_progress.designer.yellow_label}
           greenValue={props.jira_designer_progress.designer.green_value}
           greenLabel={props.jira_designer_progress.designer.green_label}
+        />
+      </div>
+      <div className={layout.paper}>
+        <h2>Sprint</h2>
+        <h3>Days Left</h3>
+        <Statistic value={props.jira_sprint_days_count.days_left} />
+      </div>
+      <div className={TrafficLightClasses}>
+        <h2>JIRA Breakdown</h2>
+        <h3>niolabs Site</h3>
+        <TrafficLight
+          total={props.jira_nl_progress.nlTotal}
+          redValue={props.jira_nl_progress.nl.red_value}
+          redLabel={props.jira_nl_progress.nl.red_label}
+          yellowValue={props.jira_nl_progress.nl.yellow_value}
+          yellowLabel={props.jira_nl_progress.nl.yellow_label}
+          greenValue={props.jira_nl_progress.nl.green_value}
+          greenLabel={props.jira_nl_progress.nl.green_label}
         />
       </div>
       <div className={TrafficLightClasses}>
@@ -93,18 +124,13 @@ const ProductDashboard = (props) => {
         <BarGraph data={props.timely_hours_ordinal && props.timely_hours_ordinal} />
       </div>
       <div className={layout.paper}>
-        <h2>Sprint</h2>
-        <h3>Days Left</h3>
-        <Statistic value={props.jira_sprint_days_count.days_left} />
-      </div>
-      <div className={layout.paper}>
         <h2>Active Users</h2>
-        <h3>System Designer</h3>
+        <h3>Designer</h3>
         <Statistic value={props.auth0_active_users_count.count} />
       </div>
       <div className={layout.paper}>
         <h2>Total Users</h2>
-        <h3>System Designer</h3>
+        <h3>Designer</h3>
         <Statistic value={props.auth0_total_user_count.count} />
       </div>
     </div>
@@ -116,6 +142,9 @@ ProductDashboard.propTypes = {
   jira_pubkeeper_progress: React.PropTypes.object,
   jira_designer_progress: React.PropTypes.object,
   jira_api_progress: React.PropTypes.object,
+  jira_ce_progress: React.PropTypes.object,
+  jira_devops_progress: React.PropTypes.object,
+  jira_nl_progress: React.PropTypes.object,
   time: React.PropTypes.object,
 };
 
