@@ -9,6 +9,8 @@ const defaultState = {
   jazz_applicants_count: 'n/a',
   slack_employees_count: 'n/a',
   kitchen_coffee_count: 'n/a',
+  auth0_active_users_count: 'n/a',
+  auth0_total_user_count: 'n/a',
 };
 
 const dashboard = (state, action) => {
