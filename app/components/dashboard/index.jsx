@@ -52,6 +52,16 @@ const Dashboard = (props) => {
         <h2>Applicants</h2>
         <Statistic label='' unit='' value={props.jazz_applicants_count.applicants} />
       </div>
+      <div className={layout.paper}>
+        <h2>Active Users</h2>
+        <h3>Designer</h3>
+        <Statistic value={props.auth0_active_users_count.count} />
+      </div>
+      <div className={layout.paper}>
+        <h2>Total Users</h2>
+        <h3>Designer</h3>
+        <Statistic value={props.auth0_total_user_count.count} />
+      </div>
     </div>
   );
 };
