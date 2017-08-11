@@ -13,6 +13,15 @@
   flex: 8;
 }
 
+.backgroundLayer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(169,169,169, 0.7);
+}
+
 .pageTitle {
   &::after {
     content: '';
@@ -34,13 +43,16 @@
 
 .boardTitle {
   color: white;
+  font-size: 73px;
+  margin-top: 58px;
+  margin-left: 81px;
 }
 
 .community {
   background-image: url('./img/CommunityBoard.jpg');
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  width: 3840px;
+  height: 2160px;
 }
 
 .artboard {

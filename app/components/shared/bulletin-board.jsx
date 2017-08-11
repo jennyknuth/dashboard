@@ -8,7 +8,7 @@ class BulletinBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      positionArray: positionData
+      positionArray: positionData.reverse()
     };
     this.margin = { top: 50, bottom: 50, left: 50, right: 50 };
     this.width = 3840;
@@ -42,21 +42,22 @@ class BulletinBoard extends React.Component {
         preserveAspectRatio='xMidYMin slice'
         style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
       >
-        <text className={board.question} x={0} y={0} textAnchor='start'>{question.text}</text>
+        <text className={board.question} x={0} dx={81} y={0} textAnchor='start'>{question.text}</text>
         <g transform={`translate(${this.margin.left}, ${this.margin.top})`} >
           { answers && answers.map((d, i) =>
-            <g key={`message-${i}`} transform={`translate(${this.margin.left}, ${this.margin.top})`} >
-              <rect className={board.indexCard} x={this.state.positionArray[positionData.length - 1 - i][0]} y={this.state.positionArray[positionData.length - 1 - i][1]} width={this.sideLength} height={this.sideLength} />
-              <circle className={board.pin} cx={this.state.positionArray[positionData.length - 1 - i][0]} cy={this.state.positionArray[positionData.length - 1 - i][1]} r={15} fill={d3.shuffle(colors)[0]}/>
+            <g key={`message-${i}`} >
+              <rect className={board.indexCard} x={this.state.positionArray[positionData.length - 1 - i][0]} y={this.state.positionArray[positionData.length - 1 - i][1]} width={this.sideLength * 1.3} height={this.sideLength} stroke='#3CAFDA' strokeWidth={0.2}/>
+              <circle className={board.pin} cx={this.state.positionArray[positionData.length - 1 - i][0]} cy={this.state.positionArray[positionData.length - 1 - i][1]} r={13} fill={d3.shuffle(colors)[0]}/>
               <foreignObject
                 x={this.state.positionArray[positionData.length - 1 - i][0] + this.padding}
                 y={this.state.positionArray[positionData.length - 1 - i][1] + this.padding}
-                width={this.sideLength - (this.padding + this.padding)}
-                height={this.sideLength - (this.padding + this.padding + 10)}
+                width={(this.sideLength * 1.3) - (this.padding + this.padding)}
+                height={this.sideLength - (this.padding + this.padding + 24)}
+                style={{ fontSize: 22, overflow: 'hidden' }}
               >
                 {d.text}
               </foreignObject>
-              <text x={this.state.positionArray[this.state.positionArray.length - 1 - i][0] + (this.sideLength - this.padding)} y={this.state.positionArray[this.state.positionArray.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" >{d.name}</text>
+              <text x={this.state.positionArray[this.state.positionArray.length - 1 - i][0] + ((this.sideLength * 1.3) - this.padding)} y={this.state.positionArray[this.state.positionArray.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" fontSize={20}>{d.name}</text>
             </g>
           )
         }
