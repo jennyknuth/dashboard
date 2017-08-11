@@ -6,10 +6,9 @@ import BulletinBoard from 'components/shared/bulletin-board';
 import layout from 'theme/layout.scss';
 
 const CommunityBoard = (props) => {
-  console.log('in component', props);
   return (
     <div className={layout.artboard}>
-      <BulletinBoard question={props.question} data={props.answer} />
+      <BulletinBoard question={props.question} answers={props.answer} />
     </div>
   );
 };

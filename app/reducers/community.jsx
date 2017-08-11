@@ -4,9 +4,7 @@ const defaultState = {
 };
 
 const community = (state, action) => {
-  console.log(action);
   const formatData = (data) => {
-    console.log('in formatData', data);
     switch (data.type) {
       case 'question':
         return data.question;
@@ -19,7 +17,6 @@ const community = (state, action) => {
   }
   switch (action.type) {
     case 'COMMUNITY':
-    console.log('in reducer', action);
       return {
         ...state,
         [action.data.type]: formatData(action.data),

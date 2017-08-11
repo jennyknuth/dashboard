@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route path="product" component={ProductDashboard} title="Product Dashboard" onEnter={requireAuth} />
             <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={requireAuth} />
             <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={requireAuth} />
-            <Route path="community" component={CommunityBoard} title="Community Board" onEnter={requireAuth} />
+            <Route path="community" component={CommunityBoard} onEnter={requireAuth} />
             <Route path="login" component={Login} onEnter={checkAuth} />
           </Route>
         </Router>

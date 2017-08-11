@@ -9,13 +9,16 @@ class BulletinBoard extends React.Component {
     };
     this.margin = { top: 50, bottom: 50, left: 50, right: 50 };
     this.width = 1600;
-    this.height = 500 ;
+    this.height = 500;
+
     this.chartHeight = this.height - this.margin.top - this.margin.bottom;
     this.chartWidth = this.width - this.margin.left - this.margin.right;
 
     this.sideLength = 150;
+    this.samples = 20;
     // this.searchRadius = 300;
-    this.padding = 150;
+    this.padding = 10;
+    this.maxAnswers = 10;
 
     this.xScale = d3.scaleLinear()
       .domain([0, 1])
@@ -143,10 +146,13 @@ class BulletinBoard extends React.Component {
         style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
       >
         <g transform={`translate(${this.margin.left}, ${this.margin.top})`} >
-          { data.map((d, i) =>
+          <text x={50} y = {-80} textAnchor='middle'>{question.text}</text>
+          { answers && answers.map((d, i) =>
             <g key={`message-${i}`} transform={`translate(${this.margin.left}, ${this.margin.top})`} >
-              <rect x={this.state.positionArray[i][0]} y={this.state.positionArray[i][1]} width={this.sideLength} height={this.sideLength} fill='teal'/>
-              <circle cx={this.state.positionArray[i][0]} cy={this.state.positionArray[i][1]} r={4} fill='red'/>
+              <rect x={this.state.positionArray[this.maxAnswers - 1 - i][0]} y={this.state.positionArray[this.maxAnswers - 1 - i][1]} width={this.sideLength} height={this.sideLength} fill='teal'/>
+              <circle cx={this.state.positionArray[this.maxAnswers - 1 - i][0]} cy={this.state.positionArray[this.maxAnswers - 1 - i][1]} r={4} fill='red'/>
+              <foreignObject x={this.state.positionArray[this.maxAnswers - 1 - i][0] + this.padding} y={this.state.positionArray[this.maxAnswers - 1 - i][1] + this.padding} width={this.sideLength - (this.padding + this.padding)} height={this.sideLength - (this.padding + this.padding + 10)}>{d.text}</foreignObject>
+              <text x={this.state.positionArray[this.maxAnswers - 1 - i][0] + (this.sideLength - this.padding)} y={this.state.positionArray[this.maxAnswers - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end">{d.name}</text>
             </g>
           )
         }
@@ -156,7 +162,7 @@ class BulletinBoard extends React.Component {
     );
   }
 }
-// const BulletinBoard = ({ data }) => {
+// const BulletinBoard = ({ answers }) => {
 
   // // set up chart boundaries and margins
   // const margin = { top: 0, bottom: 0, left: 0, right: 0 };
@@ -224,7 +230,7 @@ class BulletinBoard extends React.Component {
   //     preserveAspectRatio='xMidYMin slice'
   //     style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
   //   >
-  //     { data.map((d, i) =>
+  //     { answers.map((d, i) =>
   //         <g key={`message-${i}`} transform={`translate(${margin.left}, ${margin.top})`} >
   //           <rect x={placeNote(d).position[0]} y={placeNote(d).position[1]} width={sideLength} height={sideLength} />
   //         </g>
