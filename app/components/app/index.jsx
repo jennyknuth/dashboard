@@ -39,10 +39,6 @@ class MainApp extends React.Component {
       this.props.location.pathname === '/community' ? layout.boardTitle : layout.pageTitle
     );
 
-    const appClasses = classNames(
-      this.props.location.pathname === '/community' ? layout.backgroundLayer : layout.app
-    );
-
     const iconClasses = classNames(
       'fa fa-bars fa-2x fa-fw',
       header.icon,
@@ -90,7 +86,7 @@ class MainApp extends React.Component {
             }
           </nav>
           )}
-          <div className={appClasses}>
+          <div className={layout.app}>
             { props.route.auth.loggedIn() && (
             <h1 className={titleClasses}>{props.children.props.route.title}</h1>
             )}
