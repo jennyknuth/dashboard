@@ -2,6 +2,8 @@ import React from 'react';
 import * as d3 from 'd3';
 import positionData from './positionData.js';
 
+import board from 'theme/board';
+
 class BulletinBoard extends React.Component {
   constructor(props) {
     super(props);
@@ -15,9 +17,8 @@ class BulletinBoard extends React.Component {
     this.chartHeight = this.height - this.margin.top - this.margin.bottom;
     this.chartWidth = this.width - this.margin.left - this.margin.right;
 
-    this.sideLength = 150;
+    this.sideLength = 200;
     this.samples = 20;
-    // this.searchRadius = 300;
     this.padding = 10;
     this.maxAnswers = 10;
 
@@ -32,9 +33,8 @@ class BulletinBoard extends React.Component {
 
   render() {
     const { question, answers } = this.props;
-    console.log('length', positionData[100]);
-    console.log('state', this.state.positionArray);
-    console.log(question, answers);
+
+    const colors = ['#DD3B4C', '#3CAFDA', '#F4BC26', '#37C0C9', '#FD9813', '#22537A' ];
 
     return (
       <svg
@@ -42,14 +42,21 @@ class BulletinBoard extends React.Component {
         preserveAspectRatio='xMidYMin slice'
         style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
       >
+        <text className={board.question} x={0} y={0} textAnchor='start'>{question.text}</text>
         <g transform={`translate(${this.margin.left}, ${this.margin.top})`} >
-          <text x={50} y = {-80} textAnchor='middle'>{question.text}</text>
           { answers && answers.map((d, i) =>
             <g key={`message-${i}`} transform={`translate(${this.margin.left}, ${this.margin.top})`} >
-              <rect x={this.state.positionArray[positionData.length - 1 - i][0]} y={this.state.positionArray[positionData.length - 1 - i][1]} width={this.sideLength} height={this.sideLength} fill='teal'/>
-              <circle cx={this.state.positionArray[positionData.length - 1 - i][0]} cy={this.state.positionArray[positionData.length - 1 - i][1]} r={4} fill='red'/>
-              <foreignObject x={this.state.positionArray[positionData.length - 1 - i][0] + this.padding} y={this.state.positionArray[positionData.length - 1 - i][1] + this.padding} width={this.sideLength - (this.padding + this.padding)} height={this.sideLength - (this.padding + this.padding + 10)}>{d.text}</foreignObject>
-              <text x={this.state.positionArray[this.state.positionArray.length - 1 - i][0] + (this.sideLength - this.padding)} y={this.state.positionArray[this.state.positionArray.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end">{d.name} index:{i}</text>
+              <rect className={board.indexCard} x={this.state.positionArray[positionData.length - 1 - i][0]} y={this.state.positionArray[positionData.length - 1 - i][1]} width={this.sideLength} height={this.sideLength} />
+              <circle className={board.pin} cx={this.state.positionArray[positionData.length - 1 - i][0]} cy={this.state.positionArray[positionData.length - 1 - i][1]} r={15} fill={d3.shuffle(colors)[0]}/>
+              <foreignObject
+                x={this.state.positionArray[positionData.length - 1 - i][0] + this.padding}
+                y={this.state.positionArray[positionData.length - 1 - i][1] + this.padding}
+                width={this.sideLength - (this.padding + this.padding)}
+                height={this.sideLength - (this.padding + this.padding + 10)}
+              >
+                {d.text}
+              </foreignObject>
+              <text x={this.state.positionArray[this.state.positionArray.length - 1 - i][0] + (this.sideLength - this.padding)} y={this.state.positionArray[this.state.positionArray.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" >{d.name}</text>
             </g>
           )
         }

@@ -32,6 +32,17 @@
   }
 }
 
+.boardTitle {
+  color: white;
+}
+
+.community {
+  background-image: url('./img/CommunityBoard.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
 .artboard {
   margin: 2rem auto 0 auto;
   display: flex;

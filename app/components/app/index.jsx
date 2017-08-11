@@ -31,6 +31,14 @@ class MainApp extends React.Component {
       );
     };
 
+    const headerClasses = classNames(
+      this.props.location.pathname === '/community' ? header.hidden : header.header
+    );
+
+    const titleClasses = classNames(
+      this.props.location.pathname === '/community' ? layout.boardTitle : layout.pageTitle
+    );
+
     const iconClasses = classNames(
       'fa fa-bars fa-2x fa-fw',
       header.icon,
@@ -41,15 +49,19 @@ class MainApp extends React.Component {
       this.state.navOpen ? nav.bar : nav.hidden
     );
 
+    const backgroundClasses = classNames(
+      this.props.location.pathname === '/community' ? layout.community : layout.frame
+    );
+
     return (
-      <div>
-        <header className={header.header}>
+      <div >
+        <header className={headerClasses}>
           <i className={iconClasses} onClick={toggleNav}/>
           <Link className={header.link} to="/">
             <img className={header.logo} src='img/niologo_white.png' />
           </Link>
         </header>
-        <div className={layout.frame}>
+        <div className={backgroundClasses}>
           { props.route.auth.loggedIn() && (
           <nav className={navClasses}>
             { this.state.navOpen ?
@@ -76,7 +88,7 @@ class MainApp extends React.Component {
           )}
           <div className={layout.app}>
             { props.route.auth.loggedIn() && (
-            <h1 className={layout.pageTitle}>{props.children.props.route.title}</h1>
+            <h1 className={titleClasses}>{props.children.props.route.title}</h1>
             )}
             <div>
               { props.children }

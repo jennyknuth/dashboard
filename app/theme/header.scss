@@ -1,6 +1,11 @@
 @import "palette";
 
 // styles for application header
+
+.hidden {
+  display: none;
+}
+
 .header {
   position: relative;
   height: 40px;
