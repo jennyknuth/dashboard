@@ -46,6 +46,16 @@
   font-size: 73px;
   margin-top: 58px;
   margin-left: 81px;
+  &::after {
+    content: '';
+    display:block;
+    width: 300px;
+    height: 16px;
+    background-color: $palette-secondary;
+    bottom: -33px;
+    position: absolute;
+    border-radius: $border-radius;
+  }
 }
 
 .community {

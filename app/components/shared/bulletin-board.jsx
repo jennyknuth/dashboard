@@ -42,22 +42,22 @@ class BulletinBoard extends React.Component {
         preserveAspectRatio='xMidYMin slice'
         style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
       >
-        <text className={board.question} x={0} dx={81} y={0} textAnchor='start'>{question.text}</text>
+        <text className={board.question} x={0} dx={81} y={0} dy={70} textAnchor='start'>{question.text}</text>
         <g transform={`translate(${this.margin.left}, ${this.margin.top})`} >
           { answers && answers.map((d, i) =>
             <g key={`message-${i}`} >
-              <rect className={board.indexCard} x={this.state.positionArray[positionData.length - 1 - i][0]} y={this.state.positionArray[positionData.length - 1 - i][1]} width={this.sideLength * 1.3} height={this.sideLength} stroke='#3CAFDA' strokeWidth={0.2}/>
-              <circle className={board.pin} cx={this.state.positionArray[positionData.length - 1 - i][0]} cy={this.state.positionArray[positionData.length - 1 - i][1]} r={13} fill={d3.shuffle(colors)[0]}/>
+              <rect className={board.indexCard} x={this.state.positionArray[answers.length - 1 - i][0]} y={this.state.positionArray[answers.length - 1 - i][1]} width={this.sideLength * 1.3} height={this.sideLength} stroke='#3CAFDA' strokeWidth={0.2}/>
+              <circle className={board.pin} cx={this.state.positionArray[answers.length - 1 - i][0]} cy={this.state.positionArray[answers.length - 1 - i][1]} r={13} fill={d3.shuffle(colors)[0]}/>
               <foreignObject
-                x={this.state.positionArray[positionData.length - 1 - i][0] + this.padding}
-                y={this.state.positionArray[positionData.length - 1 - i][1] + this.padding}
+                x={this.state.positionArray[answers.length - 1 - i][0] + this.padding}
+                y={this.state.positionArray[answers.length - 1 - i][1] + this.padding}
                 width={(this.sideLength * 1.3) - (this.padding + this.padding)}
                 height={this.sideLength - (this.padding + this.padding + 24)}
                 style={{ fontSize: 22, overflow: 'hidden' }}
               >
                 {d.text}
               </foreignObject>
-              <text x={this.state.positionArray[this.state.positionArray.length - 1 - i][0] + ((this.sideLength * 1.3) - this.padding)} y={this.state.positionArray[this.state.positionArray.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" fontSize={20}>{d.name}</text>
+              <text x={this.state.positionArray[answers.length - 1 - i][0] + ((this.sideLength * 1.3) - this.padding)} y={this.state.positionArray[answers.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" fontSize={20}>{d.name}</text>
             </g>
           )
         }
