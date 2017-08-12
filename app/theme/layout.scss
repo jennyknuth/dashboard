@@ -13,6 +13,15 @@
   flex: 8;
 }
 
+// .backgroundLayer{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: rgba(169,169,169, 0.7);
+// }
+
 .pageTitle {
   &::after {
     content: '';
@@ -30,6 +39,31 @@
       display:none;
     }
   }
+}
+
+.boardTitle {
+  color: white;
+  font-size: 73px;
+  margin-top: 58px;
+  margin-left: 81px;
+  &::after {
+    content: '';
+    display:block;
+    width: 300px;
+    height: 16px;
+    background-color: $palette-secondary;
+    bottom: -33px;
+    position: absolute;
+    border-radius: $border-radius;
+  }
+}
+
+.community {
+  background-color: $palette-black;
+  // background-image: url('./img/CommunityBoard.jpg');
+  // background-size: cover;
+  width: 3840px;
+  height: 2160px;
 }
 
 .artboard {
