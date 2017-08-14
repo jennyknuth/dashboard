@@ -17,24 +17,22 @@ class BulletinBoard extends React.Component {
     this.chartHeight = this.height - this.margin.top - this.margin.bottom;
     this.chartWidth = this.width - this.margin.left - this.margin.right;
 
-    this.sideLength = 200;
-    this.samples = 20;
+    this.cardHeight = 200;
+    this.cardWidth = this.cardHeight * 1.3;
     this.padding = 10;
-    this.maxAnswers = 10;
 
-    this.xScale = d3.scaleLinear()
+    this.rotateScale = d3.scaleLinear()
       .domain([0, 1])
-      .range([this.sideLength / 2, this.chartWidth - this.sideLength]);
-
-    this.yScale = d3.scaleLinear()
-      .domain([0, 1])
-      .range([this.sideLength / 2, this.chartHeight - this.sideLength]);
+      .range([-2.4, 2.4]);
   }
 
   render() {
     const { question, answers } = this.props;
 
     const colors = ['#DD3B4C', '#3CAFDA', '#F4BC26', '#37C0C9', '#FD9813', '#22537A' ];
+
+    const getX = (index) => this.state.positionArray[answers.length - 1 - index][0];
+    const getY = (index) => this.state.positionArray[answers.length - 1 - index][1];
 
     return (
       <svg
@@ -43,25 +41,44 @@ class BulletinBoard extends React.Component {
         style={{width: '100%', paddingBottom: '40%', height: '1px', overflow: 'visible'}}
       >
         <text className={board.question} x={0} dx={81} y={0} dy={70} textAnchor='start'>{question.text}</text>
-        <g transform={`translate(${this.margin.left}, ${this.margin.top})`} >
+        <g transform={`translate(${this.margin.left}, ${this.margin.top})`}>
           { answers && answers.map((d, i) =>
             <g key={`message-${i}`} >
-              <rect className={board.indexCard} x={this.state.positionArray[answers.length - 1 - i][0]} y={this.state.positionArray[answers.length - 1 - i][1]} width={this.sideLength * 1.3} height={this.sideLength} stroke='#3CAFDA' strokeWidth={0.2}/>
-              <circle className={board.pin} cx={this.state.positionArray[answers.length - 1 - i][0]} cy={this.state.positionArray[answers.length - 1 - i][1]} r={13} fill={d3.shuffle(colors)[0]}/>
-              <foreignObject
-                x={this.state.positionArray[answers.length - 1 - i][0] + this.padding}
-                y={this.state.positionArray[answers.length - 1 - i][1] + this.padding}
-                width={(this.sideLength * 1.3) - (this.padding + this.padding)}
-                height={this.sideLength - (this.padding + this.padding + 24)}
-                style={{ fontSize: 22, overflow: 'hidden' }}
-              >
-                {d.text}
-              </foreignObject>
-              <text x={this.state.positionArray[answers.length - 1 - i][0] + ((this.sideLength * 1.3) - this.padding)} y={this.state.positionArray[answers.length - 1 - i][1] + (this.sideLength - this.padding)} textAnchor="end" fontSize={20}>{d.name}</text>
-            </g>
-          )
-        }
-
+              <g transform={`rotate(${this.rotateScale(Math.random())} ${getX(i) + (this.cardWidth / 2)} ${getY(i) + (this.cardHeight / 2)})`}>
+                <rect
+                  className={board.indexCard}
+                  x={getX(i)}
+                  y={getY(i)}
+                  width={this.cardWidth}
+                  height={this.cardHeight}
+                  stroke='#3CAFDA'
+                  strokeWidth={0.2}
+                />
+                <circle className={board.pin}
+                  cx={getX(i)}
+                  cy={getY(i)} r={13}
+                  fill={d3.shuffle(colors)[0]}
+                />
+                <foreignObject
+                  x={getX(i) + this.padding}
+                  y={getY(i) + this.padding}
+                  width={(this.cardWidth) - (this.padding + this.padding)}
+                  height={this.cardHeight - (this.padding + this.padding + 24)}
+                  style={{ fontSize: 22, overflow: 'hidden' }}
+                  >
+                  {d.text}
+                </foreignObject>
+                <text
+                  x={getX(i) + ((this.cardWidth) - this.padding)}
+                  y={getY(i) + (this.cardHeight - this.padding)}
+                  textAnchor="end"
+                  fontSize={20}
+                >
+                  {d.name}
+                </text>
+              </g>
+            </g>)
+          }
         </g>
       </svg>
     );
