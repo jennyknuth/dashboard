@@ -67,6 +67,7 @@ class BulletinBoard extends React.Component {
                   style={{ fontSize: 22, overflow: 'hidden' }}
                   >
                   {d.formattedText}
+                  {d.imageUrl && <img src={d.imageUrl} height={75}/>}
                 </foreignObject>
                 <text
                   x={getX(i) + ((this.cardWidth) - this.padding)}

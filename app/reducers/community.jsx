@@ -1,7 +1,15 @@
 import { toArray } from 'react-emoji-render';
+import getUrls from 'get-urls';
 
 const formatAnswers = (answer) => {
-  answer.map(a => a.formattedText = toArray(a.text));
+  answer.map(a => {
+    a.removeRightAngle = a.text.replace('>', '');
+    a.removeLeftAngle = a.removeRightAngle.replace('<', '');
+    a.imageUrl = Array.from(getUrls(a.removeLeftAngle, {stripWWW: false}))[0];
+    a.removeLink = a.removeLeftAngle.replace(a.imageUrl, '');
+    a.emojiText = toArray(a.removeLink);
+    a.formattedText = a.emojiText;
+  });
   return answer;
 };
 
