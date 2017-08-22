@@ -1,9 +1,7 @@
-import emojis from 'emojis';
+import { toArray } from 'react-emoji-render';
 
 const formatAnswers = (answer) => {
-  answer.map(a => {
-    a.formattedText = emojis.unicode(a.text);
-  });
+  answer.map(a => a.formattedText = toArray(a.text));
   return answer;
 };
 
