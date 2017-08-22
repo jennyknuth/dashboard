@@ -68,6 +68,7 @@ class BulletinBoard extends React.Component {
                   >
                   {d.formattedText}
                   {d.imageUrl && <img src={d.imageUrl} height={75}/>}
+                  <iframe height="100" width="130" frameBorder="none" style={{ top: 0, left: 0 }} src="https://www.youtube.com/embed/mcHNOOW4ywA?rel=0&showinfo=0&autoplay=1&loop=1&playlist=mcHNOOW4ywA&controls=0"/>
                 </foreignObject>
                 <text
                   x={getX(i) + ((this.cardWidth) - this.padding)}
