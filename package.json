@@ -47,6 +47,7 @@
     "auth0-lock": "^10.18.0",
     "classnames": "^2.2.5",
     "d3": "^4.4.0",
+    "emojis": "^1.0.10",
     "moment": "^2.18.1",
     "nio-css-theme": "^2.0.0",
     "niojs": "^1.1.5",

@@ -1,3 +1,12 @@
+import emojis from 'emojis';
+
+const formatAnswers = (answer) => {
+  answer.map(a => {
+    a.formattedText = emojis.unicode(a.text);
+  });
+  return answer;
+};
+
 const defaultState = {
   question: {},
   answer: []
@@ -9,7 +18,7 @@ const community = (state, action) => {
       case 'question':
         return data.question;
       case 'answer':
-        return data.answer;
+        return formatAnswers(data.answer);
     }
   };
   if (state === undefined) {
