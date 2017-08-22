@@ -66,7 +66,7 @@ class BulletinBoard extends React.Component {
                   height={this.cardHeight - (this.padding + this.padding + 24)}
                   style={{ fontSize: 22, overflow: 'hidden' }}
                   >
-                  {d.text}
+                  {d.formattedText}
                 </foreignObject>
                 <text
                   x={getX(i) + ((this.cardWidth) - this.padding)}
