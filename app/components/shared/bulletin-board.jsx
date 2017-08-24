@@ -1,7 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 import positionData from './positionData.js';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
 import board from 'theme/board';
 
