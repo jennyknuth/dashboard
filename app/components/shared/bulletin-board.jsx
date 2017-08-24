@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 import positionData from './positionData.js';
+import ReactPlayer from 'react-player'
 
 import board from 'theme/board';
 
@@ -68,7 +69,7 @@ class BulletinBoard extends React.Component {
                   >
                   {d.formattedText}
                   {d.imageUrl && <img src={d.imageUrl} height={75}/>}
-                  <iframe height="100" width="130" frameBorder="none" style={{ top: 0, left: 0 }} src="https://www.youtube.com/embed/mcHNOOW4ywA?rel=0&showinfo=0&autoplay=1&loop=1&playlist=mcHNOOW4ywA&controls=0"/>
+                  <ReactPlayer url={d.videoUrl} playing loop volume={0} height="76px" width="130px" frameBorder="none" style={{ top: 0, left: 0, transform: 'translate(40px, 70px)' }} />
                 </foreignObject>
                 <text
                   x={getX(i) + ((this.cardWidth) - this.padding)}
