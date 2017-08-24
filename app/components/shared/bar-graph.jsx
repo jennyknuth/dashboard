@@ -15,6 +15,7 @@ const BarGraph = ({ data }) => {
     'Accounting and Finance ': 'Finance',
     'PTO and Holidays': 'PTO',
     'Learning and Innovation': 'Innovation',
+    'Learning and Innovation - Individual': 'Innovation',
     'Front-end': 'Frontend',
     'Front-End': 'Frontend',
   };
