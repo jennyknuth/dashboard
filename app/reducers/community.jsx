@@ -1,7 +1,18 @@
 import { toArray } from 'react-emoji-render';
+import getUrls from 'get-urls';
+import includes from 'lodash/includes';
 
 const formatAnswers = (answer) => {
-  answer.map(a => a.formattedText = toArray(a.text));
+  answer.map(a => {
+    a.removeRightAngle = a.text.replace('>', '');
+    a.removeLeftAngle = a.removeRightAngle.replace('<', '');
+    const url = Array.from(getUrls(a.removeLeftAngle, {stripWWW: false}))[0];
+    a.imageUrl = includes(url, '.jpg') || includes(url, '.png') ? url : undefined;
+    a.videoUrl = includes(url, 'youtube') || includes(url, 'vimeo') ? url : undefined;
+    a.removeLink = a.removeLeftAngle.replace(url, '');
+    a.emojiText = toArray(a.removeLink);
+    a.formattedText = a.emojiText;
+  });
   return answer;
 };
 

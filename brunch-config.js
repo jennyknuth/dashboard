@@ -16,7 +16,8 @@ module.exports = {
   npm: {
     globals: {
       'io': 'socket.io-client'
-    }
+    },
+    compilers: ['babel-brunch']
   },
   modules: {
     autoRequire: {
@@ -27,6 +28,9 @@ module.exports = {
     babel: {
       pattern: /\.jsx?$/,
       presets: ['es2015', 'react', 'stage-0'],
+      ignore: [
+        /^node_modules\/(?!get-urls|url-regex)/
+      ]
     },
     eslint: {
       pattern: /^app\/.*\.jsx?$/
@@ -34,6 +38,6 @@ module.exports = {
     sass: {
       mode: 'native',
       modules: true
-    },
+    }
   }
-}
+};
