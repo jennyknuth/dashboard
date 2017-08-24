@@ -18,6 +18,7 @@ const BarGraph = ({ data }) => {
     'Learning and Innovation - Individual': 'Innovation',
     'Front-end': 'Frontend',
     'Front-End': 'Frontend',
+    'Legal - R&D': 'Legal',
   };
   const sortedData = data && data.sort((a, b) => d3.ascending(a.label, b.label));
   const dataWithShortLabels = data && sortedData.map(d => labelShortener[d.label] ? {label: labelShortener[d.label], value: d.value} : d);
