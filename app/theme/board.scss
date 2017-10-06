@@ -9,3 +9,11 @@
   fill: white;
   stroke: none;
 }
+
+foreignObject {
+  img {
+    display: block;
+    height: 100px;
+    margin: 1rem auto;
+  }
+}
