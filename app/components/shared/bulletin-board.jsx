@@ -18,7 +18,7 @@ class BulletinBoard extends React.Component {
     this.chartHeight = this.height - this.margin.top - this.margin.bottom;
     this.chartWidth = this.width - this.margin.left - this.margin.right;
 
-    this.cardHeight = 200;
+    this.cardHeight = 300;
     this.cardWidth = this.cardHeight * 1.3;
     this.padding = 10;
 
