@@ -6,27 +6,56 @@
   font-size: 2rem;
 }
 
-.icon {
-  font-size: 1.5rem;
-  margin-right: 0.8rem;
-}
-
-.birthday {
-  background-image: url(#);
-}
-
-.reminder {
-  background-image: url(#);
-}
-
-.update {
-  background-image: url(#);
-}
-
-.title {
-  color: $palette-primary;
+.cards {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 4rem;
+  margin: 2rem;
+  flex: 1;
+  max-width: 15%;
+}
+
+%icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 8rem;
+  width: 8rem;
+  margin-bottom: 1rem;
+}
+
+.birthdays {
+  @extend %icon;
+  background-image: url(img/todayIcons/birthdays.svg);
+}
+
+.reminders {
+  @extend %icon;
+  background-image: url(img/todayIcons/reminders.svg);
+}
+
+.updates {
+  @extend %icon;
+  background-image: url(img/todayIcons/updates.svg);
+}
+
+.title {
+  color: $palette-primary;
+  text-transform: capitalize;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.blurb {
+  color: $palette-black;
+  font-size: 1rem;
 }

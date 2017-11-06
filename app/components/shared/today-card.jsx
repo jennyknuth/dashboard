@@ -4,28 +4,19 @@ import classNames from 'classnames';
 import today from 'theme/today.scss';
 
 const TodayCard = ({ title, posts }) => {
-  // const clockClasses = classNames(
-  //   'fa fa-clock-o',
-  //   clock.icon
-  // );
-  const icon = {
-    birthdays: 'birthday',
-    reminders: 'reminder',
-    updates: 'update',
-  };
-
-  const iconClass = icon[title];
+  console.log('card posts', posts);
 
   const iconClasses = classNames(
     today.icon,
-    today[iconClass],
+    today[title],
   );
 
   return (
     <div className={today.card}>
       <div className={iconClasses} />
-      <div className={today.title}>title</div>
+      <div className={today.title}>{title}</div>
       { posts && posts.map(blurb => (<div className={today.blurb}>blurb</div>)) }
+      Ben Schnelle
     </div>
   );
 };
