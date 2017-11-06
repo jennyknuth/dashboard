@@ -32,11 +32,14 @@ class MainApp extends React.Component {
     };
 
     const headerClasses = classNames(
-      this.props.location.pathname === '/community' ? header.hidden : header.header
+      this.props.location.pathname === '/community' ? header.hidden : header.header,
+      this.props.location.pathname === '/today' ? header.hidden : header.header
     );
 
     const titleClasses = classNames(
-      this.props.location.pathname === '/community' ? layout.boardTitle : layout.pageTitle
+      this.props.location.pathname === '/community' ? layout.boardTitle
+      : this.props.location.pathname === '/today' ? layout.centeredTitle
+      : layout.pageTitle
     );
 
     const iconClasses = classNames(
@@ -50,7 +53,8 @@ class MainApp extends React.Component {
     );
 
     const backgroundClasses = classNames(
-      this.props.location.pathname === '/community' ? layout.community : layout.frame
+      this.props.location.pathname === '/community' ? layout.community : layout.frame,
+      this.props.location.pathname === '/today' ? layout.today : layout.frame
     );
 
     return (
@@ -58,7 +62,7 @@ class MainApp extends React.Component {
         <header className={headerClasses}>
           <i className={iconClasses} onClick={toggleNav}/>
           <Link className={header.link} to="/">
-            <img className={header.logo} src='img/niologo_white.png' />
+            <img className={header.logo} src='img/niolabs_logo_white.svg' />
           </Link>
         </header>
         <div className={backgroundClasses}>

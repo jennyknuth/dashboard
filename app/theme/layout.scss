@@ -49,10 +49,38 @@
   }
 }
 
+.centeredTitle {
+  font-size: 70px;
+  margin: 9rem auto 3rem auto;
+  text-align: center;
+  color: white;
+  &::after {
+    content: '';
+    width: 10rem;
+    height: 0.3rem;
+    background-color: white;
+    bottom: -1rem;
+    position: absolute;
+    border-radius: $border-radius;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .community {
   background-color: $palette-black;
   width: 3840px;
   height: 2160px;
+}
+
+.today {
+  background-image: url(img/niolabs_logo_white.svg);
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  background-position-x: center;
+  background-position-y: 4%;
+  background-color: $palette-secondary;
+  text-align: center;
 }
 
 .artboard {

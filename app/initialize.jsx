@@ -14,6 +14,7 @@ import ProductDashboard from 'components/productDashboard';
 import IndustrialDashboard from 'components/industrialDashboard';
 import AgricultureDashboard from 'components/agricultureDashboard';
 import CommunityBoard from 'components/communityBoard';
+import Today from 'components/today';
 import Login from 'components/login';
 
 // For our theme provider
@@ -29,11 +30,12 @@ import ProductController from 'controllers/product';
 import IndustrialController from 'controllers/industrial';
 import AgricultureController from 'controllers/agriculture';
 import CommunityController from 'controllers/community';
+import TodayController from 'controllers/today';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[DashboardController, ProductController, IndustrialController, AgricultureController, CommunityController].forEach(ctrl => {
+[DashboardController, ProductController, IndustrialController, AgricultureController, CommunityController, TodayController].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();
@@ -76,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route path="industrial" component={IndustrialDashboard} title="Industrial Dashboard" onEnter={requireAuth} />
             <Route path="agriculture" component={AgricultureDashboard} title="Agriculture Dashboard" onEnter={requireAuth} />
             <Route path="community" component={CommunityBoard} title="Community Board" onEnter={requireAuth} />
+            <Route path="today" component={Today} title="Office Updates" onEnter={requireAuth} />
             <Route path="login" component={Login} onEnter={checkAuth} />
           </Route>
         </Router>
