@@ -1,0 +1,32 @@
+@import "palette";
+@import "global";
+
+.today {
+  color: white;
+  font-size: 2rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+.birthday {
+  background-image: url(#);
+}
+
+.reminder {
+  background-image: url(#);
+}
+
+.update {
+  background-image: url(#);
+}
+
+.title {
+  color: $palette-primary;
+}
+
+.card {
+  text-align: center;
+}
