@@ -1,0 +1,61 @@
+@import "palette";
+@import "global";
+
+.today {
+  color: white;
+  font-size: 4rem;
+}
+
+.cards {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  min-height: 50%;
+}
+
+.card {
+  text-align: center;
+  background-color: white;
+  padding: 4rem;
+  margin: 4rem;
+  flex: 1;
+  max-width: 15%;
+  min-height: 35vh;
+}
+
+%icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  width: 200px;
+  margin: 3rem auto;
+  margin-bottom: 3rem;
+}
+
+.birthdays {
+  @extend %icon;
+  background-image: url(img/todayIcons/birthdays.svg);
+}
+
+.reminders {
+  @extend %icon;
+  background-image: url(img/todayIcons/reminders.svg);
+}
+
+.updates {
+  @extend %icon;
+  background-image: url(img/todayIcons/updates.svg);
+}
+
+.title {
+  color: $palette-primary;
+  text-transform: capitalize;
+  font-size: 4.5rem;
+  margin-bottom: 3rem;
+}
+
+.blurb {
+  color: $palette-black;
+  font-size: 2rem;
+}
