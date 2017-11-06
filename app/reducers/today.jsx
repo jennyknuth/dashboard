@@ -1,11 +1,11 @@
 const defaultState = {
-  birthdays: ['No one today. Maybe tomorrow.'],
   reminders: ['Be free.'],
-  updates: []
+  announcements: [],
+  birthdays: ['No one today. Maybe tomorrow.'],
 };
 
 const today = (state, action) => {
-  if (state === undefined) {
+  if (state === undefined || state.birthdays === null || state.reminders === null) {
     state = defaultState;
   }
   switch (action.type) {
@@ -19,10 +19,10 @@ const today = (state, action) => {
         ...state,
         reminders: action.data.posts,
       };
-    case 'UPDATES':
+    case 'ANNOUNCEMENTS':
       return {
         ...state,
-        updates: action.data.posts,
+        announcements: action.data.posts,
       };
     default:
       return state;
