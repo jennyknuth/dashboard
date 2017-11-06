@@ -50,16 +50,16 @@
 }
 
 .centeredTitle {
-  font-size: 70px;
-  margin: 9rem auto 3rem auto;
+  font-size: 150px;
+  margin: 13vh auto 3vh auto;
   text-align: center;
   color: white;
   &::after {
     content: '';
-    width: 10rem;
-    height: 0.3rem;
+    width: 17rem;
+    height: 0.8rem;
     background-color: white;
-    bottom: -1rem;
+    bottom: -2rem;
     position: absolute;
     border-radius: $border-radius;
     left: 50%;
@@ -76,7 +76,7 @@
 .today {
   background-image: url(img/niolabs_logo_white.svg);
   background-repeat: no-repeat;
-  background-size: 10rem;
+  background-size: 20rem;
   background-position-x: center;
   background-position-y: 4%;
   background-color: $palette-secondary;

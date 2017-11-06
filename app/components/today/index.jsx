@@ -9,13 +9,12 @@ import today from 'theme/today.scss';
 const Today = (props) => {
   const date = moment().format('LL');
   const cards = ['birthdays', 'reminders', 'updates'];
-  console.log('today props', props);
 
   return (
     <div className={today.today}>
       {date}
       <div className={today.cards}>
-        { cards.map(card => (<TodayCard key={`card-${card}`} title={card} posts={props[card]} />)) }
+        { cards.map(card => (props[card].length > 0 && <TodayCard key={`card-${card}`} title={card} posts={props[card]} />)) }
       </div>
     </div>
   );
