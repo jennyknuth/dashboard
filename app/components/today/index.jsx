@@ -14,7 +14,7 @@ const Today = (props) => {
     <div className={today.today}>
       {date}
       <div className={today.cards}>
-        { cards.map(card => (props[card] && props[card].length > 0 && <TodayCard key={`card-${card}`} title={card} posts={props[card]} />)) }
+        { cards.map(card => (props[card].length > 0 && <TodayCard key={`card-${card}`} title={card} posts={props[card]} />)) }
       </div>
     </div>
   );

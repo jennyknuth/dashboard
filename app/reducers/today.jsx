@@ -12,14 +12,14 @@ const today = (state, action) => {
     case 'REMINDERS':
       return {
         ...state,
-        reminders: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Be free'],
+        reminders: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Be free.'],
       };
     case 'ANNOUNCEMENTS':
       return {
         ...state,
-        announcements: action.data.posts,
+        announcements: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Engage with niolabs on social media today.'],
       };
-      case 'BIRTHDAYS':
+    case 'BIRTHDAYS':
       return {
         ...state,
         birthdays: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['No one today. Maybe tomorrow.'],
