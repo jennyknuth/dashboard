@@ -1,28 +1,28 @@
 const defaultState = {
-  reminders: ['Be free.'],
+  reminders: [],
   announcements: [],
-  birthdays: ['No one today. Maybe tomorrow.'],
+  birthdays: [],
 };
 
 const today = (state, action) => {
-  if (state === undefined || state.birthdays === null || state.reminders === null) {
+  if (state === undefined) {
     state = defaultState;
   }
   switch (action.type) {
-    case 'BIRTHDAYS':
-      return {
-        ...state,
-        birthdays: action.data.posts,
-      };
     case 'REMINDERS':
       return {
         ...state,
-        reminders: action.data.posts,
+        reminders: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Be free'],
       };
     case 'ANNOUNCEMENTS':
       return {
         ...state,
         announcements: action.data.posts,
+      };
+      case 'BIRTHDAYS':
+      return {
+        ...state,
+        birthdays: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['No one today. Maybe tomorrow.'],
       };
     default:
       return state;
