@@ -1,12 +1,12 @@
-export const birthdays = (data) => ({
-  type: 'BIRTHDAYS',
-  data,
-});
 export const reminders = (data) => ({
   type: 'REMINDERS',
   data,
 });
-export const updates = (data) => ({
-  type: 'UPDATES',
+export const announcements = (data) => ({
+  type: 'ANNOUNCEMENTS',
+  data,
+});
+export const birthdays = (data) => ({
+  type: 'BIRTHDAYS',
   data,
 });

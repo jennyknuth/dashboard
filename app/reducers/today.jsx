@@ -1,7 +1,7 @@
 const defaultState = {
-  birthdays: ['No one today. Maybe tomorrow.'],
-  reminders: ['Be free.'],
-  updates: []
+  reminders: [],
+  announcements: [],
+  birthdays: [],
 };
 
 const today = (state, action) => {
@@ -9,20 +9,20 @@ const today = (state, action) => {
     state = defaultState;
   }
   switch (action.type) {
-    case 'BIRTHDAYS':
-      return {
-        ...state,
-        birthdays: action.data.posts,
-      };
     case 'REMINDERS':
       return {
         ...state,
-        reminders: action.data.posts,
+        reminders: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Be free'],
       };
-    case 'UPDATES':
+    case 'ANNOUNCEMENTS':
       return {
         ...state,
-        updates: action.data.posts,
+        announcements: action.data.posts,
+      };
+      case 'BIRTHDAYS':
+      return {
+        ...state,
+        birthdays: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['No one today. Maybe tomorrow.'],
       };
     default:
       return state;

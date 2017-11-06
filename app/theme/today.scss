@@ -43,9 +43,9 @@
   background-image: url(img/todayIcons/reminders.svg);
 }
 
-.updates {
+.announcements {
   @extend %icon;
-  background-image: url(img/todayIcons/updates.svg);
+  background-image: url(img/todayIcons/announcements.svg);
 }
 
 .title {
@@ -58,4 +58,5 @@
 .blurb {
   color: $palette-black;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
