@@ -5,7 +5,7 @@ class TodayController extends BaseController {
   start() {
     this.bindSocketDataToAction('today_birthdays', birthdays);
     this.bindSocketDataToAction('today_reminders', reminders);
-    this.bindSocketDataToAction('today_updates', announcements);
+    this.bindSocketDataToAction('today_announcements', announcements);
   }
 }
 
