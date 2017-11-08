@@ -15,7 +15,6 @@ const TodayCard = ({ title, posts }) => {
       <div className={iconClasses} />
       <div className={today.title}>{title}</div>
       { posts && posts.map((blurb, index) => (<div key={`${title}-${index}`} className={today.blurb}>{blurb}</div>)) }
-      Ben Schnelle
     </div>
   );
 };
