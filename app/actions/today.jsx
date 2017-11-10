@@ -10,3 +10,7 @@ export const birthdays = (data) => ({
   type: 'BIRTHDAYS',
   data,
 });
+export const reset = (data) => ({
+  type: 'RESET',
+  data,
+});
