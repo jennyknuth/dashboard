@@ -12,17 +12,17 @@ const today = (state, action) => {
     case 'REMINDERS':
       return {
         ...state,
-        reminders: action.data.posts && action.data.posts.length > 0 ? action.data.posts : [''],
+        reminders: action.data.posts,
       };
     case 'ANNOUNCEMENTS':
       return {
         ...state,
-        announcements: action.data.posts && action.data.posts.length > 0 ? action.data.posts : [''],
+        announcements: action.data.posts && action.data.posts.length > 0 ? action.data.posts : ['Bill is running a bit late today.', 'Run, Bill, run!'],
       };
     case 'BIRTHDAYS':
       return {
         ...state,
-        birthdays: action.data.posts && action.data.posts.length > 0 ? action.data.posts : [''],
+        birthdays: action.data.posts,
       };
     default:
       return state;
