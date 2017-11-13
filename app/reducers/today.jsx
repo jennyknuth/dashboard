@@ -22,8 +22,6 @@ const randomAnnouncements = [
 
 const announcement = d3.shuffle(randomAnnouncements)[0];
 
-console.log(announcement);
-
 const today = (state, action) => {
   if (state === undefined) {
     state = defaultState;
