@@ -48,7 +48,7 @@ const today = (state, action) => {
       return {
         ...state,
         coffee: action.data.posts,
-    };
+      };
     case 'RESET':
       window.location.reload();
       return;
