@@ -4,6 +4,7 @@ const defaultState = {
   reminders: [],
   announcements: [],
   birthdays: [],
+  coffee: [],
 };
 
 const randomAnnouncements = [
@@ -43,6 +44,11 @@ const today = (state, action) => {
         ...state,
         birthdays: action.data.posts,
       };
+    case 'COFFEE':
+      return {
+        ...state,
+        coffee: action.data.posts,
+    };
     case 'RESET':
       window.location.reload();
       return;

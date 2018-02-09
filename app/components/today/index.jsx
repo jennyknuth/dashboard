@@ -8,7 +8,7 @@ import today from 'theme/today.scss';
 
 const Today = (props) => {
   const date = moment().format('LL');
-  const cards = ['reminders', 'announcements', 'birthdays'];
+  const cards = ['reminders', 'announcements', 'birthdays', 'coffee'];
 
   return (
     <div className={today.today}>
