@@ -49,6 +49,11 @@
   background-image: url(img/todayIcons/announcements.svg);
 }
 
+.coffee {
+  @extend %icon;
+  background-image: url(img/todayIcons/coffee.svg);
+}
+
 .title {
   color: $palette-primary;
   text-transform: capitalize;
