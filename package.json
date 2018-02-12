@@ -51,7 +51,6 @@
     "get-urls": "^7.0.0",
     "moment": "^2.19.1",
     "nio-css-theme": "^2.0.0",
-    "niojs": "^1.1.5",
     "qs": "^6.5.1",
     "react": "^15.6.2",
     "react-css-themr": "^2.0.0",
@@ -63,7 +62,6 @@
     "react-redux": "^5.0.6",
     "react-router": "^3.2.0",
     "redux": "^3.7.1",
-    "socket.io-client": "^1.7.1",
     "symbol-observable": "^1.0.4"
   }
 }
