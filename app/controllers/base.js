@@ -43,9 +43,8 @@ class BaseController {
       client.addPatron(topic, (patron) => {
 
         const handler = (rawData) => {
-          const data = JSON.parse(new TextDecoder().decode(rawData));
-          console.log('data', data);
-          this.dispatcher(action(data[0]));
+          const data = JSON.parse(new TextDecoder().decode(rawData))[0];
+          this.dispatcher(action(data));
         };
 
         patron.on('message', handler);
