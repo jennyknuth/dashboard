@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import dashboard from 'reducers/dashboard';
 import product from 'reducers/product';
+import dashboard from 'reducers/dashboard';
 import industrial from 'reducers/industrial';
 import agriculture from 'reducers/agriculture';
 import community from 'reducers/community';

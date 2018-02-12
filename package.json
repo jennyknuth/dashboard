@@ -44,6 +44,7 @@
     "uglify-js-brunch": "^2.0.1"
   },
   "dependencies": {
+    "@pubkeeper/browser-client": "^3.2.1",
     "auth0-lock": "^10.23.1",
     "classnames": "^2.2.5",
     "d3": "^4.11.0",
