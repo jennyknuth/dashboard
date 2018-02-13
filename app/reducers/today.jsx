@@ -34,6 +34,7 @@ const today = (state, action) => {
         reminders: action.data.posts,
       };
     case 'ANNOUNCEMENTS':
+
       return {
         ...state,
         announcements: action.data.posts && action.data.posts.length > 0 ? action.data.posts : announcement,
