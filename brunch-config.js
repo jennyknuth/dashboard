@@ -14,6 +14,9 @@ module.exports = {
     noPushState: false,
   },
   npm: {
+    globals: {
+      'io': 'socket.io-client'
+    },
     compilers: ['babel-brunch']
   },
   modules: {
