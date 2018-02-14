@@ -1,6 +1,5 @@
 import config from 'config';
-import nio from 'niojs';
-
+import { PubkeeperClient, WebSocketBrew } from '@pubkeeper/browser-client';
 class BaseController {
 
   /*

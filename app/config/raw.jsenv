@@ -1,6 +1,9 @@
 {
-	SOCKET_HOST: '//dashboard.websocket.nio.works',
+	PK_SERVER: 'wss://pk.demo.niolabs.com:443/ws',
+	PK_JWT: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZGkiLCJpc3MiOiJwdWJrZWVwZXIiLCJhdWQiOiJwdWJrZWVwZXIiLCJwZXJtIjpbImFsbCJdfQ.gSeJySkEB3nGlQ4FH_im9D3sk6TlSi_Ax5J1XDOSRX4',
+	PKWEBSOCKET_HOST: 'ws.demo.niolabs.com',
+	PKWEBSOCKET_PORT: '443',
 	APP_ROOT: '',
-  AUTH0_ACCT: '31A76xD4Wa7S4Sy3A0BOzJNPoZ3J8sMP',
-  AUTH0_URL: 'nio.auth0.com',
+	AUTH0_ACCT: '31A76xD4Wa7S4Sy3A0BOzJNPoZ3J8sMP',
+	AUTH0_URL: 'nio.auth0.com',
 }
