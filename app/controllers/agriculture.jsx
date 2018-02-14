@@ -3,8 +3,8 @@ import BaseController from 'controllers/base';
 
 class AgricultureController extends BaseController {
   start() {
-    this.bindSocketDataToAction('prod_clock', clock);
-    this.bindSocketDataToAction('prod_agriculture', agriculture);
+    this.bindTopicToAction('prod_clock', clock);
+    this.bindTopicToAction('prod_agriculture', agriculture);
   }
 }
 

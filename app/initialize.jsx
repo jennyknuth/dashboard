@@ -25,17 +25,24 @@ import mainApp from 'reducers';
 const store = createStore(mainApp);
 
 // App controllers
-import DashboardController from 'controllers/dashboard';
-import ProductController from 'controllers/product';
-import IndustrialController from 'controllers/industrial';
-import AgricultureController from 'controllers/agriculture';
-import CommunityController from 'controllers/community';
+// import DashboardController from 'controllers/dashboard';
+// import ProductController from 'controllers/product';
+// import IndustrialController from 'controllers/industrial';
+// import AgricultureController from 'controllers/agriculture';
+// import CommunityController from 'controllers/community';
 import TodayController from 'controllers/today';
 
 // Initialize and start all of our controllers.
 // This can be optimized to start only when the proper
 // route is loaded
-[DashboardController, ProductController, IndustrialController, AgricultureController, CommunityController, TodayController].forEach(ctrl => {
+[
+  // DashboardController,
+  // ProductController,
+  // IndustrialController,
+  // AgricultureController,
+  // CommunityController,
+  TodayController
+].forEach(ctrl => {
   const c = new ctrl();
   c.initialize(store.dispatch);
   c.start();

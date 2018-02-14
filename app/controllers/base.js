@@ -23,7 +23,7 @@ class BaseController {
    * Listen to a socket room and dispatch an action when
    * data arrives
    */
-  bindSocketDataToAction(topic, action) {
+  bindTopicToAction(topic, action) {
 
     const client = new PubkeeperClient({
       server: config.PK_SERVER,
@@ -40,6 +40,7 @@ class BaseController {
     });
 
     client.connect().then(() => {
+
       client.addPatron(topic, (patron) => {
 
         const handler = (rawData) => {

@@ -27,6 +27,7 @@ const today = (state, action) => {
   if (state === undefined) {
     state = defaultState;
   }
+
   switch (action.type) {
     case 'REMINDERS':
       return {
@@ -49,8 +50,7 @@ const today = (state, action) => {
         coffee: action.data.posts,
       };
     case 'RESET':
-      window.location.reload();
-      return;
+      return defaultState;
     default:
       return state;
   }
