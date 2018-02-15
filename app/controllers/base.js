@@ -1,6 +1,5 @@
 import config from 'config';
-import nio from 'niojs';
-
+import { PubkeeperClient, WebSocketBrew } from '@pubkeeper/browser-client';
 class BaseController {
 
   /*
@@ -23,11 +22,41 @@ class BaseController {
    * Listen to a socket room and dispatch an action when
    * data arrives
    */
-  bindSocketDataToAction(room, action) {
-    nio.source.socketio(config.SOCKET_HOST, [room])
-      .pipe(nio.pass((data) => {
-        this.dispatcher(action(data));
-      }));
+  bindTopicToAction(topic, action) {
+
+    const client = new PubkeeperClient({
+      server: config.PK_SERVER,
+      jwt: config.PK_JWT,
+      brews: [
+        new WebSocketBrew({
+          brewerConfig: {
+            hostname: config.PKWEBSOCKET_HOST,
+            port: config.PKWEBSOCKET_PORT,
+            secure: true,
+          },
+        }),
+      ],
+    });
+
+    client.connect().then(() => {
+
+      client.addPatron(topic, (patron) => {
+
+        const handler = (rawData) => {
+          const data = JSON.parse(new TextDecoder().decode(rawData))[0];
+          this.dispatcher(action(data));
+        };
+
+        patron.on('message', handler);
+
+        return () => {
+          // deactivation/tear-down
+          patron.off('message', handler);
+        };
+      });
+
+
+    });
   }
 }
 

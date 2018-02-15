@@ -3,11 +3,11 @@ import BaseController from 'controllers/base';
 
 class TodayController extends BaseController {
   start() {
-    this.bindSocketDataToAction('today_birthdays', birthdays);
-    this.bindSocketDataToAction('today_reminders', reminders);
-    this.bindSocketDataToAction('today_announcements', announcements);
-    this.bindSocketDataToAction('today_coffee', coffee);
-    this.bindSocketDataToAction('today_reset', reset);
+    this.bindTopicToAction('today.birthdays', birthdays);
+    this.bindTopicToAction('today.reminders', reminders);
+    this.bindTopicToAction('today.announcements', announcements);
+    this.bindTopicToAction('today.coffee', coffee);
+    this.bindTopicToAction('today.reset', reset);
   }
 }
 

@@ -3,7 +3,7 @@ import BaseController from 'controllers/base';
 
 class CommunityController extends BaseController {
   start() {
-    this.bindSocketDataToAction('prod_community', community);
+    this.bindTopicToAction('prod_community', community);
   }
 }
 
