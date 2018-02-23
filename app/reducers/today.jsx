@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 const defaultState = {
-  reminders: [],
+  weather: [],
   announcements: [],
   birthdays: [],
   coffee: [],
@@ -29,10 +29,10 @@ const today = (state, action) => {
   }
 
   switch (action.type) {
-    case 'REMINDERS':
+    case 'WEATHER':
       return {
         ...state,
-        reminders: action.data.posts,
+        weather: action.data.posts,
       };
     case 'ANNOUNCEMENTS':
 
