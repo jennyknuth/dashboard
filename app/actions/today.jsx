@@ -1,5 +1,5 @@
-export const reminders = (data) => ({
-  type: 'REMINDERS',
+export const weather = (data) => ({
+  type: 'WEATHER',
   data,
 });
 export const announcements = (data) => ({

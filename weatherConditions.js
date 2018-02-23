@@ -1,0 +1,22 @@
+const conditions =  {
+"chanceflurries",
+"chancerain",
+"chancesleet",
+"chancesnow",
+"chancetstorms",
+"clear",
+"cloudy",
+"flurries",
+"fog",
+"hazy",
+"mostlycloudy",
+"mostlysunny",
+"partlycloudy",
+"partlysunny",
+"sleet",
+"rain",
+"snow",
+"sunny",
+"tstorms",
+"unknown"
+}

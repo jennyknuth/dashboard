@@ -44,6 +44,11 @@
   background-image: url(img/todayIcons/reminders.svg);
 }
 
+.weather {
+  @extend %icon;
+  background-image: url(img/todayIcons/weather.svg);
+}
+
 .announcements {
   @extend %icon;
   background-image: url(img/todayIcons/announcements.svg);
